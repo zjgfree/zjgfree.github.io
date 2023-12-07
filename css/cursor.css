@@ -1,0 +1,36 @@
+html,
+body,
+span,
+div {
+    cursor: url(/cursor/1.png), auto !important;
+}
+
+a,
+button,
+#vcomments svg {
+    cursor: url(/cursor/2.png), auto !important;
+}
+
+select,
+::selection,
+img,
+pre {
+    cursor: url(/cursor/3.png), auto !important;
+}
+
+input,
+textarea {
+    cursor: url(/cursor/input.png), auto !important;
+}
+
+
+/* bug */
+/* #vcomments ::-webkit-scrollbar-corner {
+    cursor: url(/cursor/ns.png), auto !important;
+    background-color: white;
+    color: aliceblue;
+}
+#vcomments ::-webkit-scrollbar-resizer {
+    cursor: url(/cursor/ns.png), auto !important;
+    background-color: black;
+} */

@@ -1,0 +1,2592 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Git学习笔记, Z, zjg, zjgfree, zjgfree.top">
+    <meta name="description" content="Git学习笔记
+一个可以学习git的在线游戏：Learn Git Branching
+
+参考资料：
+Git使用教程（超详细）
+
+
+
+
+
+1. Git是什么
+Git（读音为/gɪt/）是一个开源的分布式版本控制系统，可以有效、高速地处理从很小">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Git学习笔记 | Zjgfree</title>
+    <link rel="icon" type="image/png" href="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Ffavicon.png">
+    
+    <style>
+        body{
+            background-image: url(https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Fbg2.jpg);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark_new.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+    
+    <!--鼠标样式文件-->
+    <link rel="stylesheet" href="/css/cursor.css">
+
+    <!-- 黑夜模式样式 css -->
+    <link rel="stylesheet" type="text/css" href="">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Zjgfree" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+    <style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, #ffa5fa 0%, #8dfffd 100%);
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 50px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },500); 
+        },1000);//强制显示loading page 1.0s  
+    };
+    loaded();
+})()
+</script>
+
+
+<body>
+    
+    <!--loading-pages加载动画-->
+    
+        <div id="loading-container">
+             <p class="loading-text">页面正在赶来的路上…… </p> 
+             <div class="loading-image">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div> 
+                 <div></div>
+             </div>
+        </div>
+    
+
+    <!--鼠标点击烟花爆炸效果-->
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/click_firework.js"></script>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flogo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Zjgfree</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-pen" style="zoom: 0.6;"></i>
+      
+      <span>文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>时间线</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/movies-douban" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-coffee" style="zoom: 0.6;"></i>
+      
+      <span>小窝</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/movies-douban">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>电影</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/games-douban">
+          
+          <i class="fas fa-gamepad" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>游戏</span>
+        </a>
+      </li>
+      
+      <li>
+        <a target="_blank" rel="noopener" href="https://poe.com/">
+          
+          <i class="fas fa-robot" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Chat</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于作者</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <!--
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  -->
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flogo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Zjgfree</div>
+        <div class="logo-desc">
+            
+            欢迎来到我的小世界！
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-pen"></i>
+			
+			文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:28px" ></i>
+			      
+		          <span>时间线</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:28px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:28px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-coffee"></i>
+			
+			小窝
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/movies-douban " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:28px" ></i>
+			      
+		          <span>电影</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/games-douban " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-gamepad" style="position: absolute;left:28px" ></i>
+			      
+		          <span>游戏</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a target="_blank" rel="noopener" href="https://poe.com/ " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-robot" style="position: absolute;left:28px" ></i>
+			      
+		          <span>Chat</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于作者
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+    
+    <!-- 元宵节灯笼样式开始 -->
+    <style>
+        @media only screen and (min-width: 1124px) {
+            .nav-menu {
+                padding-right: 96px;
+            }
+        }
+        @media only screen and (max-width: 760px) {
+            .deng-box, .deng-box1 {
+                width: 40%;
+            }
+            .right {
+                float: left!important;
+            }
+        }
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            .right {
+                float: left!important;
+            }
+        }
+        .deng-box {
+            position: fixed;
+           /* top: -30px; */
+            top: 13px;
+            right: -20px;
+            z-index: 999;
+        }
+        .deng-box1 {
+            position: fixed;
+            top: 13px;
+            /* right: 10px; */
+            z-index: 999;
+        }
+        .deng-box1 .deng {
+            position: relative;
+            width: 120px;
+            height: 90px;
+            margin: 50px;
+            background: #d8000f;
+            background: rgba(216, 0, 15, 0.8);
+            border-radius: 50% 50%;
+            -webkit-transform-origin: 50% -100px;
+            -webkit-animation: swing 5s infinite ease-in-out;
+            box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);
+        }
+        .deng {
+            position: relative;
+            width: 120px;
+            height: 90px;
+            margin: 50px;
+            background: #d8000f;
+            background: rgba(216, 0, 15, 0.8);
+            border-radius: 50% 50%;
+            -webkit-transform-origin: 50% -100px;
+            -webkit-animation: swing 3s infinite ease-in-out;
+            box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);
+        }
+        .deng-a {
+            width: 100px;
+            height: 90px;
+            background: #d8000f;
+            background: rgba(216, 0, 15, 0.1);
+            margin: 12px 8px 8px 10px;
+            border-radius: 50% 50%;
+            border: 2px solid #dc8f03;
+        }
+        .deng-b {
+            width: 45px;
+            height: 90px;
+            background: #d8000f;
+            background: rgba(216, 0, 15, 0.1);
+            margin: -4px 8px 8px 26px;
+            border-radius: 50% 50%;
+            border: 2px solid #dc8f03;
+        }
+        .xian {
+            position: absolute;
+            /* top: -20px; */
+            top: -69px;
+            left: 60px;
+            width: 2px;
+            /*  height: 20px; */
+            height: 70px;
+
+            background: #dc8f03;
+        }
+        .shui-a {
+            position: relative;
+            width: 5px;
+            height: 20px;
+            margin: -5px 0 0 59px;
+            -webkit-animation: swing 4s infinite ease-in-out;
+            -webkit-transform-origin: 50% -45px;
+            background: #ffa500;
+            border-radius: 0 0 5px 5px;
+        }
+        .shui-b {
+            position: absolute;
+            top: 14px;
+            left: -2px;
+            width: 10px;
+            height: 10px;
+            background: #dc8f03;
+            border-radius: 50%;
+        }
+        .shui-c {
+            position: absolute;
+            top: 18px;
+            left: -2px;
+            width: 10px;
+            height: 35px;
+            background: #ffa500;
+            border-radius: 0 0 0 5px;
+        }
+        .deng:before {
+            position: absolute;
+            top: -7px;
+            left: 29px;
+            height: 12px;
+            width: 60px;
+            content: " ";
+            display: block;
+            z-index: 999;
+            border-radius: 5px 5px 0 0;
+            border: solid 1px #dc8f03;
+            background: #ffa500;
+            background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+        }
+        .deng:after {
+            position: absolute;
+            bottom: -7px;
+            left: 10px;
+            height: 12px;
+            width: 60px;
+            content: " ";
+            display: block;
+            margin-left: 20px;
+            border-radius: 0 0 5px 5px;
+            border: solid 1px #dc8f03;
+            background: #ffa500;
+            background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+        }
+        @font-face {
+            font-family: "华文行楷";
+            src: url('https://cdn.jsdelivr.net/gh/small-rose/small-rose.github.io/box/font/huawenxingkai.ttf');
+        }
+        .deng-t {
+            font-family: 华文行楷;
+            font-size: 26px;
+            color: #dc8f03;
+            font-weight: bold;
+            line-height: 44px;
+            text-align: center;
+        }
+        .night .deng-t,
+        .night .deng-box,
+        .night .deng-box1 {
+            background: transparent !important;
+        }
+        @-moz-keyframes swing {
+            0% {
+                    -moz-transform: rotate(-10deg)
+            }
+            50% {
+                 -moz-transform: rotate(10deg)
+            }
+            100% {
+                    -moz-transform: rotate(-10deg)
+            }
+        }
+        @-webkit-keyframes swing {
+            0% {
+                    -webkit-transform: rotate(-10deg)
+            }
+            50% {
+                    -webkit-transform: rotate(10deg)
+            }
+            100% {
+                    -webkit-transform: rotate(-10deg)
+            }
+        }
+    </style>
+    <div class="denglong" id="chunjie">
+    <div class="deng-box">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b"><div class="deng-t">喜迎</div></div>
+            </div>
+            <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+        </div>
+    </div>
+    <div class="deng-box1">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b"><div class="deng-t">春节</div></div>
+            </div>
+            <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+        </div>
+    </div>
+    <!-- 元宵节灯笼样式结束 -->
+    </div>
+
+</header>
+<script>
+    if((new Date().getMonth()) > 1){
+        $('.denglong').css('display', 'none');
+    }else{
+        $('.denglong').css('display', 'block');
+    }
+</script>
+    
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('这篇文章需要密码才能看哦！')).toString(CryptoJS.enc.Hex)) {
+                alert('哎呀，密码好像不对……');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+    
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Fnotes-feature-image%2FGit.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Git学习笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%BF%85%E5%A4%87%E5%B7%A5%E5%85%B7/">
+                                <span class="chip bg-color">必备工具</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-08-13
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-09-20
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1><code>Git</code>学习笔记</h1>
+<p>一个可以学习git的在线游戏：<a target="_blank" rel="noopener" href="https://learngitbranching.js.org/?locale=zh_CN">Learn Git Branching</a></p>
+<blockquote>
+<p>参考资料：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/JanuaryFM/article/details/120535660">Git使用教程（超详细）</a></p>
+</blockquote>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F1.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F2.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F3.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F4.png" alt=""></p>
+<h2 id="1-Git是什么">1. Git是什么</h2>
+<p><strong>Git（读音为/gɪt/）是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。</strong></p>
+<h2 id="2-Git安装-Windows">2. Git安装(Windows)</h2>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>查看git版本信息</p>
+<p><code>git --version</code></p>
+</li>
+</ul>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F5.png" alt=""></p>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p><mark>git配置</mark>（在使用用Git工作之前，我们需要做个一次性的配置。方便后续Git能跟踪到谁做了修改，我们需 要设置对应的用户名与邮箱地址。）</p>
+</li>
+</ul>
+<p><code> git config --global user.name "your_username"</code><br>
+<code> git config --global user.email your_email@domain.com</code><br>
+<code> git config --list 查看所有配置</code></p>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p><strong>注意 git config 命令的 --global 参数，用了这个参数，表示你这台机器上所有的Git仓库都会 使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</strong></p>
+</li>
+</ul>
+<h2 id="3-Git文件的三种状态和工作模式">3. Git文件的三种状态和工作模式</h2>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F6.png" alt=""></p>
+<p><strong>针对Git 文件的三种状态，Git项目有三个工作区域:工作区、暂存区和Git仓库。</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F7.png" alt=""></p>
+<p><strong>基本的Git工作流程描述如下：</strong></p>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p><strong>在工作区中修改某些文件。</strong></p>
+</li>
+<li class="lvl-4">
+<p><strong>对修改后的文件进行快照，然后添加到暂存区。</strong></p>
+</li>
+<li class="lvl-4">
+<p><strong>提交更新，将保存在暂存区域的文件快照永久转储到 Git 仓库中。</strong></p>
+</li>
+</ul>
+<h2 id="4-创建版本仓库并提交文件">4. 创建版本仓库并提交文件</h2>
+<p><strong>版本库又名仓库，可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来， 每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可 以“还原”。</strong></p>
+<h3 id="4-1-初始化git仓库">4.1 初始化git仓库</h3>
+<pre><code> 在本地文件自己指定位置，通过执行 git init 命令在本地初始化一个本地仓库，执行该命令后会在本地初始化一个 没有任何文件的空仓库。
+  
+ `git init`
+  
+ ps:&lt;u&gt;.git文件（本地仓库）是隐藏需要手动设置才能看到.git文件夹&lt;/u&gt;
+</code></pre>
+<h3 id="4-2-在-git-同级目录下添加git01-txt-文件后，使用-git-status-查看工作目录与暂存区文件状态">4.2 在.git 同级目录下添加git01.txt 文件后，使用 git status 查看工作目录与暂存区文件状态</h3>
+<pre><code> `git status 命令用于显示工作目录和暂存区的状态。使用此命令能看到那些修改被暂存到 了, 哪些没有, 哪些文件没有被Git tracked（跟踪）到。`
+  
+ ![](https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F8.png)
+</code></pre>
+<h3 id="4-3-执行-git-add-文件名-命令添加文件到暂存区">4.3 执行 git add 文件名 命令添加文件到暂存区</h3>
+<pre><code> `git add path 通常是通过git add &lt;path&gt;的形式把&lt;path&gt;添加到索引库中，&lt;path&gt;可以是文件也可以是目录。`
+  
+ `git不仅能判断出&lt;path&gt;中，修改(不包括已删除)的文件，还能判断出新添的文件，并把它们的信息添加到索引库中。`
+  
+ ![](https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F9.png)
+  
+ &gt; `git add` 就好比如您去超市购物，用购物车装了一大车的商品（类似于修改过的文件），然后去收银台结账，由于您一次性挑选的商品比较多，你有可能要犹豫一下到底要不要全部买下来；这时候，你可以一件件的将商品拿到收银员那里去扫码计价结算（类似与` git add fileA`, `git add fileB`…，即添加指定某些文件）,也可以财大气粗的全部买下（类似于`git add .`/，即添加所有文件），接下来就是买单并拿回家（`git commit` 和 `git push`）。
+</code></pre>
+<h3 id="4-4-提交文件到本地版本库（仓库）">4.4 提交文件到本地版本库（仓库）</h3>
+<pre><code> **文件被添加到暂存区后，执行 git commit 命令提交暂存区文件到本地版本库中。**
+  
+ `git commit 命令用于将更改记录(提交)到存储库。将索引的当前内容与描述更改的用户和 日志消息一起存储在新的提交中。通常在执行提交时 在 git commit 命令后跟上 -m 属性 加入本次提交的记录说明（注释）方便后续查看提交或改动记录。`
+  
+ `git commit -m "注释"`
+  
+ `git log`:用于显示提交日志信息
+</code></pre>
+<h2 id="5-常用操作">5. 常用操作</h2>
+<h3 id="5-1-修改git01-txt">5.1  <strong>修改git01.txt</strong></h3>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F10.png" alt=""></p>
+<h3 id="5-2-git-status">5.2 <code>git status</code></h3>
+<p><strong>此时当文件修改后 使用 git status 命令可以看到git 检测到文件被修改，git 版本库给出的下 一步操作是添加修改的文件到暂存区 此时执行添加操作命令</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F11.png" alt=""></p>
+<h3 id="5-3-git-status">5.3 <code>git status</code></h3>
+<p><strong>执行提交</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F12.png" alt=""></p>
+<h3 id="5-4-git-log">5.4 <code>git log</code></h3>
+<p><strong>git log 命令查看操作日志记录</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F13.png" alt=""></p>
+<h3 id="5-5-git-commit">5.5 <code>git commit</code></h3>
+<p><strong>执行提交操作</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F14.png" alt=""></p>
+<h3 id="5-6-git-diff">5.6 <code>git diff</code></h3>
+<p><strong>此时执行 git diff HEAD – git01.txt 与版本库内容进行比较结果如下:</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F15.png" alt=""></p>
+<ul class="lvl-0">
+<li class="lvl-4">
+<blockquote>
+<p>差异比较说明：</p>
+<p><code>---</code>：表示变动前的文件</p>
+<p><code>+++</code>：表示变动后的文件</p>
+<p>变动的位置用两个@作为起首和结束</p>
+<pre><code>@@ -1,2 +1,3 @@:减号表示第一个文件，"1"表示第1行，"2"表示连续2行。
+同样的，"+1,3"表示变动后，成为第二个文件从第1行开始的连续3行。
+</code></pre>
+</blockquote>
+</li>
+</ul>
+<h3 id="5-7-git-reset">5.7 <code>git reset</code></h3>
+<p><strong>暂存区文件提交与撤销</strong></p>
+<p>①`git reset head``</p>
+<p>②<code>git checkout @{-1}</code></p>
+<p><strong>当发现因失误而将文件添加到暂存区时，git 支持文件的撤销操作 执行命令git reset HEAD&nbsp;文件 操作如下:</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F16.png" alt=""></p>
+<p><strong>查看版本库状态并执行撤销操作</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F17.png" alt=""></p>
+<p><strong>再次查看版本库状态 test.txt 成为未追踪文件（撤销成功）</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F18.png" alt=""></p>
+<h2 id="6-补充教程（复制粘贴）">6. 补充教程（复制粘贴）</h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wmz19960227/article/details/119153613">git使用大全_git 使用</a></p>
+</blockquote>
+<h3 id="6-1-版本的创建于回归">6.1 版本的创建于回归</h3>
+<h4 id="1-基础使用">1. 基础使用</h4>
+<p><code>git --help</code>——查看git所有指令</p>
+<p><code>git init</code>——创建版本库</p>
+<p><code>git add code.txt</code></p>
+<p><code>git commit -m "版本1"</code>——创建一个版本</p>
+<p><code>git log</code>——查看版本记录</p>
+<p><code>git reset --hard HEAD~1</code>，<code>git checkout @{-1}</code>——<strong><u>回到上一个版本</u></strong></p>
+<p><mark>HEAD表示当前最新版本</mark></p>
+<blockquote>
+<p>其中<code>HEAD</code>表示当前最新版本<code>HEAD^</code>表示当前版本的前一个版本、<code>HEAD^^</code>表示当前版本的前两个个版本;<br>
+也可以使用<code>HEAD~1</code>表示当前版本的前一个版本<code>HEAD~100</code>表示当前版本的前100版本。</p>
+</blockquote>
+<p><code>git reset --hard 版本号(Hash值)</code>——回到某个版本</p>
+<p><code>git reflog</code>——<mark>查看操作记录</mark></p>
+<h4 id="2-工作区和暂存区">2. 工作区和暂存区</h4>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>git的版本库里存了很多东西，其中最重要的就是称为<mark>stage(或者叫index)的暂存区</mark>，还有git为我们自动创建的<mark>第一个分支master</mark>，以及<mark>指向master的一个指针叫HEAD</mark>。</p>
+</li>
+<li class="lvl-4">
+<p>因为我们创建git版本库时，git自动为我们创建了唯一一个master分支，所以，现在，git  commit就是往master分支上提交更改。</p>
+</li>
+<li class="lvl-4">
+<p><strong><u>可以简单理解为，需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改</u></strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F19.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p>前面讲了我们把文件往git版本库里添加的时候，是分两步执行的：</p>
+</li>
+</ul>
+<blockquote>
+<ol>
+<li class="lvl-3">
+<p>第一步是用git add把文件添加进去，实际上就是把文件修改添加到暂存区；</p>
+</li>
+<li class="lvl-3">
+<p>第二步是用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支。</p>
+</li>
+</ol>
+</blockquote>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>使用<code>git status</code>命令查看当前工作树的状态</p>
+<ul class="lvl-2">
+<li class="lvl-6">
+<p>如果工作区和暂存区不一致时</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F20.png" alt=""></p>
+</li>
+<li class="lvl-6">
+<p>如果所有文件都被提交到了版本库</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F21.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-撤销修改">3. 撤销修改</h4>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>场景1：当你<strong>改乱了工作区某个文件的内容，想直接丢弃工作区的修改</strong>时，用命令<code>git checkout – file</code></p>
+</li>
+<li class="lvl-4">
+<p>场景2：当你<strong>不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改</strong>，分两步，第一步用命令<code>git reset HEAD file</code>，就回到了场景1，第二步按场景1操作</p>
+</li>
+</ul>
+<h4 id="4-对比工作区文件与HEAD版本中文件的不同">4. 对比工作区文件与HEAD版本中文件的不同</h4>
+<p><code>(HEAD表示当前.git库中</code>的最新版本)</p>
+<p><code>git diff HEAD -- code.txt</code></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F22.png" alt=""></p>
+<h5 id="①-查看工作区和暂存区之间文件的差异">① 查看工作区和暂存区之间文件的差异</h5>
+<blockquote>
+<p><code>git diff</code> 命令，默认查看的就是 工作区 和 暂存区之间文件的差异</p>
+<p>1.<code>git diff</code> : 查看工作区和暂存区之间所有的文件差异<br>
+2.<code>git diff -- 文件名</code>：查看具体某个文件 在工作区和暂存区之间的差异<br>
+3.<code>git diff -- 文件名1 文件名2 文件名3</code>：查看多个文件在工作区和暂存区之间的差异【注意】：查看具体文件的时候 – 和文件名 之间有一个 空格,文件名1 和 文件名2 和 文件名3之间也有空格</p>
+</blockquote>
+<p><strong>1.初始条件：工作区，暂存区之间保持干净一致的状态</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F23.png" alt=""></p>
+<p><strong>2.修改工作区中的文件</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F24.png" alt=""></p>
+<p><strong>3.<code>git diff -- 文件名1 文件名2</code>&nbsp;查看文件的差异</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F25.png" alt=""></p>
+<p><strong>4.扩展：将工作区中修改的文件添加到暂存区后再比较差异情况</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F26.png" alt=""></p>
+<h5 id="②-查看工作区和版本库之间文件的差异">② 查看工作区和版本库之间文件的差异</h5>
+<blockquote>
+<p><code>git diff HEAD</code> : 查看工作区与最新版本库之间的所有的文件差异<br>
+<code>git diff 具体某个版本</code> : 查看工作区与具体某个提交版本之间的所有的文件差异<br>
+<code>git diff HEAD -- 文件名</code> ： 查看工作区与最新版本库之间的 指定文件名的文件差异<br>
+<code>git diff HEAD -- 文件名1 文件名2 文件名3</code> ：查看工作区与最新版本库之间的 指定文件名的多个文件差异<br>
+<code>git diff 具体某个版本 -- 文件名</code> ： 查看工作区与具体某个版本之间的 指定文件名的文件差异<br>
+<code>git diff 具体某个版本 -- 文件名1 文件名2 文件名3</code> ：查看工作区与最具体某个版本之间的 指定文件名的多个文件差异</p>
+</blockquote>
+<p><strong>1.初始条件：</strong></p>
+<blockquote>
+<p><code>9f5a54b</code>版本只新增了五个文件:a.txt、 b.txt 、c.txt 、d.txt、 e.txt<br>
+<code>da27f42</code>&nbsp;版本修改了 a.txt 和 b.txt 两个文件<br>
+当前工作区、暂存区、版本库状态一致</p>
+</blockquote>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F27.png" alt=""></p>
+<p><strong>2.再修改一下 a.txt 文件内容</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F28.png" alt=""></p>
+<p><strong>3.查看当前工作区 和&nbsp;<code>9f5a54b</code>版本直接的文件差异</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F29.png" alt=""></p>
+<h5 id="③情景三：查看暂存区和版本库之间文件的差异">③情景三：查看暂存区和版本库之间文件的差异</h5>
+<blockquote>
+<p>》官方文档写的就非常的好！</p>
+<p><code>git diff [&lt;options&gt;] --cached [--merge-base] [&lt;commit&gt;] [--] [&lt;path&gt;…​]</code></p>
+<p>This form is to view the changes you staged for the next commit relative to the named <commit>.<br>
+Typically you would want comparison with the latest commit, so if you do not give <commit>, it defaults to HEAD.<br>
+If HEAD does not exist (e.g. unborn branches) and <commit> is not given, it shows all staged changes.<br>
+–staged is a synonym of --cached.</commit></commit></commit></p>
+<p>》 下面是我自己的译文：此命令 用于查看 暂存区中和 指定提交 之间的文件差异。特别指出：你可能最想比较暂存区与上一次提交之间的区别，所以，如果你不明确指定 提交的版本号，则默认是HEAD.<br>
+如果 HEAD 和 指定版本号都不存在，则该命令会展示暂存区中所有的修改。<br>
+–staged 参数和 --cached 参数是一致的。</p>
+</blockquote>
+<blockquote>
+<p><strong>git diff --cached</strong> : 查看暂存区和 上一次提交 的最新版本(HEAD)之间的所有文件差异<br>
+<strong>git diff --cached 版本号 ： 查看暂存区和 指定版本 之间的所有文件差异<br>
+git diff --cached – 文件名1 文件名2 文件名3</strong> ： 查看暂存区和 HEAD 之间的指定文件差异<br>
+<strong>git diff --cached 版本号 – 文件名1 文件名2 文件名3</strong> ： 查看暂存区和 指定版本 之间的指定文件差异1</p>
+</blockquote>
+<p><strong>1.初始条件：</strong></p>
+<blockquote>
+<p><code>9f5a54b</code>版本只新增了五个文件:a.txt、 b.txt 、c.txt 、d.txt、 e.txt<br>
+<code>da27f42</code>&nbsp;版本修改了 a.txt 和 b.txt 两个文件<br>
+<code>f0c63af</code>&nbsp;版本修改了 a.txt 文件<br>
+当前工作区、暂存区、版本库状态一致</p>
+</blockquote>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F30.png" alt=""></p>
+<p><strong>2.修改文件，并添加到暂存区</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F31.png" alt=""></p>
+<p><strong>3.查看暂存区与上个提交版本之间的区别</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F32.png" alt=""></p>
+<p><strong>4.查看暂存区与具体某个版本之间的区别</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F33.png" alt=""></p>
+<h5 id="④-查看不同版本库之间文件的差异">④ 查看不同版本库之间文件的差异</h5>
+<blockquote>
+<p><code>git diff 版本号1 版本号2</code> ： 查看两个版本之间的差异<br>
+<code>git diff 版本号1 版本号2 -- 文件名1 文件名2</code> ： 查看两个版本之间的指定文件之间的差异<br>
+<code>git diff 版本号1 版本号2 --stat</code> : 查看两个版本之间的改动的文件列表<br>
+<code>git diff 版本号1 版本号2 src</code> : 查看两个版本之间的文件夹 src 的差异</p>
+</blockquote>
+<p><strong>1.<mark>查看当前的版本列表</mark></strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F34.png" alt=""></p>
+<p><strong>2.查看两个版本之间的差异</strong></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F35.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F36.png" alt=""></p>
+<h4 id="5-删除文件">5. 删除文件</h4>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p><code>git rm code.txt</code></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F37.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p>命令<code>git rm</code>用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容</p>
+</li>
+</ul>
+<h3 id="6-2-分支管理">6.2 分支管理</h3>
+<h4 id="1-创建和合并分支">1. 创建和合并分支</h4>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>git把我们之前每次提交的版本串成一条时间线，这条时间线就是一个分支。截止到目前只有一条时间线，<strong><u>在git里，这个分支叫主分支，即master分支。HEAD严格来说不是指向提交，而是指向master，master才是指向提交的，所以，HEAD指向的就是当前分支</u></strong></p>
+</li>
+<li class="lvl-4">
+<p>一开始的时候，master分支是一条线，git用master指向最新的提交，再用HEAD指向master，就能确定当前分支，以及当前分支的提交点：</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F38.png" alt=""></p>
+<ul class="lvl-2">
+<li class="lvl-6">
+<p>git创建一个分支很快，因为除了增加一个dev指针，改变HEAD的指向，工作区的文件都没有任何变化。</p>
+</li>
+</ul>
+</li>
+<li class="lvl-4">
+<p>不过，从现在开始，对工作区的修改和提交就是针对dev分支了，比如新提交一次后，dev指针往前移动一步，而master指针不变：</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F39.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p>假如我们在dev上的工作完成了，就可以把dev合并到master上。git怎么合并呢？最简单的方法，就是直接把master指向dev的当前提交，就完成了合并：</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F40.png" alt=""></p>
+<p>git合并分支也很快，就改改指针，工作区内容也不变。</p>
+</li>
+<li class="lvl-4">
+<p>合并完分支后，甚至可以删除dev分支。删除dev分支就是把dev指针给删掉，删掉后，我们就剩下了一条master分支：</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F41.png" alt=""></p>
+</li>
+</ul>
+<h4 id="2-创建和合并分支举例">2. 创建和合并分支举例</h4>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>执行如下命令可以查看当前有几个分支并且看到在哪个分支下工作</p>
+<p><code>git branch</code></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F42.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p><mark>创建一个分支dev并切换到其上进行工作</mark></p>
+<p><code>git checkout -b dev</code></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F43.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F44.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p>修改code.txt内容，在里面添加一行，并进行提交</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F45.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p><mark>切换回master分支</mark></p>
+<p><code>git checkout master</code></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F46.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F47.png" alt=""></p>
+<p><strong>查看code.txt，发现添加的内容没有了。<mark>因为那个提交是在dev分支上</mark>，而master分支此刻的提交点并没有变</strong></p>
+</li>
+<li class="lvl-4">
+<p><mark>把dev分支的工作成果合并到master分支上</mark></p>
+<p><code>git merge 分支名称</code></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F48.png" alt=""></p>
+<p>再查看code.txt的内容，就可以看到，和dev分支的最新提交是完全一样的</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F49.png" alt=""></p>
+<p>注意到上面的Fast-forward信息，Git告诉我们，这次合并是“快进模式”，也就是直接把master指向dev的当前提交，所以合并速度非常快</p>
+</li>
+<li class="lvl-4">
+<p>合并完成后，就可以放心地<mark>删除dev分支</mark>了，删除后，查看branch，就只剩下master分支了</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F50.png" alt=""></p>
+</li>
+</ul>
+<p>总结：</p>
+<blockquote>
+<p><strong><mark>查看分支：git branch</mark><br>
+<mark>创建分支：git branch <name></name></mark><br>
+<mark>切换分支：git checkout <name></name></mark><br>
+<mark>创建+切换分支：git checkout -b <name></name></mark><br>
+<mark>合并某分支到当前分支：git merge <name></name></mark><br>
+<mark>删除分支：git branch -d <name></name></mark></strong></p>
+</blockquote>
+<h4 id="3-解决冲突">3. 解决冲突</h4>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>master分支和dev分支各自都分别有新的提交：</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F51.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p>执行如下命令尝试将dev分支合并到master分支上来</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F52.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p><code>git status</code>也可以告诉我们冲突的文件</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F53.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p>查看code.txt的内容</p>
+<p><code>cat &lt;文件名&gt;</code></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F54.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p><mark>git用&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&gt;标记出不同分支的内容，我们修改如下后保存</mark></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F55.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p>再提交</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F56.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p>现在，master分支和dev分支变成了下图所示</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F57.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p>用带参数的git log也可以看到分支的合并情况</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F58.png" alt=""></p>
+</li>
+</ul>
+<h4 id="4-分支管理策略">4. 分支管理策略</h4>
+<p><strong>通常，合并分支时，如果可能，git会用fast forward模式</strong></p>
+<p><strong>但是有些快速合并不能成功而且合并时没有冲突，这个时候会合并之后并做一次新的提交</strong></p>
+<p><strong>但这种模式下，删除分支后，会丢掉分支信息</strong></p>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>创建切换到dev分支下；</p>
+</li>
+<li class="lvl-4">
+<p>新建一个文件code3.txt编辑内容，并提交一个commit；</p>
+</li>
+<li class="lvl-4">
+<p>切换回master分支，编辑code.txt并进行一个提交；</p>
+</li>
+<li class="lvl-4">
+<p>合并dev分支的内容到master分支；</p>
+</li>
+<li class="lvl-4">
+<p>出现如下提示，这是因为这次不能进行快速合并，所以git提示输入合并说明信息，输入合并内容之后git会自动创建一次新的提交</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F59.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F60.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p><strong>如果要强制禁用fast forward模式，git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息</strong></p>
+</li>
+<li class="lvl-4">
+<p>创建并切换到dev分支；</p>
+</li>
+<li class="lvl-4">
+<p>修改code.txt内容，并提交一个commit；</p>
+</li>
+<li class="lvl-4">
+<p>切换回master分支；</p>
+</li>
+<li class="lvl-4">
+<p>准备合并dev分支，请注意–no-ff参数，表示禁用Fast forward；</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F61.png" alt=""></p>
+<p>因为本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去</p>
+</li>
+<li class="lvl-4">
+<p>合并后，我们用git log看看分支历史</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F62.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F63.png" alt=""></p>
+</li>
+</ul>
+<h4 id="5-bug分支">5. bug分支</h4>
+<p><strong>每个bug都可以通过一个新的临时分支来修复，修复后，合并分支，然后将临时分支删除</strong></p>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除； 当手头工作没有完成时，先把工作现场<code>git stash</code>一下，然后去修复bug，修复后，再<code>git stash pop</code>，恢复工作现场</p>
+</li>
+</ul>
+<h3 id="6-3-使用github">6.3 使用github</h3>
+<h4 id="1-创建仓库">1. 创建仓库</h4>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>注册github账户，登录后，点击"New respository "</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F64.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p>在新页面中，输入项目的名称，勾选’<a target="_blank" rel="noopener" href="http://readme.md">readme.md</a>’，点击’create repository’</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F65.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p>添加成功后，转到文件列表页面</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F66.png" alt=""></p>
+</li>
+</ul>
+<h4 id="2-添加ssh账户">2. 添加ssh账户</h4>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>点击账户头像后的下拉三角，选择’settings’（如果某台机器需要与github上的仓库交互，那么就要把这台机器的ssh公钥添加到这个github账户上）；</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F67.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p>点击’SSH and GPG keys’，添加ssh公钥。</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F68.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p>编辑文件.gitconfig，修改某台机器的git配置</p>
+</li>
+<li class="lvl-4">
+<p>修改为注册github时的邮箱，填写用户名</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F69.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p>使用如下命令生成ssh密钥&nbsp;<code>ssh-keygen -t rsa -C "邮箱地址"</code></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F70.png" alt=""></p>
+</li>
+<li class="lvl-4">
+<p>进入主目录下的.ssh文件件，下面有两个文件</p>
+<pre><code> 公钥为id_rsa.pub
+ 私钥为id_rsa
+</code></pre>
+</li>
+<li class="lvl-4">
+<p>查看并复制公钥内容</p>
+</li>
+<li class="lvl-4">
+<p>回到浏览器中，填写标题，粘贴公钥</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F71.png" alt=""></p>
+</li>
+</ul>
+<h4 id="3-克隆项目">3. 克隆项目</h4>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>复制git地址</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F72.png" alt=""></p>
+</li>
+</ul>
+<h4 id="4-推送项目">4. 推送项目</h4>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>推送分支，就是把该分支上的所有本地提交推送到远程库，推送时要指定本地分支，这样，git就会把该分支推送到远程库对应的远程分支上</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">git push origin 分支名称
+例：
+git push origin smart
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><mark>git第一次提交出现fatal</mark>: No configured push destination. Either specify the URL from the command-line or</p>
+<p><strong>1. 需要在 git push 之前需要输入 git remote add origin “远程仓库地址”</strong></p>
+<pre class="line-numbers language-language-git"><code class="language-language-git">git remote add origin https://gitee.com/liujianzhuang/js-basics.git
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>2. git push -u origin 对应远程分支名</strong></p>
+<pre class="line-numbers language-language-git"><code class="language-language-git">git push -u origin master
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>3. 接下来就可以直接一套操作了</strong></p>
+<pre class="line-numbers language-language-git"><code class="language-language-git">git add .
+git commit -m "信息"
+git push
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-将本地分支跟踪服务器分支">5. 将本地分支跟踪服务器分支</h4>
+<pre class="line-numbers language-language-md"><code class="language-language-md">git branch --set-upstream-to=origin/远程分支名称 本地分支名称
+例：
+git branch --set-upstream-to=origin/smart smart
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F73.png" alt=""></p>
+<h4 id="6-从远程分支上拉去代码">6. 从远程分支上拉去代码</h4>
+<pre class="line-numbers language-language-md"><code class="language-language-md">git pull orgin 分支名称
+例：
+git pull orgin smart
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fgit%2F74.png" alt=""></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Z</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zjgfree.github.io/20230813/git-xue-xi-bi-ji/">https://zjgfree.github.io/20230813/git-xue-xi-bi-ji/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Z</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%BF%85%E5%A4%87%E5%B7%A5%E5%85%B7/">
+                                    <span class="chip bg-color">必备工具</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">支持一下</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Freward%2Falipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Freward%2Fwechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Fcomment_bg_onepiece.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'LhLx7UqKvarxfFplrk6gYTBs-9Nh9j0Va',
+        appKey: 'WU9kHlPSxaP7WrHwoZCbO1l3',
+        serverURLs: 'https://lhlx7uqk.lc-cn-e1-shared.com',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'robohash',
+        pageSize: '15',
+        lang: 'zh-cn',
+        placeholder: '🌻留下你的足迹！🚩'
+    });
+</script>
+
+<!--酷Q推送-->
+
+//<script> 
+//    new Valine({
+//        el: '#vcomments',
+//        appId: 'LhLx7UqKvarxfFplrk6gYTBs-9Nh9j0Va',
+//        appKey: 'WU9kHlPSxaP7WrHwoZCbO1l3',
+//        notify: 'false' === 'true',
+//        verify: 'false' === 'true',
+//        visitor: 'true' === 'true',
+//        avatar: 'robohash',
+//        pageSize: '15',
+//        lang: 'zh-cn',
+//        placeholder: '🌻留下你的足迹！🚩',
+//    });
+//    // 点击回复直接评论 
+//    $(document).ready(function () {
+//        $('.vemoji-btn').text('😀');
+//        $("#vcomments").on('click', 'span.vat', function () {
+//            $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+//            $('textarea#veditor').focus();
+//        })
+//    });
+//</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/20230813/matlab-xue-xi-bi-ji/">
+                    <div class="card-image">
+                        
+                        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Fnotes-feature-image%2FMatlab.png" class="responsive-img" alt="MATLAB学习笔记">
+                        
+                        <span class="card-title">MATLAB学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">计算机语言</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/20230813/python-xue-xi-bi-ji/">
+                    <div class="card-image">
+                        
+                        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Fnotes-feature-image%2FPython.png" class="responsive-img" alt="Python学习笔记">
+                        
+                        <span class="card-title">Python学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">计算机语言</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('80')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Zjgfree<br />'
+            + '文章作者: Z<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: rgba(202, 243, 248, 0.75);">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #98F5FF;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="9023755987"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#98F5FF'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023</span>
+            
+            <a href="/about" target="_blank">Z</a>
+        <!--|&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>  -->
+            
+                <span id="translate">|&nbsp;简繁切换：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">37.4k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2023";
+                        var startMonth = "7";
+                        var startDate = "25";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '星球已运转 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '星球已運轉 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '星球已运转 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '星球已運轉 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zjgfree" class="tooltipped" target="_blank" data-tooltip="Jump to GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:zjgfree@qq.com" class="tooltipped" target="_blank" data-tooltip="Email：zjgfree@qq.com" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1727302945" class="tooltipped" target="_blank" data-tooltip="QQ: 1727302945" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    
+    <!--黑夜白天切换动态背景-->
+<!--
+<div class="stars-con">
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>  
+</div>
+-->
+
+<!-- 白天和黑夜主题 -->
+<div class="sum-moon-box">
+  <a class="btn-floating btn-large waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式切换" >
+    <i id="sum-moon-icon" class="fas fa-sun" style="width:48px; height:48px; font-size: 28px;"></i>
+  </a>
+</div>
+
+<script>
+  
+  // 在这里修改 isDark 变量过期的时间
+  var isDarkLiveHours = 6;
+
+  function setCookie(name, value, hoursToLive) {
+    var cookie = name + "=" + encodeURIComponent(value);
+    
+    if (typeof hoursToLive === "number") {
+      cookie += ";path=/;max-age=" + (hoursToLive*60*60);
+    }
+
+    document.cookie = cookie;
+  }
+
+  function getCookie(name) {
+    // 拆分 cookie 字符串
+    var cookieArr = document.cookie.split(";");
+   
+    // 循环遍历数组元素
+    for(var i = 0; i < cookieArr.length; i++) {
+        var cookiePair = cookieArr[i].split("=");
+       
+        /* 删除 cookie 名称开头的空白并将其与给定字符串进行比较 */
+        if(name == cookiePair[0].trim()) {
+            // 解码cookie值并返回
+            return decodeURIComponent(cookiePair[1]);
+        }
+    }
+    // 如果未找到，则返回null
+    return null;
+  }
+  
+
+  function switchNightMode() {
+    $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+    setTimeout(function() {
+      $('body').hasClass('DarkMode')
+      ? (
+        $('body').removeClass('DarkMode'),
+        setCookie('isDark', 'false', isDarkLiveHours),
+        $('#day-btn-icon-sun').css('display', 'none'),
+        $('#night-btn-icon-moon').css('display', 'inherit')
+      ) : (
+        $('body').addClass('DarkMode'),
+        setCookie('isDark', 'true', isDarkLiveHours),
+        $('#day-btn-icon-sun').css('display', 'inherit'),
+        $('#night-btn-icon-moon').css('display', 'none')
+      ),
+
+      setTimeout(function () {
+        $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+          $(this).remove()
+        })
+      }, 2e3);
+    });
+  }
+
+  //黑夜模式自动开启功能（首次加载）
+  setTimeout(function () {
+    if (getCookie('isDark') == null) {
+      if ((new Date().getHours() >= 21 || new Date().getHours() < 6) && !$('body').hasClass('DarkMode')) {
+        $('body').addClass('DarkMode');
+        setCookie('isDark', 'true', isDarkLiveHours);
+        $('#day-btn-icon-sun').css('display', 'inherit');
+        $('#night-btn-icon-moon').css('display', 'none');
+      }
+    } else {
+      if (getCookie('isDark') === 'true') {
+        document.body.classList.add('DarkMode');
+        $('#day-btn-icon-sun').css('display', 'inherit');
+        $('#night-btn-icon-moon').css('display', 'none');
+      } else {
+        document.body.classList.remove('DarkMode');
+        $('#day-btn-icon-sun').css('display', 'none');
+        $('#night-btn-icon-moon').css('display', 'inherit');
+      }
+    }
+
+  }, 0);
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "https://zjgfree.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+    
+
+    <!-- 动态标题 -->
+    <script type="text/javascript">
+        var OriginTitile = document.title,
+            st;
+        document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = "👀跑哪里去了？😭", clearTimeout(st)) : (document.title =
+                "🍔找到你啦！💕", st = setTimeout(function () {
+                    document.title = OriginTitile
+                }, 3e3))
+        })
+    </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="140" alpha='0.7'
+        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1.5,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":180,"height":180,"position":"right","hOffset":75,"vOffset":8},"mobile":{"show":false,"scale":0.4},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
+
+</html>

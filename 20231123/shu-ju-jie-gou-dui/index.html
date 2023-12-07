@@ -1,0 +1,2262 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="数据结构——堆, Z, zjg, zjgfree, zjgfree.top">
+    <meta name="description" content="堆中某个结点的值总是不大于或不小于其父结点的值...">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>数据结构——堆 | Zjgfree</title>
+    <link rel="icon" type="image/png" href="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Ffavicon.png">
+    
+    <style>
+        body{
+            background-image: url(https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Fbg2.jpg);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark_new.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+    
+    <!--鼠标样式文件-->
+    <link rel="stylesheet" href="/css/cursor.css">
+
+    <!-- 黑夜模式样式 css -->
+    <link rel="stylesheet" type="text/css" href="">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Zjgfree" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+    <style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, #ffa5fa 0%, #8dfffd 100%);
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 50px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },500); 
+        },1000);//强制显示loading page 1.0s  
+    };
+    loaded();
+})()
+</script>
+
+
+<body>
+    
+    <!--loading-pages加载动画-->
+    
+        <div id="loading-container">
+             <p class="loading-text">页面正在赶来的路上…… </p> 
+             <div class="loading-image">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div> 
+                 <div></div>
+             </div>
+        </div>
+    
+
+    <!--鼠标点击烟花爆炸效果-->
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/click_firework.js"></script>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flogo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Zjgfree</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-pen" style="zoom: 0.6;"></i>
+      
+      <span>文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>时间线</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/movies-douban" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-coffee" style="zoom: 0.6;"></i>
+      
+      <span>小窝</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/movies-douban">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>电影</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/games-douban">
+          
+          <i class="fas fa-gamepad" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>游戏</span>
+        </a>
+      </li>
+      
+      <li>
+        <a target="_blank" rel="noopener" href="https://poe.com/">
+          
+          <i class="fas fa-robot" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Chat</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于作者</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <!--
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  -->
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flogo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Zjgfree</div>
+        <div class="logo-desc">
+            
+            欢迎来到我的小世界！
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-pen"></i>
+			
+			文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:28px" ></i>
+			      
+		          <span>时间线</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:28px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:28px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-coffee"></i>
+			
+			小窝
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/movies-douban " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:28px" ></i>
+			      
+		          <span>电影</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/games-douban " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-gamepad" style="position: absolute;left:28px" ></i>
+			      
+		          <span>游戏</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a target="_blank" rel="noopener" href="https://poe.com/ " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-robot" style="position: absolute;left:28px" ></i>
+			      
+		          <span>Chat</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于作者
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+    
+    <!-- 元宵节灯笼样式开始 -->
+    <style>
+        @media only screen and (min-width: 1124px) {
+            .nav-menu {
+                padding-right: 96px;
+            }
+        }
+        @media only screen and (max-width: 760px) {
+            .deng-box, .deng-box1 {
+                width: 40%;
+            }
+            .right {
+                float: left!important;
+            }
+        }
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            .right {
+                float: left!important;
+            }
+        }
+        .deng-box {
+            position: fixed;
+           /* top: -30px; */
+            top: 13px;
+            right: -20px;
+            z-index: 999;
+        }
+        .deng-box1 {
+            position: fixed;
+            top: 13px;
+            /* right: 10px; */
+            z-index: 999;
+        }
+        .deng-box1 .deng {
+            position: relative;
+            width: 120px;
+            height: 90px;
+            margin: 50px;
+            background: #d8000f;
+            background: rgba(216, 0, 15, 0.8);
+            border-radius: 50% 50%;
+            -webkit-transform-origin: 50% -100px;
+            -webkit-animation: swing 5s infinite ease-in-out;
+            box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);
+        }
+        .deng {
+            position: relative;
+            width: 120px;
+            height: 90px;
+            margin: 50px;
+            background: #d8000f;
+            background: rgba(216, 0, 15, 0.8);
+            border-radius: 50% 50%;
+            -webkit-transform-origin: 50% -100px;
+            -webkit-animation: swing 3s infinite ease-in-out;
+            box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);
+        }
+        .deng-a {
+            width: 100px;
+            height: 90px;
+            background: #d8000f;
+            background: rgba(216, 0, 15, 0.1);
+            margin: 12px 8px 8px 10px;
+            border-radius: 50% 50%;
+            border: 2px solid #dc8f03;
+        }
+        .deng-b {
+            width: 45px;
+            height: 90px;
+            background: #d8000f;
+            background: rgba(216, 0, 15, 0.1);
+            margin: -4px 8px 8px 26px;
+            border-radius: 50% 50%;
+            border: 2px solid #dc8f03;
+        }
+        .xian {
+            position: absolute;
+            /* top: -20px; */
+            top: -69px;
+            left: 60px;
+            width: 2px;
+            /*  height: 20px; */
+            height: 70px;
+
+            background: #dc8f03;
+        }
+        .shui-a {
+            position: relative;
+            width: 5px;
+            height: 20px;
+            margin: -5px 0 0 59px;
+            -webkit-animation: swing 4s infinite ease-in-out;
+            -webkit-transform-origin: 50% -45px;
+            background: #ffa500;
+            border-radius: 0 0 5px 5px;
+        }
+        .shui-b {
+            position: absolute;
+            top: 14px;
+            left: -2px;
+            width: 10px;
+            height: 10px;
+            background: #dc8f03;
+            border-radius: 50%;
+        }
+        .shui-c {
+            position: absolute;
+            top: 18px;
+            left: -2px;
+            width: 10px;
+            height: 35px;
+            background: #ffa500;
+            border-radius: 0 0 0 5px;
+        }
+        .deng:before {
+            position: absolute;
+            top: -7px;
+            left: 29px;
+            height: 12px;
+            width: 60px;
+            content: " ";
+            display: block;
+            z-index: 999;
+            border-radius: 5px 5px 0 0;
+            border: solid 1px #dc8f03;
+            background: #ffa500;
+            background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+        }
+        .deng:after {
+            position: absolute;
+            bottom: -7px;
+            left: 10px;
+            height: 12px;
+            width: 60px;
+            content: " ";
+            display: block;
+            margin-left: 20px;
+            border-radius: 0 0 5px 5px;
+            border: solid 1px #dc8f03;
+            background: #ffa500;
+            background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+        }
+        @font-face {
+            font-family: "华文行楷";
+            src: url('https://cdn.jsdelivr.net/gh/small-rose/small-rose.github.io/box/font/huawenxingkai.ttf');
+        }
+        .deng-t {
+            font-family: 华文行楷;
+            font-size: 26px;
+            color: #dc8f03;
+            font-weight: bold;
+            line-height: 44px;
+            text-align: center;
+        }
+        .night .deng-t,
+        .night .deng-box,
+        .night .deng-box1 {
+            background: transparent !important;
+        }
+        @-moz-keyframes swing {
+            0% {
+                    -moz-transform: rotate(-10deg)
+            }
+            50% {
+                 -moz-transform: rotate(10deg)
+            }
+            100% {
+                    -moz-transform: rotate(-10deg)
+            }
+        }
+        @-webkit-keyframes swing {
+            0% {
+                    -webkit-transform: rotate(-10deg)
+            }
+            50% {
+                    -webkit-transform: rotate(10deg)
+            }
+            100% {
+                    -webkit-transform: rotate(-10deg)
+            }
+        }
+    </style>
+    <div class="denglong" id="chunjie">
+    <div class="deng-box">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b"><div class="deng-t">喜迎</div></div>
+            </div>
+            <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+        </div>
+    </div>
+    <div class="deng-box1">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b"><div class="deng-t">春节</div></div>
+            </div>
+            <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+        </div>
+    </div>
+    <!-- 元宵节灯笼样式结束 -->
+    </div>
+
+</header>
+<script>
+    if((new Date().getMonth()) > 1){
+        $('.denglong').css('display', 'none');
+    }else{
+        $('.denglong').css('display', 'block');
+    }
+</script>
+    
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('这篇文章需要密码才能看哦！')).toString(CryptoJS.enc.Hex)) {
+                alert('哎呀，密码好像不对……');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+    
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Ffeatureimages%2F4.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">数据结构——堆</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-11-23
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-11-23
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    792
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    3 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1>堆</h1>
+<h2 id="1-数据结构">1.数据结构</h2>
+<blockquote>
+<p>堆的定义如下：<code>n</code>个元素的序列<code>{k1,k2,ki,…,kn}</code>当且仅当满足下关系时，称之为堆。<br>
+$$<br>
+(k_i \le k_{2i} 且 k_i \le k_{2i+1})或者(k_i \ge k_{2i} 且 k_i \ge k_{2i+1}),(i = [1,\frac{n}{2}])<br>
+$$</p>
+</blockquote>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>最高效的<strong>优先级队列</strong>。可以被看作一棵<strong>完全二叉树</strong>（<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91">完全二叉树_百度百科 (baidu.com)</a>）的数组对象。</p>
+</li>
+<li class="lvl-2">
+<p>堆中某个结点的值总是不大于或不小于其父结点的值。</p>
+</li>
+<li class="lvl-2">
+<p>根结点最大的堆叫做<strong>最大堆</strong>或<strong>大根堆</strong>，根结点最小的堆叫做<strong>最小堆</strong>或<strong>小根堆</strong>。常见的堆有<strong>二叉堆</strong>、<strong>斐波那契堆</strong>等。</p>
+</li>
+<li class="lvl-2">
+<p>堆是非线性数据结构，相当于一维数组，有两个直接后继。<mark>堆通常用一维数组存储</mark>。假设某个节点（根节点除外）对应的一维数组下标为<code>x</code>(一维数组下标从1开始），<strong>则其父节点下标为<code>x/2</code>，左子节点下标为<code>2x</code>，右子节点下标为<code>2x+1</code></strong>。</p>
+</li>
+<li class="lvl-2">
+<p>用数组实现堆时，<strong>堆为完全二叉树而不是非完全二叉树的本质是因为其数组的存储结构</strong>。</p>
+</li>
+</ul>
+<p>图解：</p>
+<img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes/algorithm/%25E5%25B0%258F%25E6%25A0%25B9%25E5%25A0%2586%25E5%259B%25BE%25E8%25A7%25A3.jpg" alt="小根堆图解" style="zoom:67%;">
+<h2 id="2-相关操作原理（以小根堆为例）">2.相关操作原理（以小根堆为例）</h2>
+<p><strong>始终记住堆是一个<u>完全二叉树</u>且满足<u>一个节点和其父节点两个子节点需满足的大小关系</u>！</strong></p>
+<h3 id="2-1堆的插入">2.1堆的插入</h3>
+<p>当一个新元素想要插入这个堆的时候，我们首先把他放到这个堆的末尾<mark>（<u>放到末尾可以满足完全二叉树的特性</u>）</mark>。然后依据堆的特性，对它的位置进行调整（不断上浮），直至满足堆的条件。</p>
+<h3 id="2-2堆中元素的删除">2.2堆中元素的删除</h3>
+<p>一般是删除堆顶元素，将数组末尾的元素拿到堆顶空缺的位置，然后对其进行下沉操作。若要求删除非堆顶元素，则将该元素（1）首先和堆顶元素（2）进行置换，再删除（2），将堆尾元素（3）补充到堆顶，然后堆元素（1）和元素（3）进行位置调整。</p>
+<h3 id="2-3小根堆的建立">2.3小根堆的建立</h3>
+<p>堆的建立即为“堆的插入”的应用。将元素不断放到堆的末尾，然后进行位置调整。</p>
+<h2 id="3-代码实现（以小根堆为例）">3.代码实现（以小根堆为例）</h2>
+<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">// h[N]存储堆中的值, h[1]是堆顶，x的左儿子是2x, 右儿子是2x + 1
+// ph[k]存储第k个插入的点在堆中的位置
+// hp[k]存储堆中下标是k的点是第几个插入的
+int h[N], ph[N], hp[N], size;
+
+void heap_swap(int a, int b) {// 交换两个点，及其映射关系
+    swap(ph[hp[a]],ph[hp[b]]);
+    swap(hp[a], hp[b]);
+    swap(h[a], h[b]);
+}
+
+void down(int u) {//把一个节点不断 下沉 使其存储在合适位置
+    int t = u;
+    if (u * 2 <= size && h[u * 2] < h[t]) t = u * 2;//h[u]比其左儿子小,t为其左儿子
+    if (u * 2 + 1 <= size && h[u * 2 + 1] < h[t]) t = u * 2 + 1;//若右儿子比左儿子小,则t为其右儿子
+    if (u != t) {
+        heap_swap(u, t);
+        down(t);
+    }
+}
+
+void up(int u) {//把一个节点不断 上浮 使其存储在合适位置
+    while (u / 2 && h[u] < h[u / 2]) {
+        heap_swap(u, u / 2);
+        u >>= 1;	//u除以2的快速实现
+    }
+}
+
+// O(n)建堆
+for (int i = n / 2; i; i -- ) down(i);//从最后一个节点的父节点开始，i--从后往前对所有节点进行下沉
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-对建堆代码for-int-i-n-2-i-i-down-i-的思考">4.对建堆代码<code>for (int i = n / 2; i; i -- ) down(i);</code>的思考</h2>
+<ol>
+<li class="lvl-3">
+<p>该代码的意义和形象理解是什么？</p>
+<ul class="lvl-2">
+<li class="lvl-5">从最后一个有儿子节点的父节点向前遍历，依次让每个结点找到其合适的位置</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>除了这种建堆方式，还有什么别的建堆方式？</p>
+<ul class="lvl-2">
+<li class="lvl-5">①从最后一个非叶子节点开始，逐个向前进行下沉操作来实现</li>
+<li class="lvl-5">②从第一个非叶子节点开始，逐个向后进行上浮操作来实现</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>为什么<code>down()</code>操作必须满足左右子树均为堆？</p>
+<ul class="lvl-2">
+<li class="lvl-5">如果一个节点的左右子树不满足堆的性质，那么下沉操作可能导致破坏堆的性质</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>为什么要从<code>i = n / 2</code>往上建堆？</p>
+<ul class="lvl-2">
+<li class="lvl-5">只需要对索引小于等于 <code>n / 2</code> 的节点进行下沉操作，即从最后一个非叶子节点开始（最后一个有儿子节点的父节点），逐个向前处理每个非叶子节点，直到根节点。</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>为什么不从 <code>i = 1 开始到 i == n</code>，将每一个节点挨个插入的方式建堆？</p>
+<ul class="lvl-2">
+<li class="lvl-5">
+<p>如果采用从 <code>i = 1</code> 开始到 <code>i == n</code> 的方式，将每个节点逐个插入堆中，那么建堆的时间复杂度将变为 <code>O(nlogn)</code>，而不是 <code>O(n)</code>。</p>
+<p>因为插入操作的时间复杂度是 <code>O(logn)</code>。当我们将一个元素插入到堆中时，需要将其放置在堆的末尾，然后进行上浮操作，将其与父节点进行比较和交换，直到满足堆的性质。在最坏情况下，新插入的元素需要上浮到堆的根节点位置，这需要进行 <code>O(logn)</code> 次比较和交换操作。</p>
+<p>如果我们按顺序逐个插入所有的节点，则第一个插入的节点需要进行 <code>O(logn)</code> 次操作，第二个插入的节点需要进行 <code>O(logn-1)</code> 次操作，以此类推。总的时间复杂度为：<code>O(logn) + O(logn-1) + O(logn-2) + ... + O(1) = O(logn + log(n-1) + log(n-2) + ... + log(1))</code>，个和式的结果是 <code>O(logn!)</code>，即 <code>O(nlogn)</code>。</p>
+<p>相比之下，从 <code>i = n / 2</code> 开始进行下沉操作的方式可以在 <code>O(n)</code> 的时间内建立堆。</p>
+</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>为什么不直接使用<code>sort()</code>操作建堆（令<code>sort()</code>操作满足数组元素从小到大排列或从大到小排列，对存储堆元素的数组直接排序）？</p>
+<ul class="lvl-2">
+<li class="lvl-5"><code>sort()</code> 函数通常使用的是比较排序算法，例如快速排序、归并排序、堆排序等。这些排序算法的时间复杂度通常为<code>O(nlogn)</code>，大于该操作的时间复杂度<code>O(n)</code>；</li>
+<li class="lvl-5"><code>sort()</code>操作满足从小到大排列或从大到小排列后，生成的结果是完全单调的。而堆并不需要满足完全单调的性质，只需要确保父节点和子节点的相对大小关系即可。</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>该操作（<code>for (int i = n / 2; i; i -- ) down(i);</code>）建堆的时间复杂度为什么是<code>o(n)</code>的？</p>
+<ul class="lvl-2">
+<li class="lvl-5">
+<img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes/algorithm/%25E5%25BB%25BA%25E5%25A0%2586%25E6%2597%25B6%25E9%2597%25B4%25E5%25A4%258D%25E6%259D%2582%25E5%25BA%25A6%25E4%25B8%25BAO(n)%25E7%259A%2584%25E8%25AF%2581%25E6%2598%258E.jpg" alt="建堆时间复杂度为O(n)的证明" style="zoom: 67%;">
+</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>该操作直接满足了节点与其子节点之间的相对大小关系，而不是整个数组都是从小到大排序的，那堆排序是如何实现的？</p>
+<ul class="lvl-2">
+<li class="lvl-5">
+<p>（转自<code>Chat-GPT 3.5</code>）</p>
+<p>堆排序是一种基于堆数据结构的排序算法。它的主要思想是将待排序的数组构建为一个最大堆（或最小堆），然后不断地取出堆顶元素，将其与堆的最后一个元素交换，再对剩余的元素进行堆调整，重复这个过程直到整个数组有序。</p>
+<p>下面是堆排序的步骤：</p>
+<ol>
+<li class="lvl-8">
+<p>建堆：将待排序的数组构建为一个最大堆（或最小堆），这可以通过<strong>从最后一个非叶子节点开始，逐个向前进行下沉操作来实现</strong>。或者，也可以<strong>从第一个非叶子节点开始，逐个向后进行上浮操作来实现</strong>。</p>
+</li>
+<li class="lvl-8">
+<p>排序：将堆顶元素与堆的最后一个元素交换，即将最大（或最小）元素放到数组的末尾。然后，对剩余的元素进行堆调整，以维护堆的性质。</p>
+</li>
+<li class="lvl-8">
+<p>重复步骤 2，直到整个数组有序。每次交换堆顶元素和堆的最后一个元素后，堆的大小减小 1。</p>
+</li>
+</ol>
+<p>堆排序的作用是对数组进行原地<code>(in-place)</code>排序，具有稳定的时间复杂度 <code>O(nlogn)</code>。堆排序相比于其他排序算法的一个优点是，它不需要额外的空间来存储临时数据，因此空间复杂度是 <code>O(1)</code>。另外，堆排序的最坏、平均和最好情况下的时间复杂度都是 <code>O(nlogn)</code>，因此在大多数情况下具有较好的性能。</p>
+<p>堆排序的另一个重要应用是在优先队列中，用于高效地维护具有优先级的元素集合。通过使用堆数据结构，可以实现高效的插入、删除和查找操作。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="5-例题">5.例题</h2>
+<blockquote>
+<p>原题链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/840/">838. 堆排序 - AcWing题库</a></p>
+</blockquote>
+<p>这个题很有学习价值。由于这代题目时间复杂度卡的比较死，所以思路一共经历了如下的三个过程</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>过程一：很粗暴的堆排序，先构造大根堆得到堆顶的最大元素，再将最大元素固定到数组末尾，并对剩下的元素（未固定的元素）再求大根堆，以此模式依次将每一轮的最大元素依次固定到数组的末端，最后得到严格的从小到大的数组。</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">#include <iostream>
+#include <algorithm>
+using namespace std;
+const int N = 1e5 + 10;
+int a[N];
+int n, m;
+
+void down(int x) {//构造大根堆的down,堆顶为最大元素
+    int t = x;//t是要交换到的位置，且保证一个节点的左节点比右节点小
+    
+    if (x*2 <= n && a[2*x] > a[t])  t = 2*x;
+    if (x*2+1 <= n && a[2*x+1] > a[t])  t = 2*x+1;
+    
+    if (t>x) {
+        swap(a[x],a[t]);
+        down(t);
+    }
+}
+
+int main () {
+    cin >> n >> m;
+    for (int i = 1 ; i <= n ; i ++ ) cin >> a[i];
+    
+    while (n) {
+        for (int i = n/2 ; i>=1 ; i -- ) down(i);//构造大根堆
+        swap(a[n], a[1]);//再将大根堆堆顶的元素（最大值）固定到数组末尾
+        n--;//再对没有固定的元素再构造大根堆
+    }
+    
+    for (int i = 1 ; i <= m ; i++)   cout << a[i] << ' ';
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>过程二：过程一的小优化，从n次的<strong>整体建大根堆</strong>过程变成m次的<strong>整体建小根堆</strong>过程，减少了(n-m)次整体建堆的过程</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">while (m--) {
+    for (int i = n/2 ; i>=1 ; i -- ) down(i);//先构造小根堆
+    printf("%d ",a[1]);//输出小根堆堆顶元素
+    swap(a[n], a[1]);//再将小根堆堆顶的元素（最小值）固定到数组末尾
+    n--;//再对没有固定的元素再构造小根堆
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>过程三：不再完整的建立大根堆或者小根堆，而是采用<strong>部分建堆</strong>，建立一次小根堆之后，输出小根堆堆顶元素，再将小根堆堆顶元素固定到数组末尾，再对置换到堆顶的原数组末尾元素进行<code>down()</code>操作就能每次在堆顶得到一个最小元素</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-cpp"><code class="language-language-cpp">while (m--) {
+    printf("%d ",a[1]);//输出小根堆堆顶元素
+    swap(a[n], a[1]);//再将小根堆堆顶的元素（最小值）固定到数组末尾
+    n--;
+    down(1);//没有整体进行down()操作，而不是采用循环整体建堆
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Z</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zjgfree.github.io/20231123/shu-ju-jie-gou-dui/">https://zjgfree.github.io/20231123/shu-ju-jie-gou-dui/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Z</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">支持一下</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Freward%2Falipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Freward%2Fwechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Fcomment_bg_onepiece.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'LhLx7UqKvarxfFplrk6gYTBs-9Nh9j0Va',
+        appKey: 'WU9kHlPSxaP7WrHwoZCbO1l3',
+        serverURLs: 'https://lhlx7uqk.lc-cn-e1-shared.com',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'robohash',
+        pageSize: '15',
+        lang: 'zh-cn',
+        placeholder: '🌻留下你的足迹！🚩'
+    });
+</script>
+
+<!--酷Q推送-->
+
+//<script> 
+//    new Valine({
+//        el: '#vcomments',
+//        appId: 'LhLx7UqKvarxfFplrk6gYTBs-9Nh9j0Va',
+//        appKey: 'WU9kHlPSxaP7WrHwoZCbO1l3',
+//        notify: 'false' === 'true',
+//        verify: 'false' === 'true',
+//        visitor: 'true' === 'true',
+//        avatar: 'robohash',
+//        pageSize: '15',
+//        lang: 'zh-cn',
+//        placeholder: '🌻留下你的足迹！🚩',
+//    });
+//    // 点击回复直接评论 
+//    $(document).ready(function () {
+//        $('.vemoji-btn').text('😀');
+//        $("#vcomments").on('click', 'span.vat', function () {
+//            $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+//            $('textarea#veditor').focus();
+//        })
+//    });
+//</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/20231123/shu-ju-jie-gou-ha-xi-biao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Ffeatureimages%2F18.jpg" class="responsive-img" alt="数据结构——哈希表">
+                        
+                        <span class="card-title">数据结构——哈希表</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            字符串哈希核心思想：将字符串看成P进制数，P的经验值是131或13331，取这两个值的冲突概率低
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/20231123/shu-ju-jie-gou-bing-cha-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Ffeatureimages%2F16.jpg" class="responsive-img" alt="数据结构——并查集">
+                        
+                        <span class="card-title">数据结构——并查集</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            基本原理：每个集合用一棵树来表示。树根的编号就是整个集合的编号。**每个节点储存它的父节点**，p[x]表示x的父节点。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('80')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Zjgfree<br />'
+            + '文章作者: Z<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: rgba(202, 243, 248, 0.75);">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
+
+
+    
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #98F5FF;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="9023755987"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#98F5FF'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023</span>
+            
+            <a href="/about" target="_blank">Z</a>
+        <!--|&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>  -->
+            
+                <span id="translate">|&nbsp;简繁切换：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">37.4k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2023";
+                        var startMonth = "7";
+                        var startDate = "25";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '星球已运转 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '星球已運轉 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '星球已运转 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '星球已運轉 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zjgfree" class="tooltipped" target="_blank" data-tooltip="Jump to GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:zjgfree@qq.com" class="tooltipped" target="_blank" data-tooltip="Email：zjgfree@qq.com" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1727302945" class="tooltipped" target="_blank" data-tooltip="QQ: 1727302945" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    
+    <!--黑夜白天切换动态背景-->
+<!--
+<div class="stars-con">
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>  
+</div>
+-->
+
+<!-- 白天和黑夜主题 -->
+<div class="sum-moon-box">
+  <a class="btn-floating btn-large waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式切换" >
+    <i id="sum-moon-icon" class="fas fa-sun" style="width:48px; height:48px; font-size: 28px;"></i>
+  </a>
+</div>
+
+<script>
+  
+  // 在这里修改 isDark 变量过期的时间
+  var isDarkLiveHours = 6;
+
+  function setCookie(name, value, hoursToLive) {
+    var cookie = name + "=" + encodeURIComponent(value);
+    
+    if (typeof hoursToLive === "number") {
+      cookie += ";path=/;max-age=" + (hoursToLive*60*60);
+    }
+
+    document.cookie = cookie;
+  }
+
+  function getCookie(name) {
+    // 拆分 cookie 字符串
+    var cookieArr = document.cookie.split(";");
+   
+    // 循环遍历数组元素
+    for(var i = 0; i < cookieArr.length; i++) {
+        var cookiePair = cookieArr[i].split("=");
+       
+        /* 删除 cookie 名称开头的空白并将其与给定字符串进行比较 */
+        if(name == cookiePair[0].trim()) {
+            // 解码cookie值并返回
+            return decodeURIComponent(cookiePair[1]);
+        }
+    }
+    // 如果未找到，则返回null
+    return null;
+  }
+  
+
+  function switchNightMode() {
+    $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+    setTimeout(function() {
+      $('body').hasClass('DarkMode')
+      ? (
+        $('body').removeClass('DarkMode'),
+        setCookie('isDark', 'false', isDarkLiveHours),
+        $('#day-btn-icon-sun').css('display', 'none'),
+        $('#night-btn-icon-moon').css('display', 'inherit')
+      ) : (
+        $('body').addClass('DarkMode'),
+        setCookie('isDark', 'true', isDarkLiveHours),
+        $('#day-btn-icon-sun').css('display', 'inherit'),
+        $('#night-btn-icon-moon').css('display', 'none')
+      ),
+
+      setTimeout(function () {
+        $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+          $(this).remove()
+        })
+      }, 2e3);
+    });
+  }
+
+  //黑夜模式自动开启功能（首次加载）
+  setTimeout(function () {
+    if (getCookie('isDark') == null) {
+      if ((new Date().getHours() >= 21 || new Date().getHours() < 6) && !$('body').hasClass('DarkMode')) {
+        $('body').addClass('DarkMode');
+        setCookie('isDark', 'true', isDarkLiveHours);
+        $('#day-btn-icon-sun').css('display', 'inherit');
+        $('#night-btn-icon-moon').css('display', 'none');
+      }
+    } else {
+      if (getCookie('isDark') === 'true') {
+        document.body.classList.add('DarkMode');
+        $('#day-btn-icon-sun').css('display', 'inherit');
+        $('#night-btn-icon-moon').css('display', 'none');
+      } else {
+        document.body.classList.remove('DarkMode');
+        $('#day-btn-icon-sun').css('display', 'none');
+        $('#night-btn-icon-moon').css('display', 'inherit');
+      }
+    }
+
+  }, 0);
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "https://zjgfree.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+    
+
+    <!-- 动态标题 -->
+    <script type="text/javascript">
+        var OriginTitile = document.title,
+            st;
+        document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = "👀跑哪里去了？😭", clearTimeout(st)) : (document.title =
+                "🍔找到你啦！💕", st = setTimeout(function () {
+                    document.title = OriginTitile
+                }, 3e3))
+        })
+    </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="140" alpha='0.7'
+        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1.5,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":180,"height":180,"position":"right","hOffset":75,"vOffset":8},"mobile":{"show":false,"scale":0.4},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
+
+</html>

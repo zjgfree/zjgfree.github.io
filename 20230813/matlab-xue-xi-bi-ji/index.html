@@ -1,0 +1,4007 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="MATLAB学习笔记, Z, zjg, zjgfree, zjgfree.top">
+    <meta name="description" content="MATlAB学习笔记
+数学模型四大组成部分：
+
+
+决策变量（自变量）
+
+
+环境变量（无法干预的因素）
+
+
+目标函数（因变量）
+
+
+约束条件（可行域的范围）
+
+
+物理模型（事物模型）、符号模型、数学模型
+
+
+
+
+
+
+
+数学建模竞赛论文写作规范">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>MATLAB学习笔记 | Zjgfree</title>
+    <link rel="icon" type="image/png" href="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Ffavicon.png">
+    
+    <style>
+        body{
+            background-image: url(https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Fbg2.jpg);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark_new.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+    
+    <!--鼠标样式文件-->
+    <link rel="stylesheet" href="/css/cursor.css">
+
+    <!-- 黑夜模式样式 css -->
+    <link rel="stylesheet" type="text/css" href="">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Zjgfree" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+    <style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, #ffa5fa 0%, #8dfffd 100%);
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 50px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },500); 
+        },1000);//强制显示loading page 1.0s  
+    };
+    loaded();
+})()
+</script>
+
+
+<body>
+    
+    <!--loading-pages加载动画-->
+    
+        <div id="loading-container">
+             <p class="loading-text">页面正在赶来的路上…… </p> 
+             <div class="loading-image">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div> 
+                 <div></div>
+             </div>
+        </div>
+    
+
+    <!--鼠标点击烟花爆炸效果-->
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/click_firework.js"></script>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flogo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Zjgfree</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-pen" style="zoom: 0.6;"></i>
+      
+      <span>文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>时间线</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/movies-douban" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-coffee" style="zoom: 0.6;"></i>
+      
+      <span>小窝</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/movies-douban">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>电影</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/games-douban">
+          
+          <i class="fas fa-gamepad" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>游戏</span>
+        </a>
+      </li>
+      
+      <li>
+        <a target="_blank" rel="noopener" href="https://poe.com/">
+          
+          <i class="fas fa-robot" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Chat</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于作者</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <!--
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  -->
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flogo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Zjgfree</div>
+        <div class="logo-desc">
+            
+            欢迎来到我的小世界！
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-pen"></i>
+			
+			文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:28px" ></i>
+			      
+		          <span>时间线</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:28px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:28px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-coffee"></i>
+			
+			小窝
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/movies-douban " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:28px" ></i>
+			      
+		          <span>电影</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/games-douban " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-gamepad" style="position: absolute;left:28px" ></i>
+			      
+		          <span>游戏</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a target="_blank" rel="noopener" href="https://poe.com/ " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-robot" style="position: absolute;left:28px" ></i>
+			      
+		          <span>Chat</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于作者
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+    
+    <!-- 元宵节灯笼样式开始 -->
+    <style>
+        @media only screen and (min-width: 1124px) {
+            .nav-menu {
+                padding-right: 96px;
+            }
+        }
+        @media only screen and (max-width: 760px) {
+            .deng-box, .deng-box1 {
+                width: 40%;
+            }
+            .right {
+                float: left!important;
+            }
+        }
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            .right {
+                float: left!important;
+            }
+        }
+        .deng-box {
+            position: fixed;
+           /* top: -30px; */
+            top: 13px;
+            right: -20px;
+            z-index: 999;
+        }
+        .deng-box1 {
+            position: fixed;
+            top: 13px;
+            /* right: 10px; */
+            z-index: 999;
+        }
+        .deng-box1 .deng {
+            position: relative;
+            width: 120px;
+            height: 90px;
+            margin: 50px;
+            background: #d8000f;
+            background: rgba(216, 0, 15, 0.8);
+            border-radius: 50% 50%;
+            -webkit-transform-origin: 50% -100px;
+            -webkit-animation: swing 5s infinite ease-in-out;
+            box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);
+        }
+        .deng {
+            position: relative;
+            width: 120px;
+            height: 90px;
+            margin: 50px;
+            background: #d8000f;
+            background: rgba(216, 0, 15, 0.8);
+            border-radius: 50% 50%;
+            -webkit-transform-origin: 50% -100px;
+            -webkit-animation: swing 3s infinite ease-in-out;
+            box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);
+        }
+        .deng-a {
+            width: 100px;
+            height: 90px;
+            background: #d8000f;
+            background: rgba(216, 0, 15, 0.1);
+            margin: 12px 8px 8px 10px;
+            border-radius: 50% 50%;
+            border: 2px solid #dc8f03;
+        }
+        .deng-b {
+            width: 45px;
+            height: 90px;
+            background: #d8000f;
+            background: rgba(216, 0, 15, 0.1);
+            margin: -4px 8px 8px 26px;
+            border-radius: 50% 50%;
+            border: 2px solid #dc8f03;
+        }
+        .xian {
+            position: absolute;
+            /* top: -20px; */
+            top: -69px;
+            left: 60px;
+            width: 2px;
+            /*  height: 20px; */
+            height: 70px;
+
+            background: #dc8f03;
+        }
+        .shui-a {
+            position: relative;
+            width: 5px;
+            height: 20px;
+            margin: -5px 0 0 59px;
+            -webkit-animation: swing 4s infinite ease-in-out;
+            -webkit-transform-origin: 50% -45px;
+            background: #ffa500;
+            border-radius: 0 0 5px 5px;
+        }
+        .shui-b {
+            position: absolute;
+            top: 14px;
+            left: -2px;
+            width: 10px;
+            height: 10px;
+            background: #dc8f03;
+            border-radius: 50%;
+        }
+        .shui-c {
+            position: absolute;
+            top: 18px;
+            left: -2px;
+            width: 10px;
+            height: 35px;
+            background: #ffa500;
+            border-radius: 0 0 0 5px;
+        }
+        .deng:before {
+            position: absolute;
+            top: -7px;
+            left: 29px;
+            height: 12px;
+            width: 60px;
+            content: " ";
+            display: block;
+            z-index: 999;
+            border-radius: 5px 5px 0 0;
+            border: solid 1px #dc8f03;
+            background: #ffa500;
+            background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+        }
+        .deng:after {
+            position: absolute;
+            bottom: -7px;
+            left: 10px;
+            height: 12px;
+            width: 60px;
+            content: " ";
+            display: block;
+            margin-left: 20px;
+            border-radius: 0 0 5px 5px;
+            border: solid 1px #dc8f03;
+            background: #ffa500;
+            background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+        }
+        @font-face {
+            font-family: "华文行楷";
+            src: url('https://cdn.jsdelivr.net/gh/small-rose/small-rose.github.io/box/font/huawenxingkai.ttf');
+        }
+        .deng-t {
+            font-family: 华文行楷;
+            font-size: 26px;
+            color: #dc8f03;
+            font-weight: bold;
+            line-height: 44px;
+            text-align: center;
+        }
+        .night .deng-t,
+        .night .deng-box,
+        .night .deng-box1 {
+            background: transparent !important;
+        }
+        @-moz-keyframes swing {
+            0% {
+                    -moz-transform: rotate(-10deg)
+            }
+            50% {
+                 -moz-transform: rotate(10deg)
+            }
+            100% {
+                    -moz-transform: rotate(-10deg)
+            }
+        }
+        @-webkit-keyframes swing {
+            0% {
+                    -webkit-transform: rotate(-10deg)
+            }
+            50% {
+                    -webkit-transform: rotate(10deg)
+            }
+            100% {
+                    -webkit-transform: rotate(-10deg)
+            }
+        }
+    </style>
+    <div class="denglong" id="chunjie">
+    <div class="deng-box">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b"><div class="deng-t">喜迎</div></div>
+            </div>
+            <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+        </div>
+    </div>
+    <div class="deng-box1">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b"><div class="deng-t">春节</div></div>
+            </div>
+            <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+        </div>
+    </div>
+    <!-- 元宵节灯笼样式结束 -->
+    </div>
+
+</header>
+<script>
+    if((new Date().getMonth()) > 1){
+        $('.denglong').css('display', 'none');
+    }else{
+        $('.denglong').css('display', 'block');
+    }
+</script>
+    
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('这篇文章需要密码才能看哦！')).toString(CryptoJS.enc.Hex)) {
+                alert('哎呀，密码好像不对……');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+    
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Fnotes-feature-image%2FMatlab.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">MATLAB学习笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">计算机语言</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-08-13
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-08-22
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    10.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    46 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1>MATlAB学习笔记</h1>
+<p>数学模型四大组成部分：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>决策变量（自变量）</p>
+</li>
+<li class="lvl-2">
+<p>环境变量（无法干预的因素）</p>
+</li>
+<li class="lvl-2">
+<p>目标函数（因变量）</p>
+</li>
+<li class="lvl-2">
+<p>约束条件（可行域的范围）</p>
+</li>
+</ul>
+<p>物理模型（事物模型）、符号模型、数学模型</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F1.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F2.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F3.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F4.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F5.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F6.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F7.png" alt=""></p>
+<h2 id="数学建模竞赛论文写作规范">数学建模竞赛论文写作规范</h2>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F8.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F9.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F10.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F11.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F12.png" alt=""></p>
+<h2 id="MATLAB皮毛">MATLAB皮毛</h2>
+<h3 id="1-变量">1.变量</h3>
+<p>变量名区别大小写</p>
+<p>字母开头（可使用字母、数字、下划线），最多不超多63位</p>
+<p>clear all 清除右侧工作区变量</p>
+<p>clc清除命令行所有内容</p>
+<p>注释“%% ”</p>
+<h4 id="1-1数字">1.1数字</h4>
+<h4 id="1-2字符和字符串">1.2字符和字符串</h4>
+<p>s = ‘a’</p>
+<p>abs(s)=97</p>
+<p>char(97) = ‘a’</p>
+<h4 id="1-3矩阵">1.3矩阵</h4>
+<p>A = [1 2 3; 4 5 2; 6 7 2] 或者A=[1,2,3; 4,5,2; 6,7,2]</p>
+<p>分号 ‘;’ 跳到下一行，逗号 ‘,’ 和空格 ’ ’ 分开数字</p>
+<p>B = A’——B为A的转置</p>
+<p>C = A(😃——竖着拉长</p>
+<p>D = inv(A)——矩阵求逆（非方阵无法求逆）</p>
+<p>A * D</p>
+<p>E = zeros(10,5,3)——三维10行5列矩阵</p>
+<p><mark>rand</mark></p>
+<p>rand(m,n)生成m行n列的均匀分布的伪随机数</p>
+<p>rand(m,n,‘double’)生成指定精度的均匀分布的伪随机数，参数还可以是’single’</p>
+<p><mark>randi</mark></p>
+<p>randi(iMax)在开区间(0,iMax)生成均匀分布的伪随机整数</p>
+<p>randi(iMax,m,n)在开区间(0,iMax)生成m*n型随机矩阵</p>
+<p>r = randi([iMin,iMax], m, n)也是开区间</p>
+<p><mark>randn</mark></p>
+<p>生成标准分布的伪随机数（均值为0，方差为1）</p>
+<h4 id="1-4元胞数组">1.4元胞数组</h4>
+<p>A = <mark>cell</mark>(1,6)——1行6列的元胞数组</p>
+<p>A{2} = <mark>eye</mark>(3)——A{2}为3*3的对角线数值为1的单位矩阵</p>
+<p>A{5} =<mark> magic</mark>(3)——生成一个3阶的幻方。3阶幻方就是1-9九个数字，组成一个3*3的矩阵，使得该矩阵无论横、竖、斜三个方向的数的和相等。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>magic(n)——生成一个n阶的幻方。n阶幻方就是1-n^2个数字，组成一个n*n的矩阵，使得该矩阵无论横、竖、斜三个方向的数的和相等，和为n * (n^2+1) / 2</p>
+</li>
+<li class="lvl-2">
+</li>
+</ul>
+<h4 id="1-5结构体">1.5结构体</h4>
+<p><code>books = &lt;mark&gt;struct&lt;/mark&gt;('name' , {{'Machine Learning' , 'Data Mining'}} , 'price' , [30 , 40])</code></p>
+<p><a target="_blank" rel="noopener" href="http://books.name">books.name</a> = {‘Machine Learning’}    {‘Data Mining’}</p>
+<p><a target="_blank" rel="noopener" href="http://books.name">books.name</a>(1) = {‘Machine Learning’}——取出来的是cell</p>
+<p><a target="_blank" rel="noopener" href="http://books.name">books.name</a>{1} = ‘Machine Learning’——取出来的是字符串</p>
+<h3 id="2-矩阵操作">2.矩阵操作</h3>
+<h4 id="2-1矩阵的定义和构造">2.1矩阵的定义和构造</h4>
+<p>A = [1 2 16 1 03 16]</p>
+<p>B = 0 : 2 : 10——B = [ 0  2  4  6  8  10 ]，从0到10，2为步长</p>
+<p>C = <mark>repmat</mark>(B, 3, 1)</p>
+<p>C =</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab"> 0     2     4     6     8    10
+ 0     2     4     6     8    10
+ 0     2     4     6     8    10
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>C = repmat(B, 3, 2)——把B重复3行2列</p>
+<p>C =</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab"> 0     2     4     6     8    10     0     2     4     6     8    10
+ 0     2     4     6     8    10     0     2     4     6     8    10
+ 0     2     4     6     8    10     0     2     4     6     8    10
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>D = <mark>ones</mark>(3,2)</p>
+<p>D =</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab"> 1     1
+ 1     1
+ 1     1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-2矩阵的四则运算">2.2矩阵的四则运算</h4>
+<p>A = [1 2 3 4; 5 6 7 8]</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab"> 1     2     3     4
+ 5     6     7     8
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>B = [9 9 6 6; 7 7 8 8]</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab"> 9     9     6     6
+ 7     7     8     8
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>C = A+B</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">10    11     9    10
+12    13    15    16
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>D = A-B</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">-8    -7    -3    -2
+-2    -1    -1     0
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>E = A * B’——A乘B的转置</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">69    77
+189&nbsp;&nbsp;&nbsp;197
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>F = A .* B——对应项相乘</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab"> 9    18    18    24
+35    42    56    64
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>G = <mark>A / B</mark>——相当于A乘于B的逆，<mark>A * pinv(B)</mark></p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">-0.4167    0.7500
+-0.2833    1.1500
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>H = A ./ B——对应项相除</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">0.1111    0.2222    0.5000    0.6667
+0.7143    0.8571    0.8750    1.0000
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="2-3矩阵的下标">2.3矩阵的下标</h4>
+<p>A =magic(5)</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">17    24     1     8    15
+23     5     7    14    16
+ 4     6    13    20    22
+10    12    19    21     3
+11    18    25     2     9
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>B =A(2,3)</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab"> 7
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>C =A(3,:)</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab"> 4     6    13    20    22
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>D =A(:,4)</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab"> 8
+14
+20
+21
+ 2
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><mark>[m , n] = find(A &gt; 20)</mark></p>
+<p>m =</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab"> 2
+ 1
+ 5
+ 4
+ 3
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>n =</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab"> 1
+ 2
+ 3
+ 4
+ 5
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-MATLAB的逻辑和流程控制">3.MATLAB的逻辑和流程控制</h3>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">if        else    end
+for       end
+while     end
+switch    case    end
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-1for循环结构">3.1for循环结构</h4>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F13.png" alt=""></p>
+<p>步长默认为1,可以省略</p>
+<h4 id="3-2while循环结构">3.2while循环结构</h4>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F14.png" alt=""></p>
+<h4 id="3-3if…else…end结构">3.3if…else…end结构</h4>
+<h4 id="3-4switch…case…end结构">3.4switch…case…end结构</h4>
+<h3 id="4-MATLAB基本绘图操作">4.MATLAB基本绘图操作</h3>
+<h4 id="4-1二维平面绘图">4.1二维平面绘图</h4>
+<p><mark>figure</mark>建立一个幕布</p>
+<p><mark>plot(x,y)</mark>——以x为横轴，y为纵轴建立一个坐标系</p>
+<p><mark>title( ‘y=sin(x)’ )</mark>——给图像标题命名</p>
+<p><mark>xlable(‘x’)</mark>——x轴标签</p>
+<p><mark>ylable(‘sin(x)’)</mark>——y轴标签</p>
+<p><mark>xlim([0 2*pi])</mark>——将图像中的x轴坐标范围限定在[0,2*pi]之间</p>
+<p>参数：</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F15.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F16.png" alt=""></p>
+<p>对同一个幕布同一个x有多个y：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<ul class="lvl-2">
+<li class="lvl-4"><mark>plotyy(x,y1,x,y2,‘plot’)</mark></li>
+</ul>
+</li>
+</ul>
+<h4 id="4-2三维立体绘图">4.2三维立体绘图</h4>
+<p><mark>plot3</mark>(x,sin(x),cos(x))</p>
+<p><mark>hold on</mark>——在同一个幕布当中绘制多条线</p>
+<p><mark>hold off</mark>——不保存多个东西</p>
+<p><mark>grid on</mark>——在图后面加一些网格线</p>
+<h3 id="5-MATLBA图形的保存与导出">5.MATLBA图形的保存与导出</h3>
+<h2 id="MATLAB数学建模">MATLAB数学建模</h2>
+<p>（以《MATLAB数学建模》——李昕版本为参考书籍）</p>
+<h3 id="第一章-MATLAB基础知识">第一章 MATLAB基础知识</h3>
+<h4 id="1-1-数组和变量">1.1 数组和变量</h4>
+<h4 id="1-1-1-数组的定义">1.1.1 数组的定义</h4>
+<h4 id="1-1-2-数组的创建">1.1.2 数组的创建</h4>
+<p>1.创建空数组</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> A = []
+
+A =
+
+     []
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.创建一维数组</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> A = [1 2 3]
+
+A =
+
+     1     2     3
+
+>> B = [1;2;3]
+
+B =
+
+     1
+     2
+     3
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>和冒号类似的功能是linspace函数：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Var = <mark>linspace(start_var, stop_var, n)</mark>，从start_var到stop_var，创建总元素为n的等差数列，n默认值为100</p>
+</li>
+<li class="lvl-2">
+<p>Var = <mark>logspace(start_var, stop_var, n)</mark>，从10<sup>start_var到10</sup>stop_var，创建总元素为n的等比数列，n默认值为100</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> A = 1:4
+
+A =
+
+     1     2     3     4
+
+>> B = 1:2:4
+
+B =
+
+     1     3
+
+>> C = linspace(1,2,4)
+
+C =
+
+    1.0000    1.3333    1.6667    2.0000
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> logspace(0, log10(32), 6)
+
+ans =
+
+    1.0000    2.0000    4.0000    8.0000   16.0000   32.0000
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3.创建二维数组</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> A = [1 2 3; 2 5 6; 1 4 5]
+
+A =
+
+     1     2     3
+     2     5     6
+     1     4     5
+
+>> B = [1:5; linspace(3,10,5); 3 5 2 6 4]
+
+B =
+
+    1.0000    2.0000    3.0000    4.0000    5.0000
+    3.0000    4.7500    6.5000    8.2500   10.0000
+    3.0000    5.0000    2.0000    6.0000    4.0000
+
+>> C = [[1:3]; [linspace(2,3,3)]; 3 5 6]
+
+C =
+
+    1.0000    2.0000    3.0000
+    2.0000    2.5000    3.0000
+    3.0000    5.0000    6.0000
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>4.创建三维数组</p>
+<p>1）使用下标创建三维数组</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> for i = 1:2
+for j = 1:2
+for k = 1:2
+A(i,j,k) = i + j + k;
+end
+end
+end
+>> A
+
+A(:,:,1) =
+
+     3     4
+     4     5
+
+
+A(:,:,2) =
+
+     4     5
+     5     6
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> B(3,4,:)=2:5
+
+B(:,:,1) =
+
+     0     0     0     0
+     0     0     0     0
+     0     0     0     2
+
+
+B(:,:,2) =
+
+     0     0     0     0
+     0     0     0     0
+     0     0     0     3
+
+
+B(:,:,3) =
+
+     0     0     0     0
+     0     0     0     0
+     0     0     0     4
+
+
+B(:,:,4) =
+
+     0     0     0     0
+     0     0     0     0
+     0     0     0     5
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2)使用低维数组创建高维数组</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>>D2 = [1 2 3; 4 5 6; 7 8 9];
+D3(:,:,1) = D2;
+D4(:,:,2) = 2*D2;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>3)使用创建函数创建三维数组</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>C = <mark>cat(dim,A1,A2,A3,···)</mark>，cat的功能是连接数组，dim是创建数组的维度，A1、A2、A3表示各维度上的数组</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> D1 = [ 1 2 3 ;4 5 6; 1 1 1]
+D2 = cat(3,2*D1,D1*D1,D1')
+
+D1 =
+
+     1     2     3
+     4     5     6
+     1     1     1
+
+
+D2(:,:,1) =
+
+     2     4     6
+     8    10    12
+     2     2     2
+
+
+D2(:,:,2) =
+
+    12    15    18
+    30    39    48
+     6     8    10
+
+
+D2(:,:,3) =
+
+     1     4     1
+     2     5     1
+     3     6     1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>repmat</mark>用来复制并堆砌数组</p>
+</li>
+<li class="lvl-2">
+<p><mark>reshape</mark>用来重构数组</p>
+</li>
+</ul>
+<p>5.利用函数创建标准数组</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>zeros</mark></p>
+</li>
+<li class="lvl-2">
+<p><mark>ones</mark></p>
+</li>
+<li class="lvl-2">
+<p><mark>eye</mark>——单位矩阵</p>
+</li>
+<li class="lvl-2">
+<p><mark>magic</mark></p>
+</li>
+<li class="lvl-2">
+<p><mark>randn</mark></p>
+</li>
+<li class="lvl-2">
+<p><mark>gallery</mark>——测试矩阵</p>
+</li>
+</ul>
+<h4 id="1-1-3-多维数组及其操作">1.1.3 多维数组及其操作</h4>
+<p>1.属性</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>size(A)</mark>——返回数组每一维上的大小</p>
+</li>
+<li class="lvl-2">
+<p><mark>ndims(A)</mark>——返回数组A具有的维度值</p>
+</li>
+<li class="lvl-2">
+<p><mark>whos</mark>——返回当前工作区各个变量的详细信息</p>
+</li>
+</ul>
+<p>2.维度操作</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>permute</mark>函数可以按照指定的顺序重新定义多维数组的维度顺序</p>
+</li>
+<li class="lvl-2">
+<p><mark>ipermute</mark>函数被看作permute的逆函数，当B=permute(A,dims)时，ipermute(B,dims)刚好返回多维数组A</p>
+</li>
+</ul>
+<p>3.科学运算</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>sum</mark>、<mark>mean</mark>等函数可以对多维数组中第1个不为1的维度上的向量进行计算</p>
+</li>
+<li class="lvl-2">
+<p><mark>sin</mark>、<mark>cos</mark>则对每一个元素单独进行运算</p>
+</li>
+<li class="lvl-2">
+<p><mark>eigs</mark>等针对二维数组的运算函数则需要用指定的页面上的二维数组作为输入函数</p>
+</li>
+</ul>
+<h4 id="1-2-矩阵">1.2 矩阵</h4>
+<h4 id="1-2-1符号矩阵的生成">1.2.1符号矩阵的生成</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>str2sym</mark>——符号赋值函数</p>
+</li>
+<li class="lvl-2">
+<p><mark>syms</mark>——符号声明函数</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> sym_matrix = str2sym('[a b c; Jack Mike John]')
+
+sym_matrix =
+
+[   a,    b,    c]
+[Jack, Mike, John]
+
+>> syms a b c
+M1 = sym('Classical')
+M2 = sym('Jazz')
+M3 = sym('Blues')
+syms_matrix = [a b c;M1,M2,M3;2,3 5]
+
+M1 =
+
+Classical
+
+
+M2 =
+
+Jazz
+
+
+M3 =
+
+Blues
+
+
+syms_matrix =
+
+[        a,    b,     c]
+[Classical, Jazz, Blues]
+[        2,    3,     5]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-2-2-大矩阵的生成">1.2.2 大矩阵的生成</h4>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> M = [1 2 3 4 5
+1 2 3 4 6
+6 6 6 6 6 ]
+
+M =
+
+     1     2     3     4     5
+     1     2     3     4     6
+     6     6     6     6     6
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-2-3-矩阵的数学函数">1.2.3 矩阵的数学函数</h4>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F17.png" alt=""></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>exp(x)</mark>——计算矩阵x中每一个元素的指数</p>
+</li>
+<li class="lvl-2">
+<p><mark>expm(x)</mark>——对矩阵x求指数</p>
+</li>
+<li class="lvl-2">
+<p><mark>logm(x)</mark>——计算矩阵x的对数，是exmp函数的逆运算</p>
+</li>
+<li class="lvl-2">
+<p><mark>complex(a,b)</mark>——a+bi</p>
+</li>
+<li class="lvl-2">
+<p><mark>abs(3+2i)</mark>——求矩阵的模、求复数的幅值</p>
+</li>
+<li class="lvl-2">
+<p><mark>det(x)</mark>——计算方阵行列式的值</p>
+</li>
+<li class="lvl-2">
+<p><mark>eig(x)</mark>——求解方阵的特征值和特征向量</p>
+</li>
+<li class="lvl-2">
+<p><mark>inv(x)</mark>——求解方阵的逆矩阵</p>
+</li>
+</ul>
+<h4 id="1-3-符号运算的基本内容">1.3 符号运算的基本内容</h4>
+<h4 id="1-3-1-符号变量代换其函数">1.3.1 符号变量代换其函数</h4>
+<p>subs(S, old, new)——将符号表达式S中的old变量替换为new</p>
+<p>subs(S, new)——用new置换符号表达式S中的自变量</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> syms a b c d k n x y w t;
+f = a * x^n + b * y + k 
+f1 = subs(f,[a b],[sin(t) log(w)])
+f2 = subs(f1,k,1:4)
+
+f =
+
+k + a*x^n + b*y
+
+
+f1 =
+
+k + x^n*sin(t) + y*log(w)
+
+
+f2 =
+
+[x^n*sin(t) + y*log(w) + 1, x^n*sin(t) + y*log(w) + 2, x^n*sin(t) + y*log(w) + 3, x^n*sin(t) + y*log(w) + 4]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-3-2-符号对象转换为数值对象的函数">1.3.2 符号对象转换为数值对象的函数</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>double©</mark>——将符号常量C转换为双精度值</p>
+</li>
+<li class="lvl-2">
+<p><mark>digits(D)</mark>——设置有效数字为D的近似解精度</p>
+</li>
+<li class="lvl-2">
+<p><mark>vpa(E,D)</mark>——求得符号表达式E的D位精度的数值解</p>
+</li>
+<li class="lvl-2">
+<p><mark>numeric(E)</mark>——将不含变量的符号表达式E转换为double双精度浮点数值形式，其效果与N = double(sym(E))相同</p>
+</li>
+</ul>
+<h4 id="1-3-3-符号表达式的化简">1.3.3 符号表达式的化简</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>factor()</mark>——符号表达式因式分解</p>
+</li>
+<li class="lvl-2">
+<p><mark>expand()</mark>——符号表达式展开</p>
+</li>
+<li class="lvl-2">
+<p><mark>collect()</mark>——合并同类项</p>
+</li>
+<li class="lvl-2">
+<p><mark>simplify()</mark>——将符号表达式运用多种恒等变换综合化简</p>
+</li>
+<li class="lvl-2">
+<p><s>[R,HOW] = simple()——化简范围大于simplify，R为被化简的表达式，HOW为化简方法</s></p>
+</li>
+<li class="lvl-2">
+<p><mark>[N,D] = numden()</mark>——通分，返回通分后的分子N与分母D，并转换成分子分母都是整系数的最佳多项式形式。若无等号左边的输出参数时，仅返回通分后的分子N，即numden(E)左边无”[N,D]=“时，输出为N。</p>
+</li>
+<li class="lvl-2">
+<p><mark>horner()</mark>——将符号表达式转换为嵌套形式表达式</p>
+</li>
+</ul>
+<h4 id="1-3-4-符号运算的其他函数">1.3.4 符号运算的其他函数</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>char()</mark>——将数值对象、符号对象转换为字符对象</p>
+</li>
+<li class="lvl-2">
+<p><mark>pretty()</mark>——以习惯的方式显示符号表达式</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> syms a b c d x y
+f = a * x/b + c/(d * y);
+f1 = sqrt(b^2 - 4*a*c);
+pretty(f)
+pretty(f1)
+ c    a x
+--- + ---
+d y    b
+
+      2
+sqrt(b  - 4 a c)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>clear</mark>——清除MATLBA工作区中的内容</p>
+</li>
+</ul>
+<h4 id="1-3-5-两种特定的符号运算常数">1.3.5 两种特定的符号运算常数</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>compose()</mark>——复合函数运算命令</p>
+</li>
+<li class="lvl-2">
+<p><mark>finverse()</mark>——反函数运算命令</p>
+</li>
+</ul>
+<h3 id="第二章-数学建模基础">第二章 数学建模基础</h3>
+<h4 id="2-1-数学建模的概念">2.1 数学建模的概念</h4>
+<h4 id="2-2-数据导入和保存">2.2 数据导入和保存</h4>
+<p>1.数据导入——<mark>load</mark>、<mark>importdata</mark></p>
+<p>2.文件的存储——<mark>save</mark></p>
+<p>3.文件的打开——<mark>open</mark></p>
+<p>注：open是以结构体的形式打开在工作区中</p>
+<h4 id="2-3-数据统计和分析">2.3 数据统计和分析</h4>
+<h4 id="2-3-1-常用统计量">2.3.1 常用统计量</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>mean()</mark>——求算数平均值</p>
+<p>nanmean()——忽略NaN计算算数平均值</p>
+</li>
+<li class="lvl-2">
+<p><mark>median()</mark>——计算中位数</p>
+<p>nanmedian()</p>
+</li>
+<li class="lvl-2">
+<p><mark>var()</mark>——求样本方差</p>
+</li>
+<li class="lvl-2">
+<p><mark>std()</mark>——求样本标准差</p>
+</li>
+</ul>
+<hr>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>Jarque-Bera检验</mark>，该检验基于数据样本的偏度和峰度，评价给定数据是否服从未知均值和方差的正态分布的假设。对于正态分布数据，样本偏度接近于0，样本峰度接近于3。</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>>
+h  = jbtest(X)——对输入数据矢量X进行Jarque-Bera检验，返回检验结果h。若h=1，则在显
+著性水平0.05下拒绝X服从正态分布的假设；若h = 0，则可认为X服从正态分布
+h = jbtest(X,alpha)——在显著性水平alpha下进行Jarque-Bera检验。
+[H,P,JBSTAT,CV] = jbtest(X,alpha)——返回其他三个输出。P为检验的p值，JBSTAT为
+检验统计量，CV为确定是否拒绝零假设的临界值
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h4 id="2-3-2-随机数">2.3.2 随机数</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>binornd()</mark>——二项分布随机数</p>
+</li>
+<li class="lvl-2">
+<p><mark>poisspdf()</mark>——泊松分布随机数</p>
+</li>
+<li class="lvl-2">
+<p><mark>unifrnd()</mark>——均匀分布随机数</p>
+</li>
+<li class="lvl-2">
+<p><mark>normrnd()</mark>——正态分布随机数</p>
+</li>
+</ul>
+<p>······</p>
+<h4 id="2-3-3-假设检验">2.3.3 假设检验</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>ztest()</mark>——方差已知时的均值假设检验</p>
+</li>
+<li class="lvl-2">
+<p><mark>ttest()</mark>——方差未知时单个正态总体均值的假设检验</p>
+</li>
+<li class="lvl-2">
+<p><mark>ttest2()</mark>——方差未知时两个正态总体均值的假设检验</p>
+</li>
+</ul>
+<h4 id="2-3-4-方差分析">2.3.4 方差分析</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>anoval()</mark></p>
+</li>
+</ul>
+<h4 id="2-4-统计图表的绘制">2.4 统计图表的绘制</h4>
+<p>1.正整数的频率表</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>tabulate(X)</mark></p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> A = [1 1 4 5 1 4]
+tabulate(A)
+
+A =
+
+     1     1     4     5     1     4
+
+  Value    Count   Percent
+      1        3     50.00%
+      2        0      0.00%
+      3        0      0.00%
+      4        2     33.33%
+      5        1     16.67%
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.经验累积分布函数图像</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>[h,stats] = cdfplot()</mark>——h表示曲线的环柄，stats表示一些样本特征</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> X = normrnd(0,1,50,1);
+[h,stats] = cdfplot(X)
+
+h = 
+
+  Line - 属性:
+
+              Color: [0 0.4470 0.7410]
+          LineStyle: '-'
+          LineWidth: 0.5000
+             Marker: 'none'
+         MarkerSize: 6
+    MarkerFaceColor: 'none'
+              XData: [-Inf -2.1495 -2.1495 -1.6747 -1.6747 -1.6105 -1.6105 -1.5305 -1.5305 -1.4487 -1.4487 … ]
+              YData: [0 0 0.0200 0.0200 0.0400 0.0400 0.0600 0.0600 0.0800 0.0800 0.1000 0.1000 0.1200 0.1200 … ]
+
+  显示 所有属性
+
+
+stats = 
+
+  包含以下字段的 struct:
+
+       min: -2.1495
+       max: 2.6825
+      mean: -0.1385
+    median: -0.1591
+       std: 1.0113
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F18.png" alt=""></p>
+<p>3.最小二乘拟合直线</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>lsline</mark></p>
+</li>
+</ul>
+<p>4.绘制正态分布概率图形</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>normplot(X)</mark>——若X为向量，则显示正态分布概率图形；若X为矩阵，则显示每一列的正态分布概率图形</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> A = [0 5 1 1 2 3 0 3 0 1 1 8];
+normplot(A)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F19.png" alt=""></p>
+<p>5.绘制威布尔概率图形</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>wblplot(X)</mark>——若X为向量，则显示威布尔概率图形；若X为矩阵，则显示每一列的威布尔概率图形</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> A = [0 5 1 1 2 3 0 3 0 1 1 8];
+weibplot(A)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>6.样本数据的盒图</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>boxplot</mark></p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> X1 = normrnd(5,1,100,1);
+X2 = normrnd(6,1,100,1);
+x = [X1 X2];
+boxplot(x,1,'|',1,0)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>7.增加参考线</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>refline(slope,intercept)</mark>——slope表示斜率，intercept表示截距</p>
+</li>
+<li class="lvl-2">
+<p><mark>refline(slope,intercept)</mark>——slope = [a b]，图中加一条直线y=ax+b</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> XJY = [0 5 1 1 2 3 0 3 0 1 1 8]';
+plot(XJY)
+refline(0.1,-1)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F20.png" alt=""></p>
+<p>8.增加多项式曲线</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>refcurve()</mark>——在当前图形中加入一条多项式曲线</p>
+<p>h = refcurve(p)——在图中加入一条多项式曲线，h为曲线的环柄，p为多项式系数向量，p = [p1,p2,p3,···,pn]，其中p1为最高幂项系数。</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> h = [95 172 220 269 349 281 423 437 432 478 556 430 410 356];
+plot(h,'r')
+refcurve([-6,120,-10])
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F21.png" alt=""></p>
+<p>9.样本概率图形</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>p = capaplot(data,specs)</mark>——返回来自于估计分布的随机变量落在指定范围内的概率。data为所给样本数据，specs为指定范围，p表示在指定范围内的概率</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> h = [95,172,220,269,349,281,423,437,432,478,556,430,410,356];
+p = capaplot(h,[100,300])
+
+p =
+
+    0.3213
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F22.png" alt=""></p>
+<p>10.附加有正态密度曲线的直方图</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>histfit(data)</mark>——data为向量，返回直方图和正态曲线</p>
+</li>
+<li class="lvl-2">
+<p><mark>histfit(data,nbins)</mark>——nbins指定bat的个数</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> A = normrnd(5,10,1,20);
+histfit(A)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F23.png" alt=""></p>
+<p>11.在指定的界限之间画正态密度曲线</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>p = normspec(specs,mu,sigma)</mark>——specs指定界限，mu、sigma为正态分布的参数，p为样本落在上、下界之间的概率。</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>>  normspec([50,inf],200,100)
+
+ans =
+
+    0.9332
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F24.png" alt=""></p>
+<h4 id="2-5-回归模型">2.5 回归模型</h4>
+<p>回归分析是确定两种或两种以上变量间相互依赖的定量关系的一种统计分析方法。</p>
+<p>回归分析通常分为一元线性回归分析、多元线性回归分析、非线性回归分析、曲线估计、时间序列的曲线估计、含虚拟变量的回归分析和逻辑回归分析等类型</p>
+<p>1.一元线性回归</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> x = 1:10;
+y = [2650 1942 1493 1086 766 539 485 291 224 202];
+for i = 1:10
+ plot(x(i),y(i),'ok');
+ hold on
+end
+xlabel('x');
+ylabel('y');
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F25.png" alt=""></p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> x = 1:10;
+y = [2650 1942 1493 1086 766 539 485 291 224 202];
+z = zeros(size(y));
+N = length(y);
+for i = 1:N
+ z(i) = log(y(i));
+ plot(x(i),z(i),'ok');
+ hold on
+end
+xlabel('x');
+ylabel('z');
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F26.png" alt=""></p>
+<p>2.多元线性回归</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>[b,bint,r,rint,stats] = regress(y,x,alpha)</mark>——y为因变量数据向量，x为自变量数据向量，alpha为显著性水平（缺省时设定为0.05）。b为输出向量，bint为回归系数估计值和它们的置信区间，r为残差，rint为置信区间，stats是用于检验回归模型的统计量。</p>
+</li>
+<li class="lvl-2">
+<p><mark>注意y，x的输入格式！</mark></p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> x1 = [1.376 1.375 1.378 1.401 1.412 1.428 1.445 1.477];
+x2 = [0.450 0.475 0.485 0.500 0.535 0.545 0.550 0.575];
+x3 = [2.170 2.554 2.676 2.713 2.823 3.088 3.122 3.262];
+x4 = [0.8922 1.1610 0.5346 0.9589 1.0239 1.0499 1.1065 1.1387];
+y = [5.19 5.30 5.60 5.82 6.00 6.06 6.45 6.95];
+save data x1 x2 x3 x4 y
+load data     %%取出数据
+Y = y';
+X = [ones(size(x1')),x1',x2',x3',x4'];
+[b,bint,r,rint,stats] = regress(Y,X)
+
+b =
+
+  -13.3547
+   12.8531
+    1.7866
+    0.2071
+   -0.3714
+
+
+bint =
+
+  -25.5633   -1.1461
+    0.6278   25.0784
+  -16.2410   19.8142
+   -1.4491    1.8632
+   -1.2072    0.4644
+
+
+r =
+
+   -0.0631
+    0.0354
+    0.0211
+    0.0686
+    0.0460
+   -0.1627
+    0.0138
+    0.0409
+
+
+rint =
+
+   -0.1322    0.0060
+   -0.2061    0.2769
+   -0.1355    0.1777
+   -0.4556    0.5927
+   -0.0073    0.0993
+   -0.3143   -0.0111
+   -0.5014    0.5291
+   -0.2791    0.3608
+
+
+stats =
+
+    0.9830   43.2851    0.0055    0.0136
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>即Y于X的模型为：</p>
+<p>Y = -13.3547 + 12.8531 * x1 + 1.7866 * x2 + 0.2071 * x3 - 0.3714 * x4</p>
+<h3 id="第三章-MATLAB程序设计">第三章 MATLAB程序设计</h3>
+<h4 id="3-1-自顶向下的程序设计方法">3.1 自顶向下的程序设计方法</h4>
+<p>以列主元高斯消元法为例</p>
+<h4 id="3-2-符号运算">3.2 符号运算</h4>
+<h4 id="3-2-1-符号对象">3.2.1 符号对象</h4>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> a1 = [1/3, pi/7, sqrt(5), pi+sqrt(5)]
+a2 = sym([1/3, pi/7, sqrt(5), pi+sqrt(5)])
+a3 = sym([1/3, pi/7, sqrt(5), pi+sqrt(5)],'e')
+a4 = str2sym('[1/3, pi/7, sqrt(5), pi+sqrt(5)]')
+
+a1 =
+
+    0.3333    0.4488    2.2361    5.3777
+
+
+a2 =
+
+[1/3, pi/7, 5^(1/2), 189209612611719/35184372088832]
+
+
+a3 =
+
+[1/3 - eps/12, pi/7 - (13*eps)/165, (137*eps)/280 + 5^(1/2), 189209612611719/35184372088832]
+
+
+a4 =
+
+[1/3, pi/7, 5^(1/2), pi + 5^(1/2)]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> a5 = sym(str2sym('[1/3, pi/7, sqrt(5), pi+sqrt(5)]'))
+
+a5 =
+
+[1/3, pi/7, 5^(1/2), pi + 5^(1/2)]
+%%可以看到a5的表达形式同a4非常像
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-2-2-创建符号对象">3.2.2 创建符号对象</h4>
+<p>1.函数命令sym()的调用格式</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>S = sym(A)</mark>——由A来建立一个符号对象S，其类型为sym类型。A为数字（值）或数值矩阵或数值表达式，则输出是将数值对象转换成符号对象。</p>
+</li>
+<li class="lvl-2">
+<p><mark>S = sym(‘A’)</mark>——A为不带 ‘[’ 、 ‘]’ 的字符串，将此字符串转换为符号对象。</p>
+</li>
+<li class="lvl-2">
+<p><mark>S = sym(str2sym(‘[   ]’)或S = str2sym(’[   ]')</mark></p>
+</li>
+<li class="lvl-2">
+<p><mark>S = sym(A,flag)</mark>——命令功能同S = sym(A)。flag可以去以下选项</p>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>’r‘——默认设置，最接近有理表示的形式。这种形式是指用两个正整数p、q构成的p/q、p*pi/q、sqrt(q)、2<sup>p、q</sup>10表示的形式之一</p>
+</li>
+<li class="lvl-4">
+<p>‘d’——最接近的十进制浮点精确表示；</p>
+</li>
+<li class="lvl-4">
+<p>’e‘——带估计误差的有理表示</p>
+</li>
+<li class="lvl-4">
+<p>’f‘——十六进制浮点表示</p>
+</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p><mark>S = sym(‘A’,flag)</mark>——命令功能同S = sym(’A‘)。只不过转换成的符号对象应按flag指定的要求。flag可取以下“限定性”选项：</p>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>‘positive’——限定A为正的实型符号变量</p>
+</li>
+<li class="lvl-4">
+<p>’real‘——限定A为实型符号变量</p>
+</li>
+<li class="lvl-4">
+<p>’unreal‘——限定A为非实型符号变量</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>2.函数命令syms()的调用格式</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>syms s1 s2 s3 flag</mark>——flag限定性同上</p>
+</li>
+</ul>
+<p>3.函数命令class( )的调用格式</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>str = class(object)——返回指代数据对象类型的字符串。</p>
+</li>
+</ul>
+<h4 id="3-2-3-符号表达式及函数">3.2.3 符号表达式及函数</h4>
+<p>在不指明自变量的情况下，按照数学常规，自变量通常都是小写英文字母，并且为字母表末尾的几个，如t、w、x、y、z等。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>findsym(f,n)</mark>——按照数学习惯确定<u>符号函数f</u>中的n个自变量。当指定n=1时，从符号函数f中找出在字母表中与x最近的字母；如果有两个字母与x的距离相等，则取较后一个。当输入参数n缺省时，函数命令将给出f中所有的符号变量。</p>
+</li>
+<li class="lvl-2">
+<p><mark>findsym(e,n)</mark>——这种格式的功能是按数学习惯确定<u>符号方程e</u>中的n个自变量</p>
+</li>
+</ul>
+<h4 id="3-3-关系运算符和逻辑运算符">3.3 关系运算符和逻辑运算符</h4>
+<h4 id="3-3-1-关系运算符">3.3.1 关系运算符</h4>
+<p>== 等于</p>
+<p>~= 不等于</p>
+<h4 id="3-3-2-逻辑运算符">3.3.2 逻辑运算符</h4>
+<p>1.逐个元素的逻辑运算</p>
+<p>逻辑与&amp;、逻辑或|、逻辑非~</p>
+<p>2.捷径逻辑运算</p>
+<p>逻辑与&amp;&amp;、逻辑或||</p>
+<p>3.逐位逻辑运算</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>bitand(a,b)</mark>——逐位逻辑与</p>
+</li>
+<li class="lvl-2">
+<p><mark>bitor(a,b)</mark>——逐位逻辑或</p>
+</li>
+<li class="lvl-2">
+<p><mark>bitcmp(a,b)</mark>——逐位逻辑非</p>
+</li>
+<li class="lvl-2">
+<p><mark>bitxor(a,b)</mark>——逐位逻辑异或</p>
+</li>
+</ul>
+<h4 id="3-3-3-常用操作函数">3.3.3 常用操作函数</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>xor(x,y)——异或运算</p>
+</li>
+<li class="lvl-2">
+<p>any(x)——如果在一个向量x中，任何元素是非零，返回1；矩阵x中的每一列有非零元素，返回1</p>
+</li>
+<li class="lvl-2">
+<p>all(x)——如果在一个向量x中，所有元素非零，返回1；矩阵x中的每一列所有元素非零，返回1</p>
+</li>
+</ul>
+<h4 id="3-4-分支结构">3.4 分支结构</h4>
+<h4 id="3-4-1-if分支结构">3.4.1 if分支结构</h4>
+<p>if <code>expression</code><br>
+<code>statements</code><br>
+elseif <code>expression</code><br>
+<code>statements</code><br>
+else<br>
+<code>statements</code><br>
+end</p>
+<h4 id="3-4-2-switch分支结构">3.4.2 switch分支结构</h4>
+<p>switch <code>switch_expression</code></p>
+<pre><code>case `case_expression`
+
+  `statements`
+
+ ...
+
+otherwise
+
+   `statements` 
+</code></pre>
+<p>end</p>
+<h4 id="3-5-循环结构2">3.5 循环结构2.</h4>
+<h4 id="3-5-1-while循环结构">3.5.1 while循环结构</h4>
+<p>while <code>expression</code><br>
+<code>statements</code><br>
+end</p>
+<h4 id="3-5-2-for循环结构">3.5.2 for循环结构</h4>
+<p>for <code>index</code> = <code>values</code><br>
+<code>statements</code><br>
+end</p>
+<h4 id="3-5-3-控制程序的其他命令">3.5.3 控制程序的其他命令</h4>
+<p>1.continue</p>
+<p>2.break</p>
+<p>3.return</p>
+<p>4.input</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>input()</mark></p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> a = input('input a number:','s')
+b = input('input a number:')
+input a number:66n
+
+a =
+
+    '66n'
+
+input a number:6
+
+b =
+
+     6
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>5.keyboard——使程序暂停运行，等待键盘命令<br>
+6.error和warning</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>error(‘message’)</mark>——显示出错信息message，终止程序</p>
+</li>
+<li class="lvl-2">
+<p><mark>errordlg(‘errorstring’,‘dlgname’)</mark>——显示出错信息的对话框，对话框的标题为dlgname</p>
+</li>
+<li class="lvl-2">
+<p><mark>warning(‘message’)</mark>——显示出错信息message，程序继续进行</p>
+</li>
+</ul>
+<h4 id="3-6-程序调试和优化">3.6 程序调试和优化</h4>
+<h4 id="3-6-1-程序调试命令">3.6.1 程序调试命令</h4>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">- dbstop     - Set breakpoint                      %设置断点
+- dbclear    - Remove breakpoint                   %清除断点
+- dbcont     - Resume execution                    %重新执行
+- dbdown    - Change local workspace context       %下移本地工作空间内容
+- dbmex     - Enable MEX-file debugging            %使MEX文件调试有效
+- dbstack    - List who called whom                %列出函数调用关系
+- dbstatus    - List all breakpoints               %列出所有断点
+- dbstep     - Execute one or more lines           %单步或多步执行
+- dbtype     - List M-file with line numbers       %列出M文件
+- dbup      - Change local workspace context       %上移本地工作空间内容
+- dbquit     - Quit debug mode                     %退出调试模式
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F26-27.png" alt=""></p>
+<h4 id="3-6-2-经典算法程序举例">3.6.2 经典算法程序举例</h4>
+<ol>
+<li class="lvl-3">
+<p>雅可比（Jacobi）迭代算法——解方程组常用算法</p>
+</li>
+<li class="lvl-3">
+<p>拉格朗日插值函数算法——求解插值点处的函数值</p>
+</li>
+<li class="lvl-3">
+<p>图论相关算法</p>
+<ol>
+<li class="lvl-6">
+<p>最小生成树</p>
+</li>
+<li class="lvl-6">
+<p>最短路径Dijkstra算法</p>
+</li>
+<li class="lvl-6">
+<p>Ford算法</p>
+</li>
+<li class="lvl-6">
+<p>模糊聚类分析算法程序（组）</p>
+</li>
+<li class="lvl-6">
+<p>层次分析——求近似特征向量算法</p>
+</li>
+<li class="lvl-6">
+<p>灰色关联分析——单因子情形</p>
+</li>
+<li class="lvl-6">
+<p>灰色预测——GM（1，1）</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="第四章-常用建模函数">第四章 常用建模函数</h3>
+<h4 id="4-1-曲线拟合函数">4.1 曲线拟合函数</h4>
+<h4 id="4-1-1-多项式拟合">4.1.1 多项式拟合</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>polyfit(x,y,n)</mark>——找到次数为n的多项式系数，对于数据集合{(xi,yi)}，满足差的平方和最小</p>
+</li>
+<li class="lvl-2">
+<p><mark>[p,E]=polyfit(x,y,n)</mark>——返回同上的多项式p和矩阵E。多项式系数在向量p中，矩阵E用在polyval函数中计算误差。</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> x = [0.3 0.4 0.7 0.9 1.2 1.9 2.8 3.2 3.7 4.5];
+y = [1 2 3 4 5 2 6 9 2 7];
+p5 = polyfit(x,y,5);    %5阶多项式拟合
+y5 = polyval(p5,x);     %计算多项式 p 在 x 的每个点处的值
+p5                      %显示p5向量
+p5 = vpa(poly2sym(p5),5)%显示5阶多项式
+p9 = polyfit(x,y,9);    %9阶多项式拟合
+y9 = polyval(p9,x);
+figure;                 %画图显示
+plot(x,y,'bo');
+hold on;
+plot(x,y5,'r:');
+plot(x,y9,'g--');
+legend('原始数据','5阶多项式拟合','9阶多项式拟合');
+xlabel('x');
+ylabel('y');
+
+p5 =
+
+    0.8877  -10.3002   42.9421  -77.9316   59.8332  -11.6732
+
+
+p5 =
+
+0.8877*x^5 - 10.3*x^4 + 42.942*x^3 - 77.932*x^2 + 59.833*x - 11.673
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F27.png" alt=""></p>
+<h4 id="4-1-2-加权最小方差拟合">4.1.2 加权最小方差拟合</h4>
+<h4 id="4-1-3-非线性曲线拟合">4.1.3 非线性曲线拟合</h4>
+<p>非线性曲线拟合是已知输入向量xdata、输出向量ydata，并直到输入与输出的函数关系为ydata = F(x,xdata)，但不清楚系数向量x。进行曲线拟合即求x使得下式成立：</p>
+<p>$$<br>
+minx(1/2)||F(x,xdata)−ydata||<sup>2_2=12∑(F(x,xdatai)−ydatai)</sup>2<br>
+$$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>x = <mark>lsqcurvefit(fun, x0, xdata, ydata)</mark>——x0为初始解向量；xdata、ydata为满足关系ydata = F(x,xdata)的数据。</p>
+</li>
+<li class="lvl-2">
+<p><input type="checkbox" id="checkbox0"><label for="checkbox0">。</label></p>
+</li>
+<li class="lvl-2">
+<p>x = lsqcurvefit(fun, x0, xdata, ydata, lb, ub, options)——options为指定的优化参数</p>
+</li>
+<li class="lvl-2">
+<p>[x ,resnorm, residual, exitflag, output] = lsqcurvefit(···)——resnorm是在x处残差和的平方和，residual为在x处的残差，exitflag为终止迭代的条件，output为输出的优化信息。</p>
+</li>
+</ul>
+<h4 id="4-2-参数估计函数">4.2 参数估计函数</h4>
+<h4 id="4-2-1-常见分布的参数估计">4.2.1 常见分布的参数估计</h4>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F27-28.png" alt=""></p>
+<h4 id="4-2-2-点估计">4.2.2 点估计</h4>
+<p>点估计是用单个数值作为参数的估计，目前使用较多的方法是最大似然法和矩法</p>
+<p>1.最大似然法</p>
+<p><mark>pha = mle(‘dist’,data)</mark>——使用data适量中的样本数据，返回<u>dist指定的分布</u>的最大似然估计</p>
+<p>2.矩法</p>
+<p><mark>moment(X,order)</mark></p>
+<h4 id="4-2-3-区间估计">4.2.3 区间估计</h4>
+<p>求参数的区间估计，首先要求出该参数的点估计，然后构造一个含有该参数的随机变量，并根据一定的置信水平求该估计值的范围。</p>
+<p><mark>mle()</mark></p>
+<h4 id="4-3-参数传递函数">4.3 参数传递函数</h4>
+<h4 id="4-3-1-输入和输出参数的数目">4.3.1 输入和输出参数的数目</h4>
+<p>MATLAB中可以通过<mark>nargin</mark>和<mark>nargout</mark>函数，确定函数调用时实际传递的输入和输出参数个数，结合条件分支语句，就可以处理函数调用中指定不同数目的输入/输出参数的情况。</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">function [n1,n2] = mythe(m1,m2)
+if nargin == 1
+    n1 = m1;
+    if nargout == 2
+        n2 = m1;
+    end
+else
+    if nargout == 1
+        n1 = m1 + m2;
+    else
+        n1 = m1;
+        n2 = m2;
+    end
+end
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> m = mythe(4)
+
+m =
+
+     4
+
+>> [m,n] = mythe(4)
+
+m =
+
+     4
+
+
+n =
+
+     4
+
+>> m = mythe(4,8)
+
+m =
+
+    12
+
+>> [m,n] = mythe(4,8)
+
+m =
+
+     4
+
+
+n =
+
+     8
+
+>> mythe(4,8)
+
+ans =
+
+     4
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-3-2-可变数目的参数传递">4.3.2 可变数目的参数传递</h4>
+<p>某些情况下，用户可能并不确定具体调用中传递的输入参数或输出参数的个数，即具有可变数目的传递参数。MATLAB中可通过<mark>varargin</mark>和<mark>varargout</mark>函数实现可变数目的参数传递，使用这两个函数对于处理具有复杂的输入/输出参数个数组合的情况也是便利的。</p>
+<blockquote>
+<p><code>varargin</code>&nbsp;是函数定义语句中的一个输入变量，允许函数接受任意数量的输入参数。使用小写字符指定&nbsp;<code>varargin</code>，将其作为最后一个输入参数附加在任何显式声明的输入项后。</p>
+<p>在执行函数时，<code>varargin</code>&nbsp;是一个 1×N 元胞数组，其中 N 是函数在显式声明的输入后收到的输入项数。但是，如果该函数在显式声明的输入后未收到任何输入，则&nbsp;<code>varargin</code>&nbsp;是空元胞数组。</p>
+</blockquote>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F28.png" alt=""></p>
+<h4 id="4-3-3-返回被修改的输入参数">4.3.3 返回被修改的输入参数</h4>
+<p>同C语言，在函数内修改的工作区变量x不会改变实参x，除非返回到x</p>
+<h4 id="4-3-4-全局变量">4.3.4 全局变量</h4>
+<p>关键词<mark>global</mark></p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">function y = azhe(x)
+    global A;
+    A = A + 9;
+    y = cos(x);
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> global A;
+azhe(1)
+
+ans =
+
+    0.5403
+
+>> A
+
+A =
+
+    11
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-4-插值函数">4.4 插值函数</h4>
+<p>插值是指在所给的基准数据情况下，研究如何平滑地估算出基准数据之间其他点的函数数值。每当其他点上函数值获取的代价比较高时，插值就会发挥作用。</p>
+<h4 id="4-4-1-一维插值命令及实例">4.4.1 一维插值命令及实例</h4>
+<p>MATLAB中，一维插值有基于多项式的插值和基于快速傅里叶的插值的两种类型。一维插值就是对一维函数y = f(x)进行插值。</p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F28-29.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F29.png" alt=""></p>
+<h4 id="4-4-2-二维插值命令及实例">4.4.2 二维插值命令及实例</h4>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F29-30.png" alt=""></p>
+<p>meshgrid函数用来生成二维和三维网格</p>
+<blockquote>
+<p><mark>[X,Y] = meshgrid(x,y) </mark>基于向量 x 和 y 中包含的坐标返回二维网格坐标。X 是一个矩阵，每一行是 x 的一个副本；Y 也是一个矩阵，每一列是 y 的一个副本。坐标 X 和 Y 表示的网格有 length(y) 个行和 length(x) 个列。</p>
+<p><mark>[X,Y] = meshgrid(x)</mark> 与 [X,Y] = meshgrid(x,x) 相同，并返回网格大小为 length(x)×length(x) 的方形网格坐标。</p>
+<p><mark>[X,Y,Z] = meshgrid(x,y,z) </mark>返回由向量 x、y 和 z 定义的三维网格坐标。X、Y 和 Z 表示的网格的大小为 length(y)×length(x)×length(z)。</p>
+<p><mark>[X,Y,Z] = meshgrid(x) </mark>与 [X,Y,Z] = meshgrid(x,x,x) 相同，并返回网格大小为 length(x)×length(x)×length(x) 的三维网格坐标。</p>
+</blockquote>
+<h4 id="4-4-3-样条插值">4.4.3 样条插值</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>yy = spline(x,y,xx)</mark>——对于给定的离散的测量数据x、y(称为断点)，要寻找一个三项多项式y = p(x)，以逼近每对数据(x,y)点间的曲线。</p>
+</li>
+<li class="lvl-2">
+<p><mark>pp = spline(x,y)</mark>——返回由向量x与y确定的分段样条多项式的系数矩阵pp，它可用于命令<mark>ppval</mark>、<mark>unmkpp</mark>的计算。</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> x = [0 2 4 5 8 12 12.8 17.2 19.9 20];
+y = exp(x).*sin(x);
+xx = 0:0.25:20;
+yy = spline(x,y,xx);
+plot(x,y,'h',xx,yy,':black')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F30.png" alt=""></p>
+<h3 id="第九章-MATLAB数据图形可视化">第九章 MATLAB数据图形可视化</h3>
+<h4 id="9-1-MATLAB图形窗口">9.1 MATLAB图形窗口</h4>
+<h4 id="9-1-1-创建图形窗口">9.1.1 创建图形窗口</h4>
+<p>使用<mark>figure</mark>来建立图形窗口。</p>
+<p><mark>figure(x)</mark>——x为正整数，就会得到图形框名称为x的图形，直接输入figure默认显示图形框名称为1.</p>
+<h4 id="9-1-2-关闭与清楚图形框">9.1.2 关闭与清楚图形框</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>close</mark>——关闭当前图形窗口，等效于close(gcf)</p>
+</li>
+<li class="lvl-2">
+<p><mark>close(x)</mark>——关闭图形句柄指定的图形窗口</p>
+</li>
+<li class="lvl-2">
+<p><mark>close name</mark>——关闭图形窗口名name指定的图形窗口</p>
+</li>
+<li class="lvl-2">
+<p><mark>close all</mark>——关闭除隐含图形句柄的所有图形窗口</p>
+</li>
+<li class="lvl-2">
+<p><mark>close all hidden</mark>——关闭包括隐含图形句柄的所有图形窗口</p>
+</li>
+<li class="lvl-2">
+<p><mark>status = close(···)</mark>——调用close函数正常关闭图形窗口时，返回1，否则返回0。</p>
+</li>
+<li class="lvl-2">
+<p><mark>clf</mark>——清楚当前图形窗口所有可见的图形对象</p>
+</li>
+<li class="lvl-2">
+<p><mark>clf reset</mark>——清楚当前图形窗口所有可见的图形对象，并将窗口的属性设置为默认值</p>
+</li>
+</ul>
+<h4 id="9-2-函数绘制">9.2 函数绘制</h4>
+<h4 id="9-2-1-一元函数绘图">9.2.1 一元函数绘图</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>ezplot(f)</mark>——按照x的默认取值范围（-2<em>pi&lt;x&lt;2</em>pi）绘制f = f(x)的图形。对于f = f(x,y)，则绘制f(x,y) = 0的图形</p>
+</li>
+<li class="lvl-2">
+<p><mark>ezplot(f,[min,max])</mark>——按照x的指定范围（min&lt;x&lt;max）绘制f = f(x)的图形。</p>
+</li>
+<li class="lvl-2">
+<p><mark>ezplot(x,y)</mark>——按照t的默认范围(-2<em>pi&lt;t&lt;2</em>pi)绘制x=x(t)、y=y(t)的图形。</p>
+</li>
+<li class="lvl-2">
+<p><mark>ezplot(f,[xmin,xmax,ymin,ymax])</mark>——按照指定的x,y取值范围，在图形窗口绘制函数f = f(x,y)的图形。</p>
+</li>
+<li class="lvl-2">
+<p><mark>ezplot(x,y,[tmin,tmax])</mark>——按照t的指定范围绘制x = x(t)、y = y(t)的图形。</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> syms x y
+f = x.^3 + y.^2 - 3;
+ezplot(f)
+>> f = 'x.^3 + y.^2 - 3';
+ezplot(f)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F31.png" alt=""></p>
+<h4 id="9-2-2-二元函数绘图">9.2.2 二元函数绘图</h4>
+<p>1.函数<mark>ezmesh</mark></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F31-32.png" alt=""></p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> syms s t
+x = 's^(2*t)；
+y = 'cos(s)^2+t'；
+z = 'sin(s)*tan(t)'；
+figure
+ezmesh(x,y,z)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F32.png" alt=""></p>
+<p>2.<mark>meshgrid</mark>、<mark>surf()</mark>——创建三维曲面图</p>
+<p>对于二元函数z = f(x,y)，每一对x和y的值产生一个z的值，作为x与y的函数，z是三维空间的一个曲面。MATLAB将z存放在一个矩阵中，z的行和列分别表示为：</p>
+<p>$$<br>
+z(i,:) = f(x,y(i)<br>
+$$</p>
+<p>$$<br>
+z(:,i) = f(x(i,y)<br>
+$$</p>
+<p>当z = f(x,y)能用简单的表达式表示时，利用meshgrid函数可以方便地获得所有z地数据，然后用前面讲过的画三维图形的命令就可以绘制二元函数z = f(x,y)。</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">x = 0:0.5:4;
+y = -5:0.2:3;
+[X,Y] = meshgrid(x,y);
+Z = cos(X).*cos(Y);
+surf(X,Y,Z);    %创建三维曲面图
+xlabel('X'),ylabel('Y'),zlabel('Z');
+title('Z = cos(X).*cos(Y)');
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F33.png" alt=""></p>
+<h4 id="9-3-数据图形绘制简介">9.3 数据图形绘制简介</h4>
+<h4 id="9-3-1-离散数据可视化">9.3.1 离散数据可视化</h4>
+<p>1.<mark>stem</mark></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>stem(y)</mark>——以x=1,2,3···作为各个数据点的x坐标，以向量y的值为y坐标，在(x,y)坐标点画一个空心小圆圈，并连接一条线段到X轴</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> figure
+t = linspace(-2*pi,2*pi,8)
+h = stem(t)
+set(h,'Color','blue')
+
+t =
+
+   -6.2832   -4.4880   -2.6928   -0.8976    0.8976    2.6928    4.4880    6.2832
+
+
+h = 
+
+  Stem - 属性:
+
+              Color: [0 0.4470 0.7410]
+          LineStyle: '-'
+          LineWidth: 0.5000
+             Marker: 'o'
+         MarkerSize: 6
+    MarkerFaceColor: 'none'
+          BaseValue: 0
+              XData: [1 2 3 4 5 6 7 8]
+              YData: [-6.2832 -4.4880 -2.6928 -0.8976 0.8976 2.6928 4.4880 6.2832]
+
+  显示 所有属性
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F34.png" alt=""></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>stem(x,y,‘option’)</mark>——以x向量的各个元素为x坐标，以y向量的各个元素为y坐标，在(x,y)坐标点画一个空心小圆圈，并连接一条线段到X轴。option选项表示绘图时的线型、颜色等设置。</p>
+</li>
+<li class="lvl-2">
+<p><mark>stem(x,y,‘filled’)</mark>——filled表示点为实心</p>
+</li>
+</ul>
+<p>2.<mark>plot</mark></p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> a = linspace(-100,100,21);
+b = (a.^2+sqrt(a))/1000;
+plot(a,b,'rh','MarkerSize',15)
+grid on
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F35.png" alt=""></p>
+<h4 id="9-3-2-连续函数可视化">9.3.2 连续函数可视化</h4>
+<p><mark>plot</mark>（若不用关键字或者显示某个具体点的内容，plot函数默认用直线连接各个离散点）</p>
+<p>关键字：</p>
+<ol>
+<li class="lvl-3">
+<p><code>Color</code>——线条颜色</p>
+</li>
+<li class="lvl-3">
+<p><code>LineStyle</code>——线型</p>
+</li>
+<li class="lvl-3">
+<p><code>LineWidth</code>——线条宽度</p>
+</li>
+<li class="lvl-3">
+<p><code>Marker</code>——标记符号</p>
+</li>
+<li class="lvl-3">
+<p><code>MarkerIndices</code>——要显示标记的数据点的索引（每隔多少个标记一个、标记特定的点）</p>
+</li>
+<li class="lvl-3">
+<p><code>MarkerEdgeColor</code>——标记轮廓颜色</p>
+</li>
+<li class="lvl-3">
+<p><code>MarkerFaceColor</code>——标记填充颜色</p>
+</li>
+<li class="lvl-3">
+<p><code>MarkerSize</code>——标记大小</p>
+</li>
+<li class="lvl-3">
+<p><code>DatetimeTickFormat - datetime</code>——刻度标签的格式</p>
+</li>
+<li class="lvl-4">
+<p><code>DurationTickFormat - duration</code>——刻度标签的格式</p>
+</li>
+</ol>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">plot(x,y,'-o','MarkerIndices',[1 5 10])              % 在第1、第5和第10个数据点处显示圆形标记。
+plot(x,y,'-x','MarkerIndices',1:3:length(y))         % 每隔2个数据点显示1个交叉标记。
+plot(x,y,'Marker','square','MarkerIndices',5)           % 在第5个数据点显示1个正方形标记。
+plot(x,y,'-or','MarkerIndices',1:8:length(y),'LineWidth',3,'MarkerSize',10,'MarkerEdgeColor','b','MarkerFaceColor','g')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="9-4-二维绘图函数">9.4 二维绘图函数</h4>
+<h4 id="9-4-1-二维图形绘制步骤">9.4.1 二维图形绘制步骤</h4>
+<p>1.数据准备</p>
+<p>2.指定图形窗口和位置</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">figure(1)        指定一号窗口
+subplot(2,2,3)   将当前图窗划分为2×2网格，并在坐标区3创建图形
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>3.绘制图形</p>
+<p>设置曲线的绘制方式，包括线型、色彩、数据点形等</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">plot(t,y,'b-')   用蓝实线画曲线
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>4.设置坐标轴和图形注释</p>
+<p>设置坐标轴包括坐标的范围、刻度和坐标分割线等，图形注释包括图名、坐标名、图例、文字说明等。</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">title('调制波形')            图名
+xlabel('t')
+ylabel('y')                 轴名
+legend('sin(t)')            图例
+text(2,0.5,'y = sin(t)')    文字
+axis([0,pi,-1,1])           设置轴的范围
+grid on                     画坐标分割线
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>5.图形的精细修饰</p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">e.g.
+set(h,'MakerSize',10)        设置数据点大小
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>6.按指定格式保存或导出图形</p>
+<p>将绘制的图形窗口保存为<code>.fig</code>文件，或者转换成其他图形文件、</p>
+<h4 id="9-4-2-快速方程式画图">9.4.2 快速方程式画图</h4>
+<p>1.fplot</p>
+<p>单纯画方程式图形，图形之上(x,y)坐标值会自动取，但必须输入x坐标的范围。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>fplot(‘方程式’,[xmin,xmax,ymin,ymax])</mark></p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> fplot('x-cos(x^2)-sin(2*x^3)',[-4,4])
+警告: 在以后的版本中，fplot 将不接受字符向量或字符串输入。请改用 fplot(@(x)x-cos(x.^2)-sin(2.*x.^3))。 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F36.png" alt=""></p>
+<p>2.ezplot</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>ezplot</mark>——见9.2.1</p>
+</li>
+</ul>
+<h4 id="9-4-3-特殊二维图形">9.4.3 特殊二维图形</h4>
+<h5 id="1-特殊坐标图形的绘制">1.特殊坐标图形的绘制</h5>
+<p><em><strong>1)极坐标系</strong></em></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>polar(theta,rho,LineSpec)</mark>——theta是用弧度制表示的角度，rho是对应的半径。极角theta为从x轴到半径的单位为弧度的向量，极径rho为各数据点到极点的半径向量，LineSpec指定极坐标图中线条的线型、标记符号和颜色等。</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> t = 0:0.1:3*pi;    %极坐标角度
+a = -2*pi:.001:2*pi;  %设定极坐标角度
+b = (1-sin(a));       %设定对应角度的半径
+figure(1)
+title('极坐标图形')
+subplot(1,2,1);       %在区域1绘图
+polar(t,abs(cos(5*t)))%绘制图一
+hold on;
+subplot(1,2,2);       %在区域2绘图
+polar(a,b,'r');       %绘制图二
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F37.png" alt=""></p>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F38.png" alt=""></p>
+<p><em><strong>2)对数坐标系</strong></em></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>semilogx(x,y)</mark>——x轴对数刻度坐标图，即用该函数绘制图形时x轴采用对数坐标。</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> x = 0:1000;
+y = log(x);
+semilogx(x,y)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F39.png" alt=""></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>semilogx(y)</mark>——对x轴的刻度求常用对数（以10为底），而y为线性刻度。</p>
+</li>
+</ul>
+<p>若y为实数向量或矩阵，则semilogx(y)结合y列向量的下标与y的列向量画出线条，即<u>以y列向量的索引值为横坐标，以y列向量的值为纵坐标</u></p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> y = [21 35 26 84
+65 28 39 68
+62 71 59 34];
+semilogx(y)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F40.png" alt=""></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>semilogy(x,y)</mark>——y轴对数刻度坐标图，用该函数绘制图形时y轴采用对数坐标。</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> x = 0.001 : 0.1*pi : 2*pi;
+y = 10.^x;
+figure
+subplot(2,1,1)
+semilogy(x,y,'r-')
+hold on
+subplot(2,1,2)
+plot(x,y)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F41.png" alt="">*</p>
+<p><em><strong>3)柱坐标系</strong></em></p>
+<p>在MATLAB中没有在柱坐标和球坐标下直接绘制数据图形的命令，但pol2cart命令能够将柱坐标和球坐标值转化为直角坐标系下的坐标值，然后在直角坐标下绘制数据图形。</p>
+<blockquote>
+<p>1：柱坐标系(r,φ,z)与<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB/1835293?fromModule=lemma_inlink">直角坐标系</a>(x,y,z)的转换关系：</p>
+<p>$$<br>
+x=rcosφ<br>
+\<br>
+y=rsinφ<br>
+\<br>
+z=z<br>
+$$<br>
+2：同样的，直角坐标系（x，y，z）与柱坐标系(r,φ,z)的转换关系：</p>
+<p>$r = \sqrt{x<sup>2+y</sup>2}$</p>
+<p>$\varphi = arctan(\dfrac{y}{x})$</p>
+<p>$z=z$</p>
+</blockquote>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>[x,y] = pol2cart(theta,rho,)</mark></p>
+</li>
+<li class="lvl-2">
+<p><mark>[x,y,z] = pol2cart(theta,rho,z)</mark></p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> theta = 0 : pi/20 : 2*pi;
+rho = sin(theta);
+[t,r] = meshgrid(theta,rho);
+z = r.*t;
+[X,Y,Z,] = pol2cart(t,r,z);
+mesh(X,Y,Z)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F42.png" alt=""></p>
+<p><em><strong>4)球坐标系</strong></em></p>
+<p>在MATLAB中可以使用sph2cart将球坐标值转换成直角坐标系下的坐标值，然后使用plot3、mesh等绘图命令。</p>
+<blockquote>
+<p>1).球坐标系(r,θ,φ)与<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB?fromModule=lemma_inlink">直角坐标系</a>(x,y,z)的转换关系:&nbsp;[1]</p>
+<p>x=rsinθcosφ.</p>
+<p>y=rsinθsinφ.</p>
+<p>z=rcosθ.</p>
+<p>2).反之，直角坐标系(x,y,z)与球坐标系(r,θ,φ)的转换关系为:<br>
+$$<br>
+r = \sqrt{x<sup>2+y</sup>2+z^2}\<br>
+\theta = arccos\dfrac{z}{r}\<br>
+\phi = arctan\dfrac{y}{x}<br>
+$$</p>
+</blockquote>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>[x,y,z] = sph2cart(azimuth,elevation,r)</mark>——azimuth为方位角，elevation为仰角，r为半径</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> theta = linspace(0,2*pi,20);
+fai = linspace(0,pi/2,20);
+r = 1;
+[x,y,z] = meshgrid(theta,fai,r);
+[X,Y,Z] = sph2cart(x,y,z);
+mesh(X,Y,Z)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F43.png" alt=""></p>
+<h5 id="2-特殊二维图形的绘制">2.特殊二维图形的绘制</h5>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>bar(x,y)</mark>——<u>条形图</u>。x是横坐标，y是纵坐标</p>
+</li>
+<li class="lvl-2">
+<p><mark>fplot(y,[a b])</mark>——<u>精确绘图</u>。y代表某个函数，[a,b]表示需要精确绘图的范围</p>
+</li>
+<li class="lvl-2">
+<p><mark>polar(θ,r)</mark>——<u>极坐标图</u>。θ是角度，r代表以θ为变量的函数</p>
+</li>
+<li class="lvl-2">
+<p><mark>stairs(x,y)</mark>——<u>阶梯图</u>。x是横坐标，y是纵坐标</p>
+</li>
+<li class="lvl-2">
+<p><mark>line([x1,y1],[x2,y2],···)</mark>——<u>折线图</u>。[x1,y1]表示折现上的点</p>
+</li>
+<li class="lvl-2">
+<p><mark>fill(x,y,‘b’)</mark>——<u>实心图</u>。x是横坐标，y是纵坐标，‘b’代表颜色</p>
+</li>
+<li class="lvl-2">
+<p><mark>scatter(x,y,s,c)</mark>——<u>散点图</u>。s是圆圈标记点的面积，c是标记点的颜色</p>
+</li>
+<li class="lvl-2">
+<p><mark>pie(x)</mark>——<u>饼图</u>。x为向量</p>
+</li>
+<li class="lvl-2">
+<p><mark>contour(x)</mark>——<u>等高线</u>。x为向量</p>
+</li>
+<li class="lvl-2">
+<p><mark>errorbar(y,e)</mark>——<u>误差条</u>。y为数据点，e为误差范围</p>
+</li>
+<li class="lvl-2">
+<p><mark>hist(y)</mark>——<u>直方图</u>。y为矩阵</p>
+</li>
+<li class="lvl-2">
+<p><mark>quiver(x,y,dx,dy)</mark>——<u>向量图</u>。</p>
+</li>
+<li class="lvl-2">
+<p><mark>feather(x,y)</mark>——<u>向量图</u>。由向量参量x与y构成的速度参量，沿水平轴方向，从均匀间隔点发射出来</p>
+</li>
+<li class="lvl-2">
+<p><mark>feather(z)</mark>——<u>羽毛图</u>。参量z是一个复数，相当于<mark>compass(real(z),imag(z))</mark></p>
+</li>
+<li class="lvl-2">
+<p><mark>movie()</mark>——<u>建立动态二维图形</u>。</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> x = [10 51 6 15 98 16 3 56];
+subplot(1,2,1)
+pie(x)
+hold on  
+y = [0 1 0 0 1 0 0 0];   切割饼图的操作
+subplot(1,2,2)
+pie(x,y)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F44.png" alt=""></p>
+<pre class="line-numbers language-language-matlab"><code class="language-language-matlab">>> M = rand(10000,3);
+hist(M)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes%2Fmatlab%2F45.png" alt=""></p>
+<h4 id="9-5-三维绘图函数">9.5 三维绘图函数</h4>
+<h4 id="9-5-1-绘制三维曲面">9.5.1 绘制三维曲面</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>surf()</mark></p>
+</li>
+<li class="lvl-2">
+<p><mark>surfc()</mark>——带等高线的surf函数</p>
+</li>
+<li class="lvl-2">
+<p><mark>surfl()</mark>——绘制具有亮面的曲面图</p>
+</li>
+<li class="lvl-2">
+<p><mark>shading faceted</mark>——在绘制曲面时采用分层网格线，为默认值</p>
+</li>
+<li class="lvl-2">
+<p><mark>shading flat</mark>——表示平滑式颜色分布方式；去掉黑色线条，补片保持单一颜色</p>
+</li>
+<li class="lvl-2">
+<p><mark>shading interp</mark>——表示插补式颜色分布方式；同样去掉线条，但补片以插值加色。这种方式需要比分块和平滑更多的计算量</p>
+</li>
+<li class="lvl-2">
+<p><mark>[x,y,z] = sphere(n)</mark>——绘制三维球面</p>
+</li>
+<li class="lvl-2">
+<p><mark>[x,y,z] = cylinder(R,n)</mark>——绘制三维柱面</p>
+</li>
+<li class="lvl-2">
+<p><mark>peaks()</mark>——多峰函数</p>
+</li>
+</ul>
+<h4 id="9-5-2-栅格数据的生成">9.5.2 栅格数据的生成</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>meshgrid()</mark></p>
+</li>
+<li class="lvl-2">
+<p><mark>georasterref()</mark></p>
+</li>
+</ul>
+<h4 id="9-5-3-网格曲面的绘制命令">9.5.3 网格曲面的绘制命令</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>plot3()</mark></p>
+</li>
+<li class="lvl-2">
+<p><mark>mesh()</mark></p>
+</li>
+<li class="lvl-2">
+<p><mark>meshc()</mark>——在绘图的同时，在x-y平面上绘制函数的等值线</p>
+</li>
+<li class="lvl-2">
+<p><mark>msehz()</mark>——在网格图的基础上在图形的底部外侧绘制平行z轴的边框线</p>
+</li>
+</ul>
+<h4 id="9-5-4-隐藏线的显示和关闭">9.5.4 隐藏线的显示和关闭</h4>
+<p><mark>hidden on</mark>——去掉网格曲面的隐藏线</p>
+<p><mark>hidden off</mark>——显示网格曲面的隐藏线</p>
+<h3 id="第十章-MATLAB图像处理算法">第十章 MATLAB图像处理算法</h3>
+<h4 id="10-1-图像处理基础">10.1 图像处理基础</h4>
+<p>1.图像增强</p>
+<p>目前图像增强技术根据其处理的空间不同，可分为<mark>空域法</mark>和<mark>频域法</mark>两大类，前者根据在图像所在的像素空间进行处理，后者是通过对图像进行傅里叶变换后在频域空间上间接进行的。</p>
+<p>2.图像重建</p>
+<p>3.图像变换</p>
+<p>4.图像压缩</p>
+<p>5.图像分割</p>
+<p>6.图像边缘检测</p>
+<p>7.图像识别</p>
+<h4 id="10-2-MATLAB图像处理函数">10.2 MATLAB图像处理函数</h4>
+<h4 id="10-2-1-默认显示方式">10.2.1 默认显示方式</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>imshow(X,MAP)</mark>——显示图像X，使用MAP颜色矩阵</p>
+</li>
+<li class="lvl-2">
+<p>H = imshow(…)——显示图像X，并将图像X的句柄返回给变量H</p>
+</li>
+</ul>
+<blockquote>
+<p>imshow函数特点：</p>
+<ol>
+<li class="lvl-3">
+<p>自动设置图像的轴和标签属性。imshow程序代码会根据图像的特点，自动选择是否显示轴，或者是否显示标签属性。</p>
+</li>
+<li class="lvl-3">
+<p>自动设置是否显示图像的边框。程序代码会根据图像的属性，来自动选择是否显示图像的边框。</p>
+</li>
+<li class="lvl-3">
+<p>自动调用turesize代码程序，决定是否进行插值。</p>
+</li>
+</ol>
+</blockquote>
+<h4 id="10-2-2-添加颜色条">10.2.2 添加颜色条</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>colorbar</mark></p>
+</li>
+</ul>
+<h4 id="10-2-3-显示多帧图像">10.2.3 显示多帧图像</h4>
+<h4 id="10-2-4-显示动画">10.2.4 显示动画</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>movie</mark></p>
+</li>
+</ul>
+<h4 id="10-2-5-三维材质图像">10.2.5 三维材质图像</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>warp(x,y,z,…)</mark>——在x、y、z三维界面上显示图像</p>
+</li>
+</ul>
+<h4 id="10-2-6-图像的直方图">10.2.6 图像的直方图</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>imhist(I)</mark></p>
+</li>
+<li class="lvl-2">
+<p><mark>imhist(I,n)</mark></p>
+</li>
+<li class="lvl-2">
+<p><mark>imhist(X,map)</mark></p>
+</li>
+</ul>
+<p>在以上的调用格式中，参数I表示灰度图或二值图，n为直方图的柱数，X表示索引图，map为对应的Colormap。在调用格式imhist(I,n)中，当n未指定时，n根据I的不同类型取256（灰度图）或2（二值图）。</p>
+<h4 id="10-2-7-灰度变换">10.2.7 灰度变换</h4>
+<p>灰度变换主要功能是改变图像的对比度。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>imadjust</mark></p>
+</li>
+</ul>
+<h4 id="10-2-8-均衡直方图">10.2.8 均衡直方图</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>histeq</mark></p>
+</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Z</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zjgfree.github.io/20230813/matlab-xue-xi-bi-ji/">https://zjgfree.github.io/20230813/matlab-xue-xi-bi-ji/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Z</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">计算机语言</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">支持一下</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Freward%2Falipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Freward%2Fwechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Fcomment_bg_onepiece.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'LhLx7UqKvarxfFplrk6gYTBs-9Nh9j0Va',
+        appKey: 'WU9kHlPSxaP7WrHwoZCbO1l3',
+        serverURLs: 'https://lhlx7uqk.lc-cn-e1-shared.com',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'robohash',
+        pageSize: '15',
+        lang: 'zh-cn',
+        placeholder: '🌻留下你的足迹！🚩'
+    });
+</script>
+
+<!--酷Q推送-->
+
+//<script> 
+//    new Valine({
+//        el: '#vcomments',
+//        appId: 'LhLx7UqKvarxfFplrk6gYTBs-9Nh9j0Va',
+//        appKey: 'WU9kHlPSxaP7WrHwoZCbO1l3',
+//        notify: 'false' === 'true',
+//        verify: 'false' === 'true',
+//        visitor: 'true' === 'true',
+//        avatar: 'robohash',
+//        pageSize: '15',
+//        lang: 'zh-cn',
+//        placeholder: '🌻留下你的足迹！🚩',
+//    });
+//    // 点击回复直接评论 
+//    $(document).ready(function () {
+//        $('.vemoji-btn').text('😀');
+//        $("#vcomments").on('click', 'span.vat', function () {
+//            $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+//            $('textarea#veditor').focus();
+//        })
+//    });
+//</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/20230813/latex-ge-shi-jie-tu/">
+                    <div class="card-image">
+                        
+                        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Fnotes-feature-image%2FLaTeX.png" class="responsive-img" alt="LaTeX格式截图">
+                        
+                        <span class="card-title">LaTeX格式截图</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BF%85%E5%A4%87%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">必备工具</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/20230813/git-xue-xi-bi-ji/">
+                    <div class="card-image">
+                        
+                        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Fnotes-feature-image%2FGit.png" class="responsive-img" alt="Git学习笔记">
+                        
+                        <span class="card-title">Git学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BF%85%E5%A4%87%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">必备工具</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('80')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Zjgfree<br />'
+            + '文章作者: Z<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: rgba(202, 243, 248, 0.75);">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
+
+
+    
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #98F5FF;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="9023755987"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#98F5FF'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023</span>
+            
+            <a href="/about" target="_blank">Z</a>
+        <!--|&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>  -->
+            
+                <span id="translate">|&nbsp;简繁切换：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">37.4k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2023";
+                        var startMonth = "7";
+                        var startDate = "25";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '星球已运转 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '星球已運轉 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '星球已运转 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '星球已運轉 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zjgfree" class="tooltipped" target="_blank" data-tooltip="Jump to GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:zjgfree@qq.com" class="tooltipped" target="_blank" data-tooltip="Email：zjgfree@qq.com" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1727302945" class="tooltipped" target="_blank" data-tooltip="QQ: 1727302945" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    
+    <!--黑夜白天切换动态背景-->
+<!--
+<div class="stars-con">
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>  
+</div>
+-->
+
+<!-- 白天和黑夜主题 -->
+<div class="sum-moon-box">
+  <a class="btn-floating btn-large waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式切换" >
+    <i id="sum-moon-icon" class="fas fa-sun" style="width:48px; height:48px; font-size: 28px;"></i>
+  </a>
+</div>
+
+<script>
+  
+  // 在这里修改 isDark 变量过期的时间
+  var isDarkLiveHours = 6;
+
+  function setCookie(name, value, hoursToLive) {
+    var cookie = name + "=" + encodeURIComponent(value);
+    
+    if (typeof hoursToLive === "number") {
+      cookie += ";path=/;max-age=" + (hoursToLive*60*60);
+    }
+
+    document.cookie = cookie;
+  }
+
+  function getCookie(name) {
+    // 拆分 cookie 字符串
+    var cookieArr = document.cookie.split(";");
+   
+    // 循环遍历数组元素
+    for(var i = 0; i < cookieArr.length; i++) {
+        var cookiePair = cookieArr[i].split("=");
+       
+        /* 删除 cookie 名称开头的空白并将其与给定字符串进行比较 */
+        if(name == cookiePair[0].trim()) {
+            // 解码cookie值并返回
+            return decodeURIComponent(cookiePair[1]);
+        }
+    }
+    // 如果未找到，则返回null
+    return null;
+  }
+  
+
+  function switchNightMode() {
+    $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+    setTimeout(function() {
+      $('body').hasClass('DarkMode')
+      ? (
+        $('body').removeClass('DarkMode'),
+        setCookie('isDark', 'false', isDarkLiveHours),
+        $('#day-btn-icon-sun').css('display', 'none'),
+        $('#night-btn-icon-moon').css('display', 'inherit')
+      ) : (
+        $('body').addClass('DarkMode'),
+        setCookie('isDark', 'true', isDarkLiveHours),
+        $('#day-btn-icon-sun').css('display', 'inherit'),
+        $('#night-btn-icon-moon').css('display', 'none')
+      ),
+
+      setTimeout(function () {
+        $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+          $(this).remove()
+        })
+      }, 2e3);
+    });
+  }
+
+  //黑夜模式自动开启功能（首次加载）
+  setTimeout(function () {
+    if (getCookie('isDark') == null) {
+      if ((new Date().getHours() >= 21 || new Date().getHours() < 6) && !$('body').hasClass('DarkMode')) {
+        $('body').addClass('DarkMode');
+        setCookie('isDark', 'true', isDarkLiveHours);
+        $('#day-btn-icon-sun').css('display', 'inherit');
+        $('#night-btn-icon-moon').css('display', 'none');
+      }
+    } else {
+      if (getCookie('isDark') === 'true') {
+        document.body.classList.add('DarkMode');
+        $('#day-btn-icon-sun').css('display', 'inherit');
+        $('#night-btn-icon-moon').css('display', 'none');
+      } else {
+        document.body.classList.remove('DarkMode');
+        $('#day-btn-icon-sun').css('display', 'none');
+        $('#night-btn-icon-moon').css('display', 'inherit');
+      }
+    }
+
+  }, 0);
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "https://zjgfree.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+    
+
+    <!-- 动态标题 -->
+    <script type="text/javascript">
+        var OriginTitile = document.title,
+            st;
+        document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = "👀跑哪里去了？😭", clearTimeout(st)) : (document.title =
+                "🍔找到你啦！💕", st = setTimeout(function () {
+                    document.title = OriginTitile
+                }, 3e3))
+        })
+    </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="140" alpha='0.7'
+        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1.5,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":180,"height":180,"position":"right","hOffset":75,"vOffset":8},"mobile":{"show":false,"scale":0.4},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
+
+</html>

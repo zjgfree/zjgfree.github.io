@@ -1,0 +1,3864 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python学习笔记, Z, zjg, zjgfree, zjgfree.top">
+    <meta name="description" content="笔记参考教程：（python蛇书）Python编程 从入门到时间（第2版）（ [美]埃里克 · 马瑟斯 著 袁国忠 译 ）
+此文章为个人学习笔记，仅供学习交流，不作商业用途，如果侵权，请联系站长删除
+Python学习笔记
+1.变量和简单数据">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Python学习笔记 | Zjgfree</title>
+    <link rel="icon" type="image/png" href="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Ffavicon.png">
+    
+    <style>
+        body{
+            background-image: url(https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Fbg2.jpg);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark_new.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+    
+    <!--鼠标样式文件-->
+    <link rel="stylesheet" href="/css/cursor.css">
+
+    <!-- 黑夜模式样式 css -->
+    <link rel="stylesheet" type="text/css" href="">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Zjgfree" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+    <style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, #ffa5fa 0%, #8dfffd 100%);
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 50px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },500); 
+        },1000);//强制显示loading page 1.0s  
+    };
+    loaded();
+})()
+</script>
+
+
+<body>
+    
+    <!--loading-pages加载动画-->
+    
+        <div id="loading-container">
+             <p class="loading-text">页面正在赶来的路上…… </p> 
+             <div class="loading-image">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div> 
+                 <div></div>
+             </div>
+        </div>
+    
+
+    <!--鼠标点击烟花爆炸效果-->
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/click_firework.js"></script>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flogo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Zjgfree</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-pen" style="zoom: 0.6;"></i>
+      
+      <span>文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>时间线</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/movies-douban" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-coffee" style="zoom: 0.6;"></i>
+      
+      <span>小窝</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/movies-douban">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>电影</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/games-douban">
+          
+          <i class="fas fa-gamepad" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>游戏</span>
+        </a>
+      </li>
+      
+      <li>
+        <a target="_blank" rel="noopener" href="https://poe.com/">
+          
+          <i class="fas fa-robot" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Chat</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于作者</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <!--
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  -->
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flogo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Zjgfree</div>
+        <div class="logo-desc">
+            
+            欢迎来到我的小世界！
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-pen"></i>
+			
+			文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:28px" ></i>
+			      
+		          <span>时间线</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:28px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:28px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-coffee"></i>
+			
+			小窝
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/movies-douban " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:28px" ></i>
+			      
+		          <span>电影</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/games-douban " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-gamepad" style="position: absolute;left:28px" ></i>
+			      
+		          <span>游戏</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a target="_blank" rel="noopener" href="https://poe.com/ " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-robot" style="position: absolute;left:28px" ></i>
+			      
+		          <span>Chat</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于作者
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+    
+    <!-- 元宵节灯笼样式开始 -->
+    <style>
+        @media only screen and (min-width: 1124px) {
+            .nav-menu {
+                padding-right: 96px;
+            }
+        }
+        @media only screen and (max-width: 760px) {
+            .deng-box, .deng-box1 {
+                width: 40%;
+            }
+            .right {
+                float: left!important;
+            }
+        }
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            .right {
+                float: left!important;
+            }
+        }
+        .deng-box {
+            position: fixed;
+           /* top: -30px; */
+            top: 13px;
+            right: -20px;
+            z-index: 999;
+        }
+        .deng-box1 {
+            position: fixed;
+            top: 13px;
+            /* right: 10px; */
+            z-index: 999;
+        }
+        .deng-box1 .deng {
+            position: relative;
+            width: 120px;
+            height: 90px;
+            margin: 50px;
+            background: #d8000f;
+            background: rgba(216, 0, 15, 0.8);
+            border-radius: 50% 50%;
+            -webkit-transform-origin: 50% -100px;
+            -webkit-animation: swing 5s infinite ease-in-out;
+            box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);
+        }
+        .deng {
+            position: relative;
+            width: 120px;
+            height: 90px;
+            margin: 50px;
+            background: #d8000f;
+            background: rgba(216, 0, 15, 0.8);
+            border-radius: 50% 50%;
+            -webkit-transform-origin: 50% -100px;
+            -webkit-animation: swing 3s infinite ease-in-out;
+            box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);
+        }
+        .deng-a {
+            width: 100px;
+            height: 90px;
+            background: #d8000f;
+            background: rgba(216, 0, 15, 0.1);
+            margin: 12px 8px 8px 10px;
+            border-radius: 50% 50%;
+            border: 2px solid #dc8f03;
+        }
+        .deng-b {
+            width: 45px;
+            height: 90px;
+            background: #d8000f;
+            background: rgba(216, 0, 15, 0.1);
+            margin: -4px 8px 8px 26px;
+            border-radius: 50% 50%;
+            border: 2px solid #dc8f03;
+        }
+        .xian {
+            position: absolute;
+            /* top: -20px; */
+            top: -69px;
+            left: 60px;
+            width: 2px;
+            /*  height: 20px; */
+            height: 70px;
+
+            background: #dc8f03;
+        }
+        .shui-a {
+            position: relative;
+            width: 5px;
+            height: 20px;
+            margin: -5px 0 0 59px;
+            -webkit-animation: swing 4s infinite ease-in-out;
+            -webkit-transform-origin: 50% -45px;
+            background: #ffa500;
+            border-radius: 0 0 5px 5px;
+        }
+        .shui-b {
+            position: absolute;
+            top: 14px;
+            left: -2px;
+            width: 10px;
+            height: 10px;
+            background: #dc8f03;
+            border-radius: 50%;
+        }
+        .shui-c {
+            position: absolute;
+            top: 18px;
+            left: -2px;
+            width: 10px;
+            height: 35px;
+            background: #ffa500;
+            border-radius: 0 0 0 5px;
+        }
+        .deng:before {
+            position: absolute;
+            top: -7px;
+            left: 29px;
+            height: 12px;
+            width: 60px;
+            content: " ";
+            display: block;
+            z-index: 999;
+            border-radius: 5px 5px 0 0;
+            border: solid 1px #dc8f03;
+            background: #ffa500;
+            background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+        }
+        .deng:after {
+            position: absolute;
+            bottom: -7px;
+            left: 10px;
+            height: 12px;
+            width: 60px;
+            content: " ";
+            display: block;
+            margin-left: 20px;
+            border-radius: 0 0 5px 5px;
+            border: solid 1px #dc8f03;
+            background: #ffa500;
+            background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+        }
+        @font-face {
+            font-family: "华文行楷";
+            src: url('https://cdn.jsdelivr.net/gh/small-rose/small-rose.github.io/box/font/huawenxingkai.ttf');
+        }
+        .deng-t {
+            font-family: 华文行楷;
+            font-size: 26px;
+            color: #dc8f03;
+            font-weight: bold;
+            line-height: 44px;
+            text-align: center;
+        }
+        .night .deng-t,
+        .night .deng-box,
+        .night .deng-box1 {
+            background: transparent !important;
+        }
+        @-moz-keyframes swing {
+            0% {
+                    -moz-transform: rotate(-10deg)
+            }
+            50% {
+                 -moz-transform: rotate(10deg)
+            }
+            100% {
+                    -moz-transform: rotate(-10deg)
+            }
+        }
+        @-webkit-keyframes swing {
+            0% {
+                    -webkit-transform: rotate(-10deg)
+            }
+            50% {
+                    -webkit-transform: rotate(10deg)
+            }
+            100% {
+                    -webkit-transform: rotate(-10deg)
+            }
+        }
+    </style>
+    <div class="denglong" id="chunjie">
+    <div class="deng-box">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b"><div class="deng-t">喜迎</div></div>
+            </div>
+            <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+        </div>
+    </div>
+    <div class="deng-box1">
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b"><div class="deng-t">春节</div></div>
+            </div>
+            <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+        </div>
+    </div>
+    <!-- 元宵节灯笼样式结束 -->
+    </div>
+
+</header>
+<script>
+    if((new Date().getMonth()) > 1){
+        $('.denglong').css('display', 'none');
+    }else{
+        $('.denglong').css('display', 'block');
+    }
+</script>
+    
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('这篇文章需要密码才能看哦！')).toString(CryptoJS.enc.Hex)) {
+                alert('哎呀，密码好像不对……');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+    
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Fnotes-feature-image%2FPython.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Python学习笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">计算机语言</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-08-13
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-08-22
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    9.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    42 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><strong>笔记参考教程：（python蛇书）Python编程 从入门到时间（第2版）（ [美]埃里克 · 马瑟斯 著 袁国忠 译 ）</strong></p>
+<p><strong>此文章为个人学习笔记，仅供学习交流，不作商业用途，如果侵权，请联系站长删除</strong></p>
+<h1>Python学习笔记</h1>
+<h2 id="1-变量和简单数据类型">1.变量和简单数据类型</h2>
+<h3 id="1-1字符串">1.1字符串</h3>
+<pre class="line-numbers language-language-python"><code class="language-language-python">单引号和双引号都可以
+“This is a string“
+'This is also a string'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-1-1“方法”">1.1.1“方法”</h4>
+<p>方法后面的 “ ( ) ” 是由于某些方法通常需要额外的信息来完成其工作</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>title()</mark>——每个单词首字母大写</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">  names = "ada lovelace"
+  print(names.title())
+  ------
+  #输出得
+  Ada Lovelace
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>upper()</mark>——全大写</p>
+</li>
+<li class="lvl-2">
+<p><mark>lower()</mark>——全小写</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = "ada lovelace"
+print(names.upper())
+print(names.lower())
+------
+#输出得
+ADA LOVELACE
+ada lovelace
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-1-2变量">1.1.2变量</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>{}</mark></p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">first_name = "ada"
+last_name = "lovelace"
+full_name = f"{first_name} {last_name}"
+print(full_name)
+------
+#输出得
+ada lovelace
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-python"><code class="language-language-python">first_name = "ada"
+last_name = "lovelace"
+full_name = f"{first_name} {last_name}"
+print(f"Hello,{full_name.title()}!")
+------
+#输出得
+Hello,Ada LoveLace
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-1-3删除空白">1.1.3删除空白</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>rstrip()</mark>——删除字符后面的空</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">>>>favorite_language = 'python '
+>>>favorite_language
+'python '
+>>>favorite_language.rstrip()
+'python'
+>>>favorite_language
+'python '
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>lstrip()</mark>——删除字符前面的空</p>
+</li>
+<li class="lvl-2">
+<p><mark>strip()</mark>——删除字符前后的空</p>
+</li>
+</ul>
+<h3 id="1-2数">1.2数</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>任意两个数相除，结果总是浮点数，即使这两个数都是整数且能整除</p>
+</li>
+<li class="lvl-2">
+<p>下划线——书写很大的数用下划线区分数字分组，使其清晰易读。当打印这种带下划线的数时，Python不会打印其中的下划线</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">>>>num = 12_000_000_000
+>>>print(num)
+12000000000
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>同时给多个变量赋值</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">x,y,z = 10,20,30
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="2-列表">2.列表</h2>
+<h3 id="2-1列表是什么">2.1列表是什么</h3>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['joe','zero','kent','peter']
+print(names)
+print(names[0])
+message = 'names[0].title() is a good friend.'
+print(message)
+print(f"{names[0].title()} is a good friend.")
+------
+#输出得
+['joe', 'zero', 'kent', 'peter']
+joe
+name[0].title() is a good friend.
+
+Joe is a good friend.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果直接让Python将列表打印出来，Python将打印列表的内部表示，包括方括号</p>
+<h3 id="2-2修改、添加和删除列表元素">2.2修改、添加和删除列表元素</h3>
+<h4 id="2-2-1修改">2.2.1修改</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['joe','zro','kent','peter']
+print(names)
+names[0] = 'luffy'
+print(names)
+------
+#输出得
+['joe', 'zero', 'kent', 'peter']
+['luffy', 'zero', 'kent', 'peter']
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-2-2添加">2.2.2添加</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>append()</mark>——在列表末尾添加元素</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['luffy','zoro','usopp','sanji']
+names.append('nami')
+print(names)
+------
+#输出得
+['luffy', 'zoro', 'usopp', 'sanji', 'nami']
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>insert()</mark>——在列表中插入元素</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['luffy','zoro','usopp','sanji']
+names.insert(1,'shanks')
+print(names)
+------
+#输出得
+['luffy', 'shanks', 'zoro', 'usopp', 'sanji']
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-2-3删除">2.2.3删除</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>del</mark>——永久删除</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['luffy','zoro','usopp','sanji']
+print(names)
+del names[0]
+print(names)
+------
+#输出得
+['luffy', 'zoro', 'usopp', 'sanji']
+['zoro', 'usopp', 'sanji']
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>pop()</mark>——若括号中无值，则默认取出最后一个元素；否则，取出指定位置的元素</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['luffy','zoro','usopp','sanji']
+print(names)
+person1 = names.pop()
+person2 = names.pop(0)
+print(names)
+print(person1)
+print(person2)
+------
+#输出得
+['luffy', 'zoro', 'usopp', 'sanji']
+['zoro', 'usopp']
+sanji
+luffy
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>remove()</mark>——删除指定值的元素</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['luffy','zoro','usopp','sanji']
+print(names)
+names.remove('usopp')
+print(names)
+------
+#输出得
+['luffy', 'zoro', 'usopp', 'sanji']
+['luffy', 'zoro', 'sanji']
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-3排序">2.3排序</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>print(-1)</mark>——打印倒数第一个元素</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['luffy','zoro','usopp','sanji']
+print(names[-1])
+print(names[-2])
+------
+#输出得
+sanji
+usopp
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>sort()</mark>——按字母顺序永久排列</p>
+</li>
+<li class="lvl-2">
+<p>sort(reverse = True)——按字母反序排列</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['luffy','zoro','usopp','sanji']
+print(names)
+names.sort()
+print(names)
+names.sort(reverse=True)
+print(names)
+------
+#输出得
+['luffy', 'zoro', 'usopp', 'sanji']
+['luffy', 'sanji', 'usopp', 'zoro']
+['zoro', 'usopp', 'sanji', 'luffy']
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>sorted()</mark>——临时排列</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['luffy','zoro','usopp','sanji']
+print(sorted(names))
+print(names)
+------
+#输出得
+['luffy', 'sanji', 'usopp', 'zoro']
+['luffy', 'zoro', 'usopp', 'sanji']
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>reverse()</mark>——反转列表元素顺序</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['luffy','zoro','usopp','sanji']
+names.reverse()
+print(names)
+------
+#输出得
+['sanji', 'usopp', 'zoro', 'luffy']
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>len()</mark>——确定列表长度</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['luffy','zoro','usopp','sanji']
+length = lennames)
+print(length)
+------
+#输出得
+4
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-4遍历">2.4遍历</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>python中<mark>for循环</mark>语法：对于列表中的每个元素，都将执行循环指定的步骤，而不管列表包含多少个元素</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">for 变量 in 序列:
+  # 循环体语句
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>尤其注意，针对for循环，必须保证其循环后指定的步骤有相同的缩进</strong></p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['luffy','zoro','usopp']
+for name in names:
+    print(f'{name.title()} is a character in OnePiece.')
+    print('And I like him/her.\n')
+------
+#输出得
+Luffy is a character in OnePiece.
+And I like him/her.
+
+Zoro is a character in OnePiece.
+And I like him/her.
+
+Usopp is a character in OnePiece.
+And I like him/her.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['luffy','zoro','usopp']
+for name in names:
+    print(f'{name.title()} is a character in OnePiece.')
+print('And I like him/her.\n')
+------
+#输出得
+Luffy is a character in OnePiece.
+Zoro is a character in OnePiece.
+Usopp is a character in OnePiece.
+And I like him/her.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-5创建列表">2.5创建列表</h3>
+<h4 id="2-5-1使用函数range-list-append">2.5.1使用函数range/list/append</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>rang()</mark>——生成一系列数。</p>
+<p>e.g：range(1,5)只生成1至4，从1开始，到5结束，所以未生成5</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">for value in range(1,5)
+    print(value)
+------
+1
+2
+3
+4
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>指定步长的range()</p>
+<p>range(1,11,3)：从1至11，步长为3</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">for numb in range(1,11,3):
+    print(numb)
+------
+1
+4
+7
+10
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>list()</mark>——生成列表</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">numbs1 = range(1,5)
+print(numbs1)
+numbs2 = list(range(1,5))
+print(numbs2)
+------
+range(1, 5)
+[1, 2, 3, 4]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>append()</mark>生成列表</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">numbs = []
+for a in range(1,6):
+    numbs.append(a**2)
+print(numbs)
+------
+[1, 4, 9, 16, 25]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>其中，<mark>**</mark>表示乘方运算</p>
+<h4 id="2-5-2列表解析">2.5.2列表解析</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python">numbs = [a**2 for a in range(1,11,3)]
+print(numbs)
+------
+[1, 16, 49, 100]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-6对数字列表进行统计运算">2.6对数字列表进行统计运算</h3>
+<ol>
+<li class="lvl-3">
+<p>内置函数：</p>
+<ul class="lvl-2">
+<li class="lvl-5"><code>len()</code>：返回列表的长度（元素个数）。</li>
+<li class="lvl-5"><code>sum()</code>：返回列表中所有元素的和。</li>
+<li class="lvl-5"><code>min()</code>：返回列表中的最小值。</li>
+<li class="lvl-5"><code>max()</code>：返回列表中的最大值。</li>
+<li class="lvl-5"><code>sorted()</code>：返回一个排好序的列表副本。</li>
+</ul>
+</li>
+</ol>
+<pre class="line-numbers language-language-python"><code class="language-language-python">numbers = [3, 5, 1, 2, 4]
+
+length = len(numbers)
+total = sum(numbers)
+minimum = min(numbers)
+maximum = max(numbers)
+sorted_numbers = sorted(numbers)
+
+print(length)           # 输出：5
+print(total)            # 输出：15
+print(minimum)          # 输出：1
+print(maximum)          # 输出：5
+print(sorted_numbers)   # 输出：[1, 2, 3, 4, 5]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li class="lvl-3">
+<p>统计库 -&nbsp;<code>statistics</code>：<br>
+<code>statistics</code>&nbsp;是Python的标准库之一，提供了执行统计计算的函数，如平均值、标准差、中位数等。需要导入&nbsp;<code>statistics</code>&nbsp;模块才能使用。</p>
+</li>
+</ol>
+<pre class="line-numbers language-language-python"><code class="language-language-python">import statistics
+
+numbers = [3, 5, 1, 2, 4]
+
+mean = statistics.mean(numbers)        # 平均值
+median = statistics.median(numbers)    # 中位数
+stdev = statistics.stdev(numbers)      # 标准差
+variance = statistics.variance(numbers)# 方差
+
+print(mean)         # 输出：3.0
+print(median)       # 输出：3
+print(stdev)        # 输出：1.5811388300841898
+print(variance)     # 输出：2.5
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-7列表切片">2.7列表切片</h3>
+<h4 id="2-7-1切片">2.7.1切片</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['luffy','zoro','sanji','usopp','nami']
+print(names[0:3])     #从0号元素开始，到3号元素终止
+print(names[2:])      #从2号元素开始，到列表末尾所有元素
+print(names[:3])      #从列表开始开始，终止到3号元素
+print(names[-3:])     #从倒数第三个元素开始，到列表末尾所有元素
+print(names[:])       #从列表开头到列表末尾的所有元素
+------
+['luffy', 'zoro', 'sanji']
+['sanji', 'usopp', 'nami']
+['luffy', 'zoro', 'sanji']
+['sanji', 'usopp', 'nami']
+['luffy', 'zoro', 'sanji', 'usopp', 'nami']
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-7-2遍历切片">2.7.2遍历切片</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['luffy','zoro','sanji','usopp','nami']
+for name in names[:3]:
+    print(name.title())
+------
+Luffy
+Zoro
+Sanji
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-7-3复制列表">2.7.3复制列表</h4>
+<ol>
+<li class="lvl-3">
+<p>先看 <strong><mark>names_1 = names[:]</mark></strong> 的情况</p>
+</li>
+</ol>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['luffy','zoro','sanji','usopp','nami']
+names_1 = names[:]
+print(f'names_1 = {names_1}')
+names.append('x')
+names_1.append('y')
+print(f'names_appended = {names}')
+print(f'names_1_appended = {names_1}')
+------
+names_1 = ['luffy', 'zoro', 'sanji', 'usopp', 'nami']
+names_appended = ['luffy', 'zoro', 'sanji', 'usopp', 'nami', 'x']
+names_1_appended = ['luffy', 'zoro', 'sanji', 'usopp', 'nami', 'y']
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li class="lvl-3">
+<p>再来观察直接赋值的情况 <strong><mark>names_1 = names</mark></strong> ，<mark>这种用法是错误的</mark></p>
+</li>
+</ol>
+<pre class="line-numbers language-language-python"><code class="language-language-python">names = ['luffy','zoro','sanji','usopp','nami']
+names_2 = names
+print(f'names_2 = {names_2}')
+names.append('x')
+names_2.append('y')
+print(f'names_appended = {names}')
+print(f'names_2_appended = {names_2}')
+------
+names_2 = ['luffy', 'zoro', 'sanji', 'usopp', 'nami']
+names_appended = ['luffy', 'zoro', 'sanji', 'usopp', 'nami', 'x', 'y']
+names_2_appended = ['luffy', 'zoro', 'sanji', 'usopp', 'nami', 'x', 'y']
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以看到，情况2的names_2实则就是names，而names_1才是names的副本。</p>
+<p><u>即<strong>names_1</strong>是在<strong>names</strong>的基础上衍生出的一个新变量，而<strong>names_2</strong>只是与<strong>names</strong>相关联，可理解为<strong>names_2</strong>指向<strong>names</strong>。</u></p>
+<h3 id="2-8元组">2.8元组</h3>
+<blockquote>
+<p><u>列表是可变的，而元组是不可变的，但用来存储元组的变量是可以变的。</u></p>
+<p>元组很像列表，<u>但是元组使用<strong>圆括号</strong>而非<strong>中括号</strong>来标识</u>。访问元组的过程同列表。</p>
+<p>严格来说，<strong><u>元组是由逗号标识的</u></strong>，圆括号只是为了让元组看起来更加整洁和清晰。<mark>如果要定义一个只包含一个元素的元组，必须在这个元素的后面加上逗号</mark>。</p>
+</blockquote>
+<pre class="line-numbers language-language-python"><code class="language-language-python">numbs = (1123,118)
+print(numbs[0])
+print(numbs[1])
+------
+1123
+118
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><mark>若要尝试修改元组的值，则会产生报错</mark></p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">numbs = (1123,118)
+numbs[0] = [666]
+------
+Traceback (most recent call last):
+  File "d:\Study\extracurricular\Python\temp.py", line 2, in <module>
+    numbs[0] = [666]
+    ~~~~~^^^
+TypeError: 'tuple' object does not support item assignment
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><mark>但修改元组变量指向的值是可以的</mark></p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">numbs = (1123,118)
+print(numbs)
+numbs = (1123,)
+print(numbs)
+------
+(1123, 118)
+(1123,)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-if语句">3.if语句</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>通用语法</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">if 条件:
+    # 满足条件时执行的代码块
+else:
+    # 不满足条件时执行的代码块
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-python"><code class="language-language-python">if 条件1:
+    # 满足条件1时执行的代码块
+elif 条件2:
+    # 满足条件2时执行的代码块
+elif 条件3:
+    # 满足条件3时执行的代码块
+else:
+    # 所有条件都不满足时执行的代码块
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>and</mark>&nbsp;&nbsp;&nbsp;&nbsp;如果你想要检查多个条件都为真，你可以使用 “and” 运算符。例如：</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">if 条件1 and 条件2:
+    # 当条件1 和 条件2 都为真时执行的代码
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>or</mark>&nbsp;&nbsp;&nbsp;&nbsp;如果你想要检查多个条件中至少一个为真，你可以使用 “or” 运算符。例如：</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">if 条件1 or 条件2:
+    # 当条件1 或 条件2 其中一个为真时执行的代码
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>此外，你还可以结合使用括号来明确条件的组合关系。例如：</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">if (条件1 and 条件2) or 条件3:
+    # 当条件1 和 条件2 都为真，或者条件3为真时执行的代码
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>in</mark>&nbsp;&nbsp;&nbsp;&nbsp;要检查特定值是否<strong>包含</strong>在列表中，你可以使用&nbsp;<code>in</code>&nbsp;运算符。示例如下：</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">my_list = [1, 2, 3, 4, 5]
+
+if 3 in my_list:
+    # 当列表中包含值为 3 时执行的代码
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>not in</mark>&nbsp;&nbsp;&nbsp;&nbsp;如果要检查特定值是否<strong>不包含</strong>在列表中，你可以使用&nbsp;<code>not in</code>&nbsp;运算符。示例如下：</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">my_list = [1, 2, 3, 4, 5]
+
+if 6 not in my_list:
+    # 当列表中不包含值为 6 时执行的代码
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>布尔表达式</mark></p>
+</li>
+</ul>
+<p>布尔表达式是一种逻辑表达式，用于在编程中表示条件判断的结果。布尔表达式的结果只能是两个值之一：True（真）或 False（假）。</p>
+<p>布尔表达式通常使用比较运算符（如相等、大于、小于等）和逻辑运算符（如与、或、非等）进行构建，它们用于比较值、执行逻辑操作和连接多个条件。</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">Luffy = 'Pirate King'
+print("Is Luffy  the 'Pirate King'?I predict True!")
+print("Luffy == 'Pirate King'")     #print中为普通语句
+print(Luffy == 'Pirate King')       #print中为布尔表达式
+------
+Is Luffy  the 'Pirate King'?I predict True!
+Luffy == 'Pirate King'
+True
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-字典">4.字典</h2>
+<p><strong>字典</strong>是一系列<strong>键值对</strong>，每个键都与一个值相关联。</p>
+<h3 id="4-1访问字典中的值">4.1访问字典中的值</h3>
+<pre class="line-numbers language-language-python"><code class="language-language-python">NikaMan = {'name': 'Luffy', 'gender': 'man','age':19 }
+print(f'Nikaman is a {NikaMan["gender"]}.)
+------
+Nikaman is a man.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-2添加键值对">4.2添加键值对</h3>
+<pre class="line-numbers language-language-python"><code class="language-language-python">NikaMan = {'name': 'Luffy', 'gender': 'man'}
+print(NikaMan)
+NikaMan['age'] = 19
+print(NikaMan)
+------
+{'name': 'Luffy', 'gender': 'man'}
+{'name': 'Luffy', 'gender': 'man', 'age': 19}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-3删除键值对">4.3删除键值对</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><mark>del NikaMan[‘age’]</mark></p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">NikaMan = {'name': 'Luffy', 'gender': 'man','age': 19}
+print(NikaMan)
+del NikaMan['age']
+print(NikaMan)
+------
+{'name': 'Luffy', 'gender': 'man', 'age': 19}
+{'name': 'Luffy', 'gender': 'man'}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-4字典另一种表达形式">4.4字典另一种表达形式</h3>
+<pre class="line-numbers language-language-python"><code class="language-language-python">favorite_language = {
+    'lixiang': 'python',
+    'z': 'c',
+    'kaifeng': 'cpp',
+    'lxq': 'java'
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>注意：每行后面的<mark>逗号 ‘,’ 不能掉</mark></strong></p>
+<h3 id="4-5使用get-来访问值">4.5使用get()来访问值</h3>
+<p><strong>方法get()的第一个参数用来用于指定键，第二个参数为指定键不存在时要返回的值，是可选的。</strong></p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">favorite_language = {
+    'lixiang': 'python',
+    'z': 'c',
+    'kaifeng': 'cpp',
+    'lxq': 'java'
+}
+print(favorite_language.get('ncc','No such key'))
+print(favorite_language.get('ncc'))
+print(favorite_language.get('lxq','Can not find'))
+------
+No such key
+None       
+java  
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-6遍历字典">4.6遍历字典</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>key</code>字典中的键</p>
+</li>
+<li class="lvl-2">
+<p><code>value</code>字典中的值</p>
+</li>
+<li class="lvl-2">
+<p><code>items()</code>是<mark>字典对象</mark>的方法</p>
+</li>
+<li class="lvl-2">
+<p><code>keys()</code>是<mark>访问字典键</mark>的方法</p>
+</li>
+<li class="lvl-2">
+<p><code>value()</code>是<mark>访问字典值</mark>的方法</p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">Person = {'name': 'Z', 'gender': 'man', 'age': 20, 'PhoneNumbe':123456 }
+for key,value in Person.items():
+    print(key,value)
+------
+name Z
+gender man       
+age 20
+PhoneNumbe 123456
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>其中，<u>key和value不是一定的，只是一个命名</u>，为了便于理解，可以用其他的命名方式，如下：</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">favorite_language = {
+    'Z': 'C',
+    'lx': 'Python',
+    'lxq': 'cpp',
+    'zkf': 'Java'
+}
+for name,language in favorite_language.items():
+    print(f"{name.title()}'s language is {language}")
+------
+Z's language is C      
+Lx's language is Python
+Lxq's language is cpp  
+Zkf's language is Java 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>访问字典键和字典值的方法如下：</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">favorite_language = {
+    'Z': 'C',
+    'lx': 'Python',
+    'lxq': 'cpp',
+    'zkf': 'Java'
+}
+if 'ncc' not in favorite_language.keys():
+    print("NCC is not a key in favorite_language")
+if 'Java' in favorite_language.values():
+    print("Somebody likes Java.")
+------
+NCC is not a key in favorite_language
+Somebody likes Java.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-python"><code class="language-language-python">favorite_language = {
+    'Z': 'C',
+    'lx': 'Python',
+    'lxq': 'cpp',
+    'zkf': 'Java'
+}
+keys = sorted(favorite_language.keys(),reverse = Ture)
+for key in keys:
+    print(key.title())
+------
+Zkf
+Lxq
+Lx
+Z
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-7嵌套">4.7嵌套</h3>
+<h4 id="4-7-1在列表中存储字典">4.7.1在列表中存储字典</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python">## Make an empty list for storing aliens.
+aliens = []
+
+## Make 30 green aliens.
+for alien_number in range(30):
+    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+    aliens.append(new_alien)
+
+for alien in aliens[:3]:
+    if alien['color'] == 'green':
+        alien['color'] = 'yellow'
+        alien['speed'] = 'medium'
+        alien['points'] = 10
+
+## Show the first 5 aliens.
+for alien in aliens[:5]:
+    print(alien)
+print("...")
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-7-2在字典中存储列表">4.7.2在字典中存储列表</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python"> # Store information about a pizza being ordered.
+pizza = {
+    'crust': 'thick',
+    'toppings': ['mushrooms', 'extra cheese'],
+    }
+
+## Summarize the order.
+print(f"You ordered a {pizza['crust']}-crust pizza "
+    "with the following toppings:")
+
+for topping in pizza['toppings']:
+    print("\t" + topping)
+------
+You ordered a thick-crust pizza with the following toppings:
+        mushrooms   
+        extra cheese
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-7-3在字典中存储字典">4.7.3在字典中存储字典</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python">users = {
+    'aeinstein': {
+        'first': 'albert',
+        'last': 'einstein',
+        'location': 'princeton',
+        },
+
+    'mcurie': {
+        'first': 'marie',
+        'last': 'curie',
+        'location': 'paris',
+        },
+
+    }
+
+for username, user_info in users.items():
+    print(f"\nUsername: {username}")
+    full_name = f"{user_info['first']} {user_info['last']}"
+    location = user_info['location']
+
+    print(f"\tFull name: {full_name.title()}")
+    print(f"\tLocation: {location.title()}")
+------
+Username: aeinstein
+        Full name: Albert Einstein
+        Location: Princeton       
+
+Username: mcurie
+        Full name: Marie Curie    
+        Location: Paris
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="5-用户输入与while循环">5.用户输入与while循环</h2>
+<h3 id="5-1-函数input工作原理">5.1 函数input工作原理</h3>
+<p>函数<code>input()</code>让程序暂停运行，等待用户输入一些文本。获取用户输入后，Python将其赋给一个变量，以方便你使用。</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">messgae = input("Tell me something, and I will repeat it back to you: ")
+print(message)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>函数<code>input()</code>接受一个参数，用于向用户显示提示或说明。</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">prompt = "\nTell me something, and I will repeat it back to you!"
+prompt += "\nEnter 'quit' to end the program.\n>>>"
+
+active = True
+while active:
+    message = input(prompt)
+
+    if message == 'quit':
+        active = False
+    else:
+        print(message)
+------
+Tell me something, and I will repeat it back to you!
+Enter 'quit' to end the program.
+>>>Hello!
+Hello!
+
+Tell me something, and I will repeat it back to you!
+Enter 'quit' to end the program.
+>>>quit
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-1-1使用int-来获取数值输入">5.1.1使用int()来获取数值输入</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python">height = input("How tall are you, in inches? ")
+height = int(height)
+
+if height >= 48:
+    print("\nYou're tall enough to ride!")
+else:
+    print("\nYou'll be able to ride when you're a little older.")
+------
+How tall are you, in inches? 60
+
+You're tall enough to ride!
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>int(height)</code>将height中所得到的字符变量转换成数值变量，类似于C语言强制转换。</p>
+<h4 id="5-1-2求模运算符">5.1.2求模运算符</h4>
+<p><code>%</code>将两个数相除并返回余数</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">>>> 4 % 3
+1
+>>> 5 % 3
+2
+>>> 6 % 3
+0 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-2while循环">5.2while循环</h3>
+<p>while循环中<code>break</code>结束语句和<code>continue</code>结束语句的区别</p>
+<p><mark>while</mark></p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">prompt = "\nPlease enter the name of a city you have visited!"
+prompt += "\n(Enter 'quit' when you are finished.)\n"
+
+while True:
+    city = input(prompt)
+
+    if city == 'quit':
+        break
+    else:
+        print(f"I'd love to go to {city.title()}!")
+------
+Please enter the name of a city you have visited!
+(Enter 'quit' when you are finished.)
+Wuhan
+I'd love to go to Wuhan!
+
+Please enter the name of a city you have visited!
+(Enter 'quit' when you are finished.)
+Shanghai
+I'd love to go to Shanghai!
+
+Please enter the name of a city you have visited!
+(Enter 'quit' when you are finished.)
+quit
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><mark>continue</mark></p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">current_number = 0
+while current_number < 10:
+    current_number += 1
+    if current_number % 2 == 0:
+        continue
+
+    print(current_number)
+------
+1
+3
+5
+7
+9
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>break</code>是终止整个while循环，<code>continue</code>是终止本次while循环</p>
+</li>
+</ul>
+<h2 id="6-函数">6.函数</h2>
+<h3 id="6-1传递实参">6.1传递实参</h3>
+<h4 id="6-1-1位置实参">6.1.1位置实参</h4>
+<p><strong>基于实参的顺序，将函数调用中的每个实参都关联到函数定义中的一个形参。</strong></p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">def describe_pet(animal_type, pet_name):
+    """Display information about a pet."""
+    print(f"\nI have a {animal_type}.")
+    print(f"My {animal_type}'s name is {pet_name.title()}.")
+
+describe_pet('cat', 'harry')
+describe_pet('dog', 'willie')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>使用位置实参来调用函数时，如果实参的顺序不正确，则会造成错误结果</strong></p>
+<h4 id="6-1-2关键字实参">6.1.2关键字实参</h4>
+<p><strong>使用关键字实参时，实参的顺序无关紧要，Python能够自动识别哪个实参的具体值该赋给哪个形参</strong></p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">def describe_pet(animal_type, pet_name):
+    """Display information about a pet."""
+    print(f"\nI have a {animal_type}.")
+    print(f"My {animal_type}'s name is {pet_name.title()}.")
+
+describe_pet(animal_type='cat', pet_name='harry')
+describe_pet(pet_name='willie', animal_type='dog')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-1-3指定默认值的形参">6.1.3指定默认值的形参</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python">def describe_pet(pet_name, animal_type='dog'):
+    """Display information about a pet."""
+    print(f"\nI have a {animal_type}.")
+    print(f"My {animal_type}'s name is {pet_name.title()}.")
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>对上述带默认值的形参，以下几种函数调用都是等效的</strong></p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">#一只名为Willie的小狗
+describe_pet('willie')
+describe_pet(pet_name='willie')
+#一只名为harry的小猫
+describe_pet('harry', 'cat')
+describe_pet(pet_name='harry', animal_type='cat')
+describe_pet(animal_type='cat', pet_name='harry')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-1-4可选实参">6.1.4可选实参</h4>
+<p>有的人无中间名，所有中间名这个参数是可选的，则将中间名放到函数形参的最后一个位置，以保证函数仅提供名和姓时该函数能够正确运行</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">def get_formatted_name(first_name, last_name, middle_name=''):
+    """Return a full name, neatly formatted."""
+    if middle_name:
+        full_name = f"{first_name} {middle_name} {last_name}"
+    else:
+        full_name = f"{first_name} {last_name}"
+    return full_name.title()
+    
+musician = get_formatted_name('jimi', 'hendrix')
+print(musician)
+
+musician = get_formatted_name('john', 'hooker', 'lee')
+print(musician)
+------
+Jimi Hendrix
+John Lee Hooker
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-1-5传递任意数量的实参">6.1.5传递任意数量的实参</h4>
+<h4 id="1-parameter元组形参法">1.<code>*parameter</code>元组形参法</h4>
+<p>形参名<code>*parameter</code>中的星号让Python创建一个名为<code>parameter</code>的空元组，并将收到的所有值都封装到这个元组中。</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">def make_pizza(size, *toppings):
+    """Summarize the pizza we are about to make."""
+    print(f"\nMaking a {size}-inch pizza with the following toppings:")
+    for topping in toppings:
+        print(f"- {topping}")
+
+make_pizza(16,'pepperoni')
+make_pizza(12,'mushrooms', 'green peppers', 'extea cheese')
+
+------
+Making a 16-inch pizza with the following toppings:
+- pepperoni
+
+Making a 12-inch pizza with the following toppings:
+- mushrooms
+- green peppers
+- extea cheese
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-parameter字典形参法">2.<code>**parameter</code>字典形参法</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python">def build_profile(first, last, **user_info):
+    """Build a dictionary containing everything we know about a user."""
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+    return user_info
+
+user_profile = build_profile('albert', 'einstein',
+                             location='princeton',
+                             field='physics')
+print(user_profile)
+
+------
+{'location': 'princeton', 'field': 'physics', 'first_name': 'albert', 'last_name': 'einstein'}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-2函数返回值">6.2函数返回值</h3>
+<p>返回字典的情况</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">def build_person(first_name, last_name, age=None):
+    """Return a dictionary of information about a person."""
+    person = {'first': first_name, 'last': last_name}
+    if age:
+        person['age'] = age
+    return person
+
+musician = build_person('jimi', 'hendrix', age=27)
+print(musician)
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-3控制函数能否修改实参">6.3控制函数能否修改实参</h3>
+<p>Python中，将一个实参传进函数，函数是会修改实参的值的。</p>
+<p>若不想改变实参的值，则传进函数中的应该是实参的副本。</p>
+<p>例如对于列表，则用列表切片法<code>[:]</code>建立副本，示例如下：</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">def change_list(list):
+    """
+    改变列表的值
+    """
+    while list:
+        del list[0]
+
+subjects = ['math', 'physics', 'chemistry']
+print(subjects)
+change_list(subjects)
+print(subjects)
+------
+['math', 'physics', 'chemistry']
+[]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-python"><code class="language-language-python">def change_list(list):
+    """
+    改变列表的值
+    """
+    while list:
+        del list[0]
+
+subjects = ['math', 'physics', 'chemistry']
+print(subjects)
+change_list(subjects[:])
+print(subjects)
+------
+['math', 'physics', 'chemistry']
+['math', 'physics', 'chemistry']
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-4导入函数或模块">6.4导入函数或模块</h3>
+<h4 id="6-4-1导入整个模块">6.4.1导入整个模块</h4>
+<ol>
+<li class="lvl-3">
+<p>在<code>pizza.py</code>中编写函数<code>make_pizza()</code></p>
+</li>
+<li class="lvl-3">
+<p>在<code>main.py</code>中使用<u><strong><code>import pizza</code></strong></u>导入整个<code>pizza.py</code>模块</p>
+</li>
+<li class="lvl-3">
+<p>使用<code>pizza.py</code>模块中的函数`make_pizza()’</p>
+</li>
+<li class="lvl-3">
+<p>使用格式：<strong><u><code>pizza.make_pizza()</code></u></strong></p>
+<p>即**<u><code>module_name.function_name()</code></u>**</p>
+<p>注意：使用时文件名和函数名之间有句点！</p>
+</li>
+</ol>
+<h4 id="6-4-2导入特定的函数">6.4.2导入特定的函数</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>语法：<strong><u><code>from module_name import function_name</code></u></strong></p>
+</li>
+<li class="lvl-2">
+<p>使用逗号分隔函数名，可根据需要从模块中导入任意数量的函数：</p>
+<p><strong><u><code>from module_name import function0, function1, function2</code></u></strong></p>
+</li>
+<li class="lvl-2">
+<p>使用这种语法时，为显式导入，调用函数时无须使用句点</p>
+</li>
+</ul>
+<h4 id="6-4-3使用as给函数指定别名">6.4.3使用<code>as</code>给函数指定别名</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>通用语法：<strong><u><code>from module_name import function_name as fn</code></u></strong></p>
+</li>
+<li class="lvl-2">
+<p>e.g.</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">from pizza import make_piza as mp
+
+mp(16,'pepperoni')
+mp(12,'mushrooms', 'green peppers', 'extea cheese')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h4 id="6-4-4使用as给模块指定别名">6.4.4使用<code>as</code>给模块指定别名</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>通用语法：<strong><u><code>import module_name as mn</code></u></strong></p>
+</li>
+<li class="lvl-2">
+<p>e.g.</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">import pizza as p
+
+p.make_pizza(16,'pepperoni')
+p.make_pizza(12,'mushrooms', 'green peppers', 'extea cheese')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h4 id="6-4-5导入模块中的所有函数">6.4.5导入模块中的所有函数</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>优点：相较于导入整个模块，此方法导入整个模块中的所有函数可以**<u>避免使用句点表示法</u>**</p>
+</li>
+<li class="lvl-2">
+<p>缺点：使用自己编写的大型模块时，若采用这种表示方法，可能会由于模块中有函数的名称与当前项目中已有的函数名称相同，导致函数的覆盖和错误使用。</p>
+</li>
+<li class="lvl-2">
+<p>通用语法：<strong><u><code>from module_name import *</code></u></strong></p>
+</li>
+</ul>
+<h2 id="7-类">7.类</h2>
+<blockquote>
+<p>PS：由于自己一个个字敲太花时间了，类的这部分笔记是直接copy后修改了一些，找的这一篇也都是照着蛇书一个个字敲的，所以也刚好“适配”和“兼容”，特别感谢作者！以下附链接：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/QINGDI1122/article/details/108048515">python – 类（学习笔记）_stayfsh的博客-CSDN博客</a></p>
+</blockquote>
+<p>面向对象编程是最有效的软件编写方法之一。在面向对象编程中，我们编写表示现实世界中事务和情景的类，并基于这些类创建。根据类来创建对象被称为实例化，这让我们能使用类的实例。</p>
+<h3 id="7-1-创建和使用类">7.1 创建和使用类</h3>
+<h4 id="7-1-1-创建Dog类">7.1.1 创建Dog类</h4>
+<p>根据Dog类创建的每个实例都将存储名字和年龄。我们赋予了每条小狗蹲下（sit（））和打滚（roll_over（））的能力。</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">class Dog:
+    """一次模拟小狗的简单尝试。"""
+    
+    def __init__(self,name,age):
+        """初始化属性name和age。"""
+        self.name = name
+        self.age = age
+        
+    def sit(self):
+        """模拟小狗被命令时蹲下"""
+        print(self.name.title() +"is now sitting.")
+        
+    def roll_over(self):
+        """模拟小狗被命令时打滚"""
+        print(self.name.title()+"rolled over!")
+        /print(f"{self.name} rolled over!")
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>根据约定，在Python中，<strong>首字母大写</strong>的名称指的是<strong>类</strong>，这个类定义中没有圆括号，因为我们要从空白创建这个类。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>方法<code>_init_()</code>:</strong></p>
+</li>
+<li class="lvl-2">
+<p>类中的函数称为方法；<code>_ init_()</code>方法是一个特殊方法，每当我们根据Dog类创建实例时，python都会自动运行它。</p>
+</li>
+<li class="lvl-2">
+<p>在上面例子中我们将方法_init_（）定义成包含三个形参：<code>self</code>，<code>name</code>，<code>age</code>。在这个方法的定义中，形参<code>self</code>必不可少，而且要位于其他形参之前，这是因为python调用这个<code>_init_()</code>方法创建实例时，将自动传入实参self。每个与类相关联的方法调用都自动传递实参<code>self</code>，它是一个指向实例本身的引用，让实例能访问类中属性和方法。</p>
+</li>
+<li class="lvl-2">
+<p>我们创建Dog实例时，python将调用Dog类的方法<code>_init_()</code>。我们将通过实参向<code>Dog()</code>传递名字和年龄；<code>self</code>会自动传递，因此我们不需要传递它。</p>
+</li>
+<li class="lvl-2">
+<p>Dog类还定义了另外两个方法：<code>sit()</code>和<code>roll_over()</code>。由于这些方法不需要额外的信息，如名字和年龄，因此它们只有一个形参self。</p>
+</li>
+</ul>
+<h4 id="7-1-2-根据类创建实例">7.1.2 根据类创建实例</h4>
+<p>可将类视为有关如何创建实例的说明。Dog类是一系列说明，让Python知道如何创建表示特定小狗的实例。下面来创建一个表示特定小狗的实例：</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">class Dog:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+    def sit(self):
+        """模拟小狗被命令时蹲下"""
+        print(self.name.title() +"is now sitting.")
+    def roll_over(self):
+        """模拟小狗被命令时打滚"""
+        print(self.name.title()+"rolled over!")
+
+my_dog=Dog('willie',6)
+print("My dog's name is"+my_dog.name.title()+".")
+print("My dog is"+str(my_dog.age)+"year old.")
+####
+My dog's name isWillie.
+My dog is 6 year old.
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里使用的是之前编写的Dog类，我们创建一条名字为 ‘wille’ ，年龄为6的小狗。遇到这行代码时，python使用实参 ‘wille’ 和 6调用Dog类中的方法 <code>_ init_()</code>。方法_ <code>_init_()</code>创建一个表示特定小狗的实例，并使用我们提供的值来设置属性name和age。方法<code>_ init_()</code>并未显示的包含return语句，但python自动返回一个表示这条小狗的的实例。我们将这个实例存储在变量my_dog中。</p>
+<p><strong>调用方法</strong></p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">my_dog.sit()
+my_dog.roll_over()
+###
+Willieis now sitting.
+Willierolled over!
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>创建多个实例</strong></p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">my_dog = Dog('willie',6)
+your_dog = Dog('lucy',3)
+
+print("My dog's name is"+my_dog.name.title()+".")
+print("My dog is "+str(my_dog.age)+" year old.")
+my_dog.sit()
+my_dog.roll_over()
+
+print("\nYour dog's name is "+your_dog.name.title()+".")
+print("Your dog is "+str(your_dog.age)+"years old.")
+your_dog.sit()
+your_dog.roll_over()
+####
+My dog's name isWillie.
+My dog is 6 year old.
+Willie is now sitting.
+Willie rolled over!
+
+Your dog's name is Lucy.
+Your dog is 3 years old.
+Lucyis now sitting.
+Lucyrolled over!
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在这里我们创建了两条小狗，分别命名为willie和lucy。每条小狗都是一个独立的实例，有自己的一组属性。</p>
+<h3 id="7-2使用类和实例">7.2使用类和实例</h3>
+<p>我们可以用类来模拟现实世界中的很多情景。类编写好后，我们的大部分时间都将花费在类创建的实例上。我们需要执行的一个重要任务是修改实例的属性。我们可以直接修改实例的属性，也可以编写方法以特定的方式进行修改。</p>
+<h4 id="7-2-1-Car-类">7.2.1 Car 类</h4>
+<p>下面来编写一个汽车类，它存储了有关汽车的信息，还有一个汇总这些信息的方法：</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">class Car:
+	"""一次模拟汽车的简单尝试"""
+	
+    def __init__(self,make,model,year):
+    	"""初始化汽车属性"""
+        self.make = make
+        self.model = model
+        self.year = year
+        
+    def get_descriptive_name(self):
+        """返回整洁的描述性信息"""
+        long_name = str(self.year)+' '+self.make+' '+self.model
+        return long_name.title()
+
+my_new_car=Car('audi','a4',2023)
+print(my_new_car.get_descriptive_name())
+###
+2023 Audi A4
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="7-2-2-给属性指定默认值">7.2.2 给属性指定默认值</h4>
+<p>类中的每个属性都必须有初始值，哪怕这个值是零或者空字符。在有些情况下，如果设置默认值时，在方法<code>_init_()</code>内指定这种初始值是可行的。如果我们对某个属性这样做了，就无须包含为它提供初始值的形参。</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">class Car:
+    def __init__(self,make,model,year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+        
+    def get_descriptive_name(self):
+        long_name=str(self.year) + ' ' + self.make + ' ' + self.model
+        return long_name.title()
+    
+    def read_odometer(self):
+        """打印汽车里程信息"""
+        print("This car has " + str(self.odometer_reading) + " miles on it.")
+        
+my_new_car = Car('audi','a4',2023)
+print(my_new_car.get_descriptive_name())
+my_new_car.read_odometer()
+
+####
+2023 Audi A4
+This car has 0 miles on it.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面程序中添加了一个名为<code>odometer_reading</code>的属性，其初始值总是为0.我们还添加了一个名为<code>read_odometer()</code>方法，用于读取汽车的里程表。</p>
+<h4 id="7-2-3-修改属性的值">7.2.3 修改属性的值</h4>
+<p>可以以三种不同的方式修改属性的值：直接通过实例进行修改；通过方法进行设置；通过方法进行设置；通过方法进行递增（增加特定的值）。</p>
+<ol>
+<li class="lvl-3">
+<p><strong>直接修改属性的值</strong></p>
+</li>
+</ol>
+<pre class="line-numbers language-language-python"><code class="language-language-python">my_new_car.odometer_reading = 23
+my_new_car.read_odometer()
+
+####
+This car has 23 miles on it.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li class="lvl-3">
+<p><strong>通过方法修改属性的值</strong></p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">class Car:
+	--snip--
+       
+	def update_odometer(self,mileage):
+    	"""
+    	通过方法修改属性的值
+    	且禁止将里程数往回调
+    	"""
+		if mileage >= self.odometer_reading:
+			self.odometer_reading = mileage
+        else:
+        	print("You can't roll back an odometer!")
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们新增的<code>update_odometer()</code>会在修改属性前检查指定的读书是否合理。</p>
+</li>
+<li class="lvl-3">
+<p><strong>通过方法对属性的值进行递增</strong></p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">class Car:
+	--snip--
+    
+	def update_odometer(self,mileage):
+		--snip--
+        
+	def increment_odometer(self,miles):
+        """将里程表数增加一个指定的量"""
+		self.odometer_reading += miles
+
+my_new_car=Car('subaru','outback',2013)
+print(my_new_car.get_descriptive_name())
+
+my_new_car.update_odometer(23500)
+my_new_car.read_odometer()
+
+my_new_car.increment_odometer(100)
+my_new_car.read_odometer()
+
+####
+2013 Subaru Outback
+This car has 23500 miles on it.
+This car has 23600 miles on it.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>新增的方法increment_odometer（）接受一个单位为英里的数字，并将其加入到self.odometer_reading中。</p>
+</li>
+</ol>
+<h3 id="7-3继承">7.3继承</h3>
+<p>编写类时，并非总是要从空白开始。如果我们要编写的类时另一个现成类的特殊版本，可以考虑使用<strong>继承</strong>。一个类继承另一个类时，<strong>它将自动获得另一个类的所有属性和方法</strong>；原有的类称为<strong>父类</strong>，而新的类称为<strong>子类</strong>。子类继承其父类的所有属性和方法，<strong>同时还可以定义自己属性和方法</strong>。</p>
+<h4 id="7-3-1子类的方法-init">7.3.1子类的方法<code>_init_()</code></h4>
+<p>下面，我们在前面创建的<code>Car</code>类的基础上创建新类<code>ElectricCar</code>，这样我们只需要为电动汽车特有的属性和行为编写代码。</p>
+<p><mark>创建子类时，父类必须包含在当前文件夹中，且位于子类前面。</mark><mark>定义子类时，必须在圆括号内指定父亲的名称</mark>例如，下面定义子类时，<code>ElectricCar</code>后又括号且括号中有内容<code>Car</code>，即定义时，代码为<code>class ElectricCar(Car)</code>。</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">class Car:
+   --snip--
+
+class ElectricCar(Car):
+    """电动汽车子类"""
+    def __init__(self,make,model,year):
+        """初始化父类的属性"""
+        super().__init__(make,model,year)
+
+my_tesla = ElectricCar('tesla','model s',2016)
+print(my_tesla.get_descriptive_name())
+####
+2016 Tesla Model S
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><mark><code>super()</code><mark>是一个特殊函数，帮助python将父类和子类关联起来。这行代码让python调用<code>Car</code>父类的方法<code>_init_()</code>,让ElectricCar实例包含这个方法中定义的所有属性。父类也称为</mark>超类</mark>，名称<code>super</code>也由此而来。</p>
+<h4 id="7-3-2-给子类定义属性和方法">7.3.2 给子类定义属性和方法</h4>
+<p>下面我们来添加一个电动车特有属性（电瓶），以及一个描述该属性的方法。我们将存储电瓶容量，并且编写一个打印电瓶描述的方法：</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">class Car:
+   --snip--
+
+class ElectricCar(Car):
+    
+    def __init__(self,make,model,year):
+        super().__init__(make,model,year)
+        self.battery_size = 70
+        
+    def describe_battery(self):
+        print("This car has a " + str(self.battery_size) + "-kWh battery.")
+
+my_tesla = ElectricCar('tesla','model s',2016)
+print(my_tesla.get_descriptive_name())
+my_tesla.describe_battery()  
+
+####
+2016 Tesla Model S
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="7-3-3-重写父类的方法">7.3.3 重写父类的方法</h4>
+<p>对于父类的方法，只要它有不符合子类模拟的实物的行为，都可以对其进行重写。为此，可以在子类中定义一个这样的方法，即它要与重写的父类方法同名。这样，python将只会关注我们在子类中定义的相应方法。</p>
+<p>假设<code>Car</code>类有一个名为<code>fill_gas_tank()</code>的方法，它对全电动汽车来说毫无意义，因此你可能想重写它。下面演示了一种重写方式。</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">class ElectricCar(Car)：
+	--snip--
+	
+	def fill_gas_tank(self):
+        """电动汽车没有油箱。"""
+        print("This car doenn't need a gas tank!")
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3.1.3 重写父类的方法对于父类的方法，只要它有不符合子类模拟的实物的行为，都可以对其进行重写。为此，可以在子类中定义一个这样的方法，即它要与重写的父类方法同名。这样，python将只会关注我们在子类中定义的相应方法。</p>
+<h4 id="7-3-4-将实例用作属性">7.3.4 将实例用作属性</h4>
+<p>使用代码模拟实物时，我们可能会发现给类添加的细节越来越多：属性和方法清单以及文件都越来越长。在这种情况下，可能需要将类的一部分作为一个独立的类提取出来。我们可以将大类拆分成多个协同工作的小类。例如，不断给<code>ElectricCar</code>类添加细节时，我们可能会发现其中包含很多专门针对汽车电脑电瓶的属性和方法。在这种情况下，我们可将这些属性和方法提取出来，放到另一个名为<code>Battery</code>的类中，并将一个<code>Battery</code>实例用作<code>ElectricCar</code>类的一个属性：</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">class Car:
+   --snip--
+
+
+class Battery:
+    """一次模拟电动车电瓶的简单尝试"""
+    
+    def __init__(self,battery_size=70):
+        """初始化电瓶的属性"""
+        self.battery_size=battery_size
+        
+    def describe_battery(self):
+        """打印一条描述电瓶的容量"""
+        print("This car has a "+str(self.battery_size)+"-kWh battery.")
+
+
+class ElectricCar(Car):
+    """电动汽车的独特之处"""
+    
+    def __init__(self,make,model,year):
+        """
+        初始化父类的属性
+        在初始化电动汽车特有的属性
+        """
+        super().__init__(make,model,year)
+        self.battery = Battery()
+
+my_tesla = ElectricCar('tesla','model s',2016)
+
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()
+
+
+####
+2016 Tesla Model S
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面的代码看似做了很多额外的工作，但好处是现在我们多详细描述电瓶都可以，切不会导致<code>ElectricCar</code>类混乱不堪。</p>
+<h3 id="7-4导入类">7.4导入类</h3>
+<p>python允许我们将类存储在模块中，然后在主程序中导入所需的模块。</p>
+<h4 id="7-4-1-导入单个类">7.4.1 导入单个类</h4>
+<p>我们可以创建一个只包含<code>Car</code>类的模块，我们可以将这个模块命名为<code>car.py</code>。然后我们可以新创建其他文件，并在其中导入我们创建好的<code>Car</code>模块。例如，我们创建新文件<code>new_car</code>：</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">from car import Car
+
+my_new_car=Car('auid','a4',2016)
+print(my_new_car.get_descriptive_name())
+
+my_new_car.odometer_reading =23
+my_new_car.read_odometer()
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>第一句处的<code>import</code>语句让python打开模块<code>car</code>，并导入其中的<code>Car</code>类，这样我们就可以使用<code>Car</code>类了。</p>
+<h4 id="7-4-2-在一个模块中存储多个类">7.4.2 在一个模块中存储多个类</h4>
+<h4 id="7-4-3-从一个模块中导入多个类">7.4.3 从一个模块中导入多个类</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python">from car import Car，ElectriCar
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="7-4-4-导入整个模块">7.4.4 导入整个模块</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python">import car
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="7-4-5-导入模块中所有类">7.4.5 导入模块中所有类</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python">from module_name import *
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>不推荐这种方法，原因如下：</p>
+<ol>
+<li class="lvl-3">
+<p>如果只看开头的<code>import</code>语句，就能清楚地知道程序使用了哪些类，将大有裨益。然而这种导入方式没有明确地指出使用了模块中的哪些类。</p>
+</li>
+<li class="lvl-3">
+<p>如果不小心导入了一个与程序文件中其他东西<strong>同名</strong>的类，将引发难以诊断的错误。</p>
+</li>
+</ol>
+<h4 id="7-4-6使用别名">7.4.6使用别名</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python">from electric_car import ElectricCar as EC
+
+my_tesla = EC('tesla', 'roadster'. 2023)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-5类编码风格">7.5类编码风格</h3>
+<ol>
+<li class="lvl-3">
+<p>类名应该采用<mark>驼峰命名法</mark>，即将类名中的<strong>每个单词的首字母都大写</strong>，而不使用<strong>下划线</strong></p>
+</li>
+<li class="lvl-3">
+<p>实例名和模块名都采用小写格式，并在单词之间加上下划线。</p>
+</li>
+<li class="lvl-3">
+<p>对于每个模块/类/方法，都应该在定义后面包含一个文档字符串</p>
+</li>
+<li class="lvl-3">
+<p>方法之间用一个空行来分隔，模块之间用两个空行来分隔</p>
+</li>
+</ol>
+<h2 id="8-文件和异常">8.文件和异常</h2>
+<blockquote>
+<p>PS：同样，文件和异常的笔记也是在别的作者的基础上修改而得（原作者很多细节都直接忽略了，也由于蛇书的版本不同，补充修改了很多）</p>
+<p>8.1文件部分参考出处：<a target="_blank" rel="noopener" href="https://blog.csdn.net/QINGDI1122/article/details/107971793">python - 文件操作（学习笔记）_stayfsh的博客-CSDN博客</a></p>
+<p>8.2异常部分参考出处：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Lance_Lewu/article/details/104417936"> Python学习笔记-异常及处理_Lance_Lewu的博客-CSDN博客</a></p>
+</blockquote>
+<h3 id="8-1-从文件中读取数据">8.1 从文件中读取数据</h3>
+<p>文本文件可以存储的数据量非常多：天气数据，交通数据，社会经济数据，文学作品等等。每当需要分析和修改文件中的数据时，读取文件都是非常重要的，对数据分析更是如此。</p>
+<h4 id="8-1-1读取整个文件">8.1.1读取整个文件</h4>
+<p><code>pi_digits.txt</code>文件中存储的是小数点后30位的圆周率值，且在小数点后每10位处换行。</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">with open('pi_digits.txt') as file_object:
+    contents = file_object.read()
+    print(contents)
+
+####
+3.1415926535
+  8979323846
+  2643383279
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong><code>关键字with</code></strong>：在不需要访问文件后将其关闭。在此程序中，我们调用了<code>open()</code>，但没有调用<code>close()</code>，即打开了但没有关闭文件，但由于执行程序时<code>close()</code>的位置往往不好确定，易产生<strong>bug</strong>导致文件未正常关闭，可能造成数据丢失或受损。且过早关闭往往会导致需要使用此文件时该文件已关闭。通过**<code>关键字with</code><strong>，<code>Python</code>可以自己去确定关闭文件的时机（即</strong><code>with</code>**后缩进相同的部分）。</p>
+</li>
+<li class="lvl-2">
+<p><strong><code>函数open()</code></strong>：</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>常用参数说明（其他参数略）：</p>
+<blockquote>
+<ul class="lvl-3">
+<li class="lvl-2">
+<p><code>file</code>：<code>Python</code>在当前执行文件所在的目录查找指定文件。</p>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<ul class="lvl-1">
+<li class="lvl-2">
+<p>mode ：打开文件的模式，默认为<code>r</code>（只读模式）。常用的模式包括：</p>
+<ul class="lvl-3">
+<li class="lvl-4"><code>'r'</code>：只读模式。</li>
+<li class="lvl-4"><code>'w'</code>：写入模式，<strong>如果文件已存在则覆盖原有内容</strong>，若文件不存在则创建新文件。</li>
+<li class="lvl-4"><code>'a'</code>：追加模式/附加模式，<strong>将文本写入到文件末尾</strong>，若文件不存在则创建新文件。</li>
+<li class="lvl-4"><code>'x'</code>：独占创建模式，只在文件不存在时创建文件，若文件已存在则抛出异常。</li>
+<li class="lvl-4"><code>'b'</code>：二进制模式。</li>
+<li class="lvl-4"><code>'t'</code>：文本模式（默认模式）。</li>
+<li class="lvl-4"><code>'+'</code>/<code>r+</code>：更新模式，允许读写操作。</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p><code>encoding</code>：用于指定文件的编码方式。例如，<code>'utf-8'</code>。</p>
+</li>
+</ul>
+</blockquote>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>方法read()</code>：读取文件。<code>read()</code>到达文件末尾时返回一个空字符串，而将这个空字符串显示出来时就是一个空行。要删除多出来的空行，可在函数调用<code>print()</code>中使用<code>strip()</code></p>
+</li>
+</ul>
+<h4 id="8-1-2文件路径">8.1.2文件路径</h4>
+<p><code>Python</code>默认在当前执行文件所在的目录查找指定文件，<strong>不会去搜寻子文件夹</strong>，更不能是上层文件夹。相对路径：</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">with open('text_files/filename.txt') as file_object:
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>绝对路径：</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">with open('C:/User/enmatthe/text_files/filename.txt') as file_object:
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p><strong>注意：</strong></p>
+<ol>
+<li class="lvl-3">显示文件路径时,<code>Windows</code>系统使用反斜杠（<code>\</code>）而不是斜杠（<code>/</code>）</li>
+<li class="lvl-3">如果在文件路径中直接使用反斜杠，将引发错误，因为反斜杠用于对字符串中的字符进行转义。e.g.路径<code>C:\Path\to\file.txt</code>中的<code>\t</code>将被解读为制表符。如果一定要使用反斜杠，可对路径中的每个反斜杠都进行转义，如<code>C:\\path\\to\\file.txt</code></li>
+</ol>
+</blockquote>
+<h4 id="8-1-3逐行读取文件">8.1.3逐行读取文件</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python">with open('pi_digits.txt') as file_object:
+    for line in file_object:
+        print(line)
+ ####
+ 3.1415926535
+
+  8979323846
+
+  2643383279
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们发现逐行读取这样操作由于<strong>每行末尾的换行符</strong>作用使得<strong>各行之间空白增多</strong>。所以我们可以使用<code>rstrip()</code>方法来进行处理</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">print(line.rstrip())
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="8-1-4使用文件的内容">8.1.4使用文件的内容</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>创建一个包含文件各行内容的列表</strong></p>
+</li>
+</ul>
+<pre class="line-numbers language-language-python"><code class="language-language-python">with open('pi_digits.txt') as file_object:
+    lines=file_object.readlines()
+    
+for line in lines:
+    print(line.rstrip())
+####
+3.1415926535
+  8979323846
+  2643383279
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用<code>with</code>时，<code>open()</code>返回的文件对象只能在<code>with</code>代码块内使用，如果想在<code>with</code>代码块外访问文件内容，可以在<code>with</code>代码块内将文件的各行存储在一个列表中，并在<code>with</code>代码块外使用列表就可以了。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>使用文件</strong></p>
+</li>
+</ul>
+<p>下面是一个简单的使用示例：</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">with open('pi_digits.txt') as file_object:
+    lines=file_object.readlines()
+    
+pi_string=''
+for line in lines:
+    pi_string+=line.rstrip()
+
+print(pi_string)
+print(len(pi_string))
+3.1415926535  8979323846  2643383279
+36
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果使用<code>strip()</code>方法来代替<code>rstrip()</code>可以输出如下结果：</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">for line in lines:
+    pi_string+=line.strip()
+
+####
+3.141592653589793238462643383279
+32
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="8-2异常">8.2异常</h3>
+<p><code>Python</code>使用称为<strong>异常</strong>的特殊对象来管理程序执行期间发生的错误。使用<code>try-except</code>代码块处理。出现异常时，显示代码作者编写的友好的错误消息，而不是**<code>traceback</code><strong>，由于</strong><code>traceback</code>**报错时会显示部分程序代码，训练有素的攻击者往往会根据显示的部分代码而对程序发动定向攻击，造成程序的崩溃。</p>
+<h4 id="8-2-1try-except代码块">8.2.1<code>try-except</code>代码块</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python">try:
+    可能出现错误的语句段
+except [指定的异常类型]:  # 指定一种异常类型
+    出现该类异常以后的处理
+except Exception as e:  # 放在最后，兜底接收其他错误类型
+    print(e) # 输出错误信息
+    默认的错误处理
+else:
+    try下代码块执行结束，没有遇到异常后，执行的代码块
+finally:
+    无论有没有异常都会执行的代码块
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong><code>Exception</code></strong> 是<strong>所有异常的父类</strong>，通常放在最后用来接收未知的错误类型.</p>
+<p>**<code>except</code>**后常见异常类型：</p>
+<ol>
+<li class="lvl-3">
+<p><code>NameError</code>：名称错误，通常是由于访问了未定义的变量或函数导致的。</p>
+</li>
+<li class="lvl-3">
+<p><code>TypeError</code>：类型错误，通常是由于操作数的类型不匹配导致的。</p>
+</li>
+<li class="lvl-3">
+<p><code>ValueError</code>：值错误，通常是由于操作数的值不合法导致的。</p>
+</li>
+<li class="lvl-3">
+<p><code>KeyError</code>：键错误，通常是由于访问字典时使用了不存在的键导致的。</p>
+</li>
+<li class="lvl-3">
+<p><code>FileNotFoundError</code>：文件未找到错误，通常是由于尝试打开不存在的文件导致的。</p>
+</li>
+<li class="lvl-3">
+<p><code>ImportError</code>：导入错误，通常是由于无法导入模块或包导致的。</p>
+</li>
+<li class="lvl-3">
+<p><code>ZeroDivisionError</code>：除零错误，通常是由于进行了除零操作导致的。</p>
+</li>
+</ol>
+<h4 id="8-2-2异常中return执行顺序">8.2.2异常中return执行顺序</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>无finally</p>
+<ol>
+<li class="lvl-5"><strong>try中有return</strong>： 立刻返回，结束程序段的执行</li>
+<li class="lvl-5"><strong>else中有return</strong>： 立刻返回，结束程序段的执行</li>
+</ol>
+</li>
+<li class="lvl-2">
+<p>有finally</p>
+<ol>
+<li class="lvl-5"><strong>try中有return而finally中无</strong>： 暂缓return，待finally执行完毕后返回</li>
+<li class="lvl-5"><strong>else中有return而finally中无</strong>： 暂缓return，待finally执行完毕后返回</li>
+<li class="lvl-5"><strong>finally中有return</strong>：无论try或else中是否有return，均以finally中返回的为准</li>
+</ol>
+</li>
+</ul>
+<p><strong>异常传递</strong><br>
+如果调用关系有多层，那么内层如果出错，错误就会被层层抛出，直到在某处被捕获或处理。如果直到最终调用处都未被捕获或处理，那么就会被抛出</p>
+<p><strong>自定义异常</strong><br>
+当系统给定的异常不能满足需求时，可以使用自定义异常来进行补充</p>
+<h4 id="8-2-3自定义一个异常">8.2.3自定义一个异常</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python">class UserNameError(Exception):
+   def __init__(self,*args,**kwargs):
+       pass
+
+#在方法中使用自定义异常
+def setUserName():
+   username = input('请输入用户名：')
+   if len(username)<6 or username[0].isdigit():
+       raise UserNameError('用户名格式错误')   # 用raise抛出异常
+   else:
+       print('输入成功')
+
+try:
+   setUserName()
+except Exception as e:  # 接收异常
+   print(e)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="8-3使用json-dump-和json-load-存储数据">8.3使用<code>json.dump()</code>和<code>json.load()</code>存储数据</h3>
+<p>很多程序要求用户输入某种信息，例如让用户存储游戏首选项或提供要可视化的数据。不管专注的是什么，程序都把用户提供的信息存储在列表和字典等数据结构中。要保存这些信息，一种简单的方法是使用<code>json()</code>模块来存储数据。模块<code>json</code>能让我们将简单的的<code>python</code>数据结构转存储到文件中，并在文件运行时加载该文件中的数据。我们还可以使用<code>json</code>在<code>python</code>程序之间分享数据。</p>
+<blockquote>
+<p><strong><code>json</code></strong>(<code>JSON, JavaScript Obkect Notation</code>)格式最初是为<code>JavaScript</code>开发的，但随后成立一种常见格式，被包括<code>Python</code>在内的众多语言采用。</p>
+</blockquote>
+<p>存储一组数字的例子：</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">import json
+
+numbers = [2,3,5,7,11,13]
+
+filename = 'numbers.json'
+with open(filename,'w') as f:
+    json.dump(numbers,f)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>json.dump()</code>是将数字列表存储到文件<code>numbers.json</code>中，这个程序没有输出。<code>json.dump()</code>接受两个实参：要存储的数据，以及可用于存储数据的文件对象。</p>
+<p>下面再写一个程序，使用<code>json.load()</code>将这个列表读取到内存中：</p>
+<pre class="line-numbers language-language-ython"><code class="language-language-ython">import json
+
+filename = 'numbers.json'
+with open(filename) as f:
+    numbers = json.load(f)
+
+print(numbers)
+
+####
+[2, 3, 5, 7, 11, 13]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="9-单元测试">9.单元测试</h2>
+<p>单元测试是一种软件测试方法，用于测试程序的最小可测试单元（通常是函数或方法）是否按照预期进行工作。它的目的是确保单元在隔离的环境中能够正确、可靠地完成其指定的功能。</p>
+<h3 id="9-1unittest单元测试格式">9.1<code>unittest</code>单元测试格式</h3>
+<h4 id="9-1-1单元测试框架：">9.1.1单元测试框架：</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>unittest</code>：Python 标准库中的测试框架，使用类和方法来创建测试用例和测试套件。</p>
+</li>
+<li class="lvl-2">
+<p><code>pytest</code>：一个功能强大且易于使用的第三方测试框架，具有简洁的语法和丰富的插件生态系统。</p>
+</li>
+<li class="lvl-2">
+<p><code>doctest</code>：可以直接从函数的文档字符串中提取测试用例，并执行函数并验证输出结果是否符合预期。</p>
+</li>
+<li class="lvl-2">
+<p>其他第三方测试框架：如 <code>nose</code>、<code>nose2</code>、<code>tox</code> 等。</p>
+</li>
+</ul>
+<h4 id="9-1-2格式：">9.1.2格式：</h4>
+<p>在使用 <code>unittest</code> 进行单元测试时，有一些常用的格式和约定可以遵循，以提高测试代码的可读性和维护性。以下是一些常见的 <code>unittest</code> 测试单元的格式：</p>
+<ol>
+<li class="lvl-3">
+<p>测试类的命名：测试类的命名通常以 “Test” 开头，后面跟着要测试的类的名称。例如，要测试名为 <code>Calculator</code> 的类，测试类的命名可以是 <code>TestCalculator</code>。</p>
+</li>
+<li class="lvl-3">
+<p>测试方法的命名：测试方法的命名通常以 “test_” 开头，后面跟着函数或方法的功能描述。例如，测试一个加法函数的功能，测试方法的命名可以是 <code>test_addition()</code>。</p>
+</li>
+<li class="lvl-3">
+<p>导入和继承：在编写测试代码时，通常需要导入 <code>unittest</code> 模块，并创建一个继承自 <code>unittest.TestCase</code> 的测试类。</p>
+</li>
+</ol>
+<pre class="line-numbers language-language-python"><code class="language-language-python">import unittest
+
+class TestCalculator(unittest.TestCase):
+    # 测试方法定义在这里
+    pass
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="4">
+<li class="lvl-3">
+<p>断言语句：使用断言语句来验证测试的期望结果与实际结果是否一致。<code>unittest</code> 提供了许多用于断言的方法，如 <code>assertEqual()</code>、<code>assertTrue()</code>、<code>assertFalse()</code> 等。</p>
+</li>
+</ol>
+<pre class="line-numbers language-language-python"><code class="language-language-python">def test_addition(self):
+    result = addition(2, 3)
+    self.assertEqual(result, 5)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ol start="5">
+<li class="lvl-3">
+<p>使用 <code>setUp()</code> 和 <code>tearDown()</code>：在需要共享设置或资源的测试之间使用 <code>setUp()</code> 和 <code>tearDown()</code> 方法。<code>setUp()</code> 方法在每个测试方法之前执行一次，用于准备测试所需的环境。<code>tearDown()</code> 方法在每个测试方法之后执行一次，用于清理测试过程中创建的任何资源。</p>
+</li>
+</ol>
+<pre class="line-numbers language-language-python"><code class="language-language-python">def setUp(self):
+    # 设置测试环境
+
+def tearDown(self):
+    # 清理测试环境
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="6">
+<li class="lvl-3">
+<p>运行测试：使用 <code>unittest.main()</code> 运行测试，它会执行测试类中的所有测试方法。</p>
+</li>
+</ol>
+<pre class="line-numbers language-language-python"><code class="language-language-python">if __name__ == '__main__':
+    unittest.main()
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="7">
+<li class="lvl-3">
+<p>使用 <code>TestSuite</code>：如果需要自定义测试执行顺序，可以创建一个 <code>TestSuite</code> 对象，并将测试方法添加到该对象中。</p>
+</li>
+</ol>
+<pre class="line-numbers language-language-python"><code class="language-language-python">suite = unittest.TestSuite()
+suite.addTest(TestCalculator("test_addition"))
+suite.addTest(TestCalculator("test_subtraction"))
+...
+unittest.TextTestRunner().run(suite)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="9-1-3示例：">9.1.3示例：</h4>
+<pre class="line-numbers language-language-python"><code class="language-language-python">import unittest # 必须步骤
+
+def add(a, b):
+    return a + b
+
+class TestAdd(unittest.TestCase): # 必须步骤
+    def test_1_plus_1(self):
+        result = add(1, 1)
+        self.assertEqual(result, 2) # 断言方法assert，核实得到的结果是否与期望的结果一致
+
+    def test_negative_numbers(self):
+        result = add(-5, -10)
+        self.assertEqual(result, -15)
+
+    def test_mixed_numbers(self):
+        result = add(3, -7)
+        self.assertEqual(result, -4)
+
+if __name__ == '__main__': # 必须步骤
+    unittest.main()
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在上述示例中，我们使用 <code>unittest</code> 框架编写了一个简单的测试用例。测试用例是通过创建一个继承自 <code>unittest.TestCase</code> 的类，并在其中定义以 <code>test_</code> 开头的测试方法来实现的。每个测试方法都使用断言语句来验证函数的返回值是否与预期结果一致。最后，在 <code>__main__</code> 中调用 <code>unittest.main()</code> 来执行测试。</p>
+<p>当执行这段代码时，测试框架将会执行所有的测试方法并输出测试结果。如果所有的断言都为真，则测试通过；如果有任何一个断言失败，则测试失败，并输出详细的错误信息。</p>
+<h3 id="9-2setUp-方法">9.2<code>setUp()</code>方法</h3>
+<p>在单元测试中，<code>setUp()</code> 方法是 <code>unittest.TestCase</code> 类中的一个特殊方法，在每个测试方法执行之前被调用。<code>setUp()</code> 方法可以用来设置测试环境，进行一些初始化操作，以确保每个测试方法都在相同的环境中运行。</p>
+<p><code>setUp()</code> 方法的主要作用是为每个测试方法创建一个干净的测试环境，并在该环境中进行实际的测试操作。在该方法中可以进行一些常见的设置工作，例如创建测试数据、连接数据库、打开文件或初始化对象等。</p>
+<p>下面是一个示例，展示了如何在单元测试中使用 <code>setUp()</code> 方法：</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">import unittest
+
+class ExampleTestCase(unittest.TestCase):
+    def setUp(self):
+        # 设置测试环境
+        self.data = [1, 2, 3, 4, 5]
+
+    def test_sum(self):
+        # 在测试方法中使用设置的数据进行测试
+        result = sum(self.data)
+        self.assertEqual(result, 15)
+
+    def test_length(self):
+        # 在测试方法中使用设置的数据进行测试
+        length = len(self.data)
+        self.assertEqual(length, 5)
+
+if __name__ == '__main__':
+    unittest.main()
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在上面的示例中，我们创建了一个名为 <code>ExampleTestCase</code> 的测试类。在 <code>setUp()</code> 方法中，我们初始化了一个名为 <code>data</code> 的列表，该列表将在每个测试方法中被使用。</p>
+<p>然后，在两个测试方法 <code>test_sum()</code> 和 <code>test_length()</code> 中，我们使用了 <code>data</code> 列表进行实际的测试。我们分别计算了列表元素的和并进行断言，以及计算列表的长度并进行断言。</p>
+<p>每次执行测试时，<code>setUp()</code> 方法都会在每个测试方法之前执行一次，确保每个测试方法都在同样的环境下进行操作，以提供可靠的测试结果。</p>
+<p>需要注意的是，<code>setUp()</code> 方法只会在每个测试方法开始之前执行一次，即使测试类中有多个测试方法，也只会执行一次。如果你希望在每个测试方法之后执行一些清理操作，可以使用 <code>tearDown()</code> 方法来完成。</p>
+<h2 id="10-正则表达式">10.正则表达式</h2>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Z</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zjgfree.github.io/20230813/python-xue-xi-bi-ji/">https://zjgfree.github.io/20230813/python-xue-xi-bi-ji/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Z</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">计算机语言</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">支持一下</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Freward%2Falipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Freward%2Fwechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Fcomment_bg_onepiece.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'LhLx7UqKvarxfFplrk6gYTBs-9Nh9j0Va',
+        appKey: 'WU9kHlPSxaP7WrHwoZCbO1l3',
+        serverURLs: 'https://lhlx7uqk.lc-cn-e1-shared.com',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'robohash',
+        pageSize: '15',
+        lang: 'zh-cn',
+        placeholder: '🌻留下你的足迹！🚩'
+    });
+</script>
+
+<!--酷Q推送-->
+
+//<script> 
+//    new Valine({
+//        el: '#vcomments',
+//        appId: 'LhLx7UqKvarxfFplrk6gYTBs-9Nh9j0Va',
+//        appKey: 'WU9kHlPSxaP7WrHwoZCbO1l3',
+//        notify: 'false' === 'true',
+//        verify: 'false' === 'true',
+//        visitor: 'true' === 'true',
+//        avatar: 'robohash',
+//        pageSize: '15',
+//        lang: 'zh-cn',
+//        placeholder: '🌻留下你的足迹！🚩',
+//    });
+//    // 点击回复直接评论 
+//    $(document).ready(function () {
+//        $('.vemoji-btn').text('😀');
+//        $("#vcomments").on('click', 'span.vat', function () {
+//            $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+//            $('textarea#veditor').focus();
+//        })
+//    });
+//</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/20230813/git-xue-xi-bi-ji/">
+                    <div class="card-image">
+                        
+                        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Fnotes-feature-image%2FGit.png" class="responsive-img" alt="Git学习笔记">
+                        
+                        <span class="card-title">Git学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BF%85%E5%A4%87%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">必备工具</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/20230728/tutorial/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Ffeatureimages%2F15.jpg" class="responsive-img" alt="tutorial">
+                        
+                        <span class="card-title">tutorial</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Test Specialties
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Front-matter/" class="post-category">
+                                    Front-matter
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/blog/">
+                        <span class="chip bg-color">blog</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('80')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Zjgfree<br />'
+            + '文章作者: Z<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: rgba(202, 243, 248, 0.75);">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #98F5FF;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="9023755987"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#98F5FF'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023</span>
+            
+            <a href="/about" target="_blank">Z</a>
+        <!--|&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>  -->
+            
+                <span id="translate">|&nbsp;简繁切换：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">37.4k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2023";
+                        var startMonth = "7";
+                        var startDate = "25";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '星球已运转 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '星球已運轉 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '星球已运转 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '星球已運轉 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zjgfree" class="tooltipped" target="_blank" data-tooltip="Jump to GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:zjgfree@qq.com" class="tooltipped" target="_blank" data-tooltip="Email：zjgfree@qq.com" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1727302945" class="tooltipped" target="_blank" data-tooltip="QQ: 1727302945" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    
+    <!--黑夜白天切换动态背景-->
+<!--
+<div class="stars-con">
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>  
+</div>
+-->
+
+<!-- 白天和黑夜主题 -->
+<div class="sum-moon-box">
+  <a class="btn-floating btn-large waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式切换" >
+    <i id="sum-moon-icon" class="fas fa-sun" style="width:48px; height:48px; font-size: 28px;"></i>
+  </a>
+</div>
+
+<script>
+  
+  // 在这里修改 isDark 变量过期的时间
+  var isDarkLiveHours = 6;
+
+  function setCookie(name, value, hoursToLive) {
+    var cookie = name + "=" + encodeURIComponent(value);
+    
+    if (typeof hoursToLive === "number") {
+      cookie += ";path=/;max-age=" + (hoursToLive*60*60);
+    }
+
+    document.cookie = cookie;
+  }
+
+  function getCookie(name) {
+    // 拆分 cookie 字符串
+    var cookieArr = document.cookie.split(";");
+   
+    // 循环遍历数组元素
+    for(var i = 0; i < cookieArr.length; i++) {
+        var cookiePair = cookieArr[i].split("=");
+       
+        /* 删除 cookie 名称开头的空白并将其与给定字符串进行比较 */
+        if(name == cookiePair[0].trim()) {
+            // 解码cookie值并返回
+            return decodeURIComponent(cookiePair[1]);
+        }
+    }
+    // 如果未找到，则返回null
+    return null;
+  }
+  
+
+  function switchNightMode() {
+    $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+    setTimeout(function() {
+      $('body').hasClass('DarkMode')
+      ? (
+        $('body').removeClass('DarkMode'),
+        setCookie('isDark', 'false', isDarkLiveHours),
+        $('#day-btn-icon-sun').css('display', 'none'),
+        $('#night-btn-icon-moon').css('display', 'inherit')
+      ) : (
+        $('body').addClass('DarkMode'),
+        setCookie('isDark', 'true', isDarkLiveHours),
+        $('#day-btn-icon-sun').css('display', 'inherit'),
+        $('#night-btn-icon-moon').css('display', 'none')
+      ),
+
+      setTimeout(function () {
+        $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+          $(this).remove()
+        })
+      }, 2e3);
+    });
+  }
+
+  //黑夜模式自动开启功能（首次加载）
+  setTimeout(function () {
+    if (getCookie('isDark') == null) {
+      if ((new Date().getHours() >= 21 || new Date().getHours() < 6) && !$('body').hasClass('DarkMode')) {
+        $('body').addClass('DarkMode');
+        setCookie('isDark', 'true', isDarkLiveHours);
+        $('#day-btn-icon-sun').css('display', 'inherit');
+        $('#night-btn-icon-moon').css('display', 'none');
+      }
+    } else {
+      if (getCookie('isDark') === 'true') {
+        document.body.classList.add('DarkMode');
+        $('#day-btn-icon-sun').css('display', 'inherit');
+        $('#night-btn-icon-moon').css('display', 'none');
+      } else {
+        document.body.classList.remove('DarkMode');
+        $('#day-btn-icon-sun').css('display', 'none');
+        $('#night-btn-icon-moon').css('display', 'inherit');
+      }
+    }
+
+  }, 0);
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "https://zjgfree.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+    
+
+    <!-- 动态标题 -->
+    <script type="text/javascript">
+        var OriginTitile = document.title,
+            st;
+        document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = "👀跑哪里去了？😭", clearTimeout(st)) : (document.title =
+                "🍔找到你啦！💕", st = setTimeout(function () {
+                    document.title = OriginTitile
+                }, 3e3))
+        })
+    </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="140" alpha='0.7'
+        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1.5,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":180,"height":180,"position":"right","hOffset":75,"vOffset":8},"mobile":{"show":false,"scale":0.4},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
+
+</html>

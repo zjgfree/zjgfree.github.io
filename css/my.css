@@ -1,0 +1,52 @@
+/* Here is your custom css styles. */
+
+/*页面字体修改*/
+@font-face{
+    font-family: '极字经典楷体简繁';
+    src: url('../font/极字经典楷体简繁.ttf');
+}
+
+body{
+    font-family: '极字经典楷体简繁';
+}
+
+/*修改博客标题在手机端的字体大小*/
+@media only screen and (max-width: 601px) {
+    /* 修改首页轮播的标题大小 */
+    .bg-cover .title {
+        font-size: 1.5rem;
+    }
+    /* 修改博客标题的字体大小 */
+    header .brand-logo .logo-span {
+        font-size: 1.5rem;
+    }
+}
+
+/*busuanzi数据一直显示*/
+#busuanzi_container_site_pv,
+#busuanzi_value_site_pv,
+#busuanzi_container_site_uv{
+   display: inline !important;
+}
+
+/* 博客界面选中文字不透明 */
+::selection {
+    background-color: rgba(61, 255, 232, 0.619);
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    background-color: #1af7f3d3;
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
+    border-radius: 3em;
+}
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+    background-color: #ffd1f3;
+    border-radius: 3em;
+}
+/* 定义滚动条样式 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 7px;
+}

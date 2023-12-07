@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Zjgfree</title>
+  
+  <subtitle>I&#39;m waiting | 爱慕未停</subtitle>
+  <link href="https://zjgfree.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://zjgfree.github.io/"/>
+  <updated>2023-11-23T13:58:48.892Z</updated>
+  <id>https://zjgfree.github.io/</id>
+  
+  <author>
+    <name>Z</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搜索与图论——DFS与BFS</title>
+    <link href="https://zjgfree.github.io/20231123/sou-suo-yu-tu-lun-dfs-yu-bfs/"/>
+    <id>https://zjgfree.github.io/20231123/sou-suo-yu-tu-lun-dfs-yu-bfs/</id>
+    <published>2023-11-23T13:46:00.000Z</published>
+    <updated>2023-11-23T13:58:48.892Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;DFS与BFS&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;由于这个博客是个人笔记性质的，且我接触DFS/BFS太多次了，就贴个代码算了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;1-DFS（暴搜，广度优先算法）&quot;&gt;1.</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="数据结构" scheme="https://zjgfree.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构——Trie树</title>
+    <link href="https://zjgfree.github.io/20231123/shu-ju-jie-gou-trie-shu/"/>
+    <id>https://zjgfree.github.io/20231123/shu-ju-jie-gou-trie-shu/</id>
+    <published>2023-11-23T13:45:32.000Z</published>
+    <updated>2023-11-23T13:57:54.867Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;&lt;code&gt;Trie&lt;/code&gt;树（&lt;strong&gt;字典树&lt;/strong&gt;、&lt;strong&gt;前缀树&lt;/strong&gt;、&lt;strong&gt;单词查找树&lt;/strong&gt; 或 &lt;strong&gt;键树&lt;/strong&gt;）&lt;/h1&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="数据结构" scheme="https://zjgfree.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构——KMP</title>
+    <link href="https://zjgfree.github.io/20231123/shu-ju-jie-gou-kmp/"/>
+    <id>https://zjgfree.github.io/20231123/shu-ju-jie-gou-kmp/</id>
+    <published>2023-11-23T13:45:17.000Z</published>
+    <updated>2023-11-23T13:57:06.182Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;KMP算法&quot;&gt;KMP算法&lt;/h2&gt;
+&lt;p&gt;KMP是一个说复杂也算复杂、说简单也的确简单的算法。网上的介绍和详解已经很多很好了(&lt;a href=&quot;https://www.acwing.com/solution/content/14666/&quot;&gt;AcWing 831.</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="数据结构" scheme="https://zjgfree.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构——链表、队列、栈的数组模拟</title>
+    <link href="https://zjgfree.github.io/20231123/shu-ju-jie-gou-lian-biao-dui-lie-zhan-de-shu-zu-mo-ni/"/>
+    <id>https://zjgfree.github.io/20231123/shu-ju-jie-gou-lian-biao-dui-lie-zhan-de-shu-zu-mo-ni/</id>
+    <published>2023-11-23T13:45:04.000Z</published>
+    <updated>2023-11-23T13:56:08.025Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;链表、队列、栈的数组模拟&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原文连接：&lt;a href=&quot;https://www.acwing.com/blog/content/404/&quot;&gt;常用代码模板2——数据结构 -</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="数据结构" scheme="https://zjgfree.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构——哈希表</title>
+    <link href="https://zjgfree.github.io/20231123/shu-ju-jie-gou-ha-xi-biao/"/>
+    <id>https://zjgfree.github.io/20231123/shu-ju-jie-gou-ha-xi-biao/</id>
+    <published>2023-11-23T13:44:32.000Z</published>
+    <updated>2023-11-23T13:54:43.198Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;哈希表（散列表）&lt;/h1&gt;
+&lt;p&gt;因为Hash理解起来比较简单，所以直接上代码，就不过多废话了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参考知乎文章：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="数据结构" scheme="https://zjgfree.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构——堆</title>
+    <link href="https://zjgfree.github.io/20231123/shu-ju-jie-gou-dui/"/>
+    <id>https://zjgfree.github.io/20231123/shu-ju-jie-gou-dui/</id>
+    <published>2023-11-23T13:44:23.000Z</published>
+    <updated>2023-11-23T13:53:24.410Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;堆&lt;/h1&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="数据结构" scheme="https://zjgfree.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构——并查集</title>
+    <link href="https://zjgfree.github.io/20231123/shu-ju-jie-gou-bing-cha-ji/"/>
+    <id>https://zjgfree.github.io/20231123/shu-ju-jie-gou-bing-cha-ji/</id>
+    <published>2023-11-23T13:44:12.000Z</published>
+    <updated>2023-11-23T13:51:28.489Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;区间合并&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;指路一篇讲的很好的文章：&lt;a href=&quot;https://zhuanlan.zhihu.com/p/93647900&quot;&gt;算法学习笔记(1) : 并查集 - 知乎</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="数据结构" scheme="https://zjgfree.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基础算法——区间合并</title>
+    <link href="https://zjgfree.github.io/20231123/ji-chu-suan-fa-qu-jian-he-bing/"/>
+    <id>https://zjgfree.github.io/20231123/ji-chu-suan-fa-qu-jian-he-bing/</id>
+    <published>2023-11-23T13:43:40.000Z</published>
+    <updated>2023-11-23T13:51:58.348Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;区间合并&lt;/h1&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="基础算法" scheme="https://zjgfree.github.io/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基础算法——离散化</title>
+    <link href="https://zjgfree.github.io/20230920/ji-chu-suan-fa-chi-san-hua/"/>
+    <id>https://zjgfree.github.io/20230920/ji-chu-suan-fa-chi-san-hua/</id>
+    <published>2023-09-20T13:06:23.000Z</published>
+    <updated>2023-09-20T13:07:26.203Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;离散化&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参考知乎文章：&lt;a href=&quot;https://zhuanlan.zhihu.com/p/112497527&quot;&gt;算法学习笔记(19): 离散化 - 知乎</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="基础算法" scheme="https://zjgfree.github.io/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基础算法——位运算</title>
+    <link href="https://zjgfree.github.io/20230920/ji-chu-suan-fa-wei-yun-suan/"/>
+    <id>https://zjgfree.github.io/20230920/ji-chu-suan-fa-wei-yun-suan/</id>
+    <published>2023-09-20T12:52:21.000Z</published>
+    <updated>2023-09-20T13:09:40.554Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;位运算&lt;/h1&gt;
+&lt;h2 id=&quot;1-n的二进制表示中第k位是1-0？&quot;&gt;1. &lt;code&gt;n&lt;/code&gt;的二进制表示中第&lt;code&gt;k&lt;/code&gt;位是1/0？&lt;/h2&gt;
+&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="基础算法" scheme="https://zjgfree.github.io/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基础算法——双指针算法</title>
+    <link href="https://zjgfree.github.io/20230920/ji-chu-suan-fa-shuang-zhi-zhen-suan-fa/"/>
+    <id>https://zjgfree.github.io/20230920/ji-chu-suan-fa-shuang-zhi-zhen-suan-fa/</id>
+    <published>2023-09-20T12:52:10.000Z</published>
+    <updated>2023-09-20T13:07:40.915Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;双指针算法&lt;/h1&gt;
+&lt;h2 id=&quot;1-算法思想&quot;&gt;1. 算法思想&lt;/h2&gt;
+&lt;pre class=&quot;line-numbers language-language-cpp&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="基础算法" scheme="https://zjgfree.github.io/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基础算法——十大排序算法总结（转载）</title>
+    <link href="https://zjgfree.github.io/20230920/ji-chu-suan-fa-shi-da-pai-xu-suan-fa-zong-jie-zhuan-zai/"/>
+    <id>https://zjgfree.github.io/20230920/ji-chu-suan-fa-shi-da-pai-xu-suan-fa-zong-jie-zhuan-zai/</id>
+    <published>2023-09-20T12:51:54.000Z</published>
+    <updated>2023-09-20T12:54:40.594Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;十大排序算法总结(转载)&lt;/h1&gt;
+&lt;p&gt;本文章仅供个人在个人博客上面参考！！！&lt;/p&gt;
+&lt;p&gt;原文写的很好，虽然有些部分我个人感觉是有点问题（读者自行斟酌），推荐阅读原文：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="基础算法" scheme="https://zjgfree.github.io/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基础算法——前缀和与差分</title>
+    <link href="https://zjgfree.github.io/20230914/ji-chu-suan-fa-qian-zhui-he-yu-chai-fen/"/>
+    <id>https://zjgfree.github.io/20230914/ji-chu-suan-fa-qian-zhui-he-yu-chai-fen/</id>
+    <published>2023-09-14T10:33:35.000Z</published>
+    <updated>2023-09-20T13:08:06.121Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;前缀和与差分&lt;/h1&gt;
+&lt;h2 id=&quot;1-一维前缀和&quot;&gt;1.一维前缀和&lt;/h2&gt;
+&lt;h3 id=&quot;1-1-前缀和的定义&quot;&gt;1.1 前缀和的定义&lt;/h3&gt;
+&lt;p&gt;$ s[n]=$一个数组中（下标从1开始）前n个数据的和&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="基础算法" scheme="https://zjgfree.github.io/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基础算法——高精度大数运算</title>
+    <link href="https://zjgfree.github.io/20230914/ji-chu-suan-fa-gao-jing-du-da-shu-yun-suan/"/>
+    <id>https://zjgfree.github.io/20230914/ji-chu-suan-fa-gao-jing-du-da-shu-yun-suan/</id>
+    <published>2023-09-14T10:33:18.000Z</published>
+    <updated>2023-09-14T10:52:17.595Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;高精度大数运算&lt;/h1&gt;
+&lt;h2 id=&quot;1-高精度定义&quot;&gt;1. 高精度定义&lt;/h2&gt;
+&lt;p&gt;在&lt;code&gt;C/C++&lt;/code&gt;中，各种数据类型都是有一定取值范围的，但在实际生产/计算中，有些位数很多的大数是C语言中的数据类型无法表示的。比如&lt;code&gt;len(a)</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="基础算法" scheme="https://zjgfree.github.io/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基础算法——二分法</title>
+    <link href="https://zjgfree.github.io/20230914/ji-chu-suan-fa-er-fen-fa/"/>
+    <id>https://zjgfree.github.io/20230914/ji-chu-suan-fa-er-fen-fa/</id>
+    <published>2023-09-14T10:32:59.000Z</published>
+    <updated>2023-09-14T10:51:35.584Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;二分法&lt;/h1&gt;
+&lt;h2 id=&quot;1-基本思想&quot;&gt;1.</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="基础算法" scheme="https://zjgfree.github.io/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基础算法——归并排序</title>
+    <link href="https://zjgfree.github.io/20230914/ji-chu-suan-fa-gui-bing-pai-xu/"/>
+    <id>https://zjgfree.github.io/20230914/ji-chu-suan-fa-gui-bing-pai-xu/</id>
+    <published>2023-09-14T10:32:41.000Z</published>
+    <updated>2023-10-13T09:23:24.765Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;归并排序&lt;/h1&gt;
+&lt;h2 id=&quot;1-基本思想&quot;&gt;1. 基本思想&lt;/h2&gt;
+&lt;img src=&quot;https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="基础算法" scheme="https://zjgfree.github.io/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基础算法——快速排序</title>
+    <link href="https://zjgfree.github.io/20230914/ji-chu-suan-fa-kuai-su-pai-xu/"/>
+    <id>https://zjgfree.github.io/20230914/ji-chu-suan-fa-kuai-su-pai-xu/</id>
+    <published>2023-09-14T10:31:59.000Z</published>
+    <updated>2023-09-14T11:24:41.696Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;快速排序&lt;/h1&gt;
+&lt;h2 id=&quot;1-基本思想&quot;&gt;1. 基本思想&lt;/h2&gt;
+&lt;p&gt;先分完，再递归两边&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="基础算法" scheme="https://zjgfree.github.io/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基础算法——快速读写</title>
+    <link href="https://zjgfree.github.io/20230914/ji-chu-suan-fa-kuai-su-du-xie/"/>
+    <id>https://zjgfree.github.io/20230914/ji-chu-suan-fa-kuai-su-du-xie/</id>
+    <published>2023-09-14T10:30:36.000Z</published>
+    <updated>2023-09-14T11:23:47.902Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;快速读写(以C语言为例)&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;参考：&lt;a href=&quot;https://www.luogu.com.cn/blog/cicos/fread-more&quot;&gt;快读攻略（详） - 学委 的博客 - 洛谷博客</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://zjgfree.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="基础算法" scheme="https://zjgfree.github.io/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RK R98键盘使用说明(自用)</title>
+    <link href="https://zjgfree.github.io/20230822/rk-r98-jian-pan-shi-yong-shuo-ming-zi-yong/"/>
+    <id>https://zjgfree.github.io/20230822/rk-r98-jian-pan-shi-yong-shuo-ming-zi-yong/</id>
+    <published>2023-08-21T16:00:12.000Z</published>
+    <updated>2023-08-22T05:10:41.806Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;RK  R98键盘使用说明（自用）&lt;/h1&gt;
+&lt;p&gt;最近买了个RK R98 TTC钢铁轴的键盘，有些快捷键用markdown记录下来直接在博客上找，免得到处翻，比较方便&lt;/p&gt;
+&lt;h2 id=&quot;1-指示灯功能&quot;&gt;1. 指示灯功能&lt;/h2&gt;
+&lt;p&gt;从左至右依次为Num</summary>
+        
+      
+    
+    
+    
+    <category term="随笔" scheme="https://zjgfree.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="随笔" scheme="https://zjgfree.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows常用快捷键</title>
+    <link href="https://zjgfree.github.io/20230819/windows-chang-yong-kuai-jie-jian/"/>
+    <id>https://zjgfree.github.io/20230819/windows-chang-yong-kuai-jie-jian/</id>
+    <published>2023-08-19T08:02:09.000Z</published>
+    <updated>2023-08-22T05:02:07.063Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;WINDOWS常用快捷键（自用）&lt;/h1&gt;
+&lt;h2 id=&quot;Alt系列&quot;&gt;Alt系列&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;快捷键&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Alt +</summary>
+        
+      
+    
+    
+    
+    <category term="随笔" scheme="https://zjgfree.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="随笔" scheme="https://zjgfree.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+</feed>
