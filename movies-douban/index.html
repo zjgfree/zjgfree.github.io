@@ -527,211 +527,213 @@
 
         
     </nav>
-    
-    <!-- 元宵节灯笼样式开始 -->
-    <style>
-        @media only screen and (min-width: 1124px) {
-            .nav-menu {
-                padding-right: 96px;
-            }
-        }
-        @media only screen and (max-width: 760px) {
-            .deng-box, .deng-box1 {
-                width: 40%;
-            }
-            .right {
-                float: left!important;
-            }
-        }
-        @media only screen and (min-width: 768px) and (max-width: 1024px) {
-            .right {
-                float: left!important;
-            }
-        }
-        .deng-box {
-            position: fixed;
-           /* top: -30px; */
-            top: 13px;
-            right: -20px;
-            z-index: 999;
-        }
-        .deng-box1 {
-            position: fixed;
-            top: 13px;
-            /* right: 10px; */
-            z-index: 999;
-        }
-        .deng-box1 .deng {
-            position: relative;
-            width: 120px;
-            height: 90px;
-            margin: 50px;
-            background: #d8000f;
-            background: rgba(216, 0, 15, 0.8);
-            border-radius: 50% 50%;
-            -webkit-transform-origin: 50% -100px;
-            -webkit-animation: swing 5s infinite ease-in-out;
-            box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);
-        }
-        .deng {
-            position: relative;
-            width: 120px;
-            height: 90px;
-            margin: 50px;
-            background: #d8000f;
-            background: rgba(216, 0, 15, 0.8);
-            border-radius: 50% 50%;
-            -webkit-transform-origin: 50% -100px;
-            -webkit-animation: swing 3s infinite ease-in-out;
-            box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);
-        }
-        .deng-a {
-            width: 100px;
-            height: 90px;
-            background: #d8000f;
-            background: rgba(216, 0, 15, 0.1);
-            margin: 12px 8px 8px 10px;
-            border-radius: 50% 50%;
-            border: 2px solid #dc8f03;
-        }
-        .deng-b {
-            width: 45px;
-            height: 90px;
-            background: #d8000f;
-            background: rgba(216, 0, 15, 0.1);
-            margin: -4px 8px 8px 26px;
-            border-radius: 50% 50%;
-            border: 2px solid #dc8f03;
-        }
-        .xian {
-            position: absolute;
-            /* top: -20px; */
-            top: -69px;
-            left: 60px;
-            width: 2px;
-            /*  height: 20px; */
-            height: 70px;
 
-            background: #dc8f03;
-        }
-        .shui-a {
-            position: relative;
-            width: 5px;
-            height: 20px;
-            margin: -5px 0 0 59px;
-            -webkit-animation: swing 4s infinite ease-in-out;
-            -webkit-transform-origin: 50% -45px;
-            background: #ffa500;
-            border-radius: 0 0 5px 5px;
-        }
-        .shui-b {
-            position: absolute;
-            top: 14px;
-            left: -2px;
-            width: 10px;
-            height: 10px;
-            background: #dc8f03;
-            border-radius: 50%;
-        }
-        .shui-c {
-            position: absolute;
-            top: 18px;
-            left: -2px;
-            width: 10px;
-            height: 35px;
-            background: #ffa500;
-            border-radius: 0 0 0 5px;
-        }
-        .deng:before {
-            position: absolute;
-            top: -7px;
-            left: 29px;
-            height: 12px;
-            width: 60px;
-            content: " ";
-            display: block;
-            z-index: 999;
-            border-radius: 5px 5px 0 0;
-            border: solid 1px #dc8f03;
-            background: #ffa500;
-            background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
-        }
-        .deng:after {
-            position: absolute;
-            bottom: -7px;
-            left: 10px;
-            height: 12px;
-            width: 60px;
-            content: " ";
-            display: block;
-            margin-left: 20px;
-            border-radius: 0 0 5px 5px;
-            border: solid 1px #dc8f03;
-            background: #ffa500;
-            background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
-        }
-        @font-face {
-            font-family: "华文行楷";
-            src: url('https://cdn.jsdelivr.net/gh/small-rose/small-rose.github.io/box/font/huawenxingkai.ttf');
-        }
-        .deng-t {
-            font-family: 华文行楷;
-            font-size: 26px;
-            color: #dc8f03;
-            font-weight: bold;
-            line-height: 44px;
-            text-align: center;
-        }
-        .night .deng-t,
-        .night .deng-box,
-        .night .deng-box1 {
-            background: transparent !important;
-        }
-        @-moz-keyframes swing {
-            0% {
-                    -moz-transform: rotate(-10deg)
-            }
-            50% {
-                 -moz-transform: rotate(10deg)
-            }
-            100% {
-                    -moz-transform: rotate(-10deg)
-            }
-        }
-        @-webkit-keyframes swing {
-            0% {
-                    -webkit-transform: rotate(-10deg)
-            }
-            50% {
-                    -webkit-transform: rotate(10deg)
-            }
-            100% {
-                    -webkit-transform: rotate(-10deg)
-            }
-        }
-    </style>
-    <div class="denglong" id="chunjie">
-    <div class="deng-box">
-        <div class="deng">
-            <div class="xian"></div>
-            <div class="deng-a">
-                <div class="deng-b"><div class="deng-t">喜迎</div></div>
-            </div>
-            <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
-        </div>
-    </div>
-    <div class="deng-box1">
-        <div class="deng">
-            <div class="xian"></div>
-            <div class="deng-a">
-                <div class="deng-b"><div class="deng-t">春节</div></div>
-            </div>
-            <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
-        </div>
-    </div>
-    <!-- 元宵节灯笼样式结束 -->
-    </div>
 
+<!--挂上灯笼太卡了，还是不挂了-->
+<!--    <!-- 元宵节灯笼样式开始 -->-->
+<!--    <style>-->
+<!--        @media only screen and (min-width: 1124px) {-->
+<!--            .nav-menu {-->
+<!--                padding-right: 96px;-->
+<!--            }-->
+<!--        }-->
+<!--        @media only screen and (max-width: 760px) {-->
+<!--            .deng-box, .deng-box1 {-->
+<!--                width: 40%;-->
+<!--            }-->
+<!--            .right {-->
+<!--                float: left!important;-->
+<!--            }-->
+<!--        }-->
+<!--        @media only screen and (min-width: 768px) and (max-width: 1024px) {-->
+<!--            .right {-->
+<!--                float: left!important;-->
+<!--            }-->
+<!--        }-->
+<!--        .deng-box {-->
+<!--            position: fixed;-->
+<!--           /* top: -30px; */-->
+<!--            top: 13px;-->
+<!--            right: -20px;-->
+<!--            z-index: 999;-->
+<!--        }-->
+<!--        .deng-box1 {-->
+<!--            position: fixed;-->
+<!--            top: 13px;-->
+<!--            /* right: 10px; */-->
+<!--            z-index: 999;-->
+<!--        }-->
+<!--        .deng-box1 .deng {-->
+<!--            position: relative;-->
+<!--            width: 120px;-->
+<!--            height: 90px;-->
+<!--            margin: 50px;-->
+<!--            background: #d8000f;-->
+<!--            background: rgba(216, 0, 15, 0.8);-->
+<!--            border-radius: 50% 50%;-->
+<!--            -webkit-transform-origin: 50% -100px;-->
+<!--            -webkit-animation: swing 5s infinite ease-in-out;-->
+<!--            box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);-->
+<!--        }-->
+<!--        .deng {-->
+<!--            position: relative;-->
+<!--            width: 120px;-->
+<!--            height: 90px;-->
+<!--            margin: 50px;-->
+<!--            background: #d8000f;-->
+<!--            background: rgba(216, 0, 15, 0.8);-->
+<!--            border-radius: 50% 50%;-->
+<!--            -webkit-transform-origin: 50% -100px;-->
+<!--            -webkit-animation: swing 3s infinite ease-in-out;-->
+<!--            box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);-->
+<!--        }-->
+<!--        .deng-a {-->
+<!--            width: 100px;-->
+<!--            height: 90px;-->
+<!--            background: #d8000f;-->
+<!--            background: rgba(216, 0, 15, 0.1);-->
+<!--            margin: 12px 8px 8px 10px;-->
+<!--            border-radius: 50% 50%;-->
+<!--            border: 2px solid #dc8f03;-->
+<!--        }-->
+<!--        .deng-b {-->
+<!--            width: 45px;-->
+<!--            height: 90px;-->
+<!--            background: #d8000f;-->
+<!--            background: rgba(216, 0, 15, 0.1);-->
+<!--            margin: -4px 8px 8px 26px;-->
+<!--            border-radius: 50% 50%;-->
+<!--            border: 2px solid #dc8f03;-->
+<!--        }-->
+<!--        .xian {-->
+<!--            position: absolute;-->
+<!--            /* top: -20px; */-->
+<!--            top: -69px;-->
+<!--            left: 60px;-->
+<!--            width: 2px;-->
+<!--            /*  height: 20px; */-->
+<!--            height: 70px;-->
+<!---->
+<!--            background: #dc8f03;-->
+<!--        }-->
+<!--        .shui-a {-->
+<!--            position: relative;-->
+<!--            width: 5px;-->
+<!--            height: 20px;-->
+<!--            margin: -5px 0 0 59px;-->
+<!--            -webkit-animation: swing 4s infinite ease-in-out;-->
+<!--            -webkit-transform-origin: 50% -45px;-->
+<!--            background: #ffa500;-->
+<!--            border-radius: 0 0 5px 5px;-->
+<!--        }-->
+<!--        .shui-b {-->
+<!--            position: absolute;-->
+<!--            top: 14px;-->
+<!--            left: -2px;-->
+<!--            width: 10px;-->
+<!--            height: 10px;-->
+<!--            background: #dc8f03;-->
+<!--            border-radius: 50%;-->
+<!--        }-->
+<!--        .shui-c {-->
+<!--            position: absolute;-->
+<!--            top: 18px;-->
+<!--            left: -2px;-->
+<!--            width: 10px;-->
+<!--            height: 35px;-->
+<!--            background: #ffa500;-->
+<!--            border-radius: 0 0 0 5px;-->
+<!--        }-->
+<!--        .deng:before {-->
+<!--            position: absolute;-->
+<!--            top: -7px;-->
+<!--            left: 29px;-->
+<!--            height: 12px;-->
+<!--            width: 60px;-->
+<!--            content: " ";-->
+<!--            display: block;-->
+<!--            z-index: 999;-->
+<!--            border-radius: 5px 5px 0 0;-->
+<!--            border: solid 1px #dc8f03;-->
+<!--            background: #ffa500;-->
+<!--            background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);-->
+<!--        }-->
+<!--        .deng:after {-->
+<!--            position: absolute;-->
+<!--            bottom: -7px;-->
+<!--            left: 10px;-->
+<!--            height: 12px;-->
+<!--            width: 60px;-->
+<!--            content: " ";-->
+<!--            display: block;-->
+<!--            margin-left: 20px;-->
+<!--            border-radius: 0 0 5px 5px;-->
+<!--            border: solid 1px #dc8f03;-->
+<!--            background: #ffa500;-->
+<!--            background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);-->
+<!--        }-->
+<!--        @font-face {-->
+<!--            font-family: "华文行楷";-->
+<!--            src: url('https://cdn.jsdelivr.net/gh/small-rose/small-rose.github.io/box/font/huawenxingkai.ttf');-->
+<!--        }-->
+<!--        .deng-t {-->
+<!--            font-family: 华文行楷;-->
+<!--            font-size: 26px;-->
+<!--            color: #dc8f03;-->
+<!--            font-weight: bold;-->
+<!--            line-height: 44px;-->
+<!--            text-align: center;-->
+<!--        }-->
+<!--        .night .deng-t,-->
+<!--        .night .deng-box,-->
+<!--        .night .deng-box1 {-->
+<!--            background: transparent !important;-->
+<!--        }-->
+<!--        @-moz-keyframes swing {-->
+<!--            0% {-->
+<!--                    -moz-transform: rotate(-10deg)-->
+<!--            }-->
+<!--            50% {-->
+<!--                 -moz-transform: rotate(10deg)-->
+<!--            }-->
+<!--            100% {-->
+<!--                    -moz-transform: rotate(-10deg)-->
+<!--            }-->
+<!--        }-->
+<!--        @-webkit-keyframes swing {-->
+<!--            0% {-->
+<!--                    -webkit-transform: rotate(-10deg)-->
+<!--            }-->
+<!--            50% {-->
+<!--                    -webkit-transform: rotate(10deg)-->
+<!--            }-->
+<!--            100% {-->
+<!--                    -webkit-transform: rotate(-10deg)-->
+<!--            }-->
+<!--        }-->
+<!--    </style>-->
+<!--    <div class="denglong" id="chunjie">-->
+<!--    <div class="deng-box">-->
+<!--        <div class="deng">-->
+<!--            <div class="xian"></div>-->
+<!--            <div class="deng-a">-->
+<!--                <div class="deng-b"><div class="deng-t">喜迎</div></div>-->
+<!--            </div>-->
+<!--            <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="deng-box1">-->
+<!--        <div class="deng">-->
+<!--            <div class="xian"></div>-->
+<!--            <div class="deng-a">-->
+<!--                <div class="deng-b"><div class="deng-t">春节</div></div>-->
+<!--            </div>-->
+<!--            <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <!-- 元宵节灯笼样式结束 -->-->
+<!--    </div>-->
+<!---->
 </header>
 <script>
     if((new Date().getMonth()) > 1){
@@ -740,6 +742,7 @@
         $('.denglong').css('display', 'block');
     }
 </script>
+
     
         
 
@@ -860,11 +863,11 @@
     <a class="hexo-douban-tab hexo-douban-tab-wish" href="javascript:;"
        rel="external">
         想看
-        (14)</a>
+        (22)</a>
     <a class="hexo-douban-tab hexo-douban-tab-collect" href="javascript:;"
        rel="external">
         已看
-        (55)</a>
+        (59)</a>
 </div>
 <div class="hexo-douban-items">
 </div>
@@ -880,9 +883,9 @@
 <script>
     (function () {
         let data = {
-            wish: [{"title":"伦敦佬对抗活死人 Cockneys vs Zombies","alt":"https://movie.douban.com/subject/3441046/","image":"https://minio.mythsman.com/douban/a6d42a66db6a6cc9b9910983b39a0e98.jpg","meta":"喜剧 / 动作 / 惊悚 / 恐怖 / 詹姆斯·莫伦 / Lucas Roche / 马蒂亚斯·霍恩 / 詹姆斯·莫伦 / Lucas Roche / 马蒂亚斯·霍恩 / 哈里·崔德威 / 米歇尔·雷恩","rating":"2023-11-22","comment":""},{"title":"行尸走肉衍生剧 The Walking Dead SPIN-OFF","alt":"https://movie.douban.com/subject/35202944/","image":"https://minio.mythsman.com/douban/e17e6f2eff0689c02ada16193f25d26e.jpg","meta":"剧情 / 犯罪 / 灾难 / 诺曼·瑞杜斯 / 梅丽莎·麦克布莱德","rating":"2023-11-19","comment":"别的不说，有我弩哥在，这剧我就打十分。就算是坨屎我也得笑着咽下去"},{"title":"搏击俱乐部 Fight Club","alt":"https://movie.douban.com/subject/1292000/","image":"https://minio.mythsman.com/douban/4893c00b185f11fa74f0fc7508411e65.jpg","meta":"剧情 / 动作 / 悬疑 / 惊悚 / 恰克·帕拉尼克 / 吉姆·乌尔斯 / 恰克·帕拉尼克 / 吉姆·乌尔斯 / 爱德华·诺顿 / 布拉德·皮特 / 海伦娜·伯翰·卡特 / 扎克·格雷尼尔 / 米特·洛夫 / 杰瑞德·莱托 / 艾恩·贝利 / 里奇蒙德·阿奎特 / 乔治·马奎尔","rating":"2023-11-18","comment":""},{"title":"追捕 君よ憤怒の河を渉れ","alt":"https://movie.douban.com/subject/1291863/","image":"https://minio.mythsman.com/douban/64aca7a78b91eb9aeabe5efcbf720085.jpg","meta":"剧情 / 动作 / 犯罪 / 田坂启 / 西村寿行 / 田坂启 / 西村寿行 / 高仓健 / 原田芳雄 / 西村晃 / 中野良子 / 田中邦卫 / 倍赏美津子","rating":"2023-08-15","comment":""},{"title":"周围的事 ぐるりのこと。","alt":"https://movie.douban.com/subject/3105588/","image":"https://minio.mythsman.com/douban/e64793757a2ae7d4df49c0ceea9d4cf1.jpg","meta":"剧情 / 家庭 / 桥口亮辅 / 桥口亮辅 / 木村多江 / 中川雅也 / 倍赏美津子 / 寺岛进 / 安藤玉惠 / 加濑亮","rating":"2023-08-15","comment":""},{"title":"利刃出鞘 Knives Out","alt":"https://movie.douban.com/subject/30318116/","image":"https://minio.mythsman.com/douban/ac68e5d420cf17356b50c7d91ba507cf.jpg","meta":"剧情 / 喜剧 / 悬疑 / 犯罪 / 莱恩·约翰逊 / 莱恩·约翰逊 / 丹尼尔·克雷格 / 安娜·德·阿玛斯 / 克里斯·埃文斯 / 杰米·李·柯蒂斯 / 迈克尔·珊农 / 唐·约翰逊 / 托妮·科莱特 / 勒凯斯·斯坦菲尔德 / 克里斯托弗·普卢默 / 凯瑟琳·兰福德 / 杰登·马泰尔 / 瑞琪·琳德赫姆 / 艾迪·帕特森 / 弗兰克·奥兹 / K·卡兰 / 诺阿·西甘 / M·埃梅特·沃尔什 / 玛琳娜·福特 / 劳尔·卡斯提洛 / 雪莉·罗德里格斯 / 约瑟夫·高登-莱维特 / 加布里埃尔·洛莱斯","rating":"2023-08-15","comment":""},{"title":"利刃出鞘2 Glass Onion: A Knives Out Mystery","alt":"https://movie.douban.com/subject/34939037/","image":"https://minio.mythsman.com/douban/047906f5f7c4512c8cabed4be237cac8.jpg","meta":"剧情 / 喜剧 / 悬疑 / 惊悚 / 犯罪 / 莱恩·约翰逊 / 莱恩·约翰逊 / 丹尼尔·克雷格 / 爱德华·诺顿 / 加奈儿·梦奈 / 凯瑟琳·哈恩 / 小莱斯利·奥多姆 / 凯特·哈德森 / 戴夫·巴蒂斯塔 / 杰西卡·亨维克 / 安吉拉·兰斯伯瑞 / 马友友 / 伊桑·霍克 / 休·格兰特 / 约瑟夫·高登-莱维特 / 玛德琳·克莱因 / 达拉斯·罗伯特斯 / 诺阿·西甘 / 杰姬·霍夫曼 / 史蒂芬·桑德海姆 / 娜塔莎·雷昂 / 卡里姆·阿卜杜尔-贾巴尔 / 塞蕾娜·威廉姆斯 / 丹·查里顿 / 艾迪·戈罗杰茨基 / Adam Davenport / James Payton","rating":"2023-08-15","comment":""},{"title":"危险关系 Jackie Brown","alt":"https://movie.douban.com/subject/1292335/","image":"https://minio.mythsman.com/douban/110b777be8bc3229dcbac05e9933e7db.jpg","meta":"剧情 / 惊悚 / 犯罪 / 昆汀·塔伦蒂诺 / 埃尔莫·伦纳德 / 昆汀·塔伦蒂诺 / 埃尔莫·伦纳德 / 帕姆·格里尔 / 塞缪尔·杰克逊 / 罗伯特·福斯特 / 布里吉特·方达 / 迈克尔·基顿 / 罗伯特·德尼罗 / 迈克尔·鲍文 / 克里斯·塔克 / 丽莎盖伊·汉密尔顿 / 汤米·利斯特 / 哈蒂·温斯顿 / 希德·黑格 / 爱米·格拉汉姆 / 埃利斯·威廉姆斯 / 唐吉·安布罗斯 / 提吉雅·克里斯特尔·凯默 / 黛安娜·乌里韦 / 劳拉·拉芙蕾丝 / 昆汀·塔伦蒂诺","rating":"2023-08-15","comment":""},{"title":"五尺天涯 Five Feet Apart","alt":"https://movie.douban.com/subject/30135110/","image":"https://minio.mythsman.com/douban/6aa5226b2c6c90515762086817012942.jpg","meta":"剧情 / 爱情 / 米琪·多特里 / 托拜厄斯·伊康尼斯 / 米琪·多特里 / 托拜厄斯·伊康尼斯 / 海莉·露·理查森 / 科尔·斯普罗斯 / 克莱尔·弗兰妮 / 莫伊塞斯·阿里亚斯 / 帕敏德·纳格拉 / 艾米丽·芭尔多尼 / 加里·维克斯 / 金伯莉·赫伯特·格雷戈里 / 吉姆·格里森","rating":"2023-08-15","comment":""},{"title":"铁拳男人 Cinderella Man","alt":"https://movie.douban.com/subject/1418519/","image":"https://minio.mythsman.com/douban/e67152957ae8d7fcffc82ddda66bc449.jpg","meta":"剧情 / 家庭 / 传记 / 运动 / 克里夫·霍林斯沃思 / 阿齐瓦·高斯曼 / 克里夫·霍林斯沃思 / 阿齐瓦·高斯曼 / 罗素·克劳 / 蕾妮·齐薇格 / 保罗·吉亚玛提 / 克雷格·比尔克 / 帕迪·康斯戴恩 / 布鲁斯·麦克吉尔 / 卡伦·普莱西 / 阿里尔·沃勒 / 罗丝玛丽·德薇特 / 琳达·卡辛 / 尼古拉斯·坎贝尔","rating":"2023-08-15","comment":""},{"title":"初吻 La boum","alt":"https://movie.douban.com/subject/1340517/","image":"https://minio.mythsman.com/douban/3765b42f2c132e8a0b115e16b5a2093e.jpg","meta":"喜剧 / 爱情 / 达妮埃尔·汤普森 / 克洛德·皮诺托 / 达妮埃尔·汤普森 / 克洛德·皮诺托 / 克洛德·布拉瑟 / 布丽吉特·佛西 / 苏菲·玛索 / 丹尼丝·格雷 / Jean-Michel Dupuis / 多米尼克·拉冯纳特 / 贝纳·纪欧多 / Jacques Ardouin / Evelyne Bellego / 理查德·波林热 / 让-克洛德·布约 / 米舍利娜·布尔戴 / 让-皮埃尔·卡斯塔尔迪 / 罗贝尔·达尔邦 / 罗贝尔·勒贝亚尔 / Sylvain Levignac / 玛丽-洛朗斯 / Frédéric de Pasquale / 希拉·奥康纳 / Arielle Sémenoff / 亚莉珊德拉·葛南 / 珍妮苏雄 / 亚历山大·斯特林 / Léon Zitrone / 阿兰·贝格尔 / 安妮·高蒂尔 / 瓦拉狄米·科斯马 / Jacques-Olivier Holzer / 伊琳娜·万卡","rating":"2023-08-15","comment":""},{"title":"机械师 The Machinist","alt":"https://movie.douban.com/subject/1309160/","image":"https://minio.mythsman.com/douban/e237ccc3659094290fa29fc29125c1a9.jpg","meta":"剧情 / 悬疑 / 惊悚 / 斯科特·考萨 / 斯科特·考萨 / 克里斯蒂安·贝尔 / 詹妮弗·杰森·李 / 艾塔娜·桑切斯-希洪 / 约翰·沙拉恩 / 迈克尔·艾恩塞德 / 小拉里·吉拉德 / 雷格·E·凯蒂 / 安娜·玛西 / 马修·罗梅罗·摩尔 / 罗伯特·朗 / 科林·斯廷顿 / 克雷格·史蒂文森 / 弗兰·拉奥斯","rating":"2023-08-15","comment":""},{"title":"惊声尖笑 Scary Movie","alt":"https://movie.douban.com/subject/1299981/","image":"https://minio.mythsman.com/douban/7103578226751e600d28bd60e730ff99.jpg","meta":"喜剧 / 肖恩·韦恩斯 / 马龙·韦恩斯 / 肖恩·韦恩斯 / 马龙·韦恩斯 / 安娜·法瑞丝 / 乔恩·亚伯拉罕斯 / 马龙·韦恩斯 / 戴夫·谢里登 / 莎诺·伊丽莎白 / 洛奇林·莫罗 / 肖恩·韦恩斯 / 雷吉娜·赫尔 / 卡门·伊莱克特拉","rating":"2023-08-15","comment":""},{"title":"暖暖内含光 Eternal Sunshine of the Spotless Mind","alt":"https://movie.douban.com/subject/1308777/","image":"https://minio.mythsman.com/douban/b64d0b23b33b2ce26a1aae526ddfdc5f.jpg","meta":"剧情 / 爱情 / 科幻 / 查理·考夫曼 / 米歇尔·贡德里 / 皮埃尔·比斯毛特 / 查理·考夫曼 / 米歇尔·贡德里 / 皮埃尔·比斯毛特 / 金·凯瑞 / 凯特·温丝莱特 / 伊利亚·伍德 / 克斯汀·邓斯特 / 汤姆斯·杰·瑞恩 / 马克·鲁弗洛 / 简·亚当斯 / 大卫·克罗斯 / 汤姆·威尔金森 / Amir Ali Said / Brian Price / 波琳·里特","rating":"2023-08-15","comment":""}],
+            wish: [{"title":"暗战 暗戰","alt":"https://movie.douban.com/subject/1298898/","image":"https://minio.mythsman.com/douban/c214daa1804505b6c80ff0d5c10e4ccb.jpg","meta":"剧情 / 动作 / 犯罪 / 游乃海 / 劳伦特·考蒂奥德 / 朱连·卡邦 / 游乃海 / 劳伦特·考蒂奥德 / 朱连·卡邦 / 刘德华 / 刘青云 / 蒙嘉慧 / 李子雄 / 许绍雄 / 林雪 / 黄卓玲 / 艾威 / 林伟健 / Robert Sparks / 洪伟良 / 罗靖庭 / 邱万城 / Paco Yick / South Kei Lee / 张浚鸿 / 李子明 / 李寿祺","rating":"2023-12-03","comment":""},{"title":"无限复活","alt":"https://movie.douban.com/subject/1305386/","image":"https://minio.mythsman.com/douban/544b3d42f14aa5f7f382d8a3a40728ee.jpg","meta":"剧情 / 爱情 / 科幻 / 奇幻 / 刘镇伟 / 刘镇伟 / 郑伊健 / 张柏芝 / 关继威 / 活丽明 / 陈忠伟","rating":"2023-12-03","comment":""},{"title":"甜蜜家园2 스위트홈2","alt":"https://movie.douban.com/subject/35524443/","image":"https://minio.mythsman.com/douban/da5a2f3510736ea8b7ad3e8246a85bc4.jpg","meta":"剧情 / 惊悚 / 恐怖 / 金坎比 / 黄英璨 / 金坎比 / 黄英璨 / 宋江 / 李阵郁 / 李施吟 / 高旻示 / 朴珪瑛 / 刘五性 / 吴政世 / 金武烈 / 郑振永","rating":"2023-12-01","comment":""},{"title":"大鱼 Big Fish","alt":"https://movie.douban.com/subject/1291545/","image":"https://minio.mythsman.com/douban/9df853cfcfa13984b847e2a4de81bf49.jpg","meta":"剧情 / 家庭 / 奇幻 / 冒险 / Daniel Wallace / 约翰·奥古斯特 / Daniel Wallace / 约翰·奥古斯特 / 伊万·麦克格雷格 / 阿尔伯特·芬尼 / 比利·克鲁德普 / 杰西卡·兰格 / 海伦娜·伯翰·卡特 / 艾莉森·洛曼 / 罗伯特·吉尔劳姆 / 玛丽昂·歌迪亚 / 马修·麦克格罗里 / 大卫·丹曼 / 米西·派勒 / 卢顿·万恩怀特三世 / 艾达·泰 / 艾伦妮·泰 / 史蒂夫·布西密 / 丹尼·德维托 / 迪普·罗伊 / 海利·安妮·内尔森","rating":"2023-12-01","comment":""},{"title":"逃出熔炉 Out of the Furnace","alt":"https://movie.douban.com/subject/3017691/","image":"https://minio.mythsman.com/douban/8468e7ec402f5b1b5803fb31c3a97361.jpg","meta":"剧情 / 惊悚 / 犯罪 / 布拉德·英格尔斯比 / 斯科特·库珀 / 布拉德·英格尔斯比 / 斯科特·库珀 / 克里斯蒂安·贝尔 / 佐伊·索尔达娜 / 伍迪·哈里森 / 威廉·达福 / 福里斯特·惠特克 / 卡西·阿弗莱克 / 山姆·夏普德 / 波伊德·霍布鲁克","rating":"2023-11-29","comment":""},{"title":"甜蜜家园 스위트홈","alt":"https://movie.douban.com/subject/34858078/","image":"https://minio.mythsman.com/douban/17f5aeb7ca0ef1c535e8b2698408fdd7.jpg","meta":"剧情 / 惊悚 / 恐怖 / 洪素利 / 金衡旼 / 朴昭静 / 洪素利 / 金衡旼 / 朴昭静 / 宋江 / 李是英 / 李到晛 / 李阵郁 / 朴珪瑛 / 高旻示 / 金南熙 / 高允贞 / 金甲洙 / 金相浩","rating":"2023-11-28","comment":""},{"title":"望夫成龙 望夫成龍","alt":"https://movie.douban.com/subject/1298603/","image":"https://minio.mythsman.com/douban/4d568145cf253df9753da6da9c2c45b5.jpg","meta":"喜剧 / 爱情 / 邓特希 / 叶广俭 / 邓特希 / 叶广俭 / 周星驰 / 吴君如 / 成奎安 / 关秀媚 / 关佩琳 / 胡枫 / 王敏德 / 单立文 / 卢宛茵","rating":"2023-11-27","comment":""},{"title":"甜蜜蜜","alt":"https://movie.douban.com/subject/1305164/","image":"https://minio.mythsman.com/douban/1b77b784fd26cfe0aedef4ce68185c31.jpg","meta":"剧情 / 爱情 / 岸西 / 岸西 / 黎明 / 张曼玉 / 杨恭如 / 曾志伟 / 杜可风 / 张同祖 / 诸慧荷 / 丁羽","rating":"2023-11-25","comment":"听说张曼玉演技封神来复盘一下"},{"title":"重庆森林 重慶森林","alt":"https://movie.douban.com/subject/1291999/","image":"https://minio.mythsman.com/douban/d891387489e2bff91c98ac2d089da52c.jpg","meta":"剧情 / 爱情 / 王家卫 / 王家卫 / 林青霞 / 金城武 / 梁朝伟 / 王菲 / 周嘉玲","rating":"2023-11-25","comment":"去过重庆，想看看重庆的森林"},{"title":"行尸走肉衍生剧 The Walking Dead SPIN-OFF","alt":"https://movie.douban.com/subject/35202944/","image":"https://minio.mythsman.com/douban/e17e6f2eff0689c02ada16193f25d26e.jpg","meta":"剧情 / 犯罪 / 灾难 / 诺曼·瑞杜斯 / 梅丽莎·麦克布莱德","rating":"2023-11-19","comment":"别的不说，有我弩哥在，这剧我就打十分。就算是坨屎我也得笑着咽下去"},{"title":"搏击俱乐部 Fight Club","alt":"https://movie.douban.com/subject/1292000/","image":"https://minio.mythsman.com/douban/4893c00b185f11fa74f0fc7508411e65.jpg","meta":"剧情 / 动作 / 悬疑 / 惊悚 / 恰克·帕拉尼克 / 吉姆·乌尔斯 / 恰克·帕拉尼克 / 吉姆·乌尔斯 / 爱德华·诺顿 / 布拉德·皮特 / 海伦娜·伯翰·卡特 / 扎克·格雷尼尔 / 米特·洛夫 / 杰瑞德·莱托 / 艾恩·贝利 / 里奇蒙德·阿奎特 / 乔治·马奎尔","rating":"2023-11-18","comment":""},{"title":"追捕 君よ憤怒の河を渉れ","alt":"https://movie.douban.com/subject/1291863/","image":"https://minio.mythsman.com/douban/64aca7a78b91eb9aeabe5efcbf720085.jpg","meta":"剧情 / 动作 / 犯罪 / 田坂启 / 西村寿行 / 田坂启 / 西村寿行 / 高仓健 / 原田芳雄 / 西村晃 / 中野良子 / 田中邦卫 / 倍赏美津子","rating":"2023-08-15","comment":""},{"title":"周围的事 ぐるりのこと。","alt":"https://movie.douban.com/subject/3105588/","image":"https://minio.mythsman.com/douban/e64793757a2ae7d4df49c0ceea9d4cf1.jpg","meta":"剧情 / 家庭 / 桥口亮辅 / 桥口亮辅 / 木村多江 / 中川雅也 / 倍赏美津子 / 寺岛进 / 安藤玉惠 / 加濑亮","rating":"2023-08-15","comment":""},{"title":"利刃出鞘 Knives Out","alt":"https://movie.douban.com/subject/30318116/","image":"https://minio.mythsman.com/douban/ac68e5d420cf17356b50c7d91ba507cf.jpg","meta":"剧情 / 喜剧 / 悬疑 / 犯罪 / 莱恩·约翰逊 / 莱恩·约翰逊 / 丹尼尔·克雷格 / 安娜·德·阿玛斯 / 克里斯·埃文斯 / 杰米·李·柯蒂斯 / 迈克尔·珊农 / 唐·约翰逊 / 托妮·科莱特 / 勒凯斯·斯坦菲尔德 / 克里斯托弗·普卢默 / 凯瑟琳·兰福德 / 杰登·马泰尔 / 瑞琪·琳德赫姆 / 艾迪·帕特森 / 弗兰克·奥兹 / K·卡兰 / 诺阿·西甘 / M·埃梅特·沃尔什 / 玛琳娜·福特 / 劳尔·卡斯提洛 / 雪莉·罗德里格斯 / 约瑟夫·高登-莱维特 / 加布里埃尔·洛莱斯","rating":"2023-08-15","comment":""},{"title":"利刃出鞘2 Glass Onion: A Knives Out Mystery","alt":"https://movie.douban.com/subject/34939037/","image":"https://minio.mythsman.com/douban/047906f5f7c4512c8cabed4be237cac8.jpg","meta":"剧情 / 喜剧 / 悬疑 / 惊悚 / 犯罪 / 莱恩·约翰逊 / 莱恩·约翰逊 / 丹尼尔·克雷格 / 爱德华·诺顿 / 加奈儿·梦奈 / 凯瑟琳·哈恩 / 小莱斯利·奥多姆 / 凯特·哈德森 / 戴夫·巴蒂斯塔 / 杰西卡·亨维克 / 安吉拉·兰斯伯瑞 / 马友友 / 伊桑·霍克 / 休·格兰特 / 约瑟夫·高登-莱维特 / 玛德琳·克莱因 / 达拉斯·罗伯特斯 / 诺阿·西甘 / 杰姬·霍夫曼 / 史蒂芬·桑德海姆 / 娜塔莎·雷昂 / 卡里姆·阿卜杜尔-贾巴尔 / 塞蕾娜·威廉姆斯 / 丹·查里顿 / 艾迪·戈罗杰茨基 / Adam Davenport / James Payton","rating":"2023-08-15","comment":""},{"title":"危险关系 Jackie Brown","alt":"https://movie.douban.com/subject/1292335/","image":"https://minio.mythsman.com/douban/110b777be8bc3229dcbac05e9933e7db.jpg","meta":"剧情 / 惊悚 / 犯罪 / 昆汀·塔伦蒂诺 / 埃尔莫·伦纳德 / 昆汀·塔伦蒂诺 / 埃尔莫·伦纳德 / 帕姆·格里尔 / 塞缪尔·杰克逊 / 罗伯特·福斯特 / 布里吉特·方达 / 迈克尔·基顿 / 罗伯特·德尼罗 / 迈克尔·鲍文 / 克里斯·塔克 / 丽莎盖伊·汉密尔顿 / 汤米·利斯特 / 哈蒂·温斯顿 / 希德·黑格 / 爱米·格拉汉姆 / 埃利斯·威廉姆斯 / 唐吉·安布罗斯 / 提吉雅·克里斯特尔·凯默 / 黛安娜·乌里韦 / 劳拉·拉芙蕾丝 / 昆汀·塔伦蒂诺","rating":"2023-08-15","comment":""},{"title":"五尺天涯 Five Feet Apart","alt":"https://movie.douban.com/subject/30135110/","image":"https://minio.mythsman.com/douban/6aa5226b2c6c90515762086817012942.jpg","meta":"剧情 / 爱情 / 米琪·多特里 / 托拜厄斯·伊康尼斯 / 米琪·多特里 / 托拜厄斯·伊康尼斯 / 海莉·露·理查森 / 科尔·斯普罗斯 / 克莱尔·弗兰妮 / 莫伊塞斯·阿里亚斯 / 帕敏德·纳格拉 / 艾米丽·芭尔多尼 / 加里·维克斯 / 金伯莉·赫伯特·格雷戈里 / 吉姆·格里森","rating":"2023-08-15","comment":""},{"title":"铁拳男人 Cinderella Man","alt":"https://movie.douban.com/subject/1418519/","image":"https://minio.mythsman.com/douban/e67152957ae8d7fcffc82ddda66bc449.jpg","meta":"剧情 / 家庭 / 传记 / 运动 / 克里夫·霍林斯沃思 / 阿齐瓦·高斯曼 / 克里夫·霍林斯沃思 / 阿齐瓦·高斯曼 / 罗素·克劳 / 蕾妮·齐薇格 / 保罗·吉亚玛提 / 克雷格·比尔克 / 帕迪·康斯戴恩 / 布鲁斯·麦克吉尔 / 卡伦·普莱西 / 阿里尔·沃勒 / 罗丝玛丽·德薇特 / 琳达·卡辛 / 尼古拉斯·坎贝尔","rating":"2023-08-15","comment":""},{"title":"初吻 La boum","alt":"https://movie.douban.com/subject/1340517/","image":"https://minio.mythsman.com/douban/3765b42f2c132e8a0b115e16b5a2093e.jpg","meta":"喜剧 / 爱情 / 达妮埃尔·汤普森 / 克洛德·皮诺托 / 达妮埃尔·汤普森 / 克洛德·皮诺托 / 克洛德·布拉瑟 / 布丽吉特·佛西 / 苏菲·玛索 / 丹尼丝·格雷 / Jean-Michel Dupuis / 多米尼克·拉冯纳特 / 贝纳·纪欧多 / Jacques Ardouin / Evelyne Bellego / 理查德·波林热 / 让-克洛德·布约 / 米舍利娜·布尔戴 / 让-皮埃尔·卡斯塔尔迪 / 罗贝尔·达尔邦 / 罗贝尔·勒贝亚尔 / Sylvain Levignac / 玛丽-洛朗斯 / Frédéric de Pasquale / 希拉·奥康纳 / Arielle Sémenoff / 亚莉珊德拉·葛南 / 珍妮苏雄 / 亚历山大·斯特林 / Léon Zitrone / 阿兰·贝格尔 / 安妮·高蒂尔 / 瓦拉狄米·科斯马 / Jacques-Olivier Holzer / 伊琳娜·万卡","rating":"2023-08-15","comment":""},{"title":"机械师 The Machinist","alt":"https://movie.douban.com/subject/1309160/","image":"https://minio.mythsman.com/douban/e237ccc3659094290fa29fc29125c1a9.jpg","meta":"剧情 / 悬疑 / 惊悚 / 斯科特·考萨 / 斯科特·考萨 / 克里斯蒂安·贝尔 / 詹妮弗·杰森·李 / 艾塔娜·桑切斯-希洪 / 约翰·沙拉恩 / 迈克尔·艾恩塞德 / 小拉里·吉拉德 / 雷格·E·凯蒂 / 安娜·玛西 / 马修·罗梅罗·摩尔 / 罗伯特·朗 / 科林·斯廷顿 / 克雷格·史蒂文森 / 弗兰·拉奥斯","rating":"2023-08-15","comment":""},{"title":"惊声尖笑 Scary Movie","alt":"https://movie.douban.com/subject/1299981/","image":"https://minio.mythsman.com/douban/7103578226751e600d28bd60e730ff99.jpg","meta":"喜剧 / 肖恩·韦恩斯 / 马龙·韦恩斯 / 肖恩·韦恩斯 / 马龙·韦恩斯 / 安娜·法瑞丝 / 乔恩·亚伯拉罕斯 / 马龙·韦恩斯 / 戴夫·谢里登 / 莎诺·伊丽莎白 / 洛奇林·莫罗 / 肖恩·韦恩斯 / 雷吉娜·赫尔 / 卡门·伊莱克特拉","rating":"2023-08-15","comment":""},{"title":"暖暖内含光 Eternal Sunshine of the Spotless Mind","alt":"https://movie.douban.com/subject/1308777/","image":"https://minio.mythsman.com/douban/b64d0b23b33b2ce26a1aae526ddfdc5f.jpg","meta":"剧情 / 爱情 / 科幻 / 查理·考夫曼 / 米歇尔·贡德里 / 皮埃尔·比斯毛特 / 查理·考夫曼 / 米歇尔·贡德里 / 皮埃尔·比斯毛特 / 金·凯瑞 / 凯特·温丝莱特 / 伊利亚·伍德 / 克斯汀·邓斯特 / 汤姆斯·杰·瑞恩 / 马克·鲁弗洛 / 简·亚当斯 / 大卫·克罗斯 / 汤姆·威尔金森 / Amir Ali Said / Brian Price / 波琳·里特","rating":"2023-08-15","comment":""}],
             do: [{"title":"行尸走肉 第六季 The Walking Dead Season 6","alt":"https://movie.douban.com/subject/26101081/","image":"https://minio.mythsman.com/douban/3ed794d6cfa06fe8391f6d7d0dcc93bb.jpg","meta":"剧情 / 恐怖 / 弗兰克·德拉邦特 / Charlie Adlard / 斯科特·M·金普勒 / Robert Kirkman / 托尼·摩尔 / Matthew Negrete / 弗兰克·德拉邦特 / Charlie Adlard / 斯科特·M·金普勒 / Robert Kirkman / 托尼·摩尔 / Matthew Negrete / 安德鲁·林肯 / 诺曼·瑞杜斯 / 奥斯汀·艾布拉姆斯 / 史蒂文·元 / 钱德勒·里格斯 / 亚利桑德拉·布莱肯瑞吉 / 劳伦·科汉 / 迈克尔·库立兹 / 托芙·菲尔德舒 / 塞斯·吉列姆 / 丹娜·奎里拉 / 连尼·詹姆斯 / 罗斯·马昆德 / 索尼夸·马丁-格林 / 阿兰娜·莫特森 / 梅丽莎·麦克布莱德 / 杰弗里·迪恩·摩根","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"人比鬼更可怕，看到第六季14集了，有点疲乏了"},{"title":"绝命毒师  第三季 Breaking Bad Season 3","alt":"https://movie.douban.com/subject/4256328/","image":"https://minio.mythsman.com/douban/d6b627ce1819f1d40714edbc7c78461a.jpg","meta":"剧情 / 犯罪 / 文斯·吉里根 / 皮特·古尔德 / 乔治·马斯塔斯 / 山姆·卡特林 / 莫伊拉·沃利-贝克特 / 约翰·施班 / 托马斯·施纳泽 / 詹妮弗·哈金森 / 文斯·吉里根 / 皮特·古尔德 / 乔治·马斯塔斯 / 山姆·卡特林 / 莫伊拉·沃利-贝克特 / 约翰·施班 / 托马斯·施纳泽 / 詹妮弗·哈金森 / 布莱恩·科兰斯顿 / 亚伦·保尔 / 安娜·冈 / 吉安卡罗·埃斯波西托 / 迪恩·诺里斯 / 贝琪·勃兰特 / 大卫·科斯塔贝尔","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"Now, call my name!"},{"title":"风骚律师 第一季 Better Call Saul Season 1","alt":"https://movie.douban.com/subject/25726259/","image":"https://minio.mythsman.com/douban/a0e4646d143397fad90a31fbef071b00.jpg","meta":"剧情 / 喜剧 / 犯罪 / 文斯·吉里根 / 皮特·古尔德 / 托马斯·施纳泽 / 詹妮弗·哈金森 / Bradley Paul / 戈登·史密斯 / 文斯·吉里根 / 皮特·古尔德 / 托马斯·施纳泽 / 詹妮弗·哈金森 / Bradley Paul / 戈登·史密斯 / 鲍勃·奥登科克 / 蕾亚·塞洪 / 乔纳森·班克斯 / 帕特里克·法比安 / 迈克尔·麦基恩 / 迈克尔·博夫舍维尔 / 丹尼斯·布特斯卡里斯 / 埃迪·J.费尔南德斯 / 迈克尔·曼多 / 朱莉·安·埃默里 / 凯瑞·康顿 / 巴里·沙巴卡·亨利 / 奥米德·阿布塔西 / 雷蒙德·克鲁斯 / 道林·米西克 / 克里·杜瓦尔 / 梅尔·罗德里格斯 / 维森特·拉雷斯卡 / 凯文·韦斯曼 / 莱恩·加里逊","rating":"2023-08-15","comment":""},{"title":"汉尼拔 第三季 Hannibal Season 3","alt":"https://movie.douban.com/subject/25884541/","image":"https://minio.mythsman.com/douban/afc6874d3bfd82aa0377b04a0ea725a9.jpg","meta":"剧情 / 惊悚 / 犯罪 / 布莱恩·福勒 / 托马斯·哈里斯 / 布莱恩·福勒 / 托马斯·哈里斯 / 麦斯·米科尔森 / 休·丹西 / 劳伦斯·菲什伯恩 / 理查德·阿米蒂奇 / 卡罗利娜·达韦纳 / 吉莲·安德森 / 卢蒂娜·卫斯理 / 乔·安德森 / 扎克瑞·昆图 / 劳尔·埃斯帕扎 / 妮娜·阿里安达 / 杰里米·克鲁齐利 / 冈本多绪","rating":"2023-08-15 / ★★★★☆ 推荐","comment":""},{"title":"雾山五行·犀川幻紫林","alt":"https://movie.douban.com/subject/35178776/","image":"https://minio.mythsman.com/douban/b67166b64560bdf1bd15757282f6ac4b.jpg","meta":"动作 / 动画 / 奇幻 / 武侠 / 林魂 / 林魂","rating":"2023-08-15 / ★★★★★ 力荐","comment":"有比这个能打的？"},{"title":"海贼王 ワンピース","alt":"https://movie.douban.com/subject/1453238/","image":"https://minio.mythsman.com/douban/fadf907bf8305c07582b25c263014e55.jpg","meta":"喜剧 / 动作 / 动画 / 奇幻 / 冒险 / 尾田荣一郎 / 武上纯希 / 岛田满 / 菅良幸 / 桥本裕志 / 山口亮太 / 村山功 / 田中仁 / 樱井刚 / 高桥阳一 / 中山智博 / 古贺直树 / 上坂浩彦 / 增本拓也 / 富冈淳广 / 米村正二 / 尾田荣一郎 / 武上纯希 / 岛田满 / 菅良幸 / 桥本裕志 / 山口亮太 / 村山功 / 田中仁 / 樱井刚 / 高桥阳一 / 中山智博 / 古贺直树 / 上坂浩彦 / 增本拓也 / 富冈淳广 / 米村正二 / 田中真弓 / 冈村明美 / 中井和哉 / 山口胜平 / 平田广明 / 大谷育江 / 山口由里子 / 矢尾一树 / 长岛雄一 / 池田秀一 / 古川登志夫 / 古谷彻 / 大塚周夫 / 津嘉山正种 / 草尾毅 / 大场真人 / 宝龟克寿 / 园部启一 / 柴田秀胜 / 中博史 / 阪口大助 / 竹内顺子 / 千叶繁 / 三石琴乃 / 挂川裕彦 / 堀秀行 / 田中秀幸 / 大友龙三郎 / 有本钦隆 / 大塚明夫 / 玄田哲章 / 小山茉美 / 土井美加 / 野田顺子 / 渡边美佐 / 野上尤加奈 / 林原惠美 / 水树奈奈 / 园崎未惠 / 西原久美子 / 久川绫 / 泽城美雪 / 池泽春菜 / 斋藤千和 / 神谷浩史 / 浪川大辅 / 森久保祥太郎 / 石田彰 / 高木涉 / 桧山修之 / 子安武人 / 关智一","rating":"2023-08-15 / ★★★★★ 力荐","comment":"不知不觉，看了十几年了啊"}],
-            collect: [{"title":"河边的错误","alt":"https://movie.douban.com/subject/35256092/","image":"https://minio.mythsman.com/douban/b32146b90183f4af22b0150a1b263ddf.jpg","meta":"剧情 / 犯罪 / 魏书钧 / 康春雷 / 魏书钧 / 朱一龙 / 曾美慧孜 / 侯天来 / 佟林楷 / 康春雷 / 王健宇 / 莫西子诗 / 白沙 / 曹阳 / 周庆昀 / 曾淇 / 黄俊 / 黄米依 / 阎鹤祥 / 周游","rating":"2023-10-26 / ★★★★☆ 推荐","comment":"精彩！很久没有这种我能紧绷两个小时认认真真翻找每一帧细节的电影了。个人感受是从悬疑到恐怖与剧情，最后到伦理的电影。虽然不看影评完全看不懂哈哈哈哈哈。朱一龙演技完全在线的！"},{"title":"坚如磐石","alt":"https://movie.douban.com/subject/33447633/","image":"https://minio.mythsman.com/douban/c5fce51db30b36b08f8f22b1fcc0d242.jpg","meta":"剧情 / 动作 / 犯罪 / 陈宇 / 陈宇 / 雷佳音 / 张国立 / 于和伟 / 周冬雨 / 孙艺洲 / 李乃文 / 许亚军 / 田雨 / 何政军 / 陈冲 / 王迅 / 林博洋 / 陈童","rating":"2023-10-04 / ★★★☆☆ 还行","comment":"想打7分，但无奈豆瓣只能打6分或者8分。\n剧情很紧凑，“大部分”演员演技还是到位的(周冬雨的角色设计的不太好个人感觉，张国立演技感觉对比起其他几个还是稍逊一筹)，但是有很多细节经不起推敲。比如①郑刚的岳父提了一嘴，但没有细说，这个还好；②杨晓薇后续没说清楚，“1000万+性命”和“手机+真相”对比起来，选择后者很牵强，而且最近还是没杀；③苏见明找手机的直觉未免太好了，真的真的太牵强了，就靠一句“小波知道”？；④尸体出现的简直离大谱，真就天意？\n还有很多很多，先吃饭了"},{"title":"黎明墙 The Dawn Wall","alt":"https://movie.douban.com/subject/30157353/","image":"https://minio.mythsman.com/douban/6dafabd6175f8bb880ff2a2b1a21f74d.jpg","meta":"纪录片 / 冒险 / 约翰·布兰奇 / 汤米·考德威尔 / 凯文·乔根森","rating":"2023-09-16 / ★★★★☆ 推荐","comment":"在网安基地图书馆二楼的放映厅看的第一部电影。\n电影本身作为纪录片是很合格的，将Tommy本人的人格魅力塑造的很成功，除去他个人断指仍挑战成功的部分，他没有放弃Kevin等待他共同前进的那一段更能打动我，Kevin最终也是不负众望成功拿下pitch 15！很励志！"},{"title":"奥本海默 Oppenheimer","alt":"https://movie.douban.com/subject/35593344/","image":"https://minio.mythsman.com/douban/5b1e32f37715eaeb6477c04ff972bd44.jpg","meta":"剧情 / 传记 / 历史 / 克里斯托弗·诺兰 / 克里斯托弗·诺兰 / 基里安·墨菲 / 艾米莉·布朗特 / 马特·达蒙 / 小罗伯特·唐尼 / 弗洛伦丝·皮尤 / 拉米·马雷克 / 加里·奥德曼 / 卡西·阿弗莱克 / 肯尼思·布拉纳 / 戴恩·德哈恩 / 乔什·哈奈特 / 詹姆斯·达西 / 杰克·奎德 / 马修·莫迪恩 / 斯科特·格瑞恩斯 / 阿尔登·埃伦瑞奇 / 古斯塔·斯卡斯加德 / 迈克尔·安格拉诺 / 奥莉薇·瑟尔比 / 乔希·佩克 / 亚历克斯·沃尔夫 / 托尼·戈德温 / 杰森·克拉克 / 大卫·克朗姆霍茨 / 詹姆斯·瑞马尔 / 大卫·达斯马齐连 / 戴文·博斯蒂克 / 马提亚斯·施维赫夫 / 本·萨弗迪 / 杰夫·赫普内尔 / 路易丝·隆巴德 / 艾玛·杜蒙特 / 迪伦·阿诺德 / 乔什·祖克曼 / 汤姆·康蒂 / 拜斯·约翰逊 / 哈里森·吉尔伯特森 / 杰佛逊·豪尔 / 格里格瑞·贾巴拉 / 克里斯托弗·邓汉 / 盖·布耐特 / 大卫·里达尔 / 斯荣德·福斯·奥瓦格 / 肖恩·艾弗里 / 丹尼·德费拉里 / 奥利·哈斯基维 / Sadie Stratton / 凯瑞·威斯特科特 / 杰米·约翰·韦尔斯","rating":"2023-09-15 / ★★★★★ 力荐","comment":"诺兰出品，必属精品！“剃刀党”墨菲真的帅爆我了，这个眼神真的直勾勾的抓住了我！！“钢铁侠”小罗伯特·唐尼也是成功靠这部电源撕掉了钢铁侠的标签（你可以说他有很多除了钢铁侠以外很优秀的作品，但这部电源我才真真正正觉得他不只是钢铁侠了）。这部电影的双线叙事看的很舒服，万达IMAX厅的音效真的巨赞！只是原子弹爆炸的声音没有我想象的震撼。\n也有一些不完全满意的点，但是豆瓣没有9分的选项，四舍五入给个满分！"},{"title":"爱你，罗茜 Love, Rosie","alt":"https://movie.douban.com/subject/5153254/","image":"https://minio.mythsman.com/douban/5d00df48d87e5df703354bdf48c529c0.jpg","meta":"喜剧 / 爱情 / 西西莉亚·埃亨 / 朱丽叶·托希迪 / 西西莉亚·埃亨 / 朱丽叶·托希迪 / 莉莉·柯林斯 / 山姆·克拉弗林 / 塔姆欣·伊格顿 / 杰美·温斯顿 / 克里斯蒂安·库克 / 阿特·帕金森 / 马里昂·奥德怀尔","rating":"2023-08-27 / ★★★☆☆ 还行","comment":"莉莉·克斯林和男主山姆很养眼，但是剧情真的是超级无敌巨俗套而且很折磨，有点刻意的感觉"},{"title":"隐入尘烟","alt":"https://movie.douban.com/subject/35131346/","image":"https://minio.mythsman.com/douban/1e98dda08452ca473ebf2c192468599c.jpg","meta":"剧情 / 李睿珺 / 李睿珺 / 武仁林 / 海清 / 杨光锐 / 赵登平 / 王彩兰 / 曾建贵 / 武赟志 / 马占红 / 王翠兰 / 续彩霞 / 李生甫 / 张敏","rating":"2023-08-15 / ★★★★★ 力荐","comment":"网友都说演的很刻意很虚假，但其实当你曾身处其中，那种真实感会更令你感到可怕"},{"title":"不要抬头 Don't Look Up","alt":"https://movie.douban.com/subject/34884712/","image":"https://minio.mythsman.com/douban/eff57e368f9d74408bafc76ce89e6e0c.jpg","meta":"喜剧 / 科幻 / 亚当·麦凯 / 戴维·西罗塔 / 亚当·麦凯 / 戴维·西罗塔 / 莱昂纳多·迪卡普里奥 / 詹妮弗·劳伦斯 / 梅丽尔·斯特里普 / 凯特·布兰切特 / 罗布·摩根 / 乔纳·希尔 / 马克·里朗斯 / 泰勒·派瑞 / 提莫西·查拉梅 / 朗·普尔曼 / 爱莉安娜·格兰德 / 卡迪小子 / 克里斯·埃文斯 / 希米什·帕特尔 / 梅兰妮·林斯基 / 迈克尔·切克利斯 / 托莫·希思黎 / 保罗·吉尔福伊尔 / 罗伯特·乔伊 / 海缇安·朴 / 朗尼·法默 / 罗斯·帕特里奇 / 列维·施瑞博尔 / 克里斯·埃弗里特 / 乔治亚·莱曼 / 帕特丽夏·德哈尼 / 本·锡德尔 / 特蕾莎·普雷恩 / 梅根·莱瑟斯 / 阿什利·班菲尔德 / 萨拉·西尔弗曼 / 乔·格拉瑟 / 博·艾伦 / 塞莱斯特·奥利瓦 / 罗曼·米蒂齐扬 / 内森·里奇曼 / 韦斯·约翰逊","rating":"2023-08-15 / ★★★★★ 力荐","comment":"小李子主演的末日题材电影，但这部电影却没有在“末日”二字上大刀阔斧，反而以喜剧和荒诞为主，带入到如今的国际关系和日常生活中，讽刺感极强"},{"title":"子弹列车 Bullet Train","alt":"https://movie.douban.com/subject/35118954/","image":"https://minio.mythsman.com/douban/479af5873b06b94cebf1bb132eebb842.jpg","meta":"喜剧 / 动作 / 惊悚 / 扎克·奥尔维奇 / 伊坂幸太郎 / 扎克·奥尔维奇 / 伊坂幸太郎 / 布拉德·皮特 / 乔伊·金 / 亚伦·泰勒-约翰逊 / 布莱恩·泰里·亨利 / 安德鲁·浩二 / 真田广之 / 迈克尔·珊农 / 桑德拉·布洛克 / 坏痞兔 / 罗根·勒曼 / 莎姬·贝兹 / 丘增 / 凯伦·福原 / 凯文·秋吉·程 / 明基·村上 / 武谷香织 / 吉姆·加里蒂 / 埃梅丽娜·亚当斯 / 詹森·郑 / 约书亚·萨达索 / 约翰娜·沃茨 / 胡里奥·加贝 / 安德烈·穆尼奥斯 / 阿诺德·陈 / 帕沙·D.林奇尼科夫 / 米歇尔·李 / 贾森·马修·史密斯 / 大卫·雷奇 / 艾恩 / 雷·巴佛 / 达伦·凯兰 / 莉昂·马苏达 / 伊戈·米基塔斯 / 瑞安·雷诺兹 / 查宁·塔图姆 / 哈里森·徐","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"布拉德·皮特还是一如既往的潇洒，电影剧情虽然普通，但是动作戏真的流畅，拳拳到肉，算是一部合格的动作片了"},{"title":"壮志凌云2：独行侠 Top Gun: Maverick","alt":"https://movie.douban.com/subject/6893932/","image":"https://minio.mythsman.com/douban/2c5a37843d21ca1421f3eb693d55c23f.jpg","meta":"动作 / 伊伦·克鲁格 / 埃里克·辛格尔 / 克里斯托弗·麦奎里 / 贾斯丁·马科斯 / 吉姆·卡什 / 小杰克·埃普斯 / 彼得·克莱格 / 伊伦·克鲁格 / 埃里克·辛格尔 / 克里斯托弗·麦奎里 / 贾斯丁·马科斯 / 吉姆·卡什 / 小杰克·埃普斯 / 彼得·克莱格 / 汤姆·克鲁斯 / 詹妮弗·康纳利 / 迈尔斯·特勒 / 乔恩·哈姆 / 方·基默 / 莫妮卡.巴巴罗 / 珍·路易莎·凯利 / 曼尼·贾希尼托 / 罗伯塔·斯巴达 / 艾德·哈里斯 / 格伦·鲍威尔 / 刘易斯·普尔曼 / 雷蒙德·李 / 莉莲安娜·雷伊 / 杰·埃利斯 / 杰克·皮克金 / 蕾切尔·马卡里兰 / 巴希尔·萨拉赫丁 / 彼得·马克·肯德尔 / 查尔斯·帕内尔 / 切尔西哈里斯 / 丹尼·拉米雷斯 / 王仲欣 / 南希·德马尔斯 / 康妮·夏普 / 塞尔吉奥·布里奥内斯 / 佩内洛普·卡普迪雅 / 马克·安东尼·考克斯 / 莫宾·汗","rating":"2023-08-15 / ★★☆☆☆ 较差","comment":"烂的不行，剧情普通、特效普通、场面普通，太老套了主要，看的折磨，还强加意识形态..."},{"title":"两大一小三俘虏 Three Fugitives","alt":"https://movie.douban.com/subject/1306378/","image":"https://minio.mythsman.com/douban/0fae7e07e39637114db541648838e873.jpg","meta":"喜剧 / 动作 / 弗朗西斯·韦贝尔 / 弗朗西斯·韦贝尔 / 尼克·诺特 / 马丁·肖特 / 麦格 / 詹姆斯·厄尔·琼斯 / 阿兰·卢克 / 肯尼思·麦克米伦 / 戴维阿诺特 / 布鲁斯·麦克吉尔 / 李·加林顿 / 西·理查森 / Stanley Brock / 约翰·普罗卡奇诺 / 凯茜·金尼 / 杰克·麦吉 / 艾伯特·亨德森 / 杰夫·帕里 / Rhoda Gemignani / 克莱夫·罗森格伦 / 拉里·米勒 / 布莱恩·汤普森 / Woody Eney / 约翰·艾尔瓦德 / Gary Armagnac / 黛娜莱诺佛 / Jeannine Wiest / Lance August / 迪恩史密斯 / 舍曼·霍华德 / Danny Nero","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"美国1989年的喜剧，欢乐且感动！"},{"title":"坠落 Fall","alt":"https://movie.douban.com/subject/35700395/","image":"https://minio.mythsman.com/douban/05456fa713b8994b99f1695de12d0421.jpg","meta":"动作 / 惊悚 / 冒险 / 运动 / 乔纳森·弗兰克 / 斯科特·曼 / 乔纳森·弗兰克 / 斯科特·曼 / 格雷斯·卡罗琳·柯里 / 维吉尼亚·加德纳 / 梅森·古丁 / 杰弗里·迪恩·摩根 / 贾斯珀·科尔 / 达雷尔·丹尼斯 / Bamm Ericsen / 朱莉娅·佩斯·米契尔 / Evie Mann / Joseph Mann / Nick Lynes / Branden Currey","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"还行，小成本大制作，各方面塑造的挺细腻的"},{"title":"边缘行者","alt":"https://movie.douban.com/subject/35192672/","image":"https://minio.mythsman.com/douban/15c16c1fc29c4025157d509d43e65e63.jpg","meta":"动作 / 悬疑 / 犯罪 / 黄明升 / 王焱 / 马焱 / 黄明升 / 王焱 / 马焱 / 任贤齐 / 任达华 / 方中信 / 谭耀文 / 吴卓羲 / 陈国坤 / 林晓峰 / 河国荣 / 尹扬明 / 朱鉴然 / 洪金宝 / 林嘉欣 / 曾江 / 张兆辉 / 陈炜 / 关礼杰","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"任贤齐/任达华啥的老角，还凑合，剧情老套了点"},{"title":"菊次郎的夏天 菊次郎の夏","alt":"https://movie.douban.com/subject/1293359/","image":"https://minio.mythsman.com/douban/89f4b420b948d9b8e5c229aad68367c6.jpg","meta":"剧情 / 喜剧 / 北野武 / 北野武 / 北野武 / 关口雄介 / 岸本加世子 / 吉行和子 / 细川典江 / 大家由祐子 / 磨赤儿 / 铃木忠幸 / 井手博士 / 今村鼠 / 兼子二郎 / 田中要次 / 小岛可奈子","rating":"2023-08-15 / ★★★★★ 力荐","comment":"那必然是真神！北野武我个人是超喜欢的，节奏把握的很好，不是主流电影俗套的模式，各种切景镜头感，人物一愣一愣的，很治愈！"},{"title":"美国往事 Once Upon a Time in America","alt":"https://movie.douban.com/subject/1292262/","image":"https://minio.mythsman.com/douban/ffa4d568574b470290c38082ecab2cda.jpg","meta":"剧情 / 犯罪 / 皮耶罗·德·贝纳迪 / 莱奥纳多·本韦努蒂 / 弗兰科·奥卡利 / 恩里科·梅迪欧力 / 弗兰科·费里尼 / 赛尔乔·莱昂内 / 皮耶罗·德·贝纳迪 / 莱奥纳多·本韦努蒂 / 弗兰科·奥卡利 / 恩里科·梅迪欧力 / 弗兰科·费里尼 / 赛尔乔·莱昂内 / 罗伯特·德尼罗 / 詹姆斯·伍兹 / 伊丽莎白·麦戈文 / 乔·佩西 / 波特·杨 / 塔斯黛·韦尔德 / 特里特·威廉斯 / 丹尼·爱罗 / 理查德·布赖特 / 詹姆斯·海登 / 威廉·弗西斯 / 达兰妮·弗鲁格 / 拉里·拉普 / 理查德·弗让吉 / 罗伯特·哈珀 / 詹妮弗·康纳利","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"好看是好看，很多经典镜头和场面，讲的意大利黑手党在美国的星期衰落，其中掺杂了各路人马各种复杂微妙的人际关系；就是时间确实有点吃不消，虽然好的故事值得静下心来细细品味，但这部电源节奏没那么快还是很需要一些耐心的"},{"title":"死亡直播 Deadstream","alt":"https://movie.douban.com/subject/35639406/","image":"https://minio.mythsman.com/douban/bb9347a8d3b0c36464b5d6f503f1362c.jpg","meta":"喜剧 / 恐怖 / 凡妮莎·温特 / 约瑟夫·温特 / 凡妮莎·温特 / 约瑟夫·温特 / 约瑟夫·温特 / 梅拉妮·斯通 / Jason K. Wixom / Pat Barnett / Marty Collins / Perla Lacayo / Cylia Austin-Lacayo / Hayden Gariety / Ariel Lee / Jaxon Harker / Jeremy Warner / Brenden Bytheway / Doug May / Ruby York / 盖博·卡斯多夫 / 凡妮莎·温特 / 杰德·谢帕德","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"挺好的一部电影，直播的形式，第一人称，代入感可以，有种密室逃脱的感觉"},{"title":"爱在黎明破晓前 Before Sunrise","alt":"https://movie.douban.com/subject/1296339/","image":"https://minio.mythsman.com/douban/587ab20b94f4f76ab5030e4621cc46a3.jpg","meta":"剧情 / 爱情 / 理查德·林克莱特 / 金·克里桑 / 理查德·林克莱特 / 金·克里桑 / 伊桑·霍克 / 朱莉·德尔佩 / 安德莉亚·埃克特 / 汉诺·波西尔 / 卡尔·布拉克施魏格尔 / 特克斯·鲁比诺威茨 / 埃尔尼·曼戈尔德 / 多米尼克·卡斯特尔 / 海蒙·玛丽亚·巴汀格 / 哈拉尔德·魏格莱因 / 汉斯·魏因加特纳 / 彼得·艾利·休默 / 休伯特·法比安·库尔特勒 / 约翰·斯洛斯 / 克里斯蒂安·安科维奇 / 亚当·戈德堡 / 保罗·波伊特","rating":"2023-08-15 / ★★★★★ 力荐","comment":"爱情三部曲自然是经典之作！这种慢悠悠的节奏看的真的舒服，爱的很纯粹！"},{"title":"恋恋笔记本 The Notebook","alt":"https://movie.douban.com/subject/1309163/","image":"https://minio.mythsman.com/douban/e261c21ec69c409bc32197f8e7d237a9.jpg","meta":"剧情 / 爱情 / 扬·萨尔迪 / 杰里米·莱文 / 尼古拉斯·斯帕克斯 / 扬·萨尔迪 / 杰里米·莱文 / 尼古拉斯·斯帕克斯 / 瑞恩·高斯林 / 瑞秋·麦克亚当斯 / 吉娜·罗兰兹 / 詹姆斯·加纳 / 斯塔尔勒塔·杜波利斯 / 凯文·康诺利 / 希瑟·沃奎斯特 / 杰弗里·奈特 / 琼·艾伦 / 詹姆斯·麦斯登","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"还行，各方面塑造啥的；作为爱情片已经很成功了，但总感觉差点什么"},{"title":"傲慢与偏见 Pride & Prejudice","alt":"https://movie.douban.com/subject/1418200/","image":"https://minio.mythsman.com/douban/8fdeb0ab1c3c18612815c60bcd9167c6.jpg","meta":"剧情 / 爱情 / 简·奥斯汀 / 黛博拉·莫盖茨 / 简·奥斯汀 / 黛博拉·莫盖茨 / 凯拉·奈特莉 / 马修·麦克费登 / 唐纳德·萨瑟兰 / 布兰达·布莱斯 / 凯瑞·穆里根 / 裴淳华 / 吉娜·马隆 / 妲露拉·莱莉 / 朱迪·丹奇 / 西蒙·伍兹 / 克劳迪·布莱克利 / 汤姆·霍兰德尔 / 鲁伯特·弗兰德 / 凯利·蕾莉 / 皮普·托伦斯 / 西妮德·马修斯 / 佩内洛普·威尔顿 / 塔姆金·莫钦特","rating":"2023-08-15 / ★★★★★ 力荐","comment":"爱死了！男主那气质拿捏的死死的，女主侧颜无敌！音乐也相当应景和谐！最后一幕，“你在晨光熹微中走来”绝美！"},{"title":"阿甘正传 Forrest Gump","alt":"https://movie.douban.com/subject/1292720/","image":"https://minio.mythsman.com/douban/1b427bdc7c9ddb28621be497c11c21b8.jpg","meta":"剧情 / 爱情 / 艾瑞克·罗斯 / 温斯顿·格鲁姆 / 艾瑞克·罗斯 / 温斯顿·格鲁姆 / 汤姆·汉克斯 / 罗宾·怀特 / 加里·西尼斯 / 麦凯尔泰·威廉逊 / 莎莉·菲尔德 / 海利·乔·奥斯蒙 / 迈克尔·康纳·亨弗里斯 / 哈罗德·G·赫瑟姆 / 山姆·安德森 / 伊俄涅·M·特雷奇 / 彼得·道博森 / 希博汗·法隆 / 伊丽莎白·汉克斯 / 汉娜·豪尔 / 克里斯托弗·琼斯 / 罗布·兰德里 / 杰森·麦克奎尔 / 桑尼·施罗耶 / 艾德·戴维斯 / 丹尼尔C.斯瑞派克 / 大卫·布里斯宾 / 德博拉·麦克蒂尔 / 艾尔·哈林顿 / 阿非莫·奥米拉 / 约翰·沃德斯塔德 / 迈克尔·伯吉斯 / 埃里克·安德伍德 / 拜伦·明斯 / 斯蒂芬·布吉格沃特 / 约翰·威廉·高尔特 / 希拉里·沙普兰 / 伊莎贝尔·罗斯 / 理查德·达历山德罗 / 迪克·史迪威 / 迈克尔-杰斯 / 杰弗里·布莱克 / 瓦妮莎·罗斯 / 迪克·卡维特 / 马拉·苏查雷特扎 / 乔·阿拉斯奇 / W·本森·泰瑞","rating":"2023-08-15 / ★★★★★ 力荐","comment":"豆瓣top3的电影自然不用多说，微缩夸张版的美国近代史"},{"title":"头文字D 頭文字D","alt":"https://movie.douban.com/subject/1329562/","image":"https://minio.mythsman.com/douban/79518f286eb551c929437c876baed3ee.jpg","meta":"剧情 / 动作 / 庄文强 / 庄文强 / 周杰伦 / 陈冠希 / 黄秋生 / 杜汶泽 / 铃木杏 / 余文乐 / 钟镇涛 / 陈小春 / 津村和幸 / 阿部力 / 田中千绘 / 刘畊宏","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"夏树好像赵今麦啊……奔驰上树我是真绷不住"},{"title":"黑豹2 Black Panther: Wakanda Forever","alt":"https://movie.douban.com/subject/30167997/","image":"https://minio.mythsman.com/douban/f46315eb96731f23d8b9a8daf56bed9c.jpg","meta":"剧情 / 动作 / 科幻 / 冒险 / 瑞恩·库格勒 / 乔·罗伯特·科尔 / 瑞恩·库格勒 / 乔·罗伯特·科尔 / 利蒂希娅·赖特 / 露皮塔·尼永奥 / 安吉拉·贝塞特 / 丹娜·奎里拉 / 温斯顿·杜克 / 马丁·弗瑞曼 / 特诺切·韦尔塔 / 理查德·希夫 / 多米尼克·索恩 / 米凯拉·科尔 / 弗洛伦丝·卡松巴 / 玛丽亚·梅塞德斯·科罗伊 / 伊萨赫·德·班克尔 / 施奎塔·詹姆斯 / 胡安·卡洛斯·坎图 / 洁基伯明翰 / 索佩·阿卢科 / 小弗洛伊德·安东尼·约翰 / 布伦特·莫雷尔·加斯金斯 / 拉希姆·赖利 / 乔丹·沃克·罗斯","rating":"2023-08-15 / ★★☆☆☆ 较差","comment":"感觉是依托答辩，比起1差远了"},{"title":"你丫闭嘴！ Tais-toi!","alt":"https://movie.douban.com/subject/1303815/","image":"https://minio.mythsman.com/douban/5be7608ec260aa78300b2dcf1685b93c.jpg","meta":"喜剧 / 犯罪 / 弗朗西斯·韦贝尔 / 弗朗西斯·韦贝尔 / 热拉尔·德帕迪约 / 让·雷诺 / 理查德·贝里 / 安德烈·杜索里埃 / 让-皮埃尔·马洛 / 让-米歇尔·诺里 / 洛朗·加默隆 / 奥雷利安·雷克因 / 樊尚·莫斯卡托 / 迪基·奥尔加多 / 米歇尔·奥蒙 / 蕾奥娜·维埃拉 / 埃德加·吉夫里","rating":"2023-08-15 / ★★☆☆☆ 较差","comment":"有点get不到笑点...感觉比较平庸"},{"title":"假期历险记 Vacation","alt":"https://movie.douban.com/subject/4075568/","image":"https://minio.mythsman.com/douban/a860b20b14fc0a92da6ea46b33b607dd.jpg","meta":"喜剧 / 家庭 / 冒险 / 乔纳森·M·戈尔茨坦 / 约翰·弗朗西斯·戴利 / 乔纳森·M·戈尔茨坦 / 约翰·弗朗西斯·戴利 / 艾德·赫尔姆斯 / 克里斯蒂娜·艾伯盖特 / 莱斯利·曼恩 / 比佛莉·德安姬罗 / 切维·切斯 / 克里斯·海姆斯沃斯 / 伊丽莎白·吉莱丝 / 斯凯勒·吉桑多 / 尼克·克罗尔 / 查理·戴 / 科甘-迈克尔·凯 / 凯特琳·奥尔森 / 迈克尔·佩纳 / 雷吉娜·赫尔 / 山姆·莱文","rating":"2023-08-15 / ★★★★★ 力荐","comment":"还是美式幽默适合我，两个头的旅行车真的笑死人，还有那个粪坑泡澡，开沙滩车撞死牛。有欢笑有泪点，一部能让人记住的很棒的喜剧片。"},{"title":"冒牌家庭 We're the Millers","alt":"https://movie.douban.com/subject/10745405/","image":"https://minio.mythsman.com/douban/7c127a3fe42e57c3d67e304d03169d16.jpg","meta":"喜剧 / 鲍勃·费希尔 / 史蒂夫·法贝尔 / 西恩·安德斯 / 约翰·莫里斯 / 鲍勃·费希尔 / 史蒂夫·法贝尔 / 西恩·安德斯 / 约翰·莫里斯 / 詹妮弗·安妮斯顿 / 杰森·苏戴奇斯 / 威尔·保尔特 / 艾玛·罗伯茨 / 艾德·赫尔姆斯 / 尼克·奥弗曼 / 凯瑟琳·哈恩 / 莫莉·奎恩 / 托莫·希思黎","rating":"2023-08-15 / ★★★★★ 力荐","comment":"围绕边境运毒拍的喜剧，虽然可能这部电影不是那么完美，但至少我看的时候笑的很开心，而且很多画面过了很久都不会忘记，笑点也不尬，很不错了！那个小男孩被蜘蛛蛰了一口成为“巨蛋侠”真的超搞，导演恶趣味"},{"title":"糊涂侦探 Get Smart","alt":"https://movie.douban.com/subject/1972701/","image":"https://minio.mythsman.com/douban/5fe458c60fc72543c2f8d356862f2f09.jpg","meta":"喜剧 / 动作 / 冒险 / 汤姆·J·阿瑟尔 / 马特·恩贝尔 / 汤姆·J·阿瑟尔 / 马特·恩贝尔 / 史蒂夫·卡瑞尔 / 安妮·海瑟薇 / 道恩·强森 / 艾伦·阿金 / 特伦斯·斯坦普 / 泰瑞·克鲁斯 / 大卫·科恩查内 / 詹姆斯·肯恩 / 比尔·默瑞 / 帕特里克·沃伯顿 / 丘增 / 内特·托伦斯 / 肯·戴维蒂安 / 大卫·S·李 / 达利普·辛格 / 吉奥夫·皮尔森 / 凯利·卡巴茨 / 林赛·霍利斯特","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"安妮·海瑟薇一如既往的漂亮！巨石强森反转成反派，但是电影情节和其他部分来讲稍微有些平庸"},{"title":"谁是超级英雄 Super-héros malgré lui","alt":"https://movie.douban.com/subject/35212079/","image":"https://minio.mythsman.com/douban/496813ae343500fa7c2b8c57d00ee2c4.jpg","meta":"喜剧 / 动作 / 朱利安·阿鲁蒂 / 皮埃尔·迪当 / 菲利普·拉肖 / 皮埃尔·拉苏 / 朱利安·阿鲁蒂 / 皮埃尔·迪当 / 菲利普·拉肖 / 皮埃尔·拉苏 / 菲利普·拉肖 / 阿马尔·维克德 / 让·雨果·安格拉德 / 艾洛蒂·丰唐 / 乔治斯·科拉菲斯 / 塔雷克·布达里 / Chantal Ladesou / 布鲁诺·洛歇 / Salomé Partouche / Michel Crémadès / 菲烈·卡特林 / Alex Martin / 爱丽丝·杜富尔 / 朱利安·阿鲁蒂 / Amin Harfouch","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"相较于同为法国喜剧的《你丫闭嘴》，我更喜欢这一部，很有法式电影的特色，剧情是失忆男主找寻真爱浪子回头，但是过程中那几个恶搞的超级英雄确实吊，亲吻“倒挂金钩”那个场面属实难绷"},{"title":"小人物 Nobody","alt":"https://movie.douban.com/subject/34865507/","image":"https://minio.mythsman.com/douban/656546bdaa2d33b4dbbc0e01036e6020.jpg","meta":"动作 / 犯罪 / 德里克·科尔斯塔 / 德里克·科尔斯塔 / 鲍勃·奥登科克 / 阿列克谢·谢列布里亚科夫 / 康妮·尼尔森 / 克里斯托弗·洛伊德 / 迈克尔·艾恩塞德 / 科林·萨蒙 / 罗伯特·菲茨杰拉德·迪格斯 / 比利·麦克莱伦 / 阿拉亚·门格沙 / 盖奇·芒罗 / 佩斯利·卡多拉思 / 亚历山大·帕里 / 亨伯利·冈萨雷斯 / 爱德森·莫拉莱斯 / J·P·马诺克斯 / 伊利亚·奈舒勒 / 谢尔盖·希纳罗维 / 斯蒂芬妮·西 / 鲁斯兰·鲁辛 / Bj·韦罗 / 达雅·查库莎 / 亚当·哈蒂格 / 克里斯汀·哈里斯 / 埃里克·阿塔瓦尔 / 沙龙·巴杰 / 鲍里斯·古利亚林 / 丹尼尔·伯哈特 / 阿兰·莫西 / 泰瑞·威瑟斯庞 / 吉姆·科比","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"还行吧，特工窝囊老爹血洗俄罗斯黑帮，剧情有点老套，无脑黑俄罗斯差不多得了"},{"title":"假日约会 Holidate","alt":"https://movie.douban.com/subject/30477702/","image":"https://minio.mythsman.com/douban/4e9193765060fd44000640e7f2fbf3ef.jpg","meta":"喜剧 / 爱情 / Tiffany Paulsen / Tiffany Paulsen / 艾玛·罗伯茨 / 卢克·布雷西 / 克里斯汀·肯诺恩斯 / 弗兰西丝·费舍 / 安德鲁·巴切勒 / 杰西卡·卡普肖 / 曼尼什·达亚尔 / 亚历克斯·莫法特 / 吴辛惠 / 杰克·曼利 / Julien Marlon Samani / 妮可拉·佩尔茨 / Savannah Reina / Olivia H. Hunt / 丹·劳里亚 / 艾米·卡里诺 / 卡洛斯·拉卡马拉 / 米凯拉·霍沃 / 卡尔·麦克道维尔 / 杰西贾姆斯·洛科里埃 / 布鲁克·杰伊·泰勒 / 玛丽莎·达维拉 / 乔纳森·巴伦 / 库尔特·岳 / Bill Medley / 詹妮弗·沃妮斯 / Marcella Detroit / 梅里·克莱顿 / Joe Pizzulo / 比利·斯洛特","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"美国佬果然玩的花啊"},{"title":"老无所依 No Country for Old Men","alt":"https://movie.douban.com/subject/1857099/","image":"https://minio.mythsman.com/douban/92c1f668fcfbaeef55dde8ee319740bc.jpg","meta":"剧情 / 惊悚 / 犯罪 / 乔尔·科恩 / 伊桑·科恩 / 科马克·麦卡锡 / 乔尔·科恩 / 伊桑·科恩 / 科马克·麦卡锡 / 汤米·李·琼斯 / 哈维尔·巴登 / 乔什·布洛林 / 伍迪·哈里森 / 凯莉·麦克唐纳 / 加瑞特·迪拉胡特 / 泰丝·哈珀 / 巴里·柯宾 / 斯蒂芬·鲁特 / 贝丝·格兰特 / 安娜·里德 / 姬特·格温 / 吉因·琼斯 / 迈克·沃特福德","rating":"2023-08-15","comment":"反派的笑容真的阴森，妈的，看完都有点后怕，虽然是个疯疯癫癫的杀手，做人还怪有原则"},{"title":"天注定","alt":"https://movie.douban.com/subject/21941283/","image":"https://minio.mythsman.com/douban/5e8b29e71ab7911e73f747137f5d4973.jpg","meta":"剧情 / 犯罪 / 贾樟柯 / 贾樟柯 / 赵涛 / 姜武 / 王宝强 / 罗蓝山 / 张嘉益 / 李梦 / 王宏伟 / 韩三明 / 贾樟柯 / 刘陆","rating":"2023-08-15 / ★★★★★ 力荐","comment":"这部电影简直就是个宝藏，王宝强、姜武啊等等四个片段都演得挺好，很写实！中间三峡的那一段作为宜昌人真的代入感很强！！！"},{"title":"低俗小说 Pulp Fiction","alt":"https://movie.douban.com/subject/1291832/","image":"https://minio.mythsman.com/douban/184471886637831da2ff92d3f0ae2ae3.jpg","meta":"剧情 / 喜剧 / 犯罪 / 昆汀·塔伦蒂诺 / 罗杰·阿夫瑞 / 昆汀·塔伦蒂诺 / 罗杰·阿夫瑞 / 约翰·特拉沃尔塔 / 乌玛·瑟曼 / 阿曼达·普拉莫 / 蒂姆·罗斯 / 塞缪尔·杰克逊 / 菲尔·拉马 / 布鲁斯·威利斯 / 弗兰克·威利 / 布尔·斯蒂尔斯 / 文·瑞姆斯 / 劳拉·拉芙蕾丝 / 保罗·考尔德伦 / 布罗娜·加拉赫 / 罗姗娜·阿奎特 / 埃里克·斯托尔兹 / 玛丽亚·德·梅黛洛","rating":"2023-08-15 / ★★★★★ 力荐","comment":"餐厅抢劫，杀人处理，文森蜜儿，拳击手布奇跑路，每一个片段都是经典。中间有一部分节奏比较慢，但这种时而舒缓时而禁止的电影反而更能让人回想连篇"},{"title":"杀死比尔 Kill Bill: Vol. 1","alt":"https://movie.douban.com/subject/1291580/","image":"https://minio.mythsman.com/douban/71e83b33efd119b142f0948f25e158c6.jpg","meta":"动作 / 惊悚 / 犯罪 / 昆汀·塔伦蒂诺 / 乌玛·瑟曼 / 昆汀·塔伦蒂诺 / 乌玛·瑟曼 / 乌玛·瑟曼 / 刘玉玲 / 薇薇卡·福克斯 / 达丽尔·汉纳 / 大卫·卡拉丁 / 迈克尔·马德森 / 朱莉·德赖弗斯 / 栗山千明 / 千叶真一 / 刘家辉 / 迈克尔·帕克斯 / 迈克尔·鲍文 / 国村隼 / 大叶健二 / 风祭由纪","rating":"2023-08-15 / ★★★★★ 力荐","comment":"暴力血腥电影的天花板了感觉，真的爽！"},{"title":"杀死比尔2 Kill Bill: Vol. 2","alt":"https://movie.douban.com/subject/1291584/","image":"https://minio.mythsman.com/douban/2cd2f0be66cdafb9ef2bdd8cf4ad8d26.jpg","meta":"动作 / 惊悚 / 犯罪 / 昆汀·塔伦蒂诺 / 乌玛·瑟曼 / 昆汀·塔伦蒂诺 / 乌玛·瑟曼 / 乌玛·瑟曼 / 大卫·卡拉丁 / 刘家辉 / 薇薇卡·福克斯 / 刘玉玲 / 迈克尔·马德森 / 达丽尔·汉纳 / 塞缪尔·杰克逊 / 佩拉·哈莉-贾德林 / 迈克尔·帕克斯 / 克拉克·米德尔顿","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"第一部的续作，比不上第一部但是也很能打了！"},{"title":"被解救的姜戈 Django Unchained","alt":"https://movie.douban.com/subject/6307447/","image":"https://minio.mythsman.com/douban/835f90c450aae0ffa3c2f7d976fa2eca.jpg","meta":"剧情 / 动作 / 西部 / 冒险 / 昆汀·塔伦蒂诺 / 昆汀·塔伦蒂诺 / 杰米·福克斯 / 莱昂纳多·迪卡普里奥 / 克里斯托弗·瓦尔兹 / 塞缪尔·杰克逊 / 凯丽·华盛顿 / 沃尔顿·戈金斯 / 丹尼斯·克里斯托弗 / 乔纳·希尔 / 詹姆斯·瑞马尔 / 爱波·塔布琳 / 弗兰科·内罗 / 罗伯特·卡拉丁 / 佐伊·贝尔","rating":"2023-08-15 / ★★★★★ 力荐","comment":"暴力美学！结尾的Freedom歌曲一响，感觉自己都到了美国西部一样"},{"title":"好莱坞往事 Once Upon a Time... in Hollywood","alt":"https://movie.douban.com/subject/27087724/","image":"https://minio.mythsman.com/douban/e6eaf7b054ff375791e5b7ed2cbc22e3.jpg","meta":"剧情 / 喜剧 / 昆汀·塔伦蒂诺 / 昆汀·塔伦蒂诺 / 莱昂纳多·迪卡普里奥 / 布拉德·皮特 / 玛格特·罗比 / 埃米尔·赫斯基 / 玛格丽特·库里 / 蒂莫西·奥利芬特 / 茱莉亚·巴特斯 / 奥斯汀·巴特勒 / 达科塔·范宁 / 布鲁斯·邓恩 / 麦克·莫 / 卢克·贝里 / 戴米恩·路易斯 / 库尔特·拉塞尔 / 阿尔·帕西诺 / 玛雅·霍克 / 西德妮·斯威尼 / 哈莉·奎恩·史密斯 / 达蒙·海瑞曼 / 凯特·贝兰特 / 洛伦扎·伊佐 / 迈克尔·马德森 / 拉莫·威利斯 / 斯科特·麦克纳里 / 小克利夫顿·克林斯 / 维多利亚·佩德雷蒂 / 吕蓓卡·盖哈特 / 佐伊·贝尔 / 莱斯利·贝加 / 瑞贝卡·瑞滕豪斯 / 萨曼莎·罗宾森 / 莉娜·邓纳姆 / 德瑞玛·沃克 / 克鲁·古拉格 / 丹妮拉·皮克 / 布伦达·瓦卡罗 / 尼古拉斯·哈蒙德 / 米奇·麦迪森 / 詹姆斯·兰德里·赫伯特 / 妮可·加利西亚 / 麦迪逊·贝蒂 / 佩内洛普·卡普迪雅 / 莫里斯·孔特 / 科斯塔·罗宁 / 卢·坦普尔 / 斯宾塞·加雷特 / 布丽安娜·乔伊·乔默 / 奥玛·杜姆 / 娜塔莉·科恩 / 拉法尔·扎维鲁查 / 马尔科·罗德里格斯 / 堪萨丝·宝琳 / 维森特·拉雷斯卡 / 殷巴尔·阿米拉夫 / 拉蒙·弗兰克 / 莫妮卡·斯塔吉丝 / 克雷格·斯塔克 / 大卫·斯廷 / 朱丽叶·吉达 / 埃迪·佩雷斯 / 布蕾迪·拉多娜 / 凯拉·拉多姆斯基 / 布里安娜·温 / 卡萝莱娜·瓦加斯 / 加里·派怀特","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"节奏较慢，根据上个世界美国真实事件改编。布拉德·皮特和昆汀、小李子联手就算剧情是坨屎，我也会去看。最后一段布拉德·皮特杀那群嬉皮士看的是真的爽，贯彻昆汀一如既往的暴力美学！"},{"title":"小妇人 Little Women","alt":"https://movie.douban.com/subject/26348103/","image":"https://minio.mythsman.com/douban/d0e784e7091cb58ee65a5d7fab598fd9.jpg","meta":"剧情 / 爱情 / 格蕾塔·葛韦格 / 路易莎·梅·奥尔科特 / 格蕾塔·葛韦格 / 路易莎·梅·奥尔科特 / 西尔莎·罗南 / 艾玛·沃森 / 弗洛伦丝·皮尤 / 伊莱扎·斯坎伦 / 劳拉·邓恩 / 提莫西·查拉梅 / 梅丽尔·斯特里普 / 鲍勃·奥登科克 / 詹姆斯·诺顿 / 路易·加瑞尔 / 克里斯·库珀 / 崔西·莱茨 / 艾比·奎因 / 萨沙·弗若洛娃 / 莉莉·恩格勒特 / 爱德华德·弗莱彻 / 杰妮·霍蒂谢尔 / 多梅尼克·阿尔迪诺 / 汤姆·斯特拉特福 / 托马斯·马里亚诺 / 哈德莉·罗宾逊 / 杰米·加扎里安","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"一般吧，有点傲慢与偏见的感觉，但远不如那个来的惊艳，甜茶这个演技有点怪怪的"},{"title":"真人快打 Mortal Kombat","alt":"https://movie.douban.com/subject/2131664/","image":"https://minio.mythsman.com/douban/d17a60f9c3b502672ad246e7f1370454.jpg","meta":"动作 / 奇幻 / 冒险 / 格雷格·罗素 / 戴夫·卡拉汉姆 / 奥伦·尤济尔 / 埃德·布恩 / 约翰·托拜亚斯 / 格雷格·罗素 / 戴夫·卡拉汉姆 / 奥伦·尤济尔 / 埃德·布恩 / 约翰·托拜亚斯 / 刘易斯·陈 / 乔·塔斯利姆 / 真田广之 / 杰西卡·麦克娜美 / 约什·劳森 / 麦卡德·布鲁克斯 / 林路迪 / 浅野忠信 / 黄经汉 / 麦克斯•黄 / 茜茜·斯特林格 / 梅尔·贾森 / 丹尼尔·尼尔森 / 劳拉·布伦特 / 马蒂尔达·金伯","rating":"2023-08-15 / ★★☆☆☆ 较差","comment":"除了特效，感觉有点一言难尽啊，剧情俗套，演技拉跨......"},{"title":"革命之路 Revolutionary Road","alt":"https://movie.douban.com/subject/2037012/","image":"https://minio.mythsman.com/douban/c66350721f1dbfec388c41f375c99563.jpg","meta":"剧情 / 爱情 / 贾斯汀·海瑟 / 理查德·耶茨 / 贾斯汀·海瑟 / 理查德·耶茨 / 凯特·温丝莱特 / 莱昂纳多·迪卡普里奥 / 克里斯托弗·菲茨杰拉德 / 尼尔·布莱德森 / 马琳·爱尔兰 / 萨曼莎·索尔 / 山姆罗森 / 大卫·哈伯 / 凯瑟琳·科廷 / 凯西·贝茨 / 理查德·伊斯顿 / 凯瑟琳·哈恩 / 佐伊·卡赞 / 迪伦·贝克 / 基思·雷丁 / 芮安·辛普金斯 / 泰·辛普金斯 / 马克斯·凯塞拉 / 麦克斯·贝克 / 杰伊·桑德斯 / 迈克尔·珊农 / Jason Etter / Kal Thompson / Racheline Maltese / 文斯·佐丹奴 / 克里斯汀·康奈利 / 约翰·贝尔曼 / Dan Burkarth / 大卫·坎贝尔 / 彼得·康博伊 / 戴维·基尔 / 乔西格里赛迪 / Zoe Hartman / Amy Mielke / Cristina Marie / Sean Marrinan / Timothy McCartney / 亨尼·罗素 / 乔纳森·伊冯","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"揭露了很多夫妻的真实内心？可能是吧，毕竟没经历过，但是不得不说美国佬的电影就是大胆啊"},{"title":"一个头两个大 Me, Myself & Irene","alt":"https://movie.douban.com/subject/1293899/","image":"https://minio.mythsman.com/douban/be216c740f6e6dd308439a3d4deae403.jpg","meta":"喜剧 / 彼得·法雷里 / 迈克·切罗内 / 博比·法雷里 / 彼得·法雷里 / 迈克·切罗内 / 博比·法雷里 / 金·凯瑞 / 蕾妮·齐薇格 / 安东尼·安德森 / 杰罗德·米克森 / 克里斯·库珀 / Michael Bowman / 理查德·詹金斯 / 罗伯特·福斯特 / 迈克·切罗内 / 罗布·莫兰 / 托尼·考克斯 / 泽恩·格斯纳 / Steve Sweeney / 特蕾勒·霍华德 / 莱尼·克拉克 / Herbie Flynn / Heather Hodder / Steve Tyler / 安娜·库尔尼科娃 / 理查德·泰森 / 凯姆·尼利 / 布莱恩·库瑞 / 康拉德·古德 / 香侬·惠利 / Rex Allen Jr. / 林·沙烨 / 詹姆斯·B·罗杰斯 / Kate Forster / 斯科特·罗森伯格 / Mongo Brownlee / Daniel Greene / Andrew Phillips / Jeremy Maleek Leggett","rating":"2023-08-15 / ★★★★★ 力荐","comment":"人格分裂的查理与汉克，三个胖乎乎的黑小子，着实有爱！结局美满！"},{"title":"楚门的世界 The Truman Show","alt":"https://movie.douban.com/subject/1292064/","image":"https://minio.mythsman.com/douban/394147ebd6025c75ce7db4f8e640c323.jpg","meta":"剧情 / 科幻 / 安德鲁·尼科尔 / 安德鲁·尼科尔 / 金·凯瑞 / 劳拉·琳妮 / 艾德·哈里斯 / 诺亚·艾默里奇 / 娜塔莎·麦克艾霍恩","rating":"2023-08-15 / ★★★★★ 力荐","comment":"楚门的世界，自然不必多说"},{"title":"变相怪杰 The Mask","alt":"https://movie.douban.com/subject/1297570/","image":"https://minio.mythsman.com/douban/7c7385bdc032106fe14c7ce3d9847304.jpg","meta":"喜剧 / 奇幻 / Michael Fallon / 马克·维西顿 / 麦克·韦柏 / Michael Fallon / 马克·维西顿 / 麦克·韦柏 / 金·凯瑞 / 彼得·里格特 / 彼得·格林纳 / 艾米·雅丝贝克 / 理查德·杰尼 / Orestes Matacena / 蒂姆·巴格来 / 南茜·费什 / Johnny Williams / 雷格·E·凯蒂 / Jim Doughan / 丹尼斯·弗雷斯特 / 卡梅隆·迪亚兹 / Joseph Alfieri / B.J. Barie / 布莱克·克拉克 / 克里斯托弗·达尔加 / 乔莉·费舍尔 / 凯文·格雷维奥斯 / Robert Keith / 爱沃瑞·欧欣 / Robert O'Reilly / Eamonn Roche / 本·斯坦 / Wendy L. Walsh / 梅多·威廉姆斯 / Max / 加雷特·佐藤","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"金凯瑞我永远相信！"},{"title":"冒牌天神 Bruce Almighty","alt":"https://movie.douban.com/subject/1297018/","image":"https://minio.mythsman.com/douban/da3e7095140f0cf7d59826e725cec642.jpg","meta":"喜剧 / 奇幻 / 史蒂夫·科伦 / 马克·奥基夫 / 史蒂夫·欧德科克 / 史蒂夫·科伦 / 马克·奥基夫 / 史蒂夫·欧德科克 / 金·凯瑞 / 摩根·弗里曼 / 詹妮弗·安妮斯顿 / 菲利普·贝克·霍尔 / 凯瑟琳·贝尔 / 丽萨·安·沃尔特 / 史蒂夫·卡瑞尔 / 诺拉·邓恩 / 埃迪·杰米森 / 保罗·萨特菲尔德 / 马克·基利 / 莎莉·柯克兰德 / 托尼·本内特 / 蒂莫西·迪普里 / 卢·费尔德 / 莉莲·亚当斯 / 克里斯托弗·达尔加 / 杰克·乔泽弗森 / 马克·阿戴尔-里奥斯 / 恩里克·阿尔梅达 / 诺尔·古格雷米 / 罗兰多·莫利纳 / 埃米里奥·瑞弗拉 / 玛德琳·洛夫乔伊 / 丹·戴斯蒙德 / 罗伯特·库蒂斯·布朗 / 迈克尔·布朗李 / 肖恩·罗宾逊 / 艾伦·鲁鲁 / 贾米森·杨 / 格雷格·科林斯 / 玛丽·帕特·格里森 / 凯瑞·斯科特 / 布拉德利·斯泰克尔 / 当·诺伍德 / 迈克尔·奥利佛斯 / 亚历克斯·维莱尔 / 阿若·希利 / 艾莉森·麦考迪 / 珍妮尔·皮尔齐娜 / 安妮·沃斯奇 / 迈卡·威廉姆斯 / 汤姆·贝耶 / 马克斯·格隆切克 / 迈克尔·博夫舍维尔 / 寇比·法兰奇 / 曼尼·苏亚雷斯 / 唐·多德 / 沙沙维恩·豪尔 / P·J·伯恩 / 约瑟夫·巴特勒 / 丽莎·坎格洛西 / 柯特·克伦德尼","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"这部稍微差了点"},{"title":"双宝斗恶魔 Tucker & Dale vs. Evil","alt":"https://movie.douban.com/subject/4180445/","image":"https://minio.mythsman.com/douban/d0451e17a8c92cb250e73cfa3a711f66.jpg","meta":"喜剧 / 恐怖 / 艾利·克雷格 / 摩根·朱根森 / 艾利·克雷格 / 摩根·朱根森 / 泰勒·莱伯恩 / 艾伦·图代克 / 卡特里娜·宝登 / 杰西·莫斯 / Philip Granger / 布兰顿·杰·麦克拉伦 / 克里斯蒂·莱恩 / 切兰·西蒙斯 / 特拉维斯·尼尔森 / 亚历克斯·阿瑟罗 / Adam Beauchesne / Joseph Allan Sutherland / Mitchell Verigin / Angela DeCorte / Karen Reigh","rating":"2023-08-15 / ★★★★★ 力荐","comment":"这部电影真的看的笑的合不拢嘴，中间那堆傻学生上来“自杀”太经典了！胖乎乎的弟弟和壮实老哥真的很有爱！"},{"title":"美国精神病人 American Psycho","alt":"https://movie.douban.com/subject/1301715/","image":"https://minio.mythsman.com/douban/afcbbefab8fb1e31c3eecd84241d2342.jpg","meta":"剧情 / 惊悚 / 犯罪 / 玛丽·哈伦 / 吉娜薇·特纳 / 玛丽·哈伦 / 吉娜薇·特纳 / 克里斯蒂安·贝尔 / 贾斯汀·塞洛克斯 / 乔什·卢卡斯 / 比尔·萨奇 / 科洛·塞维尼 / 瑞茜·威瑟斯彭 / 萨曼莎·玛西丝 / 杰瑞德·莱托 / 威廉·达福 / 卡拉·西摩","rating":"2023-08-15 / ★★★★★ 力荐","comment":"A Real Sigma!贝尔简直把一个美国华尔街的psycho演绎得淋漓尽致，铺报纸杀人、打电话给律师哭诉、公寓内追杀女孩这三个片段简直不能更nb了"},{"title":"龙与地下城：侠盗荣耀 Dungeons & Dragons: Honor Among Thieves","alt":"https://movie.douban.com/subject/26584673/","image":"https://minio.mythsman.com/douban/2fdb4701c9d3cfee731d952dfa913a5e.jpg","meta":"动作 / 奇幻 / 冒险 / 戴维·阿纳森 / 约翰·弗朗西斯·戴利 / 乔纳森·M·戈尔茨坦 / E·加里·吉加克斯 / 戴维·阿纳森 / 约翰·弗朗西斯·戴利 / 乔纳森·M·戈尔茨坦 / E·加里·吉加克斯 / 克里斯·派恩 / 休·格兰特 / 米歇尔·罗德里格兹 / 雷吉-让·佩吉 / 贾斯蒂斯·史密斯 / 索菲娅·莉莉丝 / 克洛伊·科尔曼 / 黛茜·海德 / 杰森·王 / 尼古拉斯·布兰 / Sophia Eleni / Alexis Rodney / 埃德加·阿布拉姆 / Shota Kakibata / Appy Pratt / 丹·普尔","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"和凯峰在电影院看的，他都看睡着了...只能说中规中矩算一部合格的商业电影吧"},{"title":"宇宙探索编辑部","alt":"https://movie.douban.com/subject/34941536/","image":"https://minio.mythsman.com/douban/6fb3096ca610c9a9365e06abb523614e.jpg","meta":"喜剧 / 科幻 / 孔大山 / 王一通 / 孔大山 / 王一通 / 杨皓宇 / 艾丽娅 / 王一通 / 蒋奇明 / 盛晨晨 / 郭帆 / 龚格尔","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"这部电影真的就见仁见智了，凯峰说烂的不行完全不知道在讲什么，但我觉得其实还挺搞笑挺文艺的，孙一通长的真的好像拉宏桑。杨皓宇演技感觉好刻意，看得出他很想演好，但我感觉就是那种发力感和卖力感很强，有点过于刻意了......电影嘛，总体我觉得还行，但我不推荐，因为这部电影真的需要静下心来看"},{"title":"冒牌天神2 Evan Almighty","alt":"https://movie.douban.com/subject/1867332/","image":"https://minio.mythsman.com/douban/5347d4cf4b29fc4d8bcb19bc8bef1349.jpg","meta":"喜剧 / 家庭 / 奇幻 / 史蒂夫·欧德科克 / 史蒂夫·欧德科克 / 史蒂夫·卡瑞尔 / 摩根·弗里曼 / 劳伦·格拉汉姆 / 约翰尼·西蒙斯 / 约翰·古德曼 / 旺达·塞克丝 / 乔纳·希尔 / 莫莉·香侬","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"个人认为，相较于第一部，第二部有了肉眼可见的进步。从第一部的另一个角色前新闻频道主持人出发，讲述了当选议员后建方舟的荒诞故事。ARK, One act of random kindness."},{"title":"的士速递 Taxi","alt":"https://movie.douban.com/subject/1294262/","image":"https://minio.mythsman.com/douban/9200c50f264c5424b078a28d0a3151db.jpg","meta":"喜剧 / 动作 / 犯罪 / 吕克·贝松 / 吕克·贝松 / 萨米·纳塞利 / 玛丽昂·歌迪亚 / 弗雷德里克·迪芬塔尔 / Manuela Gourary / 艾玛·韦克伦德","rating":"2023-08-15 / ★☆☆☆☆ 很差","comment":"还是接受不了这类法式幽默..."},{"title":"银河护卫队3 Guardians of the Galaxy Vol. 3","alt":"https://movie.douban.com/subject/26258779/","image":"https://minio.mythsman.com/douban/a52bdddb33d21b040b01092e2d1679dc.jpg","meta":"喜剧 / 动作 / 科幻 / 惊悚 / 冒险 / 詹姆斯·古恩 / 丹·阿布内特 / 安迪·兰宁 / 詹姆斯·古恩 / 丹·阿布内特 / 安迪·兰宁 / 克里斯·帕拉特 / 佐伊·索尔达娜 / 布莱德利·库珀 / 凯伦·吉兰 / 戴夫·巴蒂斯塔 / 范·迪塞尔 / 庞·克莱门捷夫 / 伊丽莎白·德比茨基 / 肖恩·古恩 / 西尔维斯特·史泰龙 / Lady Gaga / 威尔·保尔特 / 楚克武迪·武吉 / 丹妮拉·曼希沃 / 迈克尔·罗森巴姆 / 玛丽亚·巴卡洛娃 / 尼科·桑托斯 / 史蒂芬·布莱克哈特 / 戴恩·迪利格罗 / 阿德琳·斯布恩 / 雷纳尔多·法伯勒","rating":"2023-08-15 / ★★★★★ 力荐","comment":"当之无愧复联4之后最好且也是唯一一部不是烂片的漫威电影了！有泪有笑！唯一一次凯峰没看睡着。"},{"title":"速度与激情10 Fast & Furious 10","alt":"https://movie.douban.com/subject/26631790/","image":"https://minio.mythsman.com/douban/e9088b46da65983170c451ed71dd467a.jpg","meta":"动作 / 悬疑 / 惊悚 / 犯罪 / 冒险 / 盖瑞·斯科特·汤普森 / 盖瑞·斯科特·汤普森 / 范·迪塞尔 / 米歇尔·罗德里格兹 / 杰森·莫玛 / 杰森·斯坦森 / 查理兹·塞隆 / 布丽·拉尔森 / 泰瑞斯·吉布森 / 乔丹娜·布鲁斯特 / 娜塔莉·伊曼纽尔 / 姜成镐 / 斯科特·伊斯特伍德 / 卢达·克里斯 / 阿兰·里奇森 / 丹妮拉·曼希沃 / 丽塔·莫雷诺 / 卡迪·B","rating":"2023-08-15 / ★★☆☆☆ 较差","comment":"什么狗屎？这也敢拿来糊别人眼睛？tmd网上还一堆刷爽爆了啥的，速激系列我是碰都不会碰了，烂完了直接"},{"title":"荒蛮故事 Relatos salvajes","alt":"https://movie.douban.com/subject/24750126/","image":"https://minio.mythsman.com/douban/45cc736fbc90205cc1136d7bb6016bb8.jpg","meta":"剧情 / 喜剧 / 犯罪 / 达米安·斯兹弗隆 / 达米安·斯兹弗隆 / 达里奥·格兰迪内蒂 / 玛丽娅·玛努尔 / 莫妮卡·比利亚 / 丽塔·科尔泰塞 / 胡丽叶塔·泽尔贝伯格 / 凯撒·博尔东 / 莱昂纳多·斯巴拉格利亚 / 沃尔特·多纳多 / 里卡多·达林 / 南希·杜普拉 / 奥斯卡·马丁内兹 / 玛莉亚·奥内托 / 奥斯马·努涅斯 / 赫尔曼·德·席尔瓦 / 艾丽卡·里瓦斯 / 地亚哥·詹蒂莱 / 玛格丽塔·莫菲诺","rating":"2023-08-15 / ★★★★★ 力荐","comment":"阿根廷荒诞电影天花板！黑色幽默！很真实放映了阿根廷腐败疲软的现状，因果报应看的真的爽，很多经典片段，最后一个片段的婚礼撕逼拍的太大胆了！"},{"title":"疾速追杀4 John Wick: Chapter 4","alt":"https://movie.douban.com/subject/33455421/","image":"https://minio.mythsman.com/douban/0da6de7eac25dcf778437f0846736799.jpg","meta":"动作 / 惊悚 / 犯罪 / 迈克尔·芬奇 / 谢伊·哈顿 / 德里克·科尔斯塔 / 迈克尔·芬奇 / 谢伊·哈顿 / 德里克·科尔斯塔 / 基努·里维斯 / 甄子丹 / 比尔·斯卡斯加德 / 劳伦斯·菲什伯恩 / 真田广之 / 沙米尔·安德森 / 兰斯·莱迪克 / 泽山璃奈 / 斯科特·阿金斯 / 伊恩·麦柯肖恩 / 马克·扎罗 / 娜塔丽·特纳 / Aimée Kwan / 克兰西·布朗 / 布拉汉姆·沙卜","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"还行吧，甄子丹挺加分的，相较于前两部来说好了不少！结局还行"},{"title":"电影43 Movie 43","alt":"https://movie.douban.com/subject/3318306/","image":"https://minio.mythsman.com/douban/6fe01aa317be7d0c6349d6dfa163f5c6.jpg","meta":"喜剧 / 帕特里克·福斯贝里 / 史蒂夫·贝克 / 杰里米·索山克 / 史蒂夫·贝克尔 / 威尔·卡洛 / 马特·波特诺伊 / 格雷格·普里蒂金 / 帕特里克·福斯贝里 / 史蒂夫·贝克 / 杰里米·索山克 / 史蒂夫·贝克尔 / 威尔·卡洛 / 马特·波特诺伊 / 格雷格·普里蒂金 / 艾玛·斯通 / 杰瑞米·艾伦·怀特 / 科洛·莫瑞兹 / 伊丽莎白·班克斯 / 休·杰克曼 / 杰拉德·巴特勒 / 乔什·杜哈明 / 安娜·法瑞丝 / 凯特·温丝莱特 / 莱丝莉·比伯 / 杰森·苏戴奇斯 / 娜奥米·沃茨 / 乌玛·瑟曼 / 贾斯汀·朗 / 凯特·波茨沃斯 / 理查·基尔 / 西恩·威廉·斯科特 / 列维·施瑞博尔 / 鲍比·坎纳瓦尔 / 克里斯汀·贝尔 / 克里斯托夫·梅兹-普莱瑟 / 斯戴芬·莫昌特 / 哈莉·贝瑞","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"屎尿屁R级超级扭曲三观电影。当个乐子看的话，完全笑的停不下来：金刚狼下巴蛋、剑齿虎偏执家庭教育、星爵PoopOnMe、石榴姐超市逆天接吻、冒牌超人/蝙蝠侠/海扁王、讽刺苹果的裸女播放器ibabe、边缘世界女主来例假、飞越疯人院男主vs妖精、真心话大冒险战争······能黑的全黑完了"},{"title":"蜘蛛侠：平行宇宙2 Spider-Man: Across The Spider-Verse","alt":"https://movie.douban.com/subject/30391186/","image":"https://minio.mythsman.com/douban/b8f784f6ef24552862d5aea9defa5262.jpg","meta":"动作 / 动画 / 冒险 / 菲尔·罗德 / 克里斯托弗·米勒 / 戴夫·卡拉汉姆 / 斯坦·李 / 菲尔·罗德 / 克里斯托弗·米勒 / 戴夫·卡拉汉姆 / 斯坦·李 / 沙梅克·摩尔 / 海莉·斯坦菲尔德 / 奥斯卡·伊萨克 / 杰克·约翰逊 / 伊萨·雷 / 布莱恩·泰里·亨利 / 劳伦·维勒斯 / 瑞秋·德拉彻 / 丹尼尔·卡卢亚 / 乔玛·塔科内 / 谢伊·惠格姆 / 詹森·舒瓦兹曼","rating":"2023-08-15 / ★★★★★ 力荐","comment":"我个人觉得这部电影可以被贯彻艺术的名义了！"},{"title":"龙门镖局","alt":"https://movie.douban.com/subject/11627047/","image":"https://minio.mythsman.com/douban/602bab64e435dfc980261bdd73ec832b.jpg","meta":"喜剧 / 古装 / 宁财神 / 宁财神 / 郭京飞 / 袁咏仪 / 李倩 / 张瑞涵 / 钱芳 / 刘冠麟 / 杨皓宇 / 傅家缘 / 雷佳音 / 姚晨 / 喻恩泰 / 黄晓明 / 陈晓 / 陆毅 / 佟大为 / 马天宇 / 焦俊艳 / 尹正 / 印小天 / 胡彦斌 / 元秋 / 晨阳 / 莫小奇 / 肖央 / 连凯 / 霍思燕 / 严屹宽 / 袁弘 / 保剑锋 / 王一楠 / 朱茵 / 徐洁儿 / 姚橹 / 苏东 / 李传缨 / 文清 / 熊乃瑾 / 付辛博 / 马苏 / 张子枫 / 黄龄 / 张一白 / 孔二狗 / 高群书 / 柯蓝 / 阿朵 / 甘露 / 练练 / 李佳航 / 翟煦飞 / 宁财神 / 张馨予 / 陈赫 / 杜淳 / 李晨 / 王学兵 / 王煜锋 / 陈德铭","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"梦回当年啊"}]
+            collect: [{"title":"涉过愤怒的海","alt":"https://movie.douban.com/subject/33456512/","image":"https://minio.mythsman.com/douban/7f92c5e1f1cd28a6a8dc1eb532b0a2bf.jpg","meta":"剧情 / 悬疑 / 犯罪 / 曹保平 / 武皮皮 / 曹保平 / 武皮皮 / 黄渤 / 周迅 / 祖峰 / 张宥浩 / 周依然 / 颜北 / 闫妮","rating":"2023-12-02 / ★★★☆☆ 还行","comment":"一个缺爱的人和一个被爱得过分的人"},{"title":"伦敦佬对抗活死人 Cockneys vs Zombies","alt":"https://movie.douban.com/subject/3441046/","image":"https://minio.mythsman.com/douban/a6d42a66db6a6cc9b9910983b39a0e98.jpg","meta":"喜剧 / 动作 / 惊悚 / 恐怖 / 詹姆斯·莫伦 / Lucas Roche / 马蒂亚斯·霍恩 / 詹姆斯·莫伦 / Lucas Roche / 马蒂亚斯·霍恩 / 哈里·崔德威 / 米歇尔·雷恩","rating":"2023-12-02 / ★☆☆☆☆ 很差","comment":"有点太难看了吧老爹，有种被逼着吃了坨shit的感觉\n英式口音听不惯，再扣一星"},{"title":"泰坦尼克号 Titanic","alt":"https://movie.douban.com/subject/1292722/","image":"https://minio.mythsman.com/douban/bd42c6637c92b69ea66a2f87618b89d2.jpg","meta":"剧情 / 爱情 / 灾难 / 詹姆斯·卡梅隆 / 詹姆斯·卡梅隆 / 莱昂纳多·迪卡普里奥 / 凯特·温丝莱特 / 比利·赞恩 / 凯西·贝茨 / 弗兰西丝·费舍 / 格劳瑞亚·斯图尔特 / 比尔·帕克斯顿 / 伯纳德·希尔 / 大卫·沃纳 / 维克多·加博 / 乔纳森·海德 / 苏茜·爱米斯 / 刘易斯·阿伯内西 / 尼古拉斯·卡斯柯恩 / 阿那托利·萨加洛维奇 / 丹尼·努齐 / 杰森·贝瑞 / 伊万·斯图尔特 / 艾恩·格拉法德 / 乔纳森·菲利普斯 / 马克·林赛·查普曼 / 理查德·格拉翰 / 保罗·布赖特威尔 / 艾瑞克·布里登 / 夏洛特·查顿 / 博纳德·福克斯 / 迈克尔·英塞恩 / 法妮·布雷特 / 马丁·贾维斯 / 罗莎琳·艾尔斯 / 罗切尔·罗斯 / 乔纳森·伊万斯-琼斯 / 西蒙·克雷恩 / 爱德华德·弗莱彻 / 斯科特·安德森 / 马丁·伊斯特 / 克雷格·凯利 / 格雷戈里·库克 / 利亚姆·图伊 / 詹姆斯·兰开斯特 / 艾尔莎·瑞雯 / 卢·帕尔特 / 泰瑞·佛瑞斯塔 / 凯文·德·拉·诺伊","rating":"2023-11-25 / ★★★★★ 力荐","comment":""},{"title":"怦然心动 Flipped","alt":"https://movie.douban.com/subject/3319755/","image":"https://minio.mythsman.com/douban/c8fe428afd6ff91ccf61935476566f62.jpg","meta":"剧情 / 喜剧 / 爱情 / 罗伯·莱纳 / 安德鲁·沙因曼 / 文德琳·范·德拉安南 / 罗伯·莱纳 / 安德鲁·沙因曼 / 文德琳·范·德拉安南 / 玛德琳·卡罗尔 / 卡兰·麦克奥利菲 / 瑞贝卡·德·莫妮 / 安东尼·爱德华兹 / 约翰·马奥尼 / 佩内洛普·安·米勒 / 艾丹·奎因 / 凯文·韦斯曼 / 摩根·莉莉 / 瑞安·克茨纳 / 吉莉安·普法夫 / 迈克尔·博萨 / 博·勒纳 / 杰奎琳·埃沃拉 / 泰勒·格鲁秀斯 / 艾莉·布莱恩特 / 阿什莉·泰勒 / 伊瑟尔·布罗萨德 / 科迪·霍恩 / 迈克尔·博尔顿 / 肖恩·哈珀 / 斯戴芬妮·斯考特 / 帕特丽夏·伦茨 / 马修·戈尔德 / 阿罗拉·凯瑟琳·史密斯 / 凯莉·唐纳利 / 索菲亚·撒高 / 米歇尔·梅斯默 / 斯科特·乔尔·吉兹基 / 罗德·迈尔斯 / 卡拉 帕西托 / 凯特琳·帕西托","rating":"2023-11-25 / ★★★★★ 力荐","comment":"“斯人若彩虹，遇上方知有。”\n“金玉其外，败絮其中。”"},{"title":"河边的错误","alt":"https://movie.douban.com/subject/35256092/","image":"https://minio.mythsman.com/douban/b32146b90183f4af22b0150a1b263ddf.jpg","meta":"剧情 / 犯罪 / 魏书钧 / 康春雷 / 魏书钧 / 朱一龙 / 曾美慧孜 / 侯天来 / 佟林楷 / 康春雷 / 王健宇 / 莫西子诗 / 白沙 / 曹阳 / 周庆昀 / 曾淇 / 黄俊 / 黄米依 / 阎鹤祥 / 周游","rating":"2023-10-26 / ★★★★☆ 推荐","comment":"精彩！很久没有这种我能紧绷两个小时认认真真翻找每一帧细节的电影了。个人感受是从悬疑到恐怖与剧情，最后到伦理的电影。虽然不看影评完全看不懂哈哈哈哈哈。朱一龙演技完全在线的！"},{"title":"坚如磐石","alt":"https://movie.douban.com/subject/33447633/","image":"https://minio.mythsman.com/douban/c5fce51db30b36b08f8f22b1fcc0d242.jpg","meta":"剧情 / 动作 / 犯罪 / 陈宇 / 陈宇 / 雷佳音 / 张国立 / 于和伟 / 周冬雨 / 孙艺洲 / 李乃文 / 许亚军 / 田雨 / 何政军 / 陈冲 / 王迅 / 林博洋 / 陈童","rating":"2023-10-04 / ★★★☆☆ 还行","comment":"想打7分，但无奈豆瓣只能打6分或者8分。\n剧情很紧凑，“大部分”演员演技还是到位的(周冬雨的角色设计的不太好个人感觉，张国立演技感觉对比起其他几个还是稍逊一筹)，但是有很多细节经不起推敲。比如①郑刚的岳父提了一嘴，但没有细说，这个还好；②杨晓薇后续没说清楚，“1000万+性命”和“手机+真相”对比起来，选择后者很牵强，而且最近还是没杀；③苏见明找手机的直觉未免太好了，真的真的太牵强了，就靠一句“小波知道”？；④尸体出现的简直离大谱，真就天意？\n还有很多很多，先吃饭了"},{"title":"黎明墙 The Dawn Wall","alt":"https://movie.douban.com/subject/30157353/","image":"https://minio.mythsman.com/douban/6dafabd6175f8bb880ff2a2b1a21f74d.jpg","meta":"纪录片 / 冒险 / 约翰·布兰奇 / 汤米·考德威尔 / 凯文·乔根森","rating":"2023-09-16 / ★★★★☆ 推荐","comment":"在网安基地图书馆二楼的放映厅看的第一部电影。\n电影本身作为纪录片是很合格的，将Tommy本人的人格魅力塑造的很成功，除去他个人断指仍挑战成功的部分，他没有放弃Kevin等待他共同前进的那一段更能打动我，Kevin最终也是不负众望成功拿下pitch 15！很励志！"},{"title":"奥本海默 Oppenheimer","alt":"https://movie.douban.com/subject/35593344/","image":"https://minio.mythsman.com/douban/19a13d8bfe95488ade4419df9fe0daa3.jpg","meta":"剧情 / 传记 / 历史 / 克里斯托弗·诺兰 / 克里斯托弗·诺兰 / 基里安·墨菲 / 艾米莉·布朗特 / 马特·达蒙 / 小罗伯特·唐尼 / 弗洛伦丝·皮尤 / 拉米·马雷克 / 加里·奥德曼 / 卡西·阿弗莱克 / 肯尼思·布拉纳 / 戴恩·德哈恩 / 乔什·哈奈特 / 詹姆斯·达西 / 杰克·奎德 / 马修·莫迪恩 / 斯科特·格瑞恩斯 / 阿尔登·埃伦瑞奇 / 古斯塔·斯卡斯加德 / 迈克尔·安格拉诺 / 奥莉薇·瑟尔比 / 乔希·佩克 / 亚历克斯·沃尔夫 / 托尼·戈德温 / 杰森·克拉克 / 大卫·克朗姆霍茨 / 詹姆斯·瑞马尔 / 大卫·达斯马齐连 / 戴文·博斯蒂克 / 马提亚斯·施维赫夫 / 本·萨弗迪 / 杰夫·赫普内尔 / 路易丝·隆巴德 / 艾玛·杜蒙特 / 迪伦·阿诺德 / 乔什·祖克曼 / 汤姆·康蒂 / 拜斯·约翰逊 / 哈里森·吉尔伯特森 / 杰佛逊·豪尔 / 格里格瑞·贾巴拉 / 克里斯托弗·邓汉 / 盖·布耐特 / 大卫·里达尔 / 斯荣德·福斯·奥瓦格 / 肖恩·艾弗里 / 丹尼·德费拉里 / 奥利·哈斯基维 / Sadie Stratton / 凯瑞·威斯特科特 / 杰米·约翰·韦尔斯","rating":"2023-09-15 / ★★★★★ 力荐","comment":"诺兰出品，必属精品！“剃刀党”墨菲真的帅爆我了，这个眼神真的直勾勾的抓住了我！！“钢铁侠”小罗伯特·唐尼也是成功靠这部电源撕掉了钢铁侠的标签（你可以说他有很多除了钢铁侠以外很优秀的作品，但这部电源我才真真正正觉得他不只是钢铁侠了）。这部电影的双线叙事看的很舒服，万达IMAX厅的音效真的巨赞！只是原子弹爆炸的声音没有我想象的震撼。\n也有一些不完全满意的点，但是豆瓣没有9分的选项，四舍五入给个满分！"},{"title":"爱你，罗茜 Love, Rosie","alt":"https://movie.douban.com/subject/5153254/","image":"https://minio.mythsman.com/douban/5d00df48d87e5df703354bdf48c529c0.jpg","meta":"喜剧 / 爱情 / 西西莉亚·埃亨 / 朱丽叶·托希迪 / 西西莉亚·埃亨 / 朱丽叶·托希迪 / 莉莉·柯林斯 / 山姆·克拉弗林 / 塔姆欣·伊格顿 / 杰美·温斯顿 / 克里斯蒂安·库克 / 阿特·帕金森 / 马里昂·奥德怀尔","rating":"2023-08-27 / ★★★☆☆ 还行","comment":"莉莉·克斯林和男主山姆很养眼，但是剧情真的是超级无敌巨俗套而且很折磨，有点刻意的感觉"},{"title":"隐入尘烟","alt":"https://movie.douban.com/subject/35131346/","image":"https://minio.mythsman.com/douban/1e98dda08452ca473ebf2c192468599c.jpg","meta":"剧情 / 李睿珺 / 李睿珺 / 武仁林 / 海清 / 杨光锐 / 赵登平 / 王彩兰 / 曾建贵 / 武赟志 / 马占红 / 王翠兰 / 续彩霞 / 李生甫 / 张敏","rating":"2023-08-15 / ★★★★★ 力荐","comment":"网友都说演的很刻意很虚假，但其实当你曾身处其中，那种真实感会更令你感到可怕"},{"title":"不要抬头 Don't Look Up","alt":"https://movie.douban.com/subject/34884712/","image":"https://minio.mythsman.com/douban/eff57e368f9d74408bafc76ce89e6e0c.jpg","meta":"喜剧 / 科幻 / 亚当·麦凯 / 戴维·西罗塔 / 亚当·麦凯 / 戴维·西罗塔 / 莱昂纳多·迪卡普里奥 / 詹妮弗·劳伦斯 / 梅丽尔·斯特里普 / 凯特·布兰切特 / 罗布·摩根 / 乔纳·希尔 / 马克·里朗斯 / 泰勒·派瑞 / 提莫西·查拉梅 / 朗·普尔曼 / 爱莉安娜·格兰德 / 卡迪小子 / 克里斯·埃文斯 / 希米什·帕特尔 / 梅兰妮·林斯基 / 迈克尔·切克利斯 / 托莫·希思黎 / 保罗·吉尔福伊尔 / 罗伯特·乔伊 / 海缇安·朴 / 朗尼·法默 / 罗斯·帕特里奇 / 列维·施瑞博尔 / 克里斯·埃弗里特 / 乔治亚·莱曼 / 帕特丽夏·德哈尼 / 本·锡德尔 / 特蕾莎·普雷恩 / 梅根·莱瑟斯 / 阿什利·班菲尔德 / 萨拉·西尔弗曼 / 乔·格拉瑟 / 博·艾伦 / 塞莱斯特·奥利瓦 / 罗曼·米蒂齐扬 / 内森·里奇曼 / 韦斯·约翰逊","rating":"2023-08-15 / ★★★★★ 力荐","comment":"小李子主演的末日题材电影，但这部电影却没有在“末日”二字上大刀阔斧，反而以喜剧和荒诞为主，带入到如今的国际关系和日常生活中，讽刺感极强"},{"title":"子弹列车 Bullet Train","alt":"https://movie.douban.com/subject/35118954/","image":"https://minio.mythsman.com/douban/479af5873b06b94cebf1bb132eebb842.jpg","meta":"喜剧 / 动作 / 惊悚 / 扎克·奥尔维奇 / 伊坂幸太郎 / 扎克·奥尔维奇 / 伊坂幸太郎 / 布拉德·皮特 / 乔伊·金 / 亚伦·泰勒-约翰逊 / 布莱恩·泰里·亨利 / 安德鲁·浩二 / 真田广之 / 迈克尔·珊农 / 桑德拉·布洛克 / 坏痞兔 / 罗根·勒曼 / 莎姬·贝兹 / 丘增 / 凯伦·福原 / 凯文·秋吉·程 / 明基·村上 / 武谷香织 / 吉姆·加里蒂 / 埃梅丽娜·亚当斯 / 詹森·郑 / 约书亚·萨达索 / 约翰娜·沃茨 / 胡里奥·加贝 / 安德烈·穆尼奥斯 / 阿诺德·陈 / 帕沙·D.林奇尼科夫 / 米歇尔·李 / 贾森·马修·史密斯 / 大卫·雷奇 / 艾恩 / 雷·巴佛 / 达伦·凯兰 / 莉昂·马苏达 / 伊戈·米基塔斯 / 瑞安·雷诺兹 / 查宁·塔图姆 / 哈里森·徐","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"布拉德·皮特还是一如既往的潇洒，电影剧情虽然普通，但是动作戏真的流畅，拳拳到肉，算是一部合格的动作片了"},{"title":"壮志凌云2：独行侠 Top Gun: Maverick","alt":"https://movie.douban.com/subject/6893932/","image":"https://minio.mythsman.com/douban/2c5a37843d21ca1421f3eb693d55c23f.jpg","meta":"动作 / 伊伦·克鲁格 / 埃里克·辛格尔 / 克里斯托弗·麦奎里 / 贾斯丁·马科斯 / 吉姆·卡什 / 小杰克·埃普斯 / 彼得·克莱格 / 伊伦·克鲁格 / 埃里克·辛格尔 / 克里斯托弗·麦奎里 / 贾斯丁·马科斯 / 吉姆·卡什 / 小杰克·埃普斯 / 彼得·克莱格 / 汤姆·克鲁斯 / 詹妮弗·康纳利 / 迈尔斯·特勒 / 乔恩·哈姆 / 方·基默 / 莫妮卡.巴巴罗 / 珍·路易莎·凯利 / 曼尼·贾希尼托 / 罗伯塔·斯巴达 / 艾德·哈里斯 / 格伦·鲍威尔 / 刘易斯·普尔曼 / 雷蒙德·李 / 莉莲安娜·雷伊 / 杰·埃利斯 / 杰克·皮克金 / 蕾切尔·马卡里兰 / 巴希尔·萨拉赫丁 / 彼得·马克·肯德尔 / 查尔斯·帕内尔 / 切尔西哈里斯 / 丹尼·拉米雷斯 / 王仲欣 / 南希·德马尔斯 / 康妮·夏普 / 塞尔吉奥·布里奥内斯 / 佩内洛普·卡普迪雅 / 马克·安东尼·考克斯 / 莫宾·汗","rating":"2023-08-15 / ★★☆☆☆ 较差","comment":"烂的不行，剧情普通、特效普通、场面普通，太老套了主要，看的折磨，还强加意识形态..."},{"title":"两大一小三俘虏 Three Fugitives","alt":"https://movie.douban.com/subject/1306378/","image":"https://minio.mythsman.com/douban/0fae7e07e39637114db541648838e873.jpg","meta":"喜剧 / 动作 / 弗朗西斯·韦贝尔 / 弗朗西斯·韦贝尔 / 尼克·诺特 / 马丁·肖特 / 麦格 / 詹姆斯·厄尔·琼斯 / 阿兰·卢克 / 肯尼思·麦克米伦 / 戴维阿诺特 / 布鲁斯·麦克吉尔 / 李·加林顿 / 西·理查森 / Stanley Brock / 约翰·普罗卡奇诺 / 凯茜·金尼 / 杰克·麦吉 / 艾伯特·亨德森 / 杰夫·帕里 / Rhoda Gemignani / 克莱夫·罗森格伦 / 拉里·米勒 / 布莱恩·汤普森 / Woody Eney / 约翰·艾尔瓦德 / Gary Armagnac / 黛娜莱诺佛 / Jeannine Wiest / Lance August / 迪恩史密斯 / 舍曼·霍华德 / Danny Nero","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"美国1989年的喜剧，欢乐且感动！"},{"title":"坠落 Fall","alt":"https://movie.douban.com/subject/35700395/","image":"https://minio.mythsman.com/douban/05456fa713b8994b99f1695de12d0421.jpg","meta":"动作 / 惊悚 / 冒险 / 运动 / 乔纳森·弗兰克 / 斯科特·曼 / 乔纳森·弗兰克 / 斯科特·曼 / 格雷斯·卡罗琳·柯里 / 维吉尼亚·加德纳 / 梅森·古丁 / 杰弗里·迪恩·摩根 / 贾斯珀·科尔 / 达雷尔·丹尼斯 / Bamm Ericsen / 朱莉娅·佩斯·米契尔 / Evie Mann / Joseph Mann / Nick Lynes / Branden Currey","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"还行，小成本大制作，各方面塑造的挺细腻的"},{"title":"边缘行者","alt":"https://movie.douban.com/subject/35192672/","image":"https://minio.mythsman.com/douban/15c16c1fc29c4025157d509d43e65e63.jpg","meta":"动作 / 悬疑 / 犯罪 / 黄明升 / 王焱 / 马焱 / 黄明升 / 王焱 / 马焱 / 任贤齐 / 任达华 / 方中信 / 谭耀文 / 吴卓羲 / 陈国坤 / 林晓峰 / 河国荣 / 尹扬明 / 朱鉴然 / 洪金宝 / 林嘉欣 / 曾江 / 张兆辉 / 陈炜 / 关礼杰","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"任贤齐/任达华啥的老角，还凑合，剧情老套了点"},{"title":"菊次郎的夏天 菊次郎の夏","alt":"https://movie.douban.com/subject/1293359/","image":"https://minio.mythsman.com/douban/89f4b420b948d9b8e5c229aad68367c6.jpg","meta":"剧情 / 喜剧 / 北野武 / 北野武 / 北野武 / 关口雄介 / 岸本加世子 / 吉行和子 / 细川典江 / 大家由祐子 / 磨赤儿 / 铃木忠幸 / 井手博士 / 今村鼠 / 兼子二郎 / 田中要次 / 小岛可奈子","rating":"2023-08-15 / ★★★★★ 力荐","comment":"那必然是真神！北野武我个人是超喜欢的，节奏把握的很好，不是主流电影俗套的模式，各种切景镜头感，人物一愣一愣的，很治愈！"},{"title":"美国往事 Once Upon a Time in America","alt":"https://movie.douban.com/subject/1292262/","image":"https://minio.mythsman.com/douban/ffa4d568574b470290c38082ecab2cda.jpg","meta":"剧情 / 犯罪 / 皮耶罗·德·贝纳迪 / 莱奥纳多·本韦努蒂 / 弗兰科·奥卡利 / 恩里科·梅迪欧力 / 弗兰科·费里尼 / 赛尔乔·莱昂内 / 皮耶罗·德·贝纳迪 / 莱奥纳多·本韦努蒂 / 弗兰科·奥卡利 / 恩里科·梅迪欧力 / 弗兰科·费里尼 / 赛尔乔·莱昂内 / 罗伯特·德尼罗 / 詹姆斯·伍兹 / 伊丽莎白·麦戈文 / 乔·佩西 / 波特·杨 / 塔斯黛·韦尔德 / 特里特·威廉斯 / 丹尼·爱罗 / 理查德·布赖特 / 詹姆斯·海登 / 威廉·弗西斯 / 达兰妮·弗鲁格 / 拉里·拉普 / 理查德·弗让吉 / 罗伯特·哈珀 / 詹妮弗·康纳利","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"好看是好看，很多经典镜头和场面，讲的意大利黑手党在美国的星期衰落，其中掺杂了各路人马各种复杂微妙的人际关系；就是时间确实有点吃不消，虽然好的故事值得静下心来细细品味，但这部电源节奏没那么快还是很需要一些耐心的"},{"title":"死亡直播 Deadstream","alt":"https://movie.douban.com/subject/35639406/","image":"https://minio.mythsman.com/douban/bb9347a8d3b0c36464b5d6f503f1362c.jpg","meta":"喜剧 / 恐怖 / 凡妮莎·温特 / 约瑟夫·温特 / 凡妮莎·温特 / 约瑟夫·温特 / 约瑟夫·温特 / 梅拉妮·斯通 / Jason K. Wixom / Pat Barnett / Marty Collins / Perla Lacayo / Cylia Austin-Lacayo / Hayden Gariety / Ariel Lee / Jaxon Harker / Jeremy Warner / Brenden Bytheway / Doug May / Ruby York / 盖博·卡斯多夫 / 凡妮莎·温特 / 杰德·谢帕德","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"挺好的一部电影，直播的形式，第一人称，代入感可以，有种密室逃脱的感觉"},{"title":"爱在黎明破晓前 Before Sunrise","alt":"https://movie.douban.com/subject/1296339/","image":"https://minio.mythsman.com/douban/587ab20b94f4f76ab5030e4621cc46a3.jpg","meta":"剧情 / 爱情 / 理查德·林克莱特 / 金·克里桑 / 理查德·林克莱特 / 金·克里桑 / 伊桑·霍克 / 朱莉·德尔佩 / 安德莉亚·埃克特 / 汉诺·波西尔 / 卡尔·布拉克施魏格尔 / 特克斯·鲁比诺威茨 / 埃尔尼·曼戈尔德 / 多米尼克·卡斯特尔 / 海蒙·玛丽亚·巴汀格 / 哈拉尔德·魏格莱因 / 汉斯·魏因加特纳 / 彼得·艾利·休默 / 休伯特·法比安·库尔特勒 / 约翰·斯洛斯 / 克里斯蒂安·安科维奇 / 亚当·戈德堡 / 保罗·波伊特","rating":"2023-08-15 / ★★★★★ 力荐","comment":"爱情三部曲自然是经典之作！这种慢悠悠的节奏看的真的舒服，爱的很纯粹！"},{"title":"恋恋笔记本 The Notebook","alt":"https://movie.douban.com/subject/1309163/","image":"https://minio.mythsman.com/douban/e261c21ec69c409bc32197f8e7d237a9.jpg","meta":"剧情 / 爱情 / 扬·萨尔迪 / 杰里米·莱文 / 尼古拉斯·斯帕克斯 / 扬·萨尔迪 / 杰里米·莱文 / 尼古拉斯·斯帕克斯 / 瑞恩·高斯林 / 瑞秋·麦克亚当斯 / 吉娜·罗兰兹 / 詹姆斯·加纳 / 斯塔尔勒塔·杜波利斯 / 凯文·康诺利 / 希瑟·沃奎斯特 / 杰弗里·奈特 / 琼·艾伦 / 詹姆斯·麦斯登","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"还行，各方面塑造啥的；作为爱情片已经很成功了，但总感觉差点什么"},{"title":"傲慢与偏见 Pride & Prejudice","alt":"https://movie.douban.com/subject/1418200/","image":"https://minio.mythsman.com/douban/8fdeb0ab1c3c18612815c60bcd9167c6.jpg","meta":"剧情 / 爱情 / 简·奥斯汀 / 黛博拉·莫盖茨 / 简·奥斯汀 / 黛博拉·莫盖茨 / 凯拉·奈特莉 / 马修·麦克费登 / 唐纳德·萨瑟兰 / 布兰达·布莱斯 / 凯瑞·穆里根 / 裴淳华 / 吉娜·马隆 / 妲露拉·莱莉 / 朱迪·丹奇 / 西蒙·伍兹 / 克劳迪·布莱克利 / 汤姆·霍兰德尔 / 鲁伯特·弗兰德 / 凯利·蕾莉 / 皮普·托伦斯 / 西妮德·马修斯 / 佩内洛普·威尔顿 / 塔姆金·莫钦特","rating":"2023-08-15 / ★★★★★ 力荐","comment":"爱死了！男主那气质拿捏的死死的，女主侧颜无敌！音乐也相当应景和谐！最后一幕，“你在晨光熹微中走来”绝美！"},{"title":"阿甘正传 Forrest Gump","alt":"https://movie.douban.com/subject/1292720/","image":"https://minio.mythsman.com/douban/1b427bdc7c9ddb28621be497c11c21b8.jpg","meta":"剧情 / 爱情 / 艾瑞克·罗斯 / 温斯顿·格鲁姆 / 艾瑞克·罗斯 / 温斯顿·格鲁姆 / 汤姆·汉克斯 / 罗宾·怀特 / 加里·西尼斯 / 麦凯尔泰·威廉逊 / 莎莉·菲尔德 / 海利·乔·奥斯蒙 / 迈克尔·康纳·亨弗里斯 / 哈罗德·G·赫瑟姆 / 山姆·安德森 / 伊俄涅·M·特雷奇 / 彼得·道博森 / 希博汗·法隆 / 伊丽莎白·汉克斯 / 汉娜·豪尔 / 克里斯托弗·琼斯 / 罗布·兰德里 / 杰森·麦克奎尔 / 桑尼·施罗耶 / 艾德·戴维斯 / 丹尼尔C.斯瑞派克 / 大卫·布里斯宾 / 德博拉·麦克蒂尔 / 艾尔·哈林顿 / 阿非莫·奥米拉 / 约翰·沃德斯塔德 / 迈克尔·伯吉斯 / 埃里克·安德伍德 / 拜伦·明斯 / 斯蒂芬·布吉格沃特 / 约翰·威廉·高尔特 / 希拉里·沙普兰 / 伊莎贝尔·罗斯 / 理查德·达历山德罗 / 迪克·史迪威 / 迈克尔-杰斯 / 杰弗里·布莱克 / 瓦妮莎·罗斯 / 迪克·卡维特 / 马拉·苏查雷特扎 / 乔·阿拉斯奇 / W·本森·泰瑞","rating":"2023-08-15 / ★★★★★ 力荐","comment":"豆瓣top3的电影自然不用多说，微缩夸张版的美国近代史"},{"title":"头文字D 頭文字D","alt":"https://movie.douban.com/subject/1329562/","image":"https://minio.mythsman.com/douban/79518f286eb551c929437c876baed3ee.jpg","meta":"剧情 / 动作 / 庄文强 / 庄文强 / 周杰伦 / 陈冠希 / 黄秋生 / 杜汶泽 / 铃木杏 / 余文乐 / 钟镇涛 / 陈小春 / 津村和幸 / 阿部力 / 田中千绘 / 刘畊宏","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"夏树好像赵今麦啊……奔驰上树我是真绷不住"},{"title":"黑豹2 Black Panther: Wakanda Forever","alt":"https://movie.douban.com/subject/30167997/","image":"https://minio.mythsman.com/douban/f46315eb96731f23d8b9a8daf56bed9c.jpg","meta":"剧情 / 动作 / 科幻 / 冒险 / 瑞恩·库格勒 / 乔·罗伯特·科尔 / 瑞恩·库格勒 / 乔·罗伯特·科尔 / 利蒂希娅·赖特 / 露皮塔·尼永奥 / 安吉拉·贝塞特 / 丹娜·奎里拉 / 温斯顿·杜克 / 马丁·弗瑞曼 / 特诺切·韦尔塔 / 理查德·希夫 / 多米尼克·索恩 / 米凯拉·科尔 / 弗洛伦丝·卡松巴 / 玛丽亚·梅塞德斯·科罗伊 / 伊萨赫·德·班克尔 / 施奎塔·詹姆斯 / 胡安·卡洛斯·坎图 / 洁基伯明翰 / 索佩·阿卢科 / 小弗洛伊德·安东尼·约翰 / 布伦特·莫雷尔·加斯金斯 / 拉希姆·赖利 / 乔丹·沃克·罗斯","rating":"2023-08-15 / ★★☆☆☆ 较差","comment":"感觉是依托答辩，比起1差远了"},{"title":"你丫闭嘴！ Tais-toi!","alt":"https://movie.douban.com/subject/1303815/","image":"https://minio.mythsman.com/douban/5be7608ec260aa78300b2dcf1685b93c.jpg","meta":"喜剧 / 犯罪 / 弗朗西斯·韦贝尔 / 弗朗西斯·韦贝尔 / 热拉尔·德帕迪约 / 让·雷诺 / 理查德·贝里 / 安德烈·杜索里埃 / 让-皮埃尔·马洛 / 让-米歇尔·诺里 / 洛朗·加默隆 / 奥雷利安·雷克因 / 樊尚·莫斯卡托 / 迪基·奥尔加多 / 米歇尔·奥蒙 / 蕾奥娜·维埃拉 / 埃德加·吉夫里","rating":"2023-08-15 / ★★☆☆☆ 较差","comment":"有点get不到笑点...感觉比较平庸"},{"title":"假期历险记 Vacation","alt":"https://movie.douban.com/subject/4075568/","image":"https://minio.mythsman.com/douban/a860b20b14fc0a92da6ea46b33b607dd.jpg","meta":"喜剧 / 家庭 / 冒险 / 乔纳森·M·戈尔茨坦 / 约翰·弗朗西斯·戴利 / 乔纳森·M·戈尔茨坦 / 约翰·弗朗西斯·戴利 / 艾德·赫尔姆斯 / 克里斯蒂娜·艾伯盖特 / 莱斯利·曼恩 / 比佛莉·德安姬罗 / 切维·切斯 / 克里斯·海姆斯沃斯 / 伊丽莎白·吉莱丝 / 斯凯勒·吉桑多 / 尼克·克罗尔 / 查理·戴 / 科甘-迈克尔·凯 / 凯特琳·奥尔森 / 迈克尔·佩纳 / 雷吉娜·赫尔 / 山姆·莱文","rating":"2023-08-15 / ★★★★★ 力荐","comment":"还是美式幽默适合我，两个头的旅行车真的笑死人，还有那个粪坑泡澡，开沙滩车撞死牛。有欢笑有泪点，一部能让人记住的很棒的喜剧片。"},{"title":"冒牌家庭 We're the Millers","alt":"https://movie.douban.com/subject/10745405/","image":"https://minio.mythsman.com/douban/7c127a3fe42e57c3d67e304d03169d16.jpg","meta":"喜剧 / 鲍勃·费希尔 / 史蒂夫·法贝尔 / 西恩·安德斯 / 约翰·莫里斯 / 鲍勃·费希尔 / 史蒂夫·法贝尔 / 西恩·安德斯 / 约翰·莫里斯 / 詹妮弗·安妮斯顿 / 杰森·苏戴奇斯 / 威尔·保尔特 / 艾玛·罗伯茨 / 艾德·赫尔姆斯 / 尼克·奥弗曼 / 凯瑟琳·哈恩 / 莫莉·奎恩 / 托莫·希思黎","rating":"2023-08-15 / ★★★★★ 力荐","comment":"围绕边境运毒拍的喜剧，虽然可能这部电影不是那么完美，但至少我看的时候笑的很开心，而且很多画面过了很久都不会忘记，笑点也不尬，很不错了！那个小男孩被蜘蛛蛰了一口成为“巨蛋侠”真的超搞，导演恶趣味"},{"title":"糊涂侦探 Get Smart","alt":"https://movie.douban.com/subject/1972701/","image":"https://minio.mythsman.com/douban/5fe458c60fc72543c2f8d356862f2f09.jpg","meta":"喜剧 / 动作 / 冒险 / 汤姆·J·阿瑟尔 / 马特·恩贝尔 / 汤姆·J·阿瑟尔 / 马特·恩贝尔 / 史蒂夫·卡瑞尔 / 安妮·海瑟薇 / 道恩·强森 / 艾伦·阿金 / 特伦斯·斯坦普 / 泰瑞·克鲁斯 / 大卫·科恩查内 / 詹姆斯·肯恩 / 比尔·默瑞 / 帕特里克·沃伯顿 / 丘增 / 内特·托伦斯 / 肯·戴维蒂安 / 大卫·S·李 / 达利普·辛格 / 吉奥夫·皮尔森 / 凯利·卡巴茨 / 林赛·霍利斯特","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"安妮·海瑟薇一如既往的漂亮！巨石强森反转成反派，但是电影情节和其他部分来讲稍微有些平庸"},{"title":"谁是超级英雄 Super-héros malgré lui","alt":"https://movie.douban.com/subject/35212079/","image":"https://minio.mythsman.com/douban/496813ae343500fa7c2b8c57d00ee2c4.jpg","meta":"喜剧 / 动作 / 朱利安·阿鲁蒂 / 皮埃尔·迪当 / 菲利普·拉肖 / 皮埃尔·拉苏 / 朱利安·阿鲁蒂 / 皮埃尔·迪当 / 菲利普·拉肖 / 皮埃尔·拉苏 / 菲利普·拉肖 / 阿马尔·维克德 / 让·雨果·安格拉德 / 艾洛蒂·丰唐 / 乔治斯·科拉菲斯 / 塔雷克·布达里 / Chantal Ladesou / 布鲁诺·洛歇 / Salomé Partouche / Michel Crémadès / 菲烈·卡特林 / Alex Martin / 爱丽丝·杜富尔 / 朱利安·阿鲁蒂 / Amin Harfouch","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"相较于同为法国喜剧的《你丫闭嘴》，我更喜欢这一部，很有法式电影的特色，剧情是失忆男主找寻真爱浪子回头，但是过程中那几个恶搞的超级英雄确实吊，亲吻“倒挂金钩”那个场面属实难绷"},{"title":"小人物 Nobody","alt":"https://movie.douban.com/subject/34865507/","image":"https://minio.mythsman.com/douban/656546bdaa2d33b4dbbc0e01036e6020.jpg","meta":"动作 / 犯罪 / 德里克·科尔斯塔 / 德里克·科尔斯塔 / 鲍勃·奥登科克 / 阿列克谢·谢列布里亚科夫 / 康妮·尼尔森 / 克里斯托弗·洛伊德 / 迈克尔·艾恩塞德 / 科林·萨蒙 / 罗伯特·菲茨杰拉德·迪格斯 / 比利·麦克莱伦 / 阿拉亚·门格沙 / 盖奇·芒罗 / 佩斯利·卡多拉思 / 亚历山大·帕里 / 亨伯利·冈萨雷斯 / 爱德森·莫拉莱斯 / J·P·马诺克斯 / 伊利亚·奈舒勒 / 谢尔盖·希纳罗维 / 斯蒂芬妮·西 / 鲁斯兰·鲁辛 / Bj·韦罗 / 达雅·查库莎 / 亚当·哈蒂格 / 克里斯汀·哈里斯 / 埃里克·阿塔瓦尔 / 沙龙·巴杰 / 鲍里斯·古利亚林 / 丹尼尔·伯哈特 / 阿兰·莫西 / 泰瑞·威瑟斯庞 / 吉姆·科比","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"还行吧，特工窝囊老爹血洗俄罗斯黑帮，剧情有点老套，无脑黑俄罗斯差不多得了"},{"title":"假日约会 Holidate","alt":"https://movie.douban.com/subject/30477702/","image":"https://minio.mythsman.com/douban/4e9193765060fd44000640e7f2fbf3ef.jpg","meta":"喜剧 / 爱情 / Tiffany Paulsen / Tiffany Paulsen / 艾玛·罗伯茨 / 卢克·布雷西 / 克里斯汀·肯诺恩斯 / 弗兰西丝·费舍 / 安德鲁·巴切勒 / 杰西卡·卡普肖 / 曼尼什·达亚尔 / 亚历克斯·莫法特 / 吴辛惠 / 杰克·曼利 / Julien Marlon Samani / 妮可拉·佩尔茨 / Savannah Reina / Olivia H. Hunt / 丹·劳里亚 / 艾米·卡里诺 / 卡洛斯·拉卡马拉 / 米凯拉·霍沃 / 卡尔·麦克道维尔 / 杰西贾姆斯·洛科里埃 / 布鲁克·杰伊·泰勒 / 玛丽莎·达维拉 / 乔纳森·巴伦 / 库尔特·岳 / Bill Medley / 詹妮弗·沃妮斯 / Marcella Detroit / 梅里·克莱顿 / Joe Pizzulo / 比利·斯洛特","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"美国佬果然玩的花啊"},{"title":"老无所依 No Country for Old Men","alt":"https://movie.douban.com/subject/1857099/","image":"https://minio.mythsman.com/douban/92c1f668fcfbaeef55dde8ee319740bc.jpg","meta":"剧情 / 惊悚 / 犯罪 / 乔尔·科恩 / 伊桑·科恩 / 科马克·麦卡锡 / 乔尔·科恩 / 伊桑·科恩 / 科马克·麦卡锡 / 汤米·李·琼斯 / 哈维尔·巴登 / 乔什·布洛林 / 伍迪·哈里森 / 凯莉·麦克唐纳 / 加瑞特·迪拉胡特 / 泰丝·哈珀 / 巴里·柯宾 / 斯蒂芬·鲁特 / 贝丝·格兰特 / 安娜·里德 / 姬特·格温 / 吉因·琼斯 / 迈克·沃特福德","rating":"2023-08-15","comment":"反派的笑容真的阴森，妈的，看完都有点后怕，虽然是个疯疯癫癫的杀手，做人还怪有原则"},{"title":"天注定","alt":"https://movie.douban.com/subject/21941283/","image":"https://minio.mythsman.com/douban/5e8b29e71ab7911e73f747137f5d4973.jpg","meta":"剧情 / 犯罪 / 贾樟柯 / 贾樟柯 / 赵涛 / 姜武 / 王宝强 / 罗蓝山 / 张嘉益 / 李梦 / 王宏伟 / 韩三明 / 贾樟柯 / 刘陆","rating":"2023-08-15 / ★★★★★ 力荐","comment":"这部电影简直就是个宝藏，王宝强、姜武啊等等四个片段都演得挺好，很写实！中间三峡的那一段作为宜昌人真的代入感很强！！！"},{"title":"低俗小说 Pulp Fiction","alt":"https://movie.douban.com/subject/1291832/","image":"https://minio.mythsman.com/douban/184471886637831da2ff92d3f0ae2ae3.jpg","meta":"剧情 / 喜剧 / 犯罪 / 昆汀·塔伦蒂诺 / 罗杰·阿夫瑞 / 昆汀·塔伦蒂诺 / 罗杰·阿夫瑞 / 约翰·特拉沃尔塔 / 乌玛·瑟曼 / 阿曼达·普拉莫 / 蒂姆·罗斯 / 塞缪尔·杰克逊 / 菲尔·拉马 / 布鲁斯·威利斯 / 弗兰克·威利 / 布尔·斯蒂尔斯 / 文·瑞姆斯 / 劳拉·拉芙蕾丝 / 保罗·考尔德伦 / 布罗娜·加拉赫 / 罗姗娜·阿奎特 / 埃里克·斯托尔兹 / 玛丽亚·德·梅黛洛","rating":"2023-08-15 / ★★★★★ 力荐","comment":"餐厅抢劫，杀人处理，文森蜜儿，拳击手布奇跑路，每一个片段都是经典。中间有一部分节奏比较慢，但这种时而舒缓时而禁止的电影反而更能让人回想连篇"},{"title":"杀死比尔 Kill Bill: Vol. 1","alt":"https://movie.douban.com/subject/1291580/","image":"https://minio.mythsman.com/douban/71e83b33efd119b142f0948f25e158c6.jpg","meta":"动作 / 惊悚 / 犯罪 / 昆汀·塔伦蒂诺 / 乌玛·瑟曼 / 昆汀·塔伦蒂诺 / 乌玛·瑟曼 / 乌玛·瑟曼 / 刘玉玲 / 薇薇卡·福克斯 / 达丽尔·汉纳 / 大卫·卡拉丁 / 迈克尔·马德森 / 朱莉·德赖弗斯 / 栗山千明 / 千叶真一 / 刘家辉 / 迈克尔·帕克斯 / 迈克尔·鲍文 / 国村隼 / 大叶健二 / 风祭由纪","rating":"2023-08-15 / ★★★★★ 力荐","comment":"暴力血腥电影的天花板了感觉，真的爽！"},{"title":"杀死比尔2 Kill Bill: Vol. 2","alt":"https://movie.douban.com/subject/1291584/","image":"https://minio.mythsman.com/douban/2cd2f0be66cdafb9ef2bdd8cf4ad8d26.jpg","meta":"动作 / 惊悚 / 犯罪 / 昆汀·塔伦蒂诺 / 乌玛·瑟曼 / 昆汀·塔伦蒂诺 / 乌玛·瑟曼 / 乌玛·瑟曼 / 大卫·卡拉丁 / 刘家辉 / 薇薇卡·福克斯 / 刘玉玲 / 迈克尔·马德森 / 达丽尔·汉纳 / 塞缪尔·杰克逊 / 佩拉·哈莉-贾德林 / 迈克尔·帕克斯 / 克拉克·米德尔顿","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"第一部的续作，比不上第一部但是也很能打了！"},{"title":"被解救的姜戈 Django Unchained","alt":"https://movie.douban.com/subject/6307447/","image":"https://minio.mythsman.com/douban/835f90c450aae0ffa3c2f7d976fa2eca.jpg","meta":"剧情 / 动作 / 西部 / 冒险 / 昆汀·塔伦蒂诺 / 昆汀·塔伦蒂诺 / 杰米·福克斯 / 莱昂纳多·迪卡普里奥 / 克里斯托弗·瓦尔兹 / 塞缪尔·杰克逊 / 凯丽·华盛顿 / 沃尔顿·戈金斯 / 丹尼斯·克里斯托弗 / 乔纳·希尔 / 詹姆斯·瑞马尔 / 爱波·塔布琳 / 弗兰科·内罗 / 罗伯特·卡拉丁 / 佐伊·贝尔","rating":"2023-08-15 / ★★★★★ 力荐","comment":"暴力美学！结尾的Freedom歌曲一响，感觉自己都到了美国西部一样"},{"title":"好莱坞往事 Once Upon a Time... in Hollywood","alt":"https://movie.douban.com/subject/27087724/","image":"https://minio.mythsman.com/douban/e6eaf7b054ff375791e5b7ed2cbc22e3.jpg","meta":"剧情 / 喜剧 / 昆汀·塔伦蒂诺 / 昆汀·塔伦蒂诺 / 莱昂纳多·迪卡普里奥 / 布拉德·皮特 / 玛格特·罗比 / 埃米尔·赫斯基 / 玛格丽特·库里 / 蒂莫西·奥利芬特 / 茱莉亚·巴特斯 / 奥斯汀·巴特勒 / 达科塔·范宁 / 布鲁斯·邓恩 / 麦克·莫 / 卢克·贝里 / 戴米恩·路易斯 / 库尔特·拉塞尔 / 阿尔·帕西诺 / 玛雅·霍克 / 西德妮·斯威尼 / 哈莉·奎恩·史密斯 / 达蒙·海瑞曼 / 凯特·贝兰特 / 洛伦扎·伊佐 / 迈克尔·马德森 / 拉莫·威利斯 / 斯科特·麦克纳里 / 小克利夫顿·克林斯 / 维多利亚·佩德雷蒂 / 吕蓓卡·盖哈特 / 佐伊·贝尔 / 莱斯利·贝加 / 瑞贝卡·瑞滕豪斯 / 萨曼莎·罗宾森 / 莉娜·邓纳姆 / 德瑞玛·沃克 / 克鲁·古拉格 / 丹妮拉·皮克 / 布伦达·瓦卡罗 / 尼古拉斯·哈蒙德 / 米奇·麦迪森 / 詹姆斯·兰德里·赫伯特 / 妮可·加利西亚 / 麦迪逊·贝蒂 / 佩内洛普·卡普迪雅 / 莫里斯·孔特 / 科斯塔·罗宁 / 卢·坦普尔 / 斯宾塞·加雷特 / 布丽安娜·乔伊·乔默 / 奥玛·杜姆 / 娜塔莉·科恩 / 拉法尔·扎维鲁查 / 马尔科·罗德里格斯 / 堪萨丝·宝琳 / 维森特·拉雷斯卡 / 殷巴尔·阿米拉夫 / 拉蒙·弗兰克 / 莫妮卡·斯塔吉丝 / 克雷格·斯塔克 / 大卫·斯廷 / 朱丽叶·吉达 / 埃迪·佩雷斯 / 布蕾迪·拉多娜 / 凯拉·拉多姆斯基 / 布里安娜·温 / 卡萝莱娜·瓦加斯 / 加里·派怀特","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"节奏较慢，根据上个世界美国真实事件改编。布拉德·皮特和昆汀、小李子联手就算剧情是坨屎，我也会去看。最后一段布拉德·皮特杀那群嬉皮士看的是真的爽，贯彻昆汀一如既往的暴力美学！"},{"title":"小妇人 Little Women","alt":"https://movie.douban.com/subject/26348103/","image":"https://minio.mythsman.com/douban/d0e784e7091cb58ee65a5d7fab598fd9.jpg","meta":"剧情 / 爱情 / 格蕾塔·葛韦格 / 路易莎·梅·奥尔科特 / 格蕾塔·葛韦格 / 路易莎·梅·奥尔科特 / 西尔莎·罗南 / 艾玛·沃森 / 弗洛伦丝·皮尤 / 伊莱扎·斯坎伦 / 劳拉·邓恩 / 提莫西·查拉梅 / 梅丽尔·斯特里普 / 鲍勃·奥登科克 / 詹姆斯·诺顿 / 路易·加瑞尔 / 克里斯·库珀 / 崔西·莱茨 / 艾比·奎因 / 萨沙·弗若洛娃 / 莉莉·恩格勒特 / 爱德华德·弗莱彻 / 杰妮·霍蒂谢尔 / 多梅尼克·阿尔迪诺 / 汤姆·斯特拉特福 / 托马斯·马里亚诺 / 哈德莉·罗宾逊 / 杰米·加扎里安","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"一般吧，有点傲慢与偏见的感觉，但远不如那个来的惊艳，甜茶这个演技有点怪怪的"},{"title":"真人快打 Mortal Kombat","alt":"https://movie.douban.com/subject/2131664/","image":"https://minio.mythsman.com/douban/d17a60f9c3b502672ad246e7f1370454.jpg","meta":"动作 / 奇幻 / 冒险 / 格雷格·罗素 / 戴夫·卡拉汉姆 / 奥伦·尤济尔 / 埃德·布恩 / 约翰·托拜亚斯 / 格雷格·罗素 / 戴夫·卡拉汉姆 / 奥伦·尤济尔 / 埃德·布恩 / 约翰·托拜亚斯 / 刘易斯·陈 / 乔·塔斯利姆 / 真田广之 / 杰西卡·麦克娜美 / 约什·劳森 / 麦卡德·布鲁克斯 / 林路迪 / 浅野忠信 / 黄经汉 / 麦克斯•黄 / 茜茜·斯特林格 / 梅尔·贾森 / 丹尼尔·尼尔森 / 劳拉·布伦特 / 马蒂尔达·金伯","rating":"2023-08-15 / ★★☆☆☆ 较差","comment":"除了特效，感觉有点一言难尽啊，剧情俗套，演技拉跨......"},{"title":"革命之路 Revolutionary Road","alt":"https://movie.douban.com/subject/2037012/","image":"https://minio.mythsman.com/douban/c66350721f1dbfec388c41f375c99563.jpg","meta":"剧情 / 爱情 / 贾斯汀·海瑟 / 理查德·耶茨 / 贾斯汀·海瑟 / 理查德·耶茨 / 凯特·温丝莱特 / 莱昂纳多·迪卡普里奥 / 克里斯托弗·菲茨杰拉德 / 尼尔·布莱德森 / 马琳·爱尔兰 / 萨曼莎·索尔 / 山姆罗森 / 大卫·哈伯 / 凯瑟琳·科廷 / 凯西·贝茨 / 理查德·伊斯顿 / 凯瑟琳·哈恩 / 佐伊·卡赞 / 迪伦·贝克 / 基思·雷丁 / 芮安·辛普金斯 / 泰·辛普金斯 / 马克斯·凯塞拉 / 麦克斯·贝克 / 杰伊·桑德斯 / 迈克尔·珊农 / Jason Etter / Kal Thompson / Racheline Maltese / 文斯·佐丹奴 / 克里斯汀·康奈利 / 约翰·贝尔曼 / Dan Burkarth / 大卫·坎贝尔 / 彼得·康博伊 / 戴维·基尔 / 乔西格里赛迪 / Zoe Hartman / Amy Mielke / Cristina Marie / Sean Marrinan / Timothy McCartney / 亨尼·罗素 / 乔纳森·伊冯","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"揭露了很多夫妻的真实内心？可能是吧，毕竟没经历过，但是不得不说美国佬的电影就是大胆啊"},{"title":"一个头两个大 Me, Myself & Irene","alt":"https://movie.douban.com/subject/1293899/","image":"https://minio.mythsman.com/douban/be216c740f6e6dd308439a3d4deae403.jpg","meta":"喜剧 / 彼得·法雷里 / 迈克·切罗内 / 博比·法雷里 / 彼得·法雷里 / 迈克·切罗内 / 博比·法雷里 / 金·凯瑞 / 蕾妮·齐薇格 / 安东尼·安德森 / 杰罗德·米克森 / 克里斯·库珀 / Michael Bowman / 理查德·詹金斯 / 罗伯特·福斯特 / 迈克·切罗内 / 罗布·莫兰 / 托尼·考克斯 / 泽恩·格斯纳 / Steve Sweeney / 特蕾勒·霍华德 / 莱尼·克拉克 / Herbie Flynn / Heather Hodder / Steve Tyler / 安娜·库尔尼科娃 / 理查德·泰森 / 凯姆·尼利 / 布莱恩·库瑞 / 康拉德·古德 / 香侬·惠利 / Rex Allen Jr. / 林·沙烨 / 詹姆斯·B·罗杰斯 / Kate Forster / 斯科特·罗森伯格 / Mongo Brownlee / Daniel Greene / Andrew Phillips / Jeremy Maleek Leggett","rating":"2023-08-15 / ★★★★★ 力荐","comment":"人格分裂的查理与汉克，三个胖乎乎的黑小子，着实有爱！结局美满！"},{"title":"楚门的世界 The Truman Show","alt":"https://movie.douban.com/subject/1292064/","image":"https://minio.mythsman.com/douban/394147ebd6025c75ce7db4f8e640c323.jpg","meta":"剧情 / 科幻 / 安德鲁·尼科尔 / 安德鲁·尼科尔 / 金·凯瑞 / 劳拉·琳妮 / 艾德·哈里斯 / 诺亚·艾默里奇 / 娜塔莎·麦克艾霍恩","rating":"2023-08-15 / ★★★★★ 力荐","comment":"楚门的世界，自然不必多说"},{"title":"变相怪杰 The Mask","alt":"https://movie.douban.com/subject/1297570/","image":"https://minio.mythsman.com/douban/7c7385bdc032106fe14c7ce3d9847304.jpg","meta":"喜剧 / 奇幻 / Michael Fallon / 马克·维西顿 / 麦克·韦柏 / Michael Fallon / 马克·维西顿 / 麦克·韦柏 / 金·凯瑞 / 彼得·里格特 / 彼得·格林纳 / 艾米·雅丝贝克 / 理查德·杰尼 / Orestes Matacena / 蒂姆·巴格来 / 南茜·费什 / Johnny Williams / 雷格·E·凯蒂 / Jim Doughan / 丹尼斯·弗雷斯特 / 卡梅隆·迪亚兹 / Joseph Alfieri / B.J. Barie / 布莱克·克拉克 / 克里斯托弗·达尔加 / 乔莉·费舍尔 / 凯文·格雷维奥斯 / Robert Keith / 爱沃瑞·欧欣 / Robert O'Reilly / Eamonn Roche / 本·斯坦 / Wendy L. Walsh / 梅多·威廉姆斯 / Max / 加雷特·佐藤","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"金凯瑞我永远相信！"},{"title":"冒牌天神 Bruce Almighty","alt":"https://movie.douban.com/subject/1297018/","image":"https://minio.mythsman.com/douban/da3e7095140f0cf7d59826e725cec642.jpg","meta":"喜剧 / 奇幻 / 史蒂夫·科伦 / 马克·奥基夫 / 史蒂夫·欧德科克 / 史蒂夫·科伦 / 马克·奥基夫 / 史蒂夫·欧德科克 / 金·凯瑞 / 摩根·弗里曼 / 詹妮弗·安妮斯顿 / 菲利普·贝克·霍尔 / 凯瑟琳·贝尔 / 丽萨·安·沃尔特 / 史蒂夫·卡瑞尔 / 诺拉·邓恩 / 埃迪·杰米森 / 保罗·萨特菲尔德 / 马克·基利 / 莎莉·柯克兰德 / 托尼·本内特 / 蒂莫西·迪普里 / 卢·费尔德 / 莉莲·亚当斯 / 克里斯托弗·达尔加 / 杰克·乔泽弗森 / 马克·阿戴尔-里奥斯 / 恩里克·阿尔梅达 / 诺尔·古格雷米 / 罗兰多·莫利纳 / 埃米里奥·瑞弗拉 / 玛德琳·洛夫乔伊 / 丹·戴斯蒙德 / 罗伯特·库蒂斯·布朗 / 迈克尔·布朗李 / 肖恩·罗宾逊 / 艾伦·鲁鲁 / 贾米森·杨 / 格雷格·科林斯 / 玛丽·帕特·格里森 / 凯瑞·斯科特 / 布拉德利·斯泰克尔 / 当·诺伍德 / 迈克尔·奥利佛斯 / 亚历克斯·维莱尔 / 阿若·希利 / 艾莉森·麦考迪 / 珍妮尔·皮尔齐娜 / 安妮·沃斯奇 / 迈卡·威廉姆斯 / 汤姆·贝耶 / 马克斯·格隆切克 / 迈克尔·博夫舍维尔 / 寇比·法兰奇 / 曼尼·苏亚雷斯 / 唐·多德 / 沙沙维恩·豪尔 / P·J·伯恩 / 约瑟夫·巴特勒 / 丽莎·坎格洛西 / 柯特·克伦德尼","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"这部稍微差了点"},{"title":"双宝斗恶魔 Tucker & Dale vs. Evil","alt":"https://movie.douban.com/subject/4180445/","image":"https://minio.mythsman.com/douban/d0451e17a8c92cb250e73cfa3a711f66.jpg","meta":"喜剧 / 恐怖 / 艾利·克雷格 / 摩根·朱根森 / 艾利·克雷格 / 摩根·朱根森 / 泰勒·莱伯恩 / 艾伦·图代克 / 卡特里娜·宝登 / 杰西·莫斯 / Philip Granger / 布兰顿·杰·麦克拉伦 / 克里斯蒂·莱恩 / 切兰·西蒙斯 / 特拉维斯·尼尔森 / 亚历克斯·阿瑟罗 / Adam Beauchesne / Joseph Allan Sutherland / Mitchell Verigin / Angela DeCorte / Karen Reigh","rating":"2023-08-15 / ★★★★★ 力荐","comment":"这部电影真的看的笑的合不拢嘴，中间那堆傻学生上来“自杀”太经典了！胖乎乎的弟弟和壮实老哥真的很有爱！"},{"title":"美国精神病人 American Psycho","alt":"https://movie.douban.com/subject/1301715/","image":"https://minio.mythsman.com/douban/afcbbefab8fb1e31c3eecd84241d2342.jpg","meta":"剧情 / 惊悚 / 犯罪 / 玛丽·哈伦 / 吉娜薇·特纳 / 玛丽·哈伦 / 吉娜薇·特纳 / 克里斯蒂安·贝尔 / 贾斯汀·塞洛克斯 / 乔什·卢卡斯 / 比尔·萨奇 / 科洛·塞维尼 / 瑞茜·威瑟斯彭 / 萨曼莎·玛西丝 / 杰瑞德·莱托 / 威廉·达福 / 卡拉·西摩","rating":"2023-08-15 / ★★★★★ 力荐","comment":"A Real Sigma!贝尔简直把一个美国华尔街的psycho演绎得淋漓尽致，铺报纸杀人、打电话给律师哭诉、公寓内追杀女孩这三个片段简直不能更nb了"},{"title":"龙与地下城：侠盗荣耀 Dungeons & Dragons: Honor Among Thieves","alt":"https://movie.douban.com/subject/26584673/","image":"https://minio.mythsman.com/douban/2fdb4701c9d3cfee731d952dfa913a5e.jpg","meta":"动作 / 奇幻 / 冒险 / 戴维·阿纳森 / 约翰·弗朗西斯·戴利 / 乔纳森·M·戈尔茨坦 / E·加里·吉加克斯 / 戴维·阿纳森 / 约翰·弗朗西斯·戴利 / 乔纳森·M·戈尔茨坦 / E·加里·吉加克斯 / 克里斯·派恩 / 休·格兰特 / 米歇尔·罗德里格兹 / 雷吉-让·佩吉 / 贾斯蒂斯·史密斯 / 索菲娅·莉莉丝 / 克洛伊·科尔曼 / 黛茜·海德 / 杰森·王 / 尼古拉斯·布兰 / Sophia Eleni / Alexis Rodney / 埃德加·阿布拉姆 / Shota Kakibata / Appy Pratt / 丹·普尔","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"和凯峰在电影院看的，他都看睡着了...只能说中规中矩算一部合格的商业电影吧"},{"title":"宇宙探索编辑部","alt":"https://movie.douban.com/subject/34941536/","image":"https://minio.mythsman.com/douban/6fb3096ca610c9a9365e06abb523614e.jpg","meta":"喜剧 / 科幻 / 孔大山 / 王一通 / 孔大山 / 王一通 / 杨皓宇 / 艾丽娅 / 王一通 / 蒋奇明 / 盛晨晨 / 郭帆 / 龚格尔","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"这部电影真的就见仁见智了，凯峰说烂的不行完全不知道在讲什么，但我觉得其实还挺搞笑挺文艺的，孙一通长的真的好像拉宏桑。杨皓宇演技感觉好刻意，看得出他很想演好，但我感觉就是那种发力感和卖力感很强，有点过于刻意了......电影嘛，总体我觉得还行，但我不推荐，因为这部电影真的需要静下心来看"},{"title":"冒牌天神2 Evan Almighty","alt":"https://movie.douban.com/subject/1867332/","image":"https://minio.mythsman.com/douban/5347d4cf4b29fc4d8bcb19bc8bef1349.jpg","meta":"喜剧 / 家庭 / 奇幻 / 史蒂夫·欧德科克 / 史蒂夫·欧德科克 / 史蒂夫·卡瑞尔 / 摩根·弗里曼 / 劳伦·格拉汉姆 / 约翰尼·西蒙斯 / 约翰·古德曼 / 旺达·塞克丝 / 乔纳·希尔 / 莫莉·香侬","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"个人认为，相较于第一部，第二部有了肉眼可见的进步。从第一部的另一个角色前新闻频道主持人出发，讲述了当选议员后建方舟的荒诞故事。ARK, One act of random kindness."},{"title":"的士速递 Taxi","alt":"https://movie.douban.com/subject/1294262/","image":"https://minio.mythsman.com/douban/9200c50f264c5424b078a28d0a3151db.jpg","meta":"喜剧 / 动作 / 犯罪 / 吕克·贝松 / 吕克·贝松 / 萨米·纳塞利 / 玛丽昂·歌迪亚 / 弗雷德里克·迪芬塔尔 / Manuela Gourary / 艾玛·韦克伦德","rating":"2023-08-15 / ★☆☆☆☆ 很差","comment":"还是接受不了这类法式幽默..."},{"title":"银河护卫队3 Guardians of the Galaxy Vol. 3","alt":"https://movie.douban.com/subject/26258779/","image":"https://minio.mythsman.com/douban/a52bdddb33d21b040b01092e2d1679dc.jpg","meta":"喜剧 / 动作 / 科幻 / 惊悚 / 冒险 / 詹姆斯·古恩 / 丹·阿布内特 / 安迪·兰宁 / 詹姆斯·古恩 / 丹·阿布内特 / 安迪·兰宁 / 克里斯·帕拉特 / 佐伊·索尔达娜 / 布莱德利·库珀 / 凯伦·吉兰 / 戴夫·巴蒂斯塔 / 范·迪塞尔 / 庞·克莱门捷夫 / 伊丽莎白·德比茨基 / 肖恩·古恩 / 西尔维斯特·史泰龙 / Lady Gaga / 威尔·保尔特 / 楚克武迪·武吉 / 丹妮拉·曼希沃 / 迈克尔·罗森巴姆 / 玛丽亚·巴卡洛娃 / 尼科·桑托斯 / 史蒂芬·布莱克哈特 / 戴恩·迪利格罗 / 阿德琳·斯布恩 / 雷纳尔多·法伯勒","rating":"2023-08-15 / ★★★★★ 力荐","comment":"当之无愧复联4之后最好且也是唯一一部不是烂片的漫威电影了！有泪有笑！唯一一次凯峰没看睡着。"},{"title":"速度与激情10 Fast & Furious 10","alt":"https://movie.douban.com/subject/26631790/","image":"https://minio.mythsman.com/douban/a123875031ed1ff0986b06983418ba6a.jpg","meta":"动作 / 悬疑 / 惊悚 / 犯罪 / 冒险 / 盖瑞·斯科特·汤普森 / 盖瑞·斯科特·汤普森 / 范·迪塞尔 / 米歇尔·罗德里格兹 / 杰森·莫玛 / 杰森·斯坦森 / 查理兹·塞隆 / 布丽·拉尔森 / 泰瑞斯·吉布森 / 乔丹娜·布鲁斯特 / 娜塔莉·伊曼纽尔 / 姜成镐 / 斯科特·伊斯特伍德 / 卢达·克里斯 / 阿兰·里奇森 / 丹妮拉·曼希沃 / 丽塔·莫雷诺 / 卡迪·B","rating":"2023-08-15 / ★★☆☆☆ 较差","comment":"什么狗屎？这也敢拿来糊别人眼睛？tmd网上还一堆刷爽爆了啥的，速激系列我是碰都不会碰了，烂完了直接"},{"title":"荒蛮故事 Relatos salvajes","alt":"https://movie.douban.com/subject/24750126/","image":"https://minio.mythsman.com/douban/45cc736fbc90205cc1136d7bb6016bb8.jpg","meta":"剧情 / 喜剧 / 犯罪 / 达米安·斯兹弗隆 / 达米安·斯兹弗隆 / 达里奥·格兰迪内蒂 / 玛丽娅·玛努尔 / 莫妮卡·比利亚 / 丽塔·科尔泰塞 / 胡丽叶塔·泽尔贝伯格 / 凯撒·博尔东 / 莱昂纳多·斯巴拉格利亚 / 沃尔特·多纳多 / 里卡多·达林 / 南希·杜普拉 / 奥斯卡·马丁内兹 / 玛莉亚·奥内托 / 奥斯马·努涅斯 / 赫尔曼·德·席尔瓦 / 艾丽卡·里瓦斯 / 地亚哥·詹蒂莱 / 玛格丽塔·莫菲诺","rating":"2023-08-15 / ★★★★★ 力荐","comment":"阿根廷荒诞电影天花板！黑色幽默！很真实放映了阿根廷腐败疲软的现状，因果报应看的真的爽，很多经典片段，最后一个片段的婚礼撕逼拍的太大胆了！"},{"title":"疾速追杀4 John Wick: Chapter 4","alt":"https://movie.douban.com/subject/33455421/","image":"https://minio.mythsman.com/douban/0da6de7eac25dcf778437f0846736799.jpg","meta":"动作 / 惊悚 / 犯罪 / 迈克尔·芬奇 / 谢伊·哈顿 / 德里克·科尔斯塔 / 迈克尔·芬奇 / 谢伊·哈顿 / 德里克·科尔斯塔 / 基努·里维斯 / 甄子丹 / 比尔·斯卡斯加德 / 劳伦斯·菲什伯恩 / 真田广之 / 沙米尔·安德森 / 兰斯·莱迪克 / 泽山璃奈 / 斯科特·阿金斯 / 伊恩·麦柯肖恩 / 马克·扎罗 / 娜塔丽·特纳 / Aimée Kwan / 克兰西·布朗 / 布拉汉姆·沙卜","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"还行吧，甄子丹挺加分的，相较于前两部来说好了不少！结局还行"},{"title":"电影43 Movie 43","alt":"https://movie.douban.com/subject/3318306/","image":"https://minio.mythsman.com/douban/6fe01aa317be7d0c6349d6dfa163f5c6.jpg","meta":"喜剧 / 帕特里克·福斯贝里 / 史蒂夫·贝克 / 杰里米·索山克 / 史蒂夫·贝克尔 / 威尔·卡洛 / 马特·波特诺伊 / 格雷格·普里蒂金 / 帕特里克·福斯贝里 / 史蒂夫·贝克 / 杰里米·索山克 / 史蒂夫·贝克尔 / 威尔·卡洛 / 马特·波特诺伊 / 格雷格·普里蒂金 / 艾玛·斯通 / 杰瑞米·艾伦·怀特 / 科洛·莫瑞兹 / 伊丽莎白·班克斯 / 休·杰克曼 / 杰拉德·巴特勒 / 乔什·杜哈明 / 安娜·法瑞丝 / 凯特·温丝莱特 / 莱丝莉·比伯 / 杰森·苏戴奇斯 / 娜奥米·沃茨 / 乌玛·瑟曼 / 贾斯汀·朗 / 凯特·波茨沃斯 / 理查·基尔 / 西恩·威廉·斯科特 / 列维·施瑞博尔 / 鲍比·坎纳瓦尔 / 克里斯汀·贝尔 / 克里斯托夫·梅兹-普莱瑟 / 斯戴芬·莫昌特 / 哈莉·贝瑞","rating":"2023-08-15 / ★★★★☆ 推荐","comment":"屎尿屁R级超级扭曲三观电影。当个乐子看的话，完全笑的停不下来：金刚狼下巴蛋、剑齿虎偏执家庭教育、星爵PoopOnMe、石榴姐超市逆天接吻、冒牌超人/蝙蝠侠/海扁王、讽刺苹果的裸女播放器ibabe、边缘世界女主来例假、飞越疯人院男主vs妖精、真心话大冒险战争······能黑的全黑完了"},{"title":"蜘蛛侠：平行宇宙2 Spider-Man: Across The Spider-Verse","alt":"https://movie.douban.com/subject/30391186/","image":"https://minio.mythsman.com/douban/b8f784f6ef24552862d5aea9defa5262.jpg","meta":"动作 / 动画 / 冒险 / 菲尔·罗德 / 克里斯托弗·米勒 / 戴夫·卡拉汉姆 / 斯坦·李 / 菲尔·罗德 / 克里斯托弗·米勒 / 戴夫·卡拉汉姆 / 斯坦·李 / 沙梅克·摩尔 / 海莉·斯坦菲尔德 / 奥斯卡·伊萨克 / 杰克·约翰逊 / 伊萨·雷 / 布莱恩·泰里·亨利 / 劳伦·维勒斯 / 瑞秋·德拉彻 / 丹尼尔·卡卢亚 / 乔玛·塔科内 / 谢伊·惠格姆 / 詹森·舒瓦兹曼","rating":"2023-08-15 / ★★★★★ 力荐","comment":"我个人觉得这部电影可以被贯彻艺术的名义了！"},{"title":"龙门镖局","alt":"https://movie.douban.com/subject/11627047/","image":"https://minio.mythsman.com/douban/602bab64e435dfc980261bdd73ec832b.jpg","meta":"喜剧 / 古装 / 宁财神 / 宁财神 / 郭京飞 / 袁咏仪 / 李倩 / 张瑞涵 / 钱芳 / 刘冠麟 / 杨皓宇 / 傅家缘 / 雷佳音 / 姚晨 / 喻恩泰 / 黄晓明 / 陈晓 / 陆毅 / 佟大为 / 马天宇 / 焦俊艳 / 尹正 / 印小天 / 胡彦斌 / 元秋 / 晨阳 / 莫小奇 / 肖央 / 连凯 / 霍思燕 / 严屹宽 / 袁弘 / 保剑锋 / 王一楠 / 朱茵 / 徐洁儿 / 姚橹 / 苏东 / 李传缨 / 文清 / 熊乃瑾 / 付辛博 / 马苏 / 张子枫 / 黄龄 / 张一白 / 孔二狗 / 高群书 / 柯蓝 / 阿朵 / 甘露 / 练练 / 李佳航 / 翟煦飞 / 宁财神 / 张馨予 / 陈赫 / 杜淳 / 李晨 / 王学兵 / 王煜锋 / 陈德铭","rating":"2023-08-15 / ★★★☆☆ 还行","comment":"梦回当年啊"}]
         }
 
         let nav = {
@@ -1365,7 +1368,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2023</span>
+                <span id="year">2023-2024</span>
             
             <a href="/about" target="_blank">Z</a>
         <!--|&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1752,10 +1755,6 @@ $(function () {
     <!-- 鼠标星星特效 -->
     
 
-     
-        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-        <script src="/libs/others/TencentCaptcha.js"></script>
-        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
     
 
     <!-- Baidu Analytics -->
@@ -1803,7 +1802,7 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
     
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1.5,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":180,"height":180,"position":"right","hOffset":75,"vOffset":8},"mobile":{"show":false,"scale":0.4},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"show":false,"scale":1.5,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":180,"height":180,"position":"right","hOffset":75,"vOffset":8},"mobile":{"show":false,"scale":0.4},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
