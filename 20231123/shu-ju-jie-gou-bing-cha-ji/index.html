@@ -822,7 +822,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-11-23
+                    2024-02-04
                 </div>
                 
 
@@ -913,7 +913,7 @@
 <img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes/algorithm/%25E8%25B7%25AF%25E5%25BE%2584%25E5%258E%258B%25E7%25BC%25A9.jpg" alt="路径压缩" style="zoom:50%;">
 <h3 id="3-2路径分裂（基本不用）">3.2路径分裂（基本不用）</h3>
 <pre class="line-numbers language-language-cpp"><code class="language-language-cpp">int find(int x) {
-    while (x != p[x]) {//x的父节点指向其祖父节点的父节点，x节点指向其祖父节点
+    while (x != p[x]) {
     	int p = p[x];
     	p[x] = p[p[x]];
     	x = p;
@@ -921,8 +921,6 @@
 	return x;
 }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>图解：</p>
-<img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes/algorithm/%25E8%25B7%25AF%25E5%25BE%2584%25E5%2588%2586%25E8%25A3%2582.jpg" alt="路径分裂" style="zoom:50%;">
 <h3 id="3-3路径减半（基本不用）">3.3路径减半（基本不用）</h3>
 <pre class="line-numbers language-language-cpp"><code class="language-language-cpp">int find(int x) {
     while (x != p[x]) {//x与x的父节点均指向其祖父节点的父节点
@@ -932,11 +930,9 @@
     return x;
 }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>图解：</p>
-<img src="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/blog%2Flazyload-loading.gif" data-original="https://bucket1-1319772612.cos.ap-shanghai.myqcloud.com/pic-notes/algorithm/%25E8%25B7%25AF%25E5%25BE%2584%25E5%2587%258F%25E5%258D%258A.jpg" alt="路径减半" style="zoom:50%;">
 <h3 id="3-4按秩合并（路径压缩的优化）">3.4按秩合并（路径压缩的优化）</h3>
 <p><strong>原理</strong>：小树向大数合并。用一个数组rank[]记录每个根节点对应的树的深度（如果不是根节点，其rank相当于以它作为根节点的<strong>子树</strong>的深度）。一开始，把所有元素的rank（<strong>秩</strong>）设为1。合并时比较两个根节点，把rank较小者往较大者上合并。</p>
-<h3 id="初始化（按秩合并）">初始化（按秩合并）</h3>
+<p><strong>初始化（按秩合并）</strong></p>
 <pre class="line-numbers language-language-cpp"><code class="language-language-cpp">inline void init(int n) {
     for (int i = 1; i <= n; ++i) {
         fa[i] = i;
@@ -944,7 +940,7 @@
     }
 }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="合并（按秩合并）">合并（按秩合并）</h3>
+<p><strong>合并（按秩合并）</strong></p>
 <pre class="line-numbers language-language-cpp"><code class="language-language-cpp">inline void merge(int i, int j) {
     int x = find(i), y = find(j);    //先找到两个根节点
     if (rank[x] <= rank[y])
